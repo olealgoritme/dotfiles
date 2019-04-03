@@ -1,0 +1,576 @@
+" Author: Ronak Gandhi <me@ronakg.com>
+" Source: https://github.com/ronakg/dotfiles
+"
+" Keep all the sane settings in following file
+source ~/.vim/sane_vimrc
+
+let g:dracula_colorterm = 0
+
+
+" https://github.com/artur-shaik/vim-javacomplete2
+"autocmd FileType java setlocal omnifunc=javacomplete#Complete
+"nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+"imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+"nmap <F5> <Plug>(JavaComplete-Imports-Add)
+"imap <F5> <Plug>(JavaComplete-Imports-Add)
+"nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+"imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+"nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+"imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+
+" nerdtree ctrl+n binding
+map <C-n> :NERDTreeToggle<CR>
+let g:mapleader = "\<Space>"
+
+nnoremap \ :nohlsearch<CR>
+
+" Jump to start of function
+nnoremap [[ ?{<CR>w99[{:nohlsearch<CR>
+nnoremap ]] j0[[%/{<CR>:nohlsearch<CR>
+
+nnoremap G :norm! Gzz<CR>
+
+nmap <C-g>g :Gstatus<CR>gg<C-n>
+nmap <C-g>d :Gdiff<CR>
+nmap <C-g>b :Gblame<CR>
+
+" Grep for word under the cursor
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ -g\ '!tags'
+
+    " --column: Show column number
+    " --line-number: Show line number
+    " --no-heading: Do not show file headings in results
+    " --fixed-strings: Search term as a literal string
+    " --ignore-case: Case insensitive search
+    " --no-ignore: Do not respect .gitignore, etc...
+    " --hidden: Search hidden files and folders
+    " --follow: Follow symlinks
+    " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+    " --color: Search color options
+    command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+elseif executable("ag")
+    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+endif
+set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+function! GetVisualSelection()
+    " https://stackoverflow.com/a/6271254/777247
+    let [line_start, column_start] = getpos("'<")[1:2]
+    let [line_end, column_end] = getpos("'>")[1:2]
+    let lines = getline(line_start, line_end)
+    if len(lines) == 0
+        return ''
+    endif
+    let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
+    let lines[0] = lines[0][column_start - 1:]
+    return join(lines, "\n")
+endfunction
+
+function! Search(pattern, flags)
+    if strlen(a:pattern) <= 2
+        let search_pattern = input("Enter search term: ")
+    else
+        let search_pattern = a:pattern
+    endif
+    execute "silent grep! " . a:flags . " \"" . search_pattern . "\""
+    botright copen
+    execute "normal /" . search_pattern
+endfunction
+
+" whole word, smart case
+nnoremap <leader>vv :call Search(expand("<cword>"), "-w -S -F")<CR>
+" whole word, ignore case
+nnoremap <leader>vi :call Search(expand("<cword>"), "-w -i -F")<CR>
+" any part of word, smart case
+nnoremap <leader>VV :call Search(expand("<cword>"), "-S -F")<CR>
+" open search
+nnoremap <leader>VI :call Search(expand("<cword>"), "-i -F")<CR>
+
+" Visual mode mappings
+vnoremap <leader>vv :call Search(GetVisualSelection(), "-w -S -F")<CR>
+vnoremap <leader>vi :call Search(GetVisualSelection(), "-w -i -F")<CR>
+vnoremap <leader>VV :call Search(GetVisualSelection(), "-S -F")<CR>
+vnoremap <leader>VI :call Search(GetVisualSelection(), "-i -F")<CR>
+
+" Prompt for search text
+nnoremap <leader>vp :call Search("", "-w -S")<CR>
+nnoremap <leader>VP :call Search("", "-S")<CR>
+
+" Easier movement in visual mode
+vnoremap > >gv
+vnoremap < <gv
+
+" Don't add a newline when preview window is visible
+inoremap <silent><expr> <CR> pumvisible() ? "<C-y>" : "<C-g>u<CR>"
+
+map y <Plug>(operator-flashy)
+nmap Y <Plug>(operator-flashy)$
+
+" Backspace in normal mode switches to last buffer
+nnoremap <BS> <C-o>
+
+" Expand matching braces only when pressing Enter
+" inoremap {<CR> {<CR>}<Esc>==ko
+
+" Don't let x and c to spoil the yank register
+nnoremap x "_x
+nnoremap c "_c
+
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
+
+function! Quit()
+    let debug = 0
+    if debug
+        echom 'Entering Quit(), current buffer is: ' . bufname('%')
+        echom 'Previous buffer is: ' . bufname('#')
+    endif
+
+    let buflisted = &buflisted
+    if !buflisted
+        echom 'Quitting because buffer is not listed'
+        quit
+        return
+    endif
+
+    " number of listed buffers
+    if v:version >= 800
+        let l:nbuf = len(getbufinfo({'buflisted':1}))
+    else
+        let l:nbuf = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+    endif
+
+    if debug
+        echom 'Number of buffers: ' . l:nbuf
+    endif
+
+    " Just quit for this special buffers
+    let l:buffer_types = ['quickfix', 'nofile', 'help', 'terminal']
+    if index(l:buffer_types, &buftype) >= 0 || l:nbuf == 1
+        quit
+        return
+    endif
+
+    " total number of splits
+    let l:nsplit = winnr('$')
+    let l:cur_bufnr = bufnr('%')
+
+    " If the bufhidden is set to delete, just jump back to
+    " previous buffer, this buffer gets deleted on its own
+    let bufhid = &bufhidden
+
+    if bufhid == 'delete' || bufhid == 'wipe'
+        if debug
+            echom 'Quitting because bufhid is ' . bufhid
+        endif
+
+        if l:nbuf == l:nsplit
+            quit
+        else
+            bprevious
+        endif
+
+        return
+    endif
+
+    if debug
+        echom 'No of splits: ' . l:nsplit . ', Current buffer: ' . l:cur_bufnr
+        echom 'Previous buffer: ' . bufnr('#')
+    endif
+
+    if l:nbuf == l:nsplit
+        " delete the buffer if number of open splits is same as buffers
+        bdelete
+    elseif l:nbuf > 1
+        " Jump to previous buffer and then delete this buffer, so that
+        " we're back to where we were before
+        bprevious | execute 'bdelete ' . l:cur_bufnr
+    else
+        " quit if this is the last buffer
+        quit
+    endif
+endfunction
+
+" Quicker save and quit
+nnoremap <silent> e :call Quit()<CR>
+nnoremap <silent> <C-e> :q<CR>
+nnoremap <silent> w :update<CR>
+inoremap <silent> jj <Esc>
+
+" Paste in insert mode
+inoremap <C-p> <C-r>0
+
+" Easier to get command prompt
+nnoremap ; :
+vnoremap ; :
+
+" Jump to start and end of line using the home row keys
+nnoremap 0 ^
+nnoremap ^ 0
+
+nnoremap <leader>l :call NumberToggle()<CR>
+
+" Add a heading/subheading to current line
+nnoremap <leader>= yypVr=<Esc>==
+nnoremap <leader>- yypVr-<Esc>==
+
+" Go to end of yanked/pasted text
+vnoremap <silent> y y`]
+" }}
+
+" Commit and push {{
+function! s:CommitPush(...)
+    if a:0 > 0
+        execute "Gcommit -am '" . join(a:000) . "'"
+    else
+        :Gcommit -am "update notes"
+    endif
+
+    :Gpush
+endfunction
+
+command! -nargs=? CommitPush call s:CommitPush(<f-args>)
+
+let g:quickr_preview_position = 'right'
+let g:quickr_preview_on_cursor = 1
+
+" quickr-cscope.vim
+let g:quickr_cscope_program = "gtags-cscope"
+let g:quickr_cscope_db_file = "GTAGS"
+
+" ======================================================================================
+" UpdateGlobalDB()
+" Incrementally update the database generated by GNU GLOBAL
+" ======================================================================================
+function! UpdateGlobalDB()
+    try
+        silent! execute '!gtags -i &'
+    catch
+    endtry
+endfunction
+
+let g:quickr_cscope_autoload_db = 1
+let g:quickr_cscope_use_qf_g = 1
+let g:quickr_cscope_debug_mode = 0
+nmap <leader>h <Plug>(quickr_cscope_global_verticle_split)
+
+" ======================================================================================
+" Strip trailing whitespaces
+" ======================================================================================
+function! StripTrailingWhite()
+    let l:winview = winsaveview()
+    silent! %s/\s\+$//
+    call winrestview(l:winview)
+endfunction
+
+function! SetTerminal()
+    wincmd L
+    startinsert
+    setlocal nonumber
+    setlocal norelativenumber
+    if exists(':IndentLinesDisable')
+        IndentLinesDisable
+    endif
+endfunction
+
+
+" Auto commands
+" ======================================================================================
+
+if has("autocmd")"
+    " Enable spell checking
+
+    augroup mycommands
+        autocmd!
+        autocmd FileType gitcommit setlocal spell
+        autocmd FileType markdown setlocal spell
+        autocmd FileType text setlocal spell
+        autocmd FileType rst setlocal spell
+
+        "autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+        "autocmd WinLeave * setlocal nocursorline
+
+        "autocmd BufWritePre * call StripTrailingWhite()
+
+        " omnifuncs
+        "autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        "autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        "autocmd FileType java setlocal omnifunc=javacomplete#Complete
+        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+        "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        autocmd FileType c set omnifunc=ccomplete#Complete
+        "autocmd FileType cpp set omnifunc=omni#cpp#complete#Main
+
+        " Remember cursor position between vim sessions
+        autocmd BufReadPost *
+                    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                    \   exe "normal! g`\"" |
+                    \ endif
+
+        " Update diff when leaving from insertmode or writing to file
+        autocmd BufWritepost * if &diff == 1 | diffupdate | endif
+
+        if g:quickr_cscope_program == "gtags-cscope"
+            " Update GLOBAL database after file is written
+            autocmd BufWritePost *.c call UpdateGlobalDB()
+            autocmd BufWritePost *.cpp call UpdateGlobalDB()
+            autocmd BufWritePost *.h call UpdateGlobalDB()
+            autocmd User QfReplacementBufWritePost doautocmd BufWritePost
+        endif
+
+        "autocmd BufWritePost $MYVIMRC,vimrc source $MYVIMRC | AirlineRefresh
+
+        " Use shell syntax for .conf files
+        autocmd BufRead,BufNewFile *.conf set syntax=sh
+
+        " Open help in vertical split
+        autocmd FileType help wincmd L
+
+        if has('nvim')
+            au BufEnter * if &buftype == 'terminal' | :call SetTerminal() | endif
+        endif
+
+    augroup END
+endif
+
+function! NumberToggle()
+    if(&relativenumber == 1 && &number == 1)
+        set number
+        set norelativenumber
+    elseif (&number == 1 && &relativenumber == 0)
+        set norelativenumber
+        set nonumber
+    else
+        set number
+        set relativenumber
+    endif
+endfunction
+
+if &diff
+    nnoremap e :qa<CR>
+    nnoremap w :wa<CR>
+    nnoremap W :wa!<CR>
+    set number
+    set norelativenumber
+endif
+
+set tags=./tags;/   " ctags path, search upwards till tags file is found
+
+let g:airline#extensions#tabline#enabled                      = 1
+let g:airline#extensions#tabline#buffer_min_count             = 1
+let g:airline#extensions#tabline#tab_min_count                = 1
+let g:airline#extensions#tabline#buffer_idx_mode              = 1
+let g:airline#extensions#tabline#buffer_nr_show               = 0
+let g:airline#extensions#tabline#show_buffers                 = 1
+let g:airline#extensions#branch#enabled                       = 1
+let g:airline#extensions#tagbar#enabled                       = 1
+let g:airline_powerline_fonts                                 = 1
+let g:airline#extensions#whitespace#enabled       = 0
+let g:airline#extensions#tabline#fnamemod         = ':t'
+let g:airline_theme                               = 'hybrid'
+let g:airline_section_c                           = '%{fnamemodify(expand("%"), ":~:.")}'
+let g:airline_section_x                           = '%{fnamemodify(getcwd(), ":t")}'
+let g:airline_section_y                           = airline#section#create(['filetype'])
+" Easier tab/buffer switching
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+
+nnoremap <silent> <leader>p :FZF --no-reverse<CR>
+nnoremap <silent> <leader>b :Tags<CR>
+nnoremap b :Buffers<CR>
+
+" Change cursor shape based on mode.
+if has('nvim')
+    "set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+else
+    set t_ut=
+    set gcr=a:blinkon0
+    if exists('$TMUX')
+        let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+        let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    else
+        let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+        let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    endif
+endif
+
+let g:startify_list_order = [['Most recently used files in current directory:'], 'dir',
+            \                ['Bookmarks:'], 'bookmarks']
+let g:startify_change_to_dir = 0
+let g:startify_files_number = 10
+let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'} ]
+
+if filereadable(".vim.custom")
+    so .vim.custom
+endif
+
+function! ZoomToggle()
+    if exists('t:zoomed') && t:zoomed
+        execute t:zoom_winrestcmd
+        let t:zoomed = 0
+    else
+        let t:zoom_winrestcmd = winrestcmd()
+        resize
+        vertical resize
+        let t:zoomed = 1
+    endif
+endfunction
+nnoremap <silent> <C-a> :call ZoomToggle()<CR>
+
+"let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#completions_enabled = 1
+
+let g:indentLine_setColors = 1
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_char = '│'
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+let g:clever_f_ignore_case = 1
+let g:clever_f_smart_case = 1
+let g:clever_f_fix_key_direction = 1
+
+let g:NERDCreateDefaultMappings = 0
+let g:NERDRemoveExtraSpaces = 0
+nmap gc <plug>NERDCommenterToggle
+vmap gc <plug>NERDCommenterSexy
+map gx <plug>NERDCommenterToggle
+
+command! -nargs=+ Silent
+            \ | execute ':silent !'.<q-args>
+            \ | execute ':redraw!'
+
+nmap K <plug>(Vman)
+
+let g:EasyMotion_smartcase = 1
+nmap s <Plug>(easymotion-s2)
+
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+
+let g:vim_json_syntax_conceal = 0
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#file#enable_buffer_path = 1
+let g:deoplete#auto_complete_start_length = 2
+
+nnoremap <C-b> :vsplit term://bash<CR>
+
+" Window navigation function
+" Make ctrl-h/j/k/l move between windows and auto-insert in terminals
+func! s:mapMoveToWindowInDirection(direction)
+func! s:maybeInsertMode(direction)
+        stopinsert
+        execute "wincmd" a:direction
+
+        if &buftype == 'terminal'
+        startinsert!
+        endif
+endfunc
+
+execute "tnoremap" "<silent>" "<C-" . a:direction . ">"
+                \ "<C-\\><C-n>"
+                \ ":call <SID>maybeInsertMode(\"" . a:direction . "\")<CR>"
+execute "nnoremap" "<silent>" "<C-" . a:direction . ">"
+                \ ":call <SID>maybeInsertMode(\"" . a:direction . "\")<CR>"
+endfunc
+
+for dir in ["h", "j", "l", "k"]
+call s:mapMoveToWindowInDirection(dir)
+endfor
+tnoremap <esc><esc> <C-\><C-n>
+
+" deoplete-clang {{
+let g:deoplete#file#enable_buffer_pathete#sources#clang#libclang_path = $MY_LIBCLANG_PATH
+let g:deoplete#sources#clang#clang_header = $MY_CLANGHEADER_PATH
+let g:deoplete#sources#clang#sort_algo = 'priority'
+" }}
+
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+let g:tmux_navigator_disable_when_zoomed = 1
+
+let g:neoformat_enabled_python = ['autopep8']
+let g:neoformat_try_formatprg = 1
+let g:neoformat_only_msg_on_error = 1
+
+au FileType python setlocal formatprg=autopep8\ -
+
+nnoremap <C-d> :call ZoomToggle()<CR>:Gdiff<CR>
+
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters = { 'c': ['clang'], }
+highlight ALEErrorSign guibg=red guifg=yellow
+highlight ALEWarningSign guibg=yellow guifg=black
+
+" ======================================================================================
+" vim-signify
+" ======================================================================================
+let g:signify_sign_delete            = '-'
+
+" ======================================================================================
+" vim-clang-format
+" ======================================================================================
+let g:clang_format#auto_format = 0
+
+map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
+map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
+map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
+map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
+
+inoremap {<CR> {<CR>}<Esc>O
+
+let g:echodoc_enable_at_startup = 1
+
+" Autoclose preview windows
+" https://github.com/Shougo/deoplete.nvim/issues/115
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" https://github.com/Shougo/deoplete.nvim/issues/100
+" use tab to forward cycle
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" use tab to backward cycle
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+function! MyJavaSearch(pattern, type)
+    if strlen(a:pattern) <= 2
+        let search_pattern = input("Enter search term: ")
+    else
+        let search_pattern = a:pattern
+    endif
+
+    execute "JavaSearch -p " . search_pattern . " -t all -x " . a:type
+endfunction
+
+nnoremap <silent> <buffer> <cr> :JavaSearchContext<cr>
+nnoremap <silent> <leader>c :echo "Opening call hierarchy..."<CR>:JavaCallHierarchy<CR>
+nnoremap <silent> <leader>ss :call MyJavaSearch(expand("<cword>"), "all")<CR>
+nnoremap <silent> <leader>sr :call MyJavaSearch(expand("<cword>"), "references")<CR>
+nnoremap <silent> <leader>sp :call MyJavaSearch(expand("<cword>"), "implementation")<CR>
+
+let java_highlight_all = 1
+let java_highlight_java_lang_ids = 1
+let java_comment_strings = 1
+let java_highlight_functions = 1
+let java_highlight_debug = 1
+let java_mark_braces_in_parens_as_errors = 1
+
+let g:jedi#show_call_signatures = "1"
+
+nnoremap gf <C-w>f<C-w>L
+
+let g:vem_tabline_show = 2
+let g:vem_tabline_left_arrow = '◀'
+let g:vem_tabline_right_arrow = '▶'
