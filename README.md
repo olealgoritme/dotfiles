@@ -1,6 +1,5 @@
 # My personal dotfiles setup
-# Current: vim + tmux, both dracula themed. Font Awesome (patched)
-# for terminal icons in vim etc.
+# Current: vim + tmux, both dracula themed. Font Awesome (patched) for terminal icons in vim etc.
 
 ## Installation
 
