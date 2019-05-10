@@ -20,6 +20,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/JavaRun'
 Plug '~/.vim/plugged/YouCompleteMe'
 Plug '~/.vim/plugged/java_getset'
+Plug 'liuchengxu/vim-which-key'
 
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
