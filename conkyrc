@@ -1,0 +1,138 @@
+conky.config = {
+--==============================================================================
+-- 2017/10/25
+-- this is for conky version 1.1
+-- converted by me using lua convert tool
+-- 
+--                               conkyrc_orange
+
+--  author  : SLK
+--  version : v209011601
+--  license : Distributed under the terms of GNU GPL version 2 or later
+--  modified: me
+--  version : v20171027
+--  notes   : works on 4k screen. uses conky conf newer >v1.1
+
+--==============================================================================
+
+	short_units = true,
+	background = true,
+	update_interval = 1,
+
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	temperature_unit = 'celsius',
+
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 1080,
+
+	gap_x = 30,
+	gap_y = 30,
+	minimum_width = 240, minimum_height = 250,
+	maximum_width = 240,
+	own_window = true,
+--## me change, added next 2 lines
+--## own_window_type override
+	own_window_type = 'normal',
+	own_window_argb_visual = true,
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	alignment = 'top_right',
+
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+
+	override_utf8_locale = true,
+	use_xft = true,
+	font = 'Ubuntu:size=10',
+	xftalpha = 0.5,
+	uppercase = false,
+
+	default_color = '#FFFFFF',
+	color1 = '#DDDDDD',
+	color2 = '#AAAAAA',
+	color3 = '#888888',
+	color4 = '#EF5A29',
+
+--	lua_load = '~/.conky/conky_orange.lua',
+--	lua_draw_hook_post = 'main',
+
+--${voffset 45}
+--${goto 90}${color3}${font ubuntu:size=32}${time %e}${color1}${voffset 0}${offset -60}${font ubuntu:size=10}${time %A}
+--${goto 85}${color2}${voffset -2}${font ubuntu:size=10}${time %b}${voffset -2} ${color3}${font ubuntu:size=10}${time %Y}${font}
+
+--${voffset 70}
+
+
+};
+
+conky.text = [[
+${voffset 10}
+${goto 133}${color4}${font ubuntu:size=18}${time %e}
+${goto 118}${color2}${voffset -6}${font ubuntu:size=10}${time %b}${voffset -1} ${color3}${font ubuntu:size=10}${time %Y}
+${goto 133}${color1}${voffset -2}${font ubuntu:size=10}${time %A}
+
+${goto 90}${color1}${voffset -2}${font ubuntu:size=10}Kernel
+${goto 90}${color1}${voffset -2}${font ubuntu:size=10}${kernel}
+#${font}
+${voffset 10}
+${goto 90}${font Ubuntu:bold:size=10}${color}CPU @ ${freq} Mhz
+
+${goto 90}${font Ubuntu:normal:size=10}${color2}${top name 1}${color4}${alignr}${top cpu 1}${color3}%
+${goto 90}${font Ubuntu:normal:size=10}${color2}${top name 2}${color4}${alignr}${top cpu 2}${color3}%
+${goto 90}${font Ubuntu:normal:size=10}${color2}${top name 3}${color4}${alignr}${top cpu 3}${color3}%
+${goto 90}${font Ubuntu:normal:size=10}${color2}${top name 4}${color4}${alignr}${top cpu 4}${color3}%
+${goto 90}${font Ubuntu:normal:size=10}${color2}${top name 5}${color4}${alignr}${top cpu 5}${color3}%
+${goto 90}${font Ubuntu:normal:size=10}${color2}${top name 5}${color4}${alignr}${top cpu 6}${color3}%
+${goto 90}${font Ubuntu:normal:size=10}${color2}${top name 5}${color4}${alignr}${top cpu 7}${color3}%
+
+${goto 90}${voffset -4}${cpugraph 30,60 666666 666666}
+${goto 90}${voffset -5}${font Ubuntu:normal:size=10}${color}${processes} processes 
+
+# added by me for temps
+${voffset 5}${goto 90}${font Ubuntu:bold:size=10}${color2}${voffset -2}${font Ubuntu:bold:size=10}${color2}${offset 0}CPU Avg:     ${goto 90}${font Ubuntu:bold:size=10}${alignr}${color4} ${exec sensors k10temp-pci-* | grep Tdie | awk '{print $2}' | cut -c 1-5 | cut -c -6 | cut -c 2- | awk '{ total += $1 } END { printf "%.1f", total/NR }'}${color3}°c
+
+${voffset 5}${goto 90}${font Ubuntu:bold:size=10}${color2}${voffset -2}${font Ubuntu:bold:size=10}${color2}${offset 0}CPU 1-8: ${goto 90}${font Ubuntu:bold:size=10}${alignr}${color4} ${exec sensors k10temp-pci-00c3 | grep Tdie | awk '{print $2}' | cut -c 1-5 | cut -c -6 | cut -c 2-}${color3}°c
+${voffset 5}${goto 90}${font Ubuntu:bold:size=10}${color2}${voffset -2}${font Ubuntu:bold:size=10}${color2}${offset 0}CPU 9-16: ${goto 90}${font Ubuntu:bold:size=10}${alignr}${color4} ${exec sensors k10temp-pci-00cb | grep Tdie | awk '{print $2}' | cut -c 1-5 | cut -c -6 | cut -c 2-}${color3}°c
+${voffset 5}${goto 90}${font Ubuntu:bold:size=10}${color2}${voffset -2}${font Ubuntu:bold:size=10}${color2}${offset 0}CPU 17-24: ${goto 90}${font Ubuntu:bold:size=10}${alignr}${color4} ${exec sensors k10temp-pci-00d3 | grep Tdie | awk '{print $2}' | cut -c 1-5 | cut -c -6 | cut -c 2-}${color3}°c
+${voffset 5}${goto 90}${font Ubuntu:bold:size=10}${color2}${voffset -2}${font Ubuntu:bold:size=10}${color2}${offset 0}CPU 25-32: ${goto 90}${font Ubuntu:bold:size=10}${alignr}${color4} ${exec sensors k10temp-pci-00db | grep Tdie | awk '{print $2}' | cut -c 1-5 | cut -c -6 | cut -c 2-}${color3}°c
+#${voffset 5}${goto 90}${font Ubuntu:bold:size=10}${color2}${voffset -2}${font Ubuntu:bold:size=10}${color2}${offset 0}${goto 90}${font Ubuntu:bold:size=10}${alignr}${color4}${exec nvidia-smi -q -a | grep -Eo 'GeForce .+'}${color3}${font}
+#${voffset 5}${goto 90}${font Ubuntu:bold:size=10}${color2}${voffset -2}${font Ubuntu:bold:size=10}${color2}${offset 0}GPU: ${goto 90}${font Ubuntu:bold:size=10}${alignr}${color4}${exec nvidia-smi -q -a | grep -Eo 'GPU Current Temp .+' | cut -c31-33}°c${color3} / 99°c${font}
+
+
+${voffset 8}
+${goto 90}${font Ubuntu:bold:size=10}${color}RAM @ ${exec sudo dmidecode -t 17 | grep MT/s | head -1 | awk '{print $2}'} MHz
+${goto 90}${font Ubuntu:bold:size=10}${color}${mem}B / 128.00GB
+${goto 90}${font Ubuntu:normal:size=10}${color1}${top_mem name 1}${color4}${alignr}${top_mem mem 1}${color3}%
+${goto 90}${font Ubuntu:normal:size=10}${color2}${top_mem name 2}${color4}${alignr}${top_mem mem 2}${color3}%
+${goto 90}${font Ubuntu:normal:size=10}${color3}${top_mem name 3}${color4}${alignr}${top_mem mem 3}${color3}%
+${goto 90}${font Ubuntu:normal:size=10}${color3}${top_mem name 2}${color4}${alignr}${top_mem mem 4}${color3}%
+${goto 90}${font Ubuntu:normal:size=10}${color3}${top_mem name 3}${color4}${alignr}${top_mem mem 5}${color3}%
+
+${voffset 12}
+${goto 90}${font Ubuntu:bold:size=10}${color}DISK ${font Ubuntu:normal:size=10}${color3}used: ${color1}${fs_used}B/${fs_size}B
+${goto 90}${font Ubuntu:bold:size=10}${color}IOSched: ${font Ubuntu:normal:size=10}${color3}${ioscheduler nvme0n1}
+${goto 90}${diskiograph 30,60 666666 666666}${voffset -30}
+
+
+
+${voffset -10}
+${goto 90}${font Ubuntu:bold:size=10}${color}Network Status ${alignr}
+${goto 90}${color3}Down: $color${downspeedf enp8s0} ${color3}kB/s ${alignr}
+${goto 90}${color3}Up: $color4${upspeedf enp8s0} ${color3}kB/s ${alignr}
+${goto 90}${color3}${downspeedgraph enp8s0 30,30 ${color2} 676f9d} ${goto 180}${color4}${upspeedgraph enp8s0 30,30}
+${goto 90}${color}Total: ${totaldown enp8s0}/${totalup enp8s0}
+
+${voffset -25}
+${goto 90}${font Ubuntu:normal:size=10}${color3}Google Ping:${alignr} ${font Ubuntu:normal:size=10}${color}${exec ping -c 1 -W 1 8.8.8.8 | grep -Eo "time=.+"  | cut -c6-14} 
+${goto 90}${font Ubuntu:bold:size=10}${color3}${if_up enp3s0}eth: ${font Ubuntu:normal:size=10}${color}${addr enp3s0}${endif}
+
+#${goto 90}${font Ubuntu:normal:size=10}${color1}${tcp_portmon 1 65535 rip 0}${alignr 1}${tcp_portmon 1 65535 rport 0}
+#${goto 90}${font Ubuntu:normal:size=10}${color1}${tcp_portmon 1 65535 rip 1}${alignr 1}${tcp_portmon 1 65535 rport 1}
+#${goto 90}${font Ubuntu:normal:size=10}${color1}${tcp_portmon 1 65535 rip 2}${alignr 1}${tcp_portmon 1 65535 rport 2}
+]];

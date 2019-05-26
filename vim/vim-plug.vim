@@ -21,6 +21,8 @@ Plug 'vim-scripts/JavaRun'
 Plug '~/.vim/plugged/YouCompleteMe'
 Plug '~/.vim/plugged/java_getset'
 Plug 'liuchengxu/vim-which-key'
+" On-demand lazy load
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
