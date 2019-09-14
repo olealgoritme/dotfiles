@@ -78,5 +78,9 @@ echo -e "\nSourcing ~/.bashrc"
 # Create undodir for vim persistent undo
 mkdir -p ~/.undodir
 
+# Install crontab to push dotfiles every hour
+echo -e "\nInstalling crontab [every hour]"
+crontab crontab_install.sh
+
 # Hurray...
-echo -e "\n...done"
+echo -e "\n...You are done! Welcome to xuw's world."
