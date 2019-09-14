@@ -13,6 +13,7 @@ fi
 
 TZ='Europe/Oslo'; export TZ
 
+alias xclip="xclip -selection c"
 #source ~/.git-completion.bash
 
 #test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

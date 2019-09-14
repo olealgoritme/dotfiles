@@ -1,6 +1,7 @@
 export PATH="$PATH:/usr/local/bin:$HOME/.local/bin"
 [ -f ~/.bashrc_work ] && . ~/.bashrc_work || true
 
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 # Return if not interactive
 [[ $- != *i* ]] && return
 
