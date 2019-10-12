@@ -1,4 +1,4 @@
-" Vim-Plug {{
+"Vim-Plug {{
 if empty(glob('~/.vim/autoload/plug.vim'))
       silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -7,12 +7,32 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'tpope/vim-eunuch'     "Vim sugar for the UNIX shell commands that need it the most
-"Plug 'python-mode/python-mode', { 'for': [ 'python'], 'branch': 'develop' }
+" DEOPLETE START
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+" DEOPLETE END
+
+" YouCompleteMe
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
+Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
 
 
-" oles
-"Plug 'artur-shaik/vim-javacomplete2'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -21,16 +41,12 @@ Plug 'vim-scripts/JavaRun'
 Plug '~/.vim/plugged/YouCompleteMe'
 Plug '~/.vim/plugged/java_getset'
 Plug 'liuchengxu/vim-which-key'
-" On-demand lazy load
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+"Plug 'bling/vim-airline'
 Plug 'will133/vim-dirdiff'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-repeat'
@@ -41,50 +57,26 @@ Plug 'Yggdroot/indentLine'
 Plug 'ronakg/quickr-cscope.vim', { 'for': [ 'c', 'cpp', 'h' ] }
 Plug 'ronakg/quickr-preview.vim'
 Plug 'rhysd/vim-clang-format', { 'for': [ 'c', 'cpp', 'h', 'java' ] }
-
-
 Plug 'wellle/targets.vim'
-"Plug 'tpope/vim-unimpaired'
 Plug 'Raimondi/delimitMate'
 Plug 'rhysd/clever-f.vim'
 Plug 'vim-utils/vim-man'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
-"Plug 'christoomey/vim-tmux-navigator'
 Plug 'plasticboy/vim-markdown', { 'for': [ 'md' ] }
 Plug 'mzlogin/vim-markdown-toc', { 'for': [ 'md' ] }
 Plug 'roxma/vim-tmux-clipboard'
-"Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'nathanalderson/yang.vim', { 'for': [ 'yang' ] }
 Plug 'kana/vim-operator-user'
-"Plug 'osyo-manga/vim-anzu'
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'luochen1990/rainbow'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-Plug 'zchee/deoplete-jedi', { 'for': [ 'python' ] }
-Plug 'zchee/deoplete-clang', { 'for': [ 'c', 'cpp', 'h' ] }
 Plug 'Shougo/neoinclude.vim'
-
-"Plug 'junegunn/gv.vim'
-"Plug 'terryma/vim-multiple-cursors'
 Plug 'majutsushi/tagbar', { 'for': [ 'java' ] }
 Plug 'sheerun/vim-polyglot'
 Plug 'sickill/vim-pasta'
 Plug 'davidhalter/jedi-vim', { 'for': [ 'python' ] }
 
-" Colorschemes
-Plug 'vim-airline/vim-airline-themes'
-"Plug 'morhetz/gruvbox'
-
 call plug#end()
-" }}
+"}}

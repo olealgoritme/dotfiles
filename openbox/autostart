@@ -1,0 +1,25 @@
+# Background
+feh --bg-scale Pictures/hexa_3840_1080.png &
+
+# Compositor
+compton --config ~/openbox/compton/compton.config &
+
+# conky
+conky -c /home/xuw/.conky/conkyrc &
+
+# add resolution
+/home/xuw/scripts/xrander_add_res.sh 2600 1000 144 &
+
+# Tint2
+#tint2 -c ~/themes/tint2/tint2rc_kde &
+#tint2 -c ~/themes/tint2/tint2pager_kde &
+
+# set cpu governor
+/home/xuw/scripts/performance.sh &
+
+# Polybar
+/home/xuw/.config/polybar/launch.sh &
+
+# Audio
+start-pulseaudio-x11 & 
+volumeicon &

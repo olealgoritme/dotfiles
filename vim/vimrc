@@ -7,19 +7,76 @@ source ~/.vim/sane_vimrc
 let g:dracula_colorterm = 0
 
 
+
+" Ctrl+T new tab
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+" Ctrl-P mapping
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Switch between buffers using alt+left/right arrow
+nnoremap <silent><A-Right> :bn<CR>
+inoremap <silent><A-Right> <C-O>:bn<CR>
+nnoremap <silent><A-Left> :bp<CR>
+inoremap <silent><A-Left> <C-O>:bp<CR>
+
+augroup xuw_config
+    au!
+"    au VimEnter * call s:customMappings()
+    au VimEnter * call s:commandsIfEmptyFile()
+augroup END
+
+func s:customMappings()
+  "" jj/jk/kj EXITS INSERT mode (if u are stupid and think ur in normal mode)
+  imap jj <Esc>
+  imap jk <Esc>
+  imap kj <Esc>
+
+  nnoremap <C-Left> tabprevious
+  nnoremap <C-Right> tabnext
+  "nmap <C-Enter> m.+1 <Cr>
+  "nmap <Up> [e
+  "nmap <Down> ]e
+  "nmap <Left> <<
+  "nmap <Right> >>
+  "vmap <Left> <gv
+  "vmap <Right> >gv
+  " vmap <Up> [egv
+  " vmap <Down> ]egv
+endf
+
+func s:commandsIfEmptyFile()
+    if @% == ""
+        " No filename for current buffer
+        normal <Ctrl-n>
+      elseif filereadable(@%) == 0
+        " File doesn't exist yet
+        normal <Ctrl-n>
+      elseif line('$') == 1 && col('$') == 1
+        " File is empty
+        normal <Ctrl-n>
+      endif
+endf
+" Nerdtree Open auto with no arguments
+autocmd FileType nerdtree nmap <buffer> <left> u
+
 " https://github.com/artur-shaik/vim-javacomplete2
 "autocmd FileType java setlocal omnifunc=javacomplete#Complete
-"nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-"imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-"nmap <F5> <Plug>(JavaComplete-Imports-Add)
-"imap <F5> <Plug>(JavaComplete-Imports-Add)
-"nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-"imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-"nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-"imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+nmap <F4> <Plug>(javaomplete-imports-addsmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+nmap <F5> <Plug>(JavaComplete-Imports-Add)
+imap <F5> <Plug>(JavaComplete-Imports-Add)
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 " nerdtree ctrl+n binding
-map <C-n> :NERDTreeToggle<CR>
+map <F3> :NERDTreeToggle<CR>
+map <F2> :Tagbar<CR>
+
 let g:mapleader = "\<Space>"
 
 nnoremap \ :nohlsearch<CR>
@@ -202,6 +259,7 @@ inoremap <silent> jj <Esc>
 " Paste in insert mode
 inoremap <C-p> <C-r>0
 
+
 " Easier to get command prompt
 nnoremap ; :
 vnoremap ; :
@@ -350,9 +408,9 @@ function! NumberToggle()
 endfunction
 
 if &diff
-    nnoremap e :qa<CR>
-    nnoremap w :wa<CR>
-    nnoremap W :wa!<CR>
+    "nnoremap e :qa<CR>
+    nnoremap wq :wq<CR>
+    "nnoremap W :wa!<CR>
     set number
     set norelativenumber
 endif
@@ -370,23 +428,24 @@ let g:airline#extensions#tagbar#enabled                       = 1
 let g:airline_powerline_fonts                                 = 1
 let g:airline#extensions#whitespace#enabled       = 0
 let g:airline#extensions#tabline#fnamemod         = ':t'
-let g:airline_theme                               = 'hybrid'
+let g:airline_theme                               = 'aurora'
 let g:airline_section_c                           = '%{fnamemodify(expand("%"), ":~:.")}'
 let g:airline_section_x                           = '%{fnamemodify(getcwd(), ":t")}'
 let g:airline_section_y                           = airline#section#create(['filetype'])
 " Easier tab/buffer switching
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
+"nmap <leader>1 <Plug>AirlineSelectTab1
+"nmap <leader>2 <Plug>AirlineSelectTab2
+"nmap <leader>3 <Plug>AirlineSelectTab3
+"nmap <leader>4 <Plug>AirlineSelectTab4
+"nmap <leader>5 <Plug>AirlineSelectTab5
+"nmap <leader>6 <Plug>AirlineSelectTab6
+"nmap <leader>7 <Plug>AirlineSelectTab7
+"nmap <leader>8 <Plug>AirlineSelectTab8
+"nmap <leader>9 <Plug>AirlineSelectTab9
+
 
 nnoremap <silent> <leader>p :FZF --no-reverse<CR>
-nnoremap <silent> <leader>b :Tags<CR>
+"nnoremap <silent> <leader>b :Tags<CR>
 nnoremap b :Buffers<CR>
 
 " Change cursor shape based on mode.
