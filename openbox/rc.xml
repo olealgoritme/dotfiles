@@ -297,11 +297,18 @@
     </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
-      <action name="NextWindow">
+       
+        
+        <action name="NextWindow">
         <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
+            <action name="if">
+              <shaded>no</shaded>
+              <then>
+                <action name="Focus"/>
+                <action name="Raise"/>
+                <action name="Unshade"/>
+              </then>
+          </action> 
         </finalactions>
       </action>
     </keybind>
