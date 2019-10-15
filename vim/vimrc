@@ -6,7 +6,9 @@ source ~/.vim/sane_vimrc
 
 let g:dracula_colorterm = 0
 
-
+" load own plugins
+set runtimepath^=~/code/vim/maven-search.vim/
+source ~/code/vim/maven-search.vim/maven-search.vim
 
 " Ctrl+T new tab
 nnoremap <C-t>     :tabnew<CR>
@@ -24,7 +26,7 @@ inoremap <silent><A-Left> <C-O>:bp<CR>
 
 augroup xuw_config
     au!
-"    au VimEnter * call s:customMappings()
+    au VimEnter * call s:customMappings()
     au VimEnter * call s:commandsIfEmptyFile()
 augroup END
 
@@ -34,8 +36,11 @@ func s:customMappings()
   imap jk <Esc>
   imap kj <Esc>
 
-  nnoremap <C-Left> tabprevious
-  nnoremap <C-Right> tabnext
+  " Space + enter in Normal mode = new line in Insert mode
+  vnoremap <Leader><Enter> <Esc>i<Enter><Esc>
+  nnoremap <Leader><Enter> i<Enter><Esc>
+  "nnoremap <C-Left> tabprevious
+  "nnoremap <C-Right> tabnext
   "nmap <C-Enter> m.+1 <Cr>
   "nmap <Up> [e
   "nmap <Down> ]e
