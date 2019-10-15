@@ -29,6 +29,7 @@ function! BuildYCM(info)
   endif
 endfunction
 Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'majutsushi/tagbar'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'

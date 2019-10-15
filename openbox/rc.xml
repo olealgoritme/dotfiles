@@ -308,6 +308,9 @@
                 <action name="Raise"/>
                 <action name="Unshade"/>
               </then>
+            <else>
+              <action name="Focus"/>
+            </else>
           </action> 
         </finalactions>
       </action>

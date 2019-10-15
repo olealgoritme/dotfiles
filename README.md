@@ -34,5 +34,3 @@
 ![Screenshot](http://i.imgur.com/cisQiqu.png)
 
 P.S.: Clone at your own risk. Most config files have inline documentation.
-
-These dotfiles are forked from https://github.com/ronakg/dotfiles

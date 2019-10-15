@@ -27,7 +27,7 @@ inoremap <silent><A-Left> <C-O>:bp<CR>
 augroup xuw_config
     au!
     au VimEnter * call s:customMappings()
-    au VimEnter * call s:commandsIfEmptyFile()
+    "au VimEnter * call s:commandsIfEmptyFile()
 augroup END
 
 func s:customMappings()
@@ -55,13 +55,13 @@ endf
 func s:commandsIfEmptyFile()
     if @% == ""
         " No filename for current buffer
-        normal <Ctrl-n>
+        "":NERDTreeToggle
       elseif filereadable(@%) == 0
         " File doesn't exist yet
-        normal <Ctrl-n>
+        "":NERDTreeToggle
       elseif line('$') == 1 && col('$') == 1
         " File is empty
-        normal <Ctrl-n>
+        "":NERDTreeToggle
       endif
 endf
 " Nerdtree Open auto with no arguments
@@ -80,8 +80,10 @@ imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 " nerdtree ctrl+n binding
 map <F3> :NERDTreeToggle<CR>
-map <F2> :Tagbar<CR>
 
+" tagbar
+map <F2> :TagbarToggle<CR>
+"let g:tagbar_ctags_bin "/usr/bin/ctags"
 let g:mapleader = "\<Space>"
 
 nnoremap \ :nohlsearch<CR>
@@ -429,7 +431,7 @@ let g:airline#extensions#tabline#buffer_idx_mode              = 1
 let g:airline#extensions#tabline#buffer_nr_show               = 0
 let g:airline#extensions#tabline#show_buffers                 = 1
 let g:airline#extensions#branch#enabled                       = 1
-let g:airline#extensions#tagbar#enabled                       = 1
+let g:airline#extensions#tagbar#enabled                       = 0
 let g:airline_powerline_fonts                                 = 1
 let g:airline#extensions#whitespace#enabled       = 0
 let g:airline#extensions#tabline#fnamemod         = ':t'
