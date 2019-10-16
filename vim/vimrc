@@ -24,12 +24,29 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" Switch windows with TAB only
+nnoremap <Tab>    <C-w>w
 
 " Switch between buffers using alt+left/right arrow
-nnoremap <silent><A-Right> :bn<CR>
-inoremap <silent><A-Right> <C-O>:bn<CR>
-nnoremap <silent><A-Left> :bp<CR>
-inoremap <silent><A-Left> <C-O>:bp<CR>
+nnoremap <silent><A-Right> :call AltRight()<CR>
+inoremap <silent><A-Right> :call AltRight()<CR>
+nnoremap <silent><A-Left>  :call AltLeft()<CR>
+inoremap <silent><A-Left>  :call AltLeft()<CR>
+
+" Alt+Right but NOT when in Nerdtree
+function! AltRight()
+    if( (&ft) != 'nerdtree') 
+        :bn
+    endif
+endfunction
+
+" Alt+Left but NOT when in Nerdtree
+function! AltLeft()
+    if( (&ft) != 'nerdtree') 
+        :bp
+    endif
+endfunction
+
 
 augroup xuw_config
     au!

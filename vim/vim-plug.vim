@@ -30,6 +30,8 @@ function! BuildYCM(info)
 endfunction
 
 
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
 Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'majutsushi/tagbar'
 Plug 'skywind3000/asyncrun.vim'
@@ -40,14 +42,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/JavaRun'
-Plug '~/.vim/plugged/YouCompleteMe'
-Plug '~/.vim/plugged/java_getset'
 Plug 'liuchengxu/vim-which-key'
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
-
 Plug 'vim-airline/vim-airline'
-"Plug 'bling/vim-airline'
 Plug 'will133/vim-dirdiff'
 Plug 'mhinz/vim-startify'
 Plug 'stefandtw/quickfix-reflector.vim'
@@ -75,7 +71,6 @@ Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'luochen1990/rainbow'
 Plug 'Shougo/neoinclude.vim'
-Plug 'majutsushi/tagbar', { 'for': [ 'java' ] }
 Plug 'sheerun/vim-polyglot'
 Plug 'sickill/vim-pasta'
 Plug 'davidhalter/jedi-vim', { 'for': [ 'python' ] }
