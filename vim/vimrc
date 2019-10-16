@@ -10,6 +10,12 @@ let g:dracula_colorterm = 0
 set runtimepath^=~/code/vim/maven-search.vim/
 source ~/code/vim/maven-search.vim/maven-search.vim
 
+
+"nerdtree config
+autocmd FileType nerdtree nmap <buffer> <left> u
+autocmd FileType nerdtree nmap <buffer> <right> <cr>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " Ctrl+T new tab
 nnoremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
@@ -17,6 +23,7 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 " Ctrl-P mapping
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
 
 " Switch between buffers using alt+left/right arrow
 nnoremap <silent><A-Right> :bn<CR>
@@ -39,6 +46,9 @@ func s:customMappings()
   " Space + enter in Normal mode = new line in Insert mode
   vnoremap <Leader><Enter> <Esc>i<Enter><Esc>
   nnoremap <Leader><Enter> i<Enter><Esc>
+
+  " Space + Space in Normal mode = space in Insert mode
+  nnoremap <Leader><Leader> i<Leader><Esc>
   "nnoremap <C-Left> tabprevious
   "nnoremap <C-Right> tabnext
   "nmap <C-Enter> m.+1 <Cr>

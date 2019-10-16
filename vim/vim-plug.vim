@@ -28,6 +28,8 @@ function! BuildYCM(info)
     !./install.py
   endif
 endfunction
+
+
 Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'majutsushi/tagbar'
 Plug 'skywind3000/asyncrun.vim'
