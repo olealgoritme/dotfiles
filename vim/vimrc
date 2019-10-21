@@ -1,129 +1,146 @@
-" Author: Ronak Gandhi <me@ronakg.com>
-" Source: https://github.com/ronakg/dotfiles
-"
+" Author: Ole Algoritme <olealgoritme@gmail.com>
+" Source: https://github.com/olealgoritme/dotfiles
+" Inspiration: https://github.com/ronakg
+
 " Keep all the sane settings in following file
 source ~/.vim/sane_vimrc
-
-let g:dracula_colorterm = 0
 
 " load own plugins
 set runtimepath^=~/code/vim/maven-search.vim/
 source ~/code/vim/maven-search.vim/maven-search.vim
 
+" Internal vim stuff
 
-"nerdtree config
-autocmd FileType nerdtree nmap <buffer> <left> u
-autocmd FileType nerdtree nmap <buffer> <right> <cr>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Copies Yanked text to clipboard (Linux = unnamedplus | Windows = unnamed)
+set clipboard=unnamedplus
 
-" Ctrl+T new tab
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-t>     <Esc>:tabnew<CR>
+" autocommand group
+augroup xuw_cfg_autocmd
+    autocmd!
+    autocmd Filetype java compiler mvn
+    autocmd Filetype pom compiler mvn
+    autocmd VimEnter * call s:customGlobalVars()
+    autocmd VimEnter * call s:customMappings()
+    autocmd VimEnter * call s:customCommandsIfEmptyFile()
+    autocmd FileType java setlocal omnifunc=javacomplete#Complete
+    " Right-arrow = open/close
+    autocmd FileType nerdtree nmap <buffer> <Right> o
+    " Close NERDTree if it's the only window open
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+augroup END
 
-" Ctrl-P mapping
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 
-" Switch windows with TAB only
-nnoremap <Tab>    <C-w>w
+function! s:customGlobalVars()
+    " General vim config 
+    let g:mapleader = "\<Space>"
 
-" Switch between buffers using alt+left/right arrow
-nnoremap <silent><A-Right> :call AltRight()<CR>
-inoremap <silent><A-Right> :call AltRight()<CR>
-nnoremap <silent><A-Left>  :call AltLeft()<CR>
-inoremap <silent><A-Left>  :call AltLeft()<CR>
+    " Dracula colorscheme
+    let g:dracula_colorterm = 0
 
-" Alt+Right but NOT when in Nerdtree
-function! AltRight()
-    if( (&ft) != 'nerdtree') 
+    " Ctrl-P mapping
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlP'
+
+    " NERDTree config
+    let g:NERDCreateDefaultMappings = 0
+    let g:NERDRemoveExtraSpaces = 0
+endfunction
+
+function! s:customCommandsIfEmptyFile()
+    if @% == ""
+        " No filename for current buffer
+      elseif filereadable(@%) == 0
+        " File doesn't exist yet
+      elseif line('$') == 1 && col('$') == 1
+        " File is empty
+      endif
+endfunction
+
+function! s:customMappings()
+    " vim-javacomplete2
+    nmap <F4> <Plug>(javaomplete-imports-addsmart)
+    imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+    nmap <F5> <Plug>(JavaComplete-Imports-Add)
+    imap <F5> <Plug>(JavaComplete-Imports-Add)
+    nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+    imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+    nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+    imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+
+    " NERDTree bindings
+    map <F3> :NERDTreeToggle<CR>
+
+
+    " Tagbar bindings
+    map <F2> :TagbarToggle<CR>
+
+    " Open file under cursor
+    nnoremap <Leader>fo <C-w>f<C-w>L
+
+    " GC = General Comment
+    nmap gc <plug>NERDCommenterToggle
+    "GC = General Comment
+    vmap gc <plug>NERDCommenterSexy
+
+    " Ctrl+T new tab
+    nnoremap <C-t>     :tabnew<CR>
+    inoremap <C-t>     <Esc>:tabnew<CR>
+
+    " Switch windows with TAB only
+    nnoremap <Tab>    <C-w>w
+
+    " Switch between buffers using alt+left/right arrow
+    nnoremap <silent><A-Right> :call NextBuffer()<CR>
+    inoremap <silent><A-Right> :call NextBuffer()<CR>
+    nnoremap <silent><A-Left> :call PrevBuffer()<CR>
+    inoremap <silent><A-Left> :call PrevBuffer()<CR>
+
+    " Space + enter in Normal mode == <Enter> in Insert mode
+    vnoremap <Leader><Enter> <Esc>i<Enter><Esc>
+    nnoremap <Leader><Enter> i<Enter><Esc>
+
+    " Space + tab in Normal mode == <Tab> in Insert mode
+    nnoremap <Leader><Tab> i<Leader><Tab><Esc> 
+
+    " Space + Space in Normal mode == <Leader> in Insert mode
+    nnoremap <Leader><Leader> i<Leader><Esc>
+
+
+
+    " RONAKG start
+    nnoremap \ :nohlsearch<CR>
+    " Jump to start of function
+    nnoremap [[ ?{<CR>w99[{:nohlsearch<CR>
+    nnoremap ]] j0[[%/{<CR>:nohlsearch<CR>
+    nnoremap G :norm! Gzz<CR>
+    nmap <C-g>g :Gstatus<CR>gg<C-n>
+    nmap <C-g>d :Gdiff<CR>
+    nmap <C-g>b :Gblame<CR>
+    " RONAKG END
+endfunction
+
+
+
+" Alt+Right but NOT when in Nerdtree or Tagbar
+function! NextBuffer()
+    if ( 'nerdtree' != (&ft) && 'tagbar' != (&ft) )
         :bn
     endif
 endfunction
 
-" Alt+Left but NOT when in Nerdtree
-function! AltLeft()
-    if( (&ft) != 'nerdtree') 
+
+" Alt+Left but NOT when in Nerdtree or Tagbar
+function! PrevBuffer()
+    if ( 'nerdtree' != (&ft) && 'tagbar' != (&ft) )
         :bp
     endif
 endfunction
 
-
-augroup xuw_config
-    au!
-    au VimEnter * call s:customMappings()
-    "au VimEnter * call s:commandsIfEmptyFile()
-augroup END
-
-func s:customMappings()
-  "" jj/jk/kj EXITS INSERT mode (if u are stupid and think ur in normal mode)
-  imap jj <Esc>
-  imap jk <Esc>
-  imap kj <Esc>
-
-  " Space + enter in Normal mode = new line in Insert mode
-  vnoremap <Leader><Enter> <Esc>i<Enter><Esc>
-  nnoremap <Leader><Enter> i<Enter><Esc>
-
-  " Space + Space in Normal mode = space in Insert mode
-  nnoremap <Leader><Leader> i<Leader><Esc>
-  "nnoremap <C-Left> tabprevious
-  "nnoremap <C-Right> tabnext
-  "nmap <C-Enter> m.+1 <Cr>
-  "nmap <Up> [e
-  "nmap <Down> ]e
-  "nmap <Left> <<
-  "nmap <Right> >>
-  "vmap <Left> <gv
-  "vmap <Right> >gv
-  " vmap <Up> [egv
-  " vmap <Down> ]egv
-endf
-
-func s:commandsIfEmptyFile()
-    if @% == ""
-        " No filename for current buffer
-        "":NERDTreeToggle
-      elseif filereadable(@%) == 0
-        " File doesn't exist yet
-        "":NERDTreeToggle
-      elseif line('$') == 1 && col('$') == 1
-        " File is empty
-        "":NERDTreeToggle
-      endif
-endf
-" Nerdtree Open auto with no arguments
-autocmd FileType nerdtree nmap <buffer> <left> u
-
-" https://github.com/artur-shaik/vim-javacomplete2
-"autocmd FileType java setlocal omnifunc=javacomplete#Complete
-nmap <F4> <Plug>(javaomplete-imports-addsmart)
-imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-nmap <F5> <Plug>(JavaComplete-Imports-Add)
-imap <F5> <Plug>(JavaComplete-Imports-Add)
-nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-
-" nerdtree ctrl+n binding
-map <F3> :NERDTreeToggle<CR>
-
-" tagbar
-map <F2> :TagbarToggle<CR>
-"let g:tagbar_ctags_bin "/usr/bin/ctags"
-let g:mapleader = "\<Space>"
-
-nnoremap \ :nohlsearch<CR>
-
-" Jump to start of function
-nnoremap [[ ?{<CR>w99[{:nohlsearch<CR>
-nnoremap ]] j0[[%/{<CR>:nohlsearch<CR>
-
-nnoremap G :norm! Gzz<CR>
-
-nmap <C-g>g :Gstatus<CR>gg<C-n>
-nmap <C-g>d :Gdiff<CR>
-nmap <C-g>b :Gblame<CR>
+function! FindAndReplaceAll(from, to)
+    "%s/from/to/g"
+    "echo    a:from
+    execute "%s/" . a:from . "/" . a:to . "/gc"
+endfunction
 
 " Grep for word under the cursor
 if executable("rg")
@@ -501,7 +518,7 @@ let g:startify_list_order = [['Most recently used files in current directory:'],
             \                ['Bookmarks:'], 'bookmarks']
 let g:startify_change_to_dir = 0
 let g:startify_files_number = 10
-let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'} ]
+let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'}, {'t': '~/.tmux.conf'}  ]
 
 if filereadable(".vim.custom")
     so .vim.custom
@@ -533,11 +550,6 @@ let g:clever_f_ignore_case = 1
 let g:clever_f_smart_case = 1
 let g:clever_f_fix_key_direction = 1
 
-let g:NERDCreateDefaultMappings = 0
-let g:NERDRemoveExtraSpaces = 0
-nmap gc <plug>NERDCommenterToggle
-vmap gc <plug>NERDCommenterSexy
-map gx <plug>NERDCommenterToggle
 
 command! -nargs=+ Silent
             \ | execute ':silent !'.<q-args>
@@ -662,7 +674,6 @@ let java_mark_braces_in_parens_as_errors = 1
 
 let g:jedi#show_call_signatures = "1"
 
-nnoremap gf <C-w>f<C-w>L
 
 let g:vem_tabline_show = 2
 let g:vem_tabline_left_arrow = '◀'
