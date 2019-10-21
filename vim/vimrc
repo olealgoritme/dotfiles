@@ -14,6 +14,10 @@ source ~/code/vim/maven-search.vim/maven-search.vim
 " Copies Yanked text to clipboard (Linux = unnamedplus | Windows = unnamed)
 set clipboard=unnamedplus
 
+" Use clang instead of clangd
+let g:ycm_use_clangd = 0
+let g:clang_format#auto_format = 1
+
 " autocommand group
 augroup xuw_cfg_autocmd
     autocmd!
@@ -22,9 +26,10 @@ augroup xuw_cfg_autocmd
     autocmd VimEnter * call s:customGlobalVars()
     autocmd VimEnter * call s:customMappings()
     autocmd VimEnter * call s:customCommandsIfEmptyFile()
-    autocmd FileType java setlocal omnifunc=javacomplete#Complete
+    ""autocmd FileType java setlocal omnifunc=javacomplete#Complete
     " Right-arrow = open/close
     autocmd FileType nerdtree nmap <buffer> <Right> o
+    autocmd FileType nerdtree nmap <buffer> <Left> o
     " Close NERDTree if it's the only window open
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup END
@@ -633,10 +638,6 @@ highlight ALEWarningSign guibg=yellow guifg=black
 " ======================================================================================
 let g:signify_sign_delete            = '-'
 
-" ======================================================================================
-" vim-clang-format
-" ======================================================================================
-let g:clang_format#auto_format = 0
 
 map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
 map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
