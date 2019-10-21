@@ -57,7 +57,15 @@ function! s:customCommandsIfEmptyFile()
 endfunction
 
 function! s:customMappings()
-    " vim-javacomplete2
+    " jumps to the next/previous function
+    nnoremap <silent><A-Up>   :call search('\(\(if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "bw")<CR>
+    nnoremap <silent><A-Down> :call search('\(\(i\\|or\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "w")<CR>
+
+    " Ctrl-J/K for next tagbar map tag
+    let g:tagbar_map_nexttag="<C-J>"
+    let g:tagbar_map_prevtag="<C-K>"
+
+    "vim-javacomplete2
     nmap <F4> <Plug>(javaomplete-imports-addsmart)
     imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
     nmap <F5> <Plug>(JavaComplete-Imports-Add)
