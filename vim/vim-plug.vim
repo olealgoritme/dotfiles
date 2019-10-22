@@ -29,7 +29,9 @@ function! BuildYCM(info)
   endif
 endfunction
 
+Plug 'file://'.expand('~/.vim/plugged/runner.vim/runner.vim')
 
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
@@ -51,8 +53,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine'
-Plug 'ronakg/quickr-cscope.vim', { 'for': [ 'c', 'cpp', 'h' ] }
-Plug 'ronakg/quickr-preview.vim'
 Plug 'rhysd/vim-clang-format', { 'for': [ 'c', 'cpp', 'h', 'java' ] }
 Plug 'wellle/targets.vim'
 Plug 'Raimondi/delimitMate'
