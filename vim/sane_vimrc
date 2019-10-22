@@ -1,6 +1,3 @@
-" Author: Ronak Gandhi <me@ronakg.com>
-" Source: https://github.com/ronakg/dotfiles
-
 " ======================================================================================
 " vim-plug
 " ======================================================================================
@@ -86,7 +83,8 @@ set list
 set mouse=a
 
 if $TMUX == ''
-    set clipboard+=unnamed
+    " Copies Yanked text to clipboard (Linux = unnamedplus | Windows = unnamed)
+    set clipboard+=unnamedplus
 endif
 
 if has('nvim')

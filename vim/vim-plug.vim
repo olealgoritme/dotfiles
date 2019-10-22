@@ -30,8 +30,8 @@ function! BuildYCM(info)
 endfunction
 
 
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'majutsushi/tagbar'
 Plug 'skywind3000/asyncrun.vim'
@@ -49,7 +49,6 @@ Plug 'mhinz/vim-startify'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dispatch'
-Plug 'JalaiAmitahl/maven-compiler.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'ronakg/quickr-cscope.vim', { 'for': [ 'c', 'cpp', 'h' ] }

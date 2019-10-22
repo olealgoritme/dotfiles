@@ -11,8 +11,11 @@ source ~/code/vim/maven-search.vim/maven-search.vim
 
 " Internal vim stuff
 
-" Copies Yanked text to clipboard (Linux = unnamedplus | Windows = unnamed)
-set clipboard=unnamedplus
+" maven makeprg
+set makeprg=mvn\ -q\ -f\ project.xml\ jar:install
+
+" NERDTree window size
+let g:NERDTreeWinSize = 60
 
 " Use clang instead of clangd
 let g:ycm_use_clangd = 0
@@ -21,17 +24,21 @@ let g:clang_format#auto_format = 1
 " autocommand group
 augroup xuw_cfg_autocmd
     autocmd!
-    autocmd Filetype java compiler mvn
-    autocmd Filetype pom compiler mvn
     autocmd VimEnter * call s:customGlobalVars()
     autocmd VimEnter * call s:customMappings()
     autocmd VimEnter * call s:customCommandsIfEmptyFile()
-    ""autocmd FileType java setlocal omnifunc=javacomplete#Complete
-    " Right-arrow = open/close
+    autocmd VimEnter * Startify
+    autocmd VimEnter * NERDTree
+
+    " Left/Right-arrow = open/close
     autocmd FileType nerdtree nmap <buffer> <Right> o
     autocmd FileType nerdtree nmap <buffer> <Left> o
+
     " Close NERDTree if it's the only window open
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+    " Highlight currently open buffer in NERDTree
+    autocmd BufEnter * call NERDTreeSync()
 augroup END
 
 
@@ -71,7 +78,7 @@ function! s:customMappings()
     let g:tagbar_map_prevtag="<C-K>"
 
     "vim-javacomplete2
-    nmap <F4> <Plug>(javaomplete-imports-addsmart)
+    nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
     imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
     nmap <F5> <Plug>(JavaComplete-Imports-Add)
     imap <F5> <Plug>(JavaComplete-Imports-Add)
@@ -81,11 +88,10 @@ function! s:customMappings()
     imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
     " NERDTree bindings
-    map <F3> :NERDTreeToggle<CR>
-
+    map <silent><F3> :NERDTreeToggle<CR>
 
     " Tagbar bindings
-    map <F2> :TagbarToggle<CR>
+    map <silent><F2> :TagbarToggle<CR>
 
     " Open file under cursor
     nnoremap <Leader>fo <C-w>f<C-w>L
@@ -119,7 +125,6 @@ function! s:customMappings()
     nnoremap <Leader><Leader> i<Leader><Esc>
 
 
-
     " RONAKG start
     nnoremap \ :nohlsearch<CR>
     " Jump to start of function
@@ -133,6 +138,25 @@ function! s:customMappings()
 endfunction
 
 
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()
+    if exists("t:NERDTreeBufName")
+        if (bufwinnr(t:NERDTreeBufName) != -1)
+            return 1
+        endif
+    endif
+endfunction
+
+" Call NERDTreeFind if NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! NERDTreeSync()
+  if IsNERDTreeOpen()
+    if &modifiable && strlen(expand('%')) > 0 && !&diff
+        NERDTreeFind
+        wincmd p
+    endif
+  endif
+endfunction
 
 " Alt+Right but NOT when in Nerdtree or Tagbar
 function! NextBuffer()
