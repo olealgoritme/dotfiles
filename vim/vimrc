@@ -17,6 +17,8 @@ set makeprg=mvn\ -q\ -f\ project.xml\ jar:install
 " ctags path, search upwards till tags file is found
 "set tags=./tags;/
 
+
+
 " NERDTree window size
 let g:NERDTreeWinSize = 60
 
@@ -41,7 +43,6 @@ augroup xuw_cfg_autocmd
     " Left/Right-arrow = open/close
     autocmd FileType nerdtree nmap <buffer> <Right> o
     autocmd FileType nerdtree nmap <buffer> <Left> o
-
     autocmd FileType java set tags=~/.tags/java_jdk_src.ctags
 
     " Close NERDTree if it's the only window open
