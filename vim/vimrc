@@ -17,7 +17,7 @@ set makeprg=mvn\ -q\ -f\ project.xml\ jar:install
 " ctags path, search upwards till tags file is found
 "set tags=./tags;/
 
-
+"let g:airline_extensions = ['branch', 'hunks', 'coc']
 
 " NERDTree window size
 let g:NERDTreeWinSize = 60
@@ -43,7 +43,7 @@ augroup xuw_cfg_autocmd
     " Left/Right-arrow = open/close
     autocmd FileType nerdtree nmap <buffer> <Right> o
     autocmd FileType nerdtree nmap <buffer> <Left> o
-    autocmd FileType java set tags=~/.tags/java_jdk_src.ctags
+    autocmd FileType java set tags=~/.tags/java_jdk_src.tag
 
     " Close NERDTree if it's the only window open
     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -59,10 +59,6 @@ function! s:customGlobalVars()
 
     " Dracula colorscheme
     let g:dracula_colorterm = 0
-
-    " Ctrl-P mapping
-    let g:ctrlp_map = '<c-p>'
-    let g:ctrlp_cmd = 'CtrlP'
 
     " NERDTree config
     let g:NERDCreateDefaultMappings = 0
@@ -80,23 +76,25 @@ function! s:customCommandsIfEmptyFile()
 endfunction
 
 function! s:customMappings()
+
+    nnoremap <silent>f :Files<CR>
+    nnoremap <silent>b :Buffers<CR>
+
+    nnoremap <silent><S-j> <S-Down>
+    nnoremap <silent><S-k> <S-Up>
+    nnoremap <silent><A-j> <A-Down>
+    nnoremap <silent><A-k> <A-Up>
+
     " jumps to the next/previous function
-    nnoremap <silent><A-Up>   :call search('\(\(if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "bw")<CR>
-    nnoremap <silent><A-Down> :call search('\(\(i\\|or\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "w")<CR>
+    nnoremap <silent><A-Up>   :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "bw")<CR>
+    nnoremap <silent><A-Down> :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "w")<CR>
 
-    " Ctrl-J/K for next tagbar map tag
-    let g:tagbar_map_nexttag="<C-J>"
-    let g:tagbar_map_prevtag="<C-K>"
+    vnoremap <silent><S-Up> {
+    vnoremap <silent><S-Down> }
 
-    "vim-javacomplete2
-    nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-    imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-    nmap <F5> <Plug>(JavaComplete-Imports-Add)
-    imap <F5> <Plug>(JavaComplete-Imports-Add)
-    nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-    imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-    nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-    imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+    " next tagbar map tag
+    let g:tagbar_map_nexttag="<C-Down>"
+    let g:tagbar_map_prevtag="<C-Up>"
 
     " NERDTree bindings
     map <silent><F3> :NERDTreeToggle<CR>
@@ -121,23 +119,16 @@ function! s:customMappings()
 
     " Switch between buffers using alt+left/right arrow
     nnoremap <silent><A-Right> :call NextBuffer()<CR>
-    inoremap <silent><A-Right> :call NextBuffer()<CR>
     nnoremap <silent><A-Left> :call PrevBuffer()<CR>
-    inoremap <silent><A-Left> :call PrevBuffer()<CR>
 
-    " Space + enter in Normal mode == <Enter> in Insert mode
     vnoremap <Leader><Enter> <Esc>i<Enter><Esc>
     nnoremap <Leader><Enter> i<Enter><Esc>
-
-    " Space + tab in Normal mode == <Tab> in Insert mode
     nnoremap <Leader><Tab> i<Leader><Tab><Esc> 
-
-    " Space + Space in Normal mode == <Leader> in Insert mode
     nnoremap <Leader><Leader> i<Leader><Esc>
 
 
     " RONAKG start
-    nnoremap \ :nohlsearch<CR>
+    "nnoremap \ :nohlsearch<CR>
     " Jump to start of function
     nnoremap [[ ?{<CR>w99[{:nohlsearch<CR>
     nnoremap ]] j0[[%/{<CR>:nohlsearch<CR>
@@ -509,7 +500,7 @@ let g:airline#extensions#tagbar#enabled                       = 0
 let g:airline_powerline_fonts                                 = 1
 let g:airline#extensions#whitespace#enabled       = 0
 let g:airline#extensions#tabline#fnamemod         = ':t'
-let g:airline_theme                               = 'aurora'
+let g:airline_theme                               = 'base16'
 let g:airline_section_c                           = '%{fnamemodify(expand("%"), ":~:.")}'
 let g:airline_section_x                           = '%{fnamemodify(getcwd(), ":t")}'
 let g:airline_section_y                           = airline#section#create(['filetype'])
@@ -525,9 +516,9 @@ let g:airline_section_y                           = airline#section#create(['fil
 "nmap <leader>9 <Plug>AirlineSelectTab9
 
 
-nnoremap <silent> <leader>p :FZF --no-reverse<CR>
+"nnoremap <silent> <leader>p :FZF --no-reverse<CR>
 "nnoremap <silent> <leader>b :Tags<CR>
-nnoremap b :Buffers<CR>
+"nnoremap b :Buffers<CR>
 
 " Change cursor shape based on mode.
 if has('nvim')
@@ -550,124 +541,124 @@ let g:startify_change_to_dir = 0
 let g:startify_files_number = 10
 let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'}, {'t': '~/.tmux.conf'}  ]
 
-if filereadable(".vim.custom")
-    so .vim.custom
-endif
+"if filereadable(".vim.custom")
+    "so .vim.custom
+"endif
 
-function! ZoomToggle()
-    if exists('t:zoomed') && t:zoomed
-        execute t:zoom_winrestcmd
-        let t:zoomed = 0
-    else
-        let t:zoom_winrestcmd = winrestcmd()
-        resize
-        vertical resize
-        let t:zoomed = 1
-    endif
-endfunction
-nnoremap <silent> <C-a> :call ZoomToggle()<CR>
+"function! ZoomToggle()
+    "if exists('t:zoomed') && t:zoomed
+        "execute t:zoom_winrestcmd
+        "let t:zoomed = 0
+    "else
+        "let t:zoom_winrestcmd = winrestcmd()
+        "resize
+        "vertical resize
+        "let t:zoomed = 1
+    "endif
+"endfunction
+"nnoremap <silent> <C-a> :call ZoomToggle()<CR>
 
-"let g:jedi#use_splits_not_buffers = "right"
-let g:jedi#completions_enabled = 1
+""let g:jedi#use_splits_not_buffers = "right"
+"let g:jedi#completions_enabled = 1
 
-let g:indentLine_setColors = 1
-let g:indentLine_leadingSpaceChar = '·'
-let g:indentLine_char = '│'
+"let g:indentLine_setColors = 1
+"let g:indentLine_leadingSpaceChar = '·'
+"let g:indentLine_char = '│'
 
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+"let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-let g:clever_f_ignore_case = 1
-let g:clever_f_smart_case = 1
-let g:clever_f_fix_key_direction = 1
+"let g:clever_f_ignore_case = 1
+"let g:clever_f_smart_case = 1
+"let g:clever_f_fix_key_direction = 1
 
 
-command! -nargs=+ Silent
-            \ | execute ':silent !'.<q-args>
-            \ | execute ':redraw!'
+"command! -nargs=+ Silent
+            "\ | execute ':silent !'.<q-args>
+            "\ | execute ':redraw!'
 
-nmap K <plug>(Vman)
+"nmap K <plug>(Vman)
 
-let g:EasyMotion_smartcase = 1
-nmap s <Plug>(easymotion-s2)
+"let g:EasyMotion_smartcase = 1
+"nmap s <Plug>(easymotion-s2)
 
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_conceal = 0
+"let g:vim_markdown_folding_disabled = 1
+"let g:vim_markdown_conceal = 0
 
-let g:vim_json_syntax_conceal = 0
+"let g:vim_json_syntax_conceal = 0
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#file#enable_buffer_path = 1
-let g:deoplete#auto_complete_start_length = 2
+"" Use deoplete.
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#file#enable_buffer_path = 1
+"let g:deoplete#auto_complete_start_length = 2
 
 nnoremap <C-b> :vsplit term://bash<CR>
 
 " Window navigation function
 " Make ctrl-h/j/k/l move between windows and auto-insert in terminals
-func! s:mapMoveToWindowInDirection(direction)
-func! s:maybeInsertMode(direction)
-        stopinsert
-        execute "wincmd" a:direction
+"func! s:mapMoveToWindowInDirection(direction)
+"func! s:maybeInsertMode(direction)
+        "stopinsert
+        "execute "wincmd" a:direction
 
-        if &buftype == 'terminal'
-        startinsert!
-        endif
-endfunc
+        "if &buftype == 'terminal'
+        "startinsert!
+        "endif
+"endfunc
 
-execute "tnoremap" "<silent>" "<C-" . a:direction . ">"
-                \ "<C-\\><C-n>"
-                \ ":call <SID>maybeInsertMode(\"" . a:direction . "\")<CR>"
-execute "nnoremap" "<silent>" "<C-" . a:direction . ">"
-                \ ":call <SID>maybeInsertMode(\"" . a:direction . "\")<CR>"
-endfunc
+"execute "tnoremap" "<silent>" "<C-" . a:direction . ">"
+                "\ "<C-\\><C-n>"
+                "\ ":call <SID>maybeInsertMode(\"" . a:direction . "\")<CR>"
+"execute "nnoremap" "<silent>" "<C-" . a:direction . ">"
+                "\ ":call <SID>maybeInsertMode(\"" . a:direction . "\")<CR>"
+"endfunc
 
-for dir in ["h", "j", "l", "k"]
-call s:mapMoveToWindowInDirection(dir)
-endfor
-tnoremap <esc><esc> <C-\><C-n>
+"for dir in ["h", "j", "l", "k"]
+"call s:mapMoveToWindowInDirection(dir)
+"endfor
+"tnoremap <esc><esc> <C-\><C-n>
 
-" deoplete-clang {{
-let g:deoplete#file#enable_buffer_pathete#sources#clang#libclang_path = $MY_LIBCLANG_PATH
-let g:deoplete#sources#clang#clang_header = $MY_CLANGHEADER_PATH
-let g:deoplete#sources#clang#sort_algo = 'priority'
-" }}
+"" deoplete-clang {{
+"let g:deoplete#file#enable_buffer_pathete#sources#clang#libclang_path = $MY_LIBCLANG_PATH
+"let g:deoplete#sources#clang#clang_header = $MY_CLANGHEADER_PATH
+"let g:deoplete#sources#clang#sort_algo = 'priority'
+"" }}
 
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
-let g:SuperTabDefaultCompletionType = "<c-n>"
+"let g:SuperTabContextDefaultCompletionType = "<c-n>"
+"let g:SuperTabDefaultCompletionType = "<c-n>"
 
-let g:tmux_navigator_disable_when_zoomed = 1
+"let g:tmux_navigator_disable_when_zoomed = 1
 
-let g:neoformat_enabled_python = ['autopep8']
-let g:neoformat_try_formatprg = 1
-let g:neoformat_only_msg_on_error = 1
+"let g:neoformat_enabled_python = ['autopep8']
+"let g:neoformat_try_formatprg = 1
+"let g:neoformat_only_msg_on_error = 1
 
-au FileType python setlocal formatprg=autopep8\ -
+"au FileType python setlocal formatprg=autopep8\ -
 
-nnoremap <C-d> :call ZoomToggle()<CR>:Gdiff<CR>
+"nnoremap <C-d> :call ZoomToggle()<CR>:Gdiff<CR>
 
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_linters = { 'c': ['clang'], }
-highlight ALEErrorSign guibg=red guifg=yellow
-highlight ALEWarningSign guibg=yellow guifg=black
+"let g:ale_lint_on_text_changed = 'never'
+"let g:ale_linters = { 'c': ['clang'], }
+"highlight ALEErrorSign guibg=red guifg=yellow
+"highlight ALEWarningSign guibg=yellow guifg=black
 
 " ======================================================================================
 " vim-signify
 " ======================================================================================
-let g:signify_sign_delete            = '-'
+"let g:signify_sign_delete            = '-'
 
 
-map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
-map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
-map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
-map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
+"map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
+"map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
+"map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
+"map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
 
-inoremap {<CR> {<CR>}<Esc>O
+"inoremap {<CR> {<CR>}<Esc>O
 
-let g:echodoc_enable_at_startup = 1
+"let g:echodoc_enable_at_startup = 1
 
 " Autoclose preview windows
 " https://github.com/Shougo/deoplete.nvim/issues/115
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " https://github.com/Shougo/deoplete.nvim/issues/100
 " use tab to forward cycle
@@ -675,32 +666,32 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
-function! MyJavaSearch(pattern, type)
-    if strlen(a:pattern) <= 2
-        let search_pattern = input("Enter search term: ")
-    else
-        let search_pattern = a:pattern
-    endif
+"function! MyJavaSearch(pattern, type)
+    "if strlen(a:pattern) <= 2
+        "let search_pattern = input("Enter search term: ")
+    "else
+        "let search_pattern = a:pattern
+    "endif
 
-    execute "JavaSearch -p " . search_pattern . " -t all -x " . a:type
-endfunction
+    "execute "JavaSearch -p " . search_pattern . " -t all -x " . a:type
+"endfunction
 
-nnoremap <silent> <buffer> <cr> :JavaSearchContext<cr>
-nnoremap <silent> <leader>c :echo "Opening call hierarchy..."<CR>:JavaCallHierarchy<CR>
-nnoremap <silent> <leader>ss :call MyJavaSearch(expand("<cword>"), "all")<CR>
-nnoremap <silent> <leader>sr :call MyJavaSearch(expand("<cword>"), "references")<CR>
-nnoremap <silent> <leader>sp :call MyJavaSearch(expand("<cword>"), "implementation")<CR>
+"nnoremap <silent> <buffer> <cr> :JavaSearchContext<cr>
+"nnoremap <silent> <leader>c :echo "Opening call hierarchy..."<CR>:JavaCallHierarchy<CR>
+"nnoremap <silent> <leader>ss :call MyJavaSearch(expand("<cword>"), "all")<CR>
+"nnoremap <silent> <leader>sr :call MyJavaSearch(expand("<cword>"), "references")<CR>
+"nnoremap <silent> <leader>sp :call MyJavaSearch(expand("<cword>"), "implementation")<CR>
 
-let java_highlight_all = 1
-let java_highlight_java_lang_ids = 1
-let java_comment_strings = 1
-let java_highlight_functions = 1
-let java_highlight_debug = 1
-let java_mark_braces_in_parens_as_errors = 1
+"let java_highlight_all = 1
+"let java_highlight_java_lang_ids = 1
+"let java_comment_strings = 1
+"let java_highlight_functions = 1
+"let java_highlight_debug = 1
+"let java_mark_braces_in_parens_as_errors = 1
 
-let g:jedi#show_call_signatures = "1"
+"let g:jedi#show_call_signatures = "1"
 
 
-let g:vem_tabline_show = 2
-let g:vem_tabline_left_arrow = '◀'
-let g:vem_tabline_right_arrow = '▶'
+"let g:vem_tabline_show = 2
+"let g:vem_tabline_left_arrow = '◀'
+"let g:vem_tabline_right_arrow = '▶'

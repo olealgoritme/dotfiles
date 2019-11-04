@@ -95,3 +95,5 @@ fi
 # Enable tracing
 #set -x
 ############## BASH DEBUG END
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
