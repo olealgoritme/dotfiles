@@ -49,6 +49,7 @@
 <Plug>(coc-references)	vim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-references)            :<C-u>call       CocAction('jumpReferences')<CR>$/;"	m
 <Plug>(coc-rename)	vim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-rename)                :<C-u>call       CocActionAsync('rename')<CR>$/;"	m
 <Plug>(coc-type-definition)	vim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-type-definition)       :<C-u>call       CocAction('jumpTypeDefinition')<CR>$/;"	m
+<Plug>AutoPairsReturn	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^imap <script> <Plug>AutoPairsReturn <SID>AutoPairsReturn$/;"	m
 <Plug>CocRefresh	vim/plugged/coc.nvim/plugin/coc.vim	/^inoremap <silent>                          <Plug>CocRefresh <C-r>=coc#_complete()<CR>$/;"	m
 <Plug>DBDescribeProcedure	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBDescribeProcedure :DBDescribeProcedure<CR>$/;"	m
 <Plug>DBDescribeProcedureAskName	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBDescribeProcedureAskName$/;"	m
@@ -80,6 +81,7 @@
 <Plug>XTablineToggleFiltering	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <unique> <script> <Plug>XTablineToggleFiltering <SID>ToggleFiltering$/;"	m
 <Plug>XTablineToggleTabs	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <unique> <script> <Plug>XTablineToggleTabs <SID>ToggleTabs$/;"	m
 <SID>:	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^nnoremap <SID>: :<C-U><C-R>=v:count ? v:count : ''<CR>$/;"	m
+<SID>AutoPairsReturn	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^inoremap <silent> <SID>AutoPairsReturn <C-R>=AutoPairsReturn()<CR>$/;"	m
 <SID>NextBuffer	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <silent> <expr> <SID>NextBuffer airline#extensions#tabline#xtabline#next_buffer(v:count1)$/;"	m
 <SID>PrevBuffer	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <silent> <expr> <SID>PrevBuffer airline#extensions#tabline#xtabline#prev_buffer(v:count1)$/;"	m
 <SID>ReopenLastTab	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <silent> <SID>ReopenLastTab :XTabReopen<cr>$/;"	m
@@ -181,6 +183,20 @@ AsyncRun_Job_Stop	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:Asy
 AsyncRun_Job_Update	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_Update(count)$/;"	f
 AsyncStop	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^command! -bar -bang -nargs=0 AsyncStop call asyncrun#stop('<bang>')$/;"	c
 AutoCmd	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AutoCmd(name)$/;"	f
+AutoPairsBackInsert	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsBackInsert()$/;"	f
+AutoPairsDefaultPairs	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsDefaultPairs()$/;"	f
+AutoPairsDefine	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsDefine(pairs, ...)$/;"	f
+AutoPairsDelete	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsDelete()$/;"	f
+AutoPairsFastWrap	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsFastWrap()$/;"	f
+AutoPairsInit	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsInit()$/;"	f
+AutoPairsInsert	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsInsert(key)$/;"	f
+AutoPairsJump	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsJump()$/;"	f
+AutoPairsMap	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsMap(key)$/;"	f
+AutoPairsMoveCharacter	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsMoveCharacter(key)$/;"	f
+AutoPairsReturn	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsReturn()$/;"	f
+AutoPairsSpace	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsSpace()$/;"	f
+AutoPairsToggle	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsToggle()$/;"	f
+AutoPairsTryInit	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsTryInit()$/;"	f
 AutoUpdate	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:AutoUpdate(fname, force, ...) abort$/;"	f
 Autocmd	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:Autocmd(...) abort$/;"	f
 Autocommands	vim/plugged/ultisnips/test/test_Autocommands.py	/^class Autocommands(_VimTest):$/;"	c
@@ -758,6 +774,7 @@ EX	vim/plugged/ultisnips/test/constant.py	/^EX = "\\t"  # EXPAND$/;"	v
 EchoExec	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:EchoExec(...) abort$/;"	f
 EditableTextObject	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/base.py	/^class EditableTextObject(TextObject):$/;"	c
 Enable	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:Enable()$/;"	f
+Enable	vim/plugged/vim-tmux-clipboard/plugin/vimtmuxclipboard.vim	/^func! s:Enable()$/;"	f
 EndOfTextToken	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^class EndOfTextToken(Token):$/;"	c
 ErrorMsg	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:ErrorMsg(msg)$/;"	f
 Esc	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:Esc(str)$/;"	f
@@ -775,6 +792,7 @@ ExecuteCtagsOnFile	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ExecuteC
 ExitSnippetModeAfterTabstopZero	vim/plugged/ultisnips/test/test_Expand.py	/^class ExitSnippetModeAfterTabstopZero(_VimTest):$/;"	c
 Expand	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Expand(rev, ...) abort$/;"	f
 ExpandInTheMiddleOfLine_ExpectCorrectResult	vim/plugged/ultisnips/test/test_Expand.py	/^class ExpandInTheMiddleOfLine_ExpectCorrectResult(_SimpleExpands):$/;"	c
+ExpandMap	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:ExpandMap(map)$/;"	f
 ExpandSplit	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExpandSplit(string, ...) abort$/;"	f
 ExpandVar	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExpandVar(other, var, flags, esc, ...) abort$/;"	f
 ExpandVarLegacy	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExpandVarLegacy(str) abort$/;"	f
@@ -1692,6 +1710,8 @@ TextTabStopTextAfterTab_ExpectCorrectResult	vim/plugged/ultisnips/test/test_Mirr
 TextTabStopTextBeforeMirror_ExpectCorrectResult	vim/plugged/ultisnips/test/test_Mirror.py	/^class TextTabStopTextBeforeMirror_ExpectCorrectResult(_VimTest):$/;"	c
 TextTabStopTextBeforeTab_ExpectCorrectResult	vim/plugged/ultisnips/test/test_Mirror.py	/^class TextTabStopTextBeforeTab_ExpectCorrectResult(_VimTest):$/;"	c
 TextTabStopTextSurroundedTab_ExpectCorrectResult	vim/plugged/ultisnips/test/test_Mirror.py	/^class TextTabStopTextSurroundedTab_ExpectCorrectResult(_VimTest):$/;"	c
+TmuxBuffer	vim/plugged/vim-tmux-clipboard/plugin/vimtmuxclipboard.vim	/^func! s:TmuxBuffer()$/;"	f
+TmuxBufferName	vim/plugged/vim-tmux-clipboard/plugin/vimtmuxclipboard.vim	/^func! s:TmuxBufferName()$/;"	f
 ToggleAutoclose	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleAutoclose() abort$/;"	f
 ToggleCaseInsensitive	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleCaseInsensitive() abort$/;"	f
 ToggleFold	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleFold() abort$/;"	f
@@ -2691,6 +2711,7 @@ b:match_ignorecase	vim/plugged/ultisnips/ftplugin/snippets.vim	/^  let b:match_i
 b:match_words	vim/plugged/ultisnips/ftplugin/snippets.vim	/^  let b:match_words = '^snippet\\>:^endsnippet\\>,^global\\>:^endglobal\\>,\\${:}'$/;"	v
 b:ultisnips_override_snipmate	vim/plugged/ultisnips/syntax/snippets_snipmate.vim	/^let b:ultisnips_override_snipmate = 1$/;"	v
 b:undo_ftplugin	vim/plugged/ultisnips/ftplugin/snippets.vim	/^let b:undo_ftplugin = "$/;"	v
+backspace	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:backspace(s)$/;"	f
 bang	vim/autoload/plug.vim	/^function! s:bang(cmd, ...)$/;"	f
 bar	vim/autoload/plug.vim	/^function! s:bar()$/;"	f
 basename	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^    def basename(self):  # pylint:disable=no-self-use$/;"	m	class:SnippetUtil
@@ -3015,6 +3036,7 @@ debug	vim/plugged/ultisnips/pythonx/UltiSnips/debug.py	/^def debug(msg):$/;"	f
 define_commands	vim/autoload/plug.vim	/^function! s:define_commands()$/;"	f
 defs	vim/plugged/fzf.vim/plugin/fzf.vim	/^function! s:defs(commands)$/;"	f
 delete	vim/autoload/plug.vim	/^function! s:delete(range, force)$/;"	f
+delete	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:delete(s)$/;"	f
 deleteBookmark	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:deleteBookmark(bookmark)$/;"	f
 delete_mark	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^def delete_mark(name):$/;"	f
 delete_op	vim/autoload/plug.vim	/^function! s:delete_op(type, ...)$/;"	f
@@ -3469,6 +3491,22 @@ fzf#vim#with_preview	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! fzf#vi
 fzf_buffers	vim/plugged/fzf.vim/plugin/fzf.vim	/^augroup fzf_buffers$/;"	a
 fzf_restore_colors	vim/plugged/fzf.vim/plugin/fzf.vim	/^  function! s:fzf_restore_colors()$/;"	f
 fzf_vim_term	vim/plugged/fzf.vim/plugin/fzf.vim	/^  function! s:fzf_vim_term()$/;"	f
+g:AutoPairs	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}$/;"	v
+g:AutoPairsCenterLine	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsCenterLine = 1$/;"	v
+g:AutoPairsFlyMode	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsFlyMode = 0$/;"	v
+g:AutoPairsLoaded	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^let g:AutoPairsLoaded = 1$/;"	v
+g:AutoPairsMapBS	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapBS = 1$/;"	v
+g:AutoPairsMapCR	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapCR = 1$/;"	v
+g:AutoPairsMapCh	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapCh = 1$/;"	v
+g:AutoPairsMapSpace	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapSpace = 1$/;"	v
+g:AutoPairsMoveCharacter	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMoveCharacter = "()[]{}\\"'"$/;"	v
+g:AutoPairsMultilineClose	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMultilineClose = 1$/;"	v
+g:AutoPairsShortcutBackInsert	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutBackInsert = '<M-b>'$/;"	v
+g:AutoPairsShortcutFastWrap	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutFastWrap = '<M-e>'$/;"	v
+g:AutoPairsShortcutJump	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutJump = '<M-n>'$/;"	v
+g:AutoPairsShortcutToggle	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutToggle = '<M-p>'$/;"	v
+g:AutoPairsSmartQuotes	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsSmartQuotes = 1$/;"	v
+g:AutoPairsWildClosedPair	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsWildClosedPair = ''$/;"	v
 g:DevIconsEnableFolderExtensionPatternMatching	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:DevIconsEnableFolderExtensionPatternMatching = 0$/;"	v
 g:DevIconsEnableFolderPatternMatching	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:DevIconsEnableFolderPatternMatching = 1$/;"	v
 g:DevIconsEnableFoldersOpenClose	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:DevIconsEnableFoldersOpenClose = 0$/;"	v
@@ -4972,6 +5010,7 @@ get_tmux_option	tmux/plugins/tpm/tpm	/^get_tmux_option() {$/;"	f
 get_total_updates	polybar/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
 get_transitioned_seperator	vim/plugged/vim-airline/autoload/airline/builder.vim	/^function! s:get_transitioned_seperator(self, prev_group, group, side)$/;"	f
 get_wordcount	vim/plugged/vim-airline/autoload/airline/extensions/wordcount.vim	/^  function! s:get_wordcount(visual_mode_active)$/;"	f
+getline	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:getline()$/;"	f
 gettime	vim/plugged/tagbar/autoload/tagbar/debug.vim	/^    function! s:gettime() abort$/;"	f
 git_validate	vim/autoload/plug.vim	/^function! s:git_validate(spec, check_branch)$/;"	f
 git_version_requirement	vim/autoload/plug.vim	/^function! s:git_version_requirement(...)$/;"	f
@@ -5654,6 +5693,7 @@ leader	vim/plugged/dbext.vim/plugin/dbext.vim	/^        let leader = g:mapleader
 leader	vim/plugged/dbext.vim/plugin/dbext.vim	/^    let leader = '\\'$/;"	v
 leader	vim/plugged/dbext.vim/plugin/dbext.vim	/^    let leader = escape(leader, '\\')$/;"	v
 leave_with_wait	vim/plugged/ultisnips/test/vim_interface.py	/^    def leave_with_wait(self):$/;"	m	class:VimInterface
+left	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:left(s)$/;"	f
 legacy_airline_ale_get_line_number	vim/plugged/vim-airline/autoload/airline/extensions/ale.vim	/^function! s:legacy_airline_ale_get_line_number(cnt, type) abort$/;"	f
 line_handler	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:line_handler(lines)$/;"	f
 line_index	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^    def line_index(self):$/;"	m	class:LineIterator
@@ -5708,7 +5748,9 @@ maps	vim/plugged/ultisnips/test/test_Selection.py	/^    maps = ("H", "x"), ("e",
 maps	vim/plugged/ultisnips/test/test_Selection.py	/^    maps = ("e", "l"), ("H", "x")$/;"	v	class:SelectModeMappings_IgnoreMappings2_ECR
 mark_sink	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:mark_sink(lines)$/;"	f
 mark_window	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:mark_window() abort$/;"	f
+matchbegin	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:matchbegin(text, close)$/;"	f
 matched	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    def matched(self):$/;"	m	class:SnippetDefinition
+matchend	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:matchend(text, open)$/;"	f
 matches	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    def matches(self, before, visual_content=None):$/;"	m	class:SnippetDefinition
 maxDiff	vim/plugged/ultisnips/test/vim_test_case.py	/^    maxDiff = None  # Show all diff output, always.$/;"	v	class:VimTestCase
 menuRoot	vim/plugged/dbext.vim/plugin/dbext.vim	/^        let menuRoot = '&Plugin.&dbext'$/;"	v
@@ -5932,6 +5974,7 @@ return	vim/plugged/coc.nvim/build/index.js	/^\/******\/ 	__webpack_require__.o =
 reuseWin	vim/plugged/nerdtree/autoload/nerdtree.vim	/^function! s:reuseWin(dir) abort$/;"	f
 revert	vim/autoload/plug.vim	/^function! s:revert()$/;"	f
 rgb_to_r_g_b	conky/conky_orange.lua	/^function rgb_to_r_g_b(colour, alpha)$/;"	f
+right	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:right(s)$/;"	f
 rm_rf	vim/autoload/plug.vim	/^function! s:rm_rf(dir)$/;"	f
 root	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let root = s:guess_root(a:path, a:markers)$/;"	v
 rtp	vim/autoload/plug.vim	/^function! s:rtp(spec)$/;"	f
@@ -6002,6 +6045,8 @@ s:ERROR	vim/plugged/vim-airline-themes/autoload/airline/themes/base16_atelierdun
 s:ERROR	vim/plugged/vim-airline-themes/autoload/airline/themes/dracula.vim	/^let s:ERROR = [ s:guiWhite, s:gui05, s:ctermWhite, s:cterm05 ]$/;"	v
 s:Event	vim/plugged/nerdtree/lib/nerdtree/event.vim	/^let s:Event = {}$/;"	v
 s:FlagSet	vim/plugged/nerdtree/lib/nerdtree/flag_set.vim	/^let s:FlagSet = {}$/;"	v
+s:Go	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let s:Go = ""$/;"	v
+s:Go	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let s:Go = "\\<C-G>U"$/;"	v
 s:I1	vim/autoload/airline/themes/ronakg.vim	/^let s:I1 = [ '#585858' , '#e4e4e4' , 240 , 214 ] " Mode$/;"	v
 s:I1	vim/plugged/vim-airline-themes/autoload/airline/themes/alduin.vim	/^let s:I1 = [s:guiWhite, s:gui0B, s:ctermWhite, s:cterm0B]$/;"	v
 s:I1	vim/plugged/vim-airline-themes/autoload/airline/themes/angr.vim	/^let s:I1 = [s:gui_med_gray_hi, s:gui_blue, s:cterm_med_gray_hi, s:cterm_blue]$/;"	v
@@ -6533,6 +6578,7 @@ s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/jet.vim	/^let s:IN3
 s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/sierra.vim	/^let s:IN3 = [s:gui02, s:guiAlmostBlack, s:cterm02, s:ctermAlmostBlack]$/;"	v
 s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/vice.vim	/^let s:IN3 = [s:grey0[1], s:grey1[1], s:grey0[0], s:grey1[0] ]$/;"	v
 s:KeyMap	vim/plugged/nerdtree/lib/nerdtree/key_map.vim	/^let s:KeyMap = {}$/;"	v
+s:Left	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^let s:Left = s:Go."\\<LEFT>"$/;"	v
 s:MenuController	vim/plugged/nerdtree/lib/nerdtree/menu_controller.vim	/^let s:MenuController = {}$/;"	v
 s:MenuItem	vim/plugged/nerdtree/lib/nerdtree/menu_item.vim	/^let s:MenuItem = {}$/;"	v
 s:N1	vim/autoload/airline/themes/ronakg.vim	/^let s:N1 = [ '#585858' , '#e4e4e4' , 240 , 223 ] " Mode$/;"	v
@@ -7074,6 +7120,7 @@ s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/desertink.vim	/^let 
 s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/powerlineish.vim	/^let s:RE = [ '#ffffff' , '#d70000' , 231 , 160 ] " white          & brightred$/;"	v
 s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/ravenpower.vim	/^let s:RE = [ '#ffffff' , '#d70000' , 231 , 160 ] " white          & brightred$/;"	v
 s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/violet.vim	/^let s:RE = [ '#c6c6c6' , '#ce537a' , 251, 168 ]$/;"	v
+s:Right	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^let s:Right = s:Go."\\<RIGHT>"$/;"	v
 s:State	vim/plugged/tagbar/autoload/tagbar/state.vim	/^let s:State = {$/;"	v
 s:TE	vim/plugged/vim-airline-themes/autoload/airline/themes/peaksea.vim	/^let s:TE = [ '#1C1C1C' , '#3A3A3A' , 254 , 237 , '' ]$/;"	v
 s:TH	vim/plugged/vim-airline-themes/autoload/airline/themes/desertink.vim	/^let s:TH  = [ s:N1[1], s:N1[0], s:N1[3], s:N1[2] ]     " hidden buffers$/;"	v
@@ -10267,6 +10314,7 @@ snippets	vim/plugged/ultisnips/test/test_Visual.py	/^    snippets = ("test", r"h
 snippets	vim/plugged/ultisnips/test/vim_test_case.py	/^    snippets = ()$/;"	v	class:VimTestCase
 snippets_in_current_scope	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def snippets_in_current_scope(self, searchAll):$/;"	m	class:SnippetManager
 softRefreshNerdTree	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^function! s:softRefreshNerdTree()$/;"	f
+sortByLength	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:sortByLength(i1, i2)$/;"	f
 sortTags	vim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:sortTags(compare_typeinfo) abort dict$/;"	f
 sort_buffers	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:sort_buffers(...)$/;"	f
 sort_by_tick	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:sort_by_tick(one, two)$/;"	f
@@ -10438,6 +10486,7 @@ transform	vim/plugged/vim-startify/autoload/startify.vim	/^function s:transform(
 trigger	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    def trigger(self):$/;"	m	class:SnippetDefinition
 trim	vim/autoload/plug.vim	/^function! s:trim(str)$/;"	f
 trim	vim/plugged/coc.nvim/autoload/coc.vim	/^function! s:trim(str)$/;"	f
+ulen	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:ulen(s)$/;"	f
 ultisnips_snippets	vim/plugged/ultisnips/ftplugin/snippets.vim	/^augroup ultisnips_snippets.vim$/;"	a
 undo	tmux/plugins/tpm/lib/tmux-test/setup	/^undo() {$/;"	f
 unescape	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^def unescape(text):$/;"	f
@@ -10460,6 +10509,7 @@ update_all	tmux/plugins/tpm/scripts/update_plugin.sh	/^update_all() {$/;"	f
 update_branch	vim/plugged/vim-airline/autoload/airline/extensions/branch.vim	/^function! s:update_branch()$/;"	f
 update_extends	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/base.py	/^    def update_extends(self, child_ft, parent_fts):$/;"	m	class:SnippetSource
 update_finish	vim/autoload/plug.vim	/^function! s:update_finish()$/;"	f
+update_from_tmux	vim/plugged/vim-tmux-clipboard/plugin/vimtmuxclipboard.vim	/^func! s:update_from_tmux()$/;"	f
 update_git_branch	vim/plugged/vim-airline/autoload/airline/extensions/branch.vim	/^function! s:update_git_branch()$/;"	f
 update_hg_branch	vim/plugged/vim-airline/autoload/airline/extensions/branch.vim	/^function! s:update_hg_branch()$/;"	f
 update_impl	vim/autoload/plug.vim	/^function! s:update_impl(pull, force, args) abort$/;"	f
