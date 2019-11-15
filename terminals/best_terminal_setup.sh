@@ -10,3 +10,6 @@ sudo apt install zsh
 
 # ZSH pure theme
 https://github.com/sindresorhus/pure
+
+# ZSH configration framework
+https://github.com/robbyrussell/oh-my-zsh
