@@ -5,7 +5,16 @@ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 # Return if not interactive
 [[ $- != *i* ]] && return
 
-export LS_COLORS="$(vivid generate snazzy)"
+neofetch
+
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /home/xuw/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+fi
+
+#export LS_COLORS="$(vivid generate snazzy)"
 
 # Where are my dotfiles
 export DOTFILES=~/dotfiles

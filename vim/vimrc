@@ -23,8 +23,10 @@ set makeprg=mvn\ -q\ -f\ project.xml\ jar:install
 let g:NERDTreeWinSize = 60
 
 " Use clang instead of clangd
-let g:ycm_use_clangd = 0
-let g:clang_format#auto_format = 1
+"let g:ycm_use_clangd = 0
+"let g:clang_format#auto_format = 1
+
+let g:vue_pre_processors = 'detect_on_enter'
 
 " autocommand group
 augroup xuw_cfg_autocmd
@@ -47,6 +49,9 @@ augroup xuw_cfg_autocmd
 
     " Close NERDTree if it's the only window open
     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+    " syntax highlight for config or config.cfg / .conf
+    autocmd BufEnter,BufRead *.conf,*.cfg,*conf* setf dosini
 
     " Highlight currently open buffer in NERDTree
     autocmd BufEnter * call NERDTreeSync()
@@ -89,6 +94,7 @@ function! s:customMappings()
     nnoremap <silent><A-Up>   :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "bw")<CR>
     nnoremap <silent><A-Down> :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "w")<CR>
 
+    " select all lines till empty line
     vnoremap <silent><S-Up> {
     vnoremap <silent><S-Down> }
 
@@ -182,22 +188,10 @@ endfunction
 " Grep for word under the cursor
 if executable("rg")
     set grepprg=rg\ --vimgrep\ -g\ '!tags'
-
-    " --column: Show column number
-    " --line-number: Show line number
-    " --no-heading: Do not show file headings in results
-    " --fixed-strings: Search term as a literal string
-    " --ignore-case: Case insensitive search
-    " --no-ignore: Do not respect .gitignore, etc...
-    " --hidden: Search hidden files and folders
-    " --follow: Follow symlinks
-    " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-    " --color: Search color options
-    command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-
 elseif executable("ag")
     set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
 endif
+
 set grepformat=%f:%l:%c:%m,%f:%l:%m
 
 function! GetVisualSelection()
@@ -539,7 +533,7 @@ let g:startify_list_order = [['Most recently used files in current directory:'],
             \                ['Bookmarks:'], 'bookmarks']
 let g:startify_change_to_dir = 0
 let g:startify_files_number = 10
-let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'}, {'t': '~/.tmux.conf'}  ]
+let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'}, {'t': '~/.tmux.conf'},  {'i' : '~/.config/i3/config'}, {'p' : '~/.config/polybar/config'}, {'k' : '~/.config/kitty/kitty.conf'}  ]
 
 "if filereadable(".vim.custom")
     "so .vim.custom

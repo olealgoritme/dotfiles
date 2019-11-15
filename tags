@@ -864,6 +864,7 @@ GetSexyComRight	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s
 GetSupportedFiletypes	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GetSupportedFiletypes() abort$/;"	f
 GetTagInfo	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GetTagInfo(linenr, ignorepseudo) abort$/;"	f
 GetVisualSelection	vim/init.vim	/^function! GetVisualSelection()$/;"	f
+GetVueIndent	vim/plugged/vim-vue/indent/vue.vim	/^function! GetVueIndent()$/;"	f
 GlobComplete	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GlobComplete(lead, pattern) abort$/;"	f
 GlobalChange	vim/plugged/coc.nvim/autoload/coc.vim	/^function! s:GlobalChange(dict, key, val)$/;"	f
 GotoFileWindow	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GotoFileWindow(fileinfo, ...) abort$/;"	f
@@ -904,7 +905,7 @@ IndentLinesEnable	vim/plugged/indentLine/after/plugin/indentLine.vim	/^function!
 IndentLinesReset	vim/plugged/indentLine/after/plugin/indentLine.vim	/^command! -nargs=? IndentLinesReset call <SID>ResetWidth(<f-args>)$/;"	c
 IndentLinesToggle	vim/plugged/indentLine/after/plugin/indentLine.vim	/^command! IndentLinesToggle call <SID>IndentLinesToggle()$/;"	c
 IndentLinesToggle	vim/plugged/indentLine/after/plugin/indentLine.vim	/^function! s:IndentLinesToggle()$/;"	f
-IndentUtil	vim/plugged/ultisnips/pythonx/UltiSnips/indent_util.py	/^class IndentUtil(object):$/;"	c
+IndentUtil	vim/plugged/ultisnips/pythonx/UltiSnips/indent_util.py	/^class IndentUtil:$/;"	c
 Init	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:Init(silent) abort$/;"	f
 InitColor	vim/plugged/indentLine/after/plugin/indentLine.vim	/^function! s:InitColor()$/;"	f
 InitCwds	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^function! s:InitCwds()$/;"	f
@@ -961,7 +962,7 @@ LeadingSpaceToggle	vim/plugged/indentLine/after/plugin/indentLine.vim	/^function
 LeaveTrailingWhitespace	vim/plugged/ultisnips/test/test_Chars.py	/^class LeaveTrailingWhitespace(_VimTest):$/;"	c
 Left	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:Left(...)$/;"	f
 LeftMostIndx	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:LeftMostIndx(countCommentedLines, countEmptyLines, topline, bottomline)$/;"	f
-LineIterator	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^class LineIterator(object):$/;"	c
+LineIterator	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^class LineIterator:$/;"	c
 LinesError	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:LinesError(...) abort$/;"	f
 ListAllAvailable_BraceInFront_ExpectCorrectResult	vim/plugged/ultisnips/test/test_ListSnippets.py	/^class ListAllAvailable_BraceInFront_ExpectCorrectResult(_ListAllSnippets):$/;"	c
 ListAllAvailable_Disabled_ExpectCorrectResult	vim/plugged/ultisnips/test/test_ListSnippets.py	/^class ListAllAvailable_Disabled_ExpectCorrectResult(_ListAllSnippets):$/;"	c
@@ -1259,7 +1260,7 @@ PathInfo	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PathInfo(u
 PerlSyntaxFold	vim/plugged/ultisnips/test/test_Folding.py	/^class PerlSyntaxFold(_VimTest):$/;"	c
 PlaceDelimitersAndInsBetween	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:PlaceDelimitersAndInsBetween()$/;"	f
 Plugin_SuperTab_SimpleTest	vim/plugged/ultisnips/test/test_Plugin.py	/^class Plugin_SuperTab_SimpleTest(_VimTest):$/;"	c
-Position	vim/plugged/ultisnips/pythonx/UltiSnips/position.py	/^class Position(object):$/;"	c
+Position	vim/plugged/ultisnips/pythonx/UltiSnips/position.py	/^class Position:$/;"	c
 PreparePathArgs	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PreparePathArgs(cmd, dir, literal) abort$/;"	f
 PrevBuffer	vim/init.vim	/^function! PrevBuffer()$/;"	f
 PreviousFile	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PreviousFile(count) abort$/;"	f
@@ -1319,7 +1320,7 @@ PythonVisual_HasAccessToZeroPlaceholders	vim/plugged/ultisnips/test/test_Interpo
 PythonVisual_LineSelect_Simple	vim/plugged/ultisnips/test/test_Interpolation.py	/^class PythonVisual_LineSelect_Simple(_VimTest):$/;"	c
 PythonVisual_NoVisualSelection_Ignore	vim/plugged/ultisnips/test/test_Interpolation.py	/^class PythonVisual_NoVisualSelection_Ignore(_VimTest):$/;"	c
 PythonVisual_SelectOneWord	vim/plugged/ultisnips/test/test_Interpolation.py	/^class PythonVisual_SelectOneWord(_VimTest):$/;"	c
-Python_WeirdScoping_Error	vim/plugged/ultisnips/test/test_Interpolation.py	/^class Python_WeirdScoping_Error(_VimTest):$/;"	c
+Python_SnipRvCanBeNonText	vim/plugged/ultisnips/test/test_Interpolation.py	/^class Python_SnipRvCanBeNonText(_VimTest):$/;"	c
 QueryLog	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:QueryLog(refspec) abort$/;"	f
 QuickfixCreate	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:QuickfixCreate(nr, opts) abort$/;"	f
 QuickfixGet	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:QuickfixGet(nr, ...) abort$/;"	f
@@ -1390,7 +1391,6 @@ RestoreSession	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:RestoreSessi
 RetainsTheUnnamedRegister	vim/plugged/ultisnips/test/test_Fixes.py	/^class RetainsTheUnnamedRegister(_VimTest):$/;"	c
 RetainsTheUnnamedRegister_ButOnlyOnce	vim/plugged/ultisnips/test/test_Fixes.py	/^class RetainsTheUnnamedRegister_ButOnlyOnce(_VimTest):$/;"	c
 RevertSubcommand	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RevertSubcommand(line1, line2, range, bang, mods, args) abort$/;"	f
-Rg	vim/init.vim	/^    command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git\/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)$/;"	c
 Right	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:Right(...)$/;"	f
 RightMostIndx	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:RightMostIndx(countCommentedLines, countEmptyLines, topline, bottomline)$/;"	f
 SClose	vim/plugged/vim-startify/plugin/startify.vim	/^command! -nargs=0 -bar SClose call startify#session_close()$/;"	c
@@ -1479,11 +1479,11 @@ SnippetActions_PostActionModifiesCharAfterSnippet	vim/plugged/ultisnips/test/tes
 SnippetActions_PostActionModifiesLineAfterSnippet	vim/plugged/ultisnips/test/test_SnippetActions.py	/^class SnippetActions_PostActionModifiesLineAfterSnippet(_VimTest):$/;"	c
 SnippetActions_PreActionModifiesBuffer	vim/plugged/ultisnips/test/test_SnippetActions.py	/^class SnippetActions_PreActionModifiesBuffer(_VimTest):$/;"	c
 SnippetActions_UseCorrectJumpActions	vim/plugged/ultisnips/test/test_SnippetActions.py	/^class SnippetActions_UseCorrectJumpActions(_VimTest):$/;"	c
-SnippetDefinition	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^class SnippetDefinition(object):$/;"	c
-SnippetDictionary	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/snippet_dictionary.py	/^class SnippetDictionary(object):$/;"	c
+SnippetDefinition	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^class SnippetDefinition:$/;"	c
+SnippetDictionary	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/snippet_dictionary.py	/^class SnippetDictionary:$/;"	c
 SnippetFileSource	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/file/base.py	/^class SnippetFileSource(SnippetSource):$/;"	c
 SnippetInstance	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/snippet_instance.py	/^class SnippetInstance(EditableTextObject):$/;"	c
-SnippetManager	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^class SnippetManager(object):$/;"	c
+SnippetManager	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^class SnippetManager:$/;"	c
 SnippetOptions_ExpandInwordSnippetsWithOtherChars_Expand	vim/plugged/ultisnips/test/test_SnippetOptions.py	/^class SnippetOptions_ExpandInwordSnippetsWithOtherChars_Expand(_VimTest):$/;"	c
 SnippetOptions_ExpandInwordSnippetsWithOtherChars_Expand2	vim/plugged/ultisnips/test/test_SnippetOptions.py	/^class SnippetOptions_ExpandInwordSnippetsWithOtherChars_Expand2(_VimTest):$/;"	c
 SnippetOptions_ExpandInwordSnippetsWithOtherChars_Expand3	vim/plugged/ultisnips/test/test_SnippetOptions.py	/^class SnippetOptions_ExpandInwordSnippetsWithOtherChars_Expand3(_VimTest):$/;"	c
@@ -1523,9 +1523,9 @@ SnippetPriorities_OverwriteThenChoose_ECR	vim/plugged/ultisnips/test/test_Snippe
 SnippetPriorities_OverwriteTwice_ECR	vim/plugged/ultisnips/test/test_SnippetPriorities.py	/^class SnippetPriorities_OverwriteTwice_ECR(_VimTest):$/;"	c
 SnippetPriorities_SimpleClear	vim/plugged/ultisnips/test/test_SnippetPriorities.py	/^class SnippetPriorities_SimpleClear(_VimTest):$/;"	c
 SnippetPriorities_SimpleClear2	vim/plugged/ultisnips/test/test_SnippetPriorities.py	/^class SnippetPriorities_SimpleClear2(_VimTest):$/;"	c
-SnippetSource	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/base.py	/^class SnippetSource(object):$/;"	c
+SnippetSource	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/base.py	/^class SnippetSource:$/;"	c
 SnippetSyntaxError	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/file/base.py	/^class SnippetSyntaxError(RuntimeError):$/;"	c
-SnippetUtil	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^class SnippetUtil(object):$/;"	c
+SnippetUtil	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^class SnippetUtil:$/;"	c
 SnippetUtilForAction	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^class SnippetUtilForAction(dict):$/;"	c
 Snippet_With_DoubleQuote	vim/plugged/ultisnips/test/test_Chars.py	/^class Snippet_With_DoubleQuote(_VimTest):$/;"	c
 Snippet_With_DoubleQuote_List	vim/plugged/ultisnips/test/test_Chars.py	/^class Snippet_With_DoubleQuote_List(_VimTest):$/;"	c
@@ -1676,7 +1676,7 @@ TagbarShowTag	vim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 TagbarSho
 TagbarToggle	vim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 TagbarToggle        call tagbar#ToggleWindow()$/;"	c
 TagbarTogglePause	vim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 TagbarTogglePause   call tagbar#toggle_pause()$/;"	c
 TempCmd	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:TempCmd(out, cmd) abort$/;"	f
-TempFileManager	vim/plugged/ultisnips/test/vim_interface.py	/^class TempFileManager(object):$/;"	c
+TempFileManager	vim/plugged/ultisnips/test/vim_interface.py	/^class TempFileManager:$/;"	c
 TempReadPost	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:TempReadPost(file) abort$/;"	f
 TempReadPre	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:TempReadPre(file) abort$/;"	f
 TempState	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:TempState(...) abort$/;"	f
@@ -1699,8 +1699,8 @@ TestRealLife	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^class TestRe
 TestRealLife1	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^class TestRealLife1(_Base, unittest.TestCase):$/;"	c
 TestUltiSnipsProblem	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^class TestUltiSnipsProblem(_Base, unittest.TestCase):$/;"	c
 TestWithNewline	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^class TestWithNewline(_Base, unittest.TestCase):$/;"	c
-TextObject	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/base.py	/^class TextObject(object):$/;"	c
-TextObjectTransformation	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/transformation.py	/^class TextObjectTransformation(object):$/;"	c
+TextObject	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/base.py	/^class TextObject:$/;"	c
+TextObjectTransformation	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/transformation.py	/^class TextObjectTransformation:$/;"	c
 TextTabStopAfterMirror_ExpectCorrectResult	vim/plugged/ultisnips/test/test_Mirror.py	/^class TextTabStopAfterMirror_ExpectCorrectResult(_VimTest):$/;"	c
 TextTabStopAllSurrounded_ExpectCorrectResult	vim/plugged/ultisnips/test/test_Mirror.py	/^class TextTabStopAllSurrounded_ExpectCorrectResult(_VimTest):$/;"	c
 TextTabStopSimpleMirrorMultilineMirrorInFront_ECR	vim/plugged/ultisnips/test/test_Mirror.py	/^class TextTabStopSimpleMirrorMultilineMirrorInFront_ECR(_VimTest):$/;"	c
@@ -1720,7 +1720,7 @@ ToggleHideNonPublicTags	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:Tog
 TogglePause	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:TogglePause() abort$/;"	f
 ToggleSort	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleSort() abort$/;"	f
 ToggleWindow	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleWindow(flags) abort$/;"	f
-Token	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^class Token(object):$/;"	c
+Token	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^class Token:$/;"	c
 TrailingNewline_TabStop_EndNL	vim/plugged/ultisnips/test/test_Chars.py	/^class TrailingNewline_TabStop_EndNL(_VimTest):$/;"	c
 TrailingNewline_TabStop_EndStartNL	vim/plugged/ultisnips/test/test_Chars.py	/^class TrailingNewline_TabStop_EndStartNL(_VimTest):$/;"	c
 TrailingNewline_TabStop_ExtraNL_ECR	vim/plugged/ultisnips/test/test_Chars.py	/^class TrailingNewline_TabStop_ExtraNL_ECR(_VimTest):$/;"	c
@@ -1930,10 +1930,11 @@ UserCommandList	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Use
 Util1	vim/plugged/vim-airline/t/util.vim	/^function! Util1()$/;"	f
 Util2	vim/plugged/vim-airline/t/util.vim	/^function! Util2()$/;"	f
 Util3	vim/plugged/vim-airline/t/util.vim	/^function! Util3(...)$/;"	f
+VADER_OUTPUT_FILE	vim/plugged/vim-vue/Makefile	/^	VADER_OUTPUT_FILE=\/dev\/stderr nvim -u test\/vimrc -c 'Vader! test\/*.vader' --headless$/;"	m
 VerifyVimDict1	vim/plugged/ultisnips/test/test_UltiSnipFunc.py	/^class VerifyVimDict1(_VimTest):$/;"	c
 VerifyVimDict2	vim/plugged/ultisnips/test/test_UltiSnipFunc.py	/^class VerifyVimDict2(_VimTest):$/;"	c
 VerifyVimDict3	vim/plugged/ultisnips/test/test_UltiSnipFunc.py	/^class VerifyVimDict3(_VimTest):$/;"	c
-VimBuffer	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^class VimBuffer(object):$/;"	c
+VimBuffer	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^class VimBuffer:$/;"	c
 VimBufferProxy	vim/plugged/ultisnips/pythonx/UltiSnips/buffer_proxy.py	/^class VimBufferProxy(vim_helper.VimBuffer):$/;"	c
 VimInterface	vim/plugged/ultisnips/test/vim_interface.py	/^class VimInterface(TempFileManager):$/;"	c
 VimInterfaceTmux	vim/plugged/ultisnips/test/vim_interface.py	/^class VimInterfaceTmux(VimInterface):$/;"	c
@@ -1942,11 +1943,11 @@ VimInterfaceWindows	vim/plugged/ultisnips/test/vim_interface.py	/^class VimInter
 VimLCode	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/viml_code.py	/^class VimLCode(NoneditableTextObject):$/;"	c
 VimLCodeToken	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^class VimLCodeToken(Token):$/;"	c
 VimPosition	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^class VimPosition(Position):$/;"	c
-VimState	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^class VimState(object):$/;"	c
+VimState	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^class VimState:$/;"	c
 VimTestCase	vim/plugged/ultisnips/test/vim_test_case.py	/^class VimTestCase(unittest.TestCase, TempFileManager):$/;"	c
 VirtualEdit	vim/plugged/ultisnips/test/test_Fixes.py	/^class VirtualEdit(_VimTest):$/;"	c
 Visual	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/visual.py	/^class Visual(NoneditableTextObject, TextObjectTransformation):$/;"	c
-VisualContentPreserver	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^class VisualContentPreserver(object):$/;"	c
+VisualContentPreserver	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^class VisualContentPreserver:$/;"	c
 VisualToken	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^class VisualToken(Token):$/;"	c
 VisualTransformationWithDefault_ExpandWithVisual	vim/plugged/ultisnips/test/test_Visual.py	/^class VisualTransformationWithDefault_ExpandWithVisual(_VimTest):$/;"	c
 VisualTransformationWithDefault_ExpandWithoutVisual	vim/plugged/ultisnips/test/test_Visual.py	/^class VisualTransformationWithDefault_ExpandWithoutVisual(_VimTest):$/;"	c
@@ -2003,13 +2004,17 @@ WebDevIconsNERDTreeMapUpdirKeepOpen	vim/plugged/vim-devicons/nerdtree_plugin/web
 WebDevIconsNERDTreeUpDirCurrentRootClosedHandler	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^function! WebDevIconsNERDTreeUpDirCurrentRootClosedHandler()$/;"	f
 Y	vim/init.vim	/^nmap Y <Plug>(operator-flashy)\$$/;"	m
 ZoomWindow	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ZoomWindow() abort$/;"	f
+[[	vim/plugged/vim-vue/ftplugin/vue.vim	/^  nnoremap <silent> <buffer> [[ :call search('^<\\(template\\<Bar>script\\<Bar>style\\)', 'bW')<CR>$/;"	m
+[]	vim/plugged/vim-vue/ftplugin/vue.vim	/^  nnoremap <silent> <buffer> [] :call search('^<\/\\(template\\<Bar>script\\<Bar>style\\)', 'bW')<CR>$/;"	m
+][	vim/plugged/vim-vue/ftplugin/vue.vim	/^  nnoremap <silent> <buffer> ][ :call search('^<\/\\(template\\<Bar>script\\<Bar>style\\)', 'W')<CR>$/;"	m
+]]	vim/plugged/vim-vue/ftplugin/vue.vim	/^  nnoremap <silent> <buffer> ]] :call search('^<\\(template\\<Bar>script\\<Bar>style\\)', 'W')<CR>$/;"	m
 ^	vim/init.vim	/^nnoremap ^ 0$/;"	m
 _AddFuncBase	vim/plugged/ultisnips/test/test_UltiSnipFunc.py	/^class _AddFuncBase(_VimTest):$/;"	c
 _AnonBase	vim/plugged/ultisnips/test/test_AnonymousExpansion.py	/^class _AnonBase(_VimTest):$/;"	c
-_Base	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^class _Base(object):$/;"	c
-_BaseGuessing	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^class _BaseGuessing(object):$/;"	c
+_Base	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^class _Base:$/;"	c
+_BaseGuessing	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^class _BaseGuessing:$/;"	c
 _CONDITIONAL	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/transformation.py	/^_CONDITIONAL = re.compile(r"\\(\\?(\\d+):", re.DOTALL)$/;"	v
-_CleverReplace	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/transformation.py	/^class _CleverReplace(object):$/;"	c
+_CleverReplace	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/transformation.py	/^class _CleverReplace:$/;"	c
 _DOLLAR	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/transformation.py	/^_DOLLAR = re.compile(r"\\$(\\d+)", re.DOTALL)$/;"	v
 _ES_Base	vim/plugged/ultisnips/test/test_Selection.py	/^class _ES_Base(_VimTest):$/;"	c
 _ExpandTabs	vim/plugged/ultisnips/test/test_Format.py	/^class _ExpandTabs(_VimTest):$/;"	c
@@ -2017,7 +2022,7 @@ _FormatoptionsBase	vim/plugged/ultisnips/test/test_Format.py	/^class _Formatopti
 _INDENT	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    _INDENT = re.compile(r"^[ \\t]*")$/;"	v	class:SnippetDefinition
 _LONG_CASEFOLDINGS	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/transformation.py	/^_LONG_CASEFOLDINGS = re.compile(r"\\\\([UL].*?)\\\\E", re.DOTALL)$/;"	v
 _ListAllSnippets	vim/plugged/ultisnips/test/test_ListSnippets.py	/^class _ListAllSnippets(_VimTest):$/;"	c
-_MPBase	vim/plugged/ultisnips/pythonx/UltiSnips/test_position.py	/^class _MPBase(object):$/;"	c
+_MPBase	vim/plugged/ultisnips/pythonx/UltiSnips/test_position.py	/^class _MPBase:$/;"	c
 _MultiLineDefault	vim/plugged/ultisnips/test/test_Chars.py	/^class _MultiLineDefault(_VimTest):$/;"	c
 _MultiWord_SnippetOptions_ExpandWordSnippets	vim/plugged/ultisnips/test/test_SnippetOptions.py	/^class _MultiWord_SnippetOptions_ExpandWordSnippets(_VimTest):$/;"	c
 _MultipleMatches	vim/plugged/ultisnips/test/test_MultipleMatches.py	/^class _MultipleMatches(_VimTest):$/;"	c
@@ -2032,13 +2037,13 @@ _Regex_Self	vim/plugged/ultisnips/test/test_SnippetOptions.py	/^class _Regex_Sel
 _SelectModeMappings	vim/plugged/ultisnips/test/test_Selection.py	/^class _SelectModeMappings(_VimTest):$/;"	c
 _SimpleExpands	vim/plugged/ultisnips/test/test_Expand.py	/^class _SimpleExpands(_VimTest):$/;"	c
 _SnippetOptions_ExpandWordSnippets	vim/plugged/ultisnips/test/test_SnippetOptions.py	/^class _SnippetOptions_ExpandWordSnippets(_VimTest):$/;"	c
-_SnippetUtilCursor	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^class _SnippetUtilCursor(object):$/;"	c
+_SnippetUtilCursor	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^class _SnippetUtilCursor:$/;"	c
 _TABS	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    _TABS = re.compile(r"^\\t*")$/;"	v	class:SnippetDefinition
 _TOKEN_TO_TEXTOBJECT	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/snipmate.py	/^_TOKEN_TO_TEXTOBJECT = {$/;"	v
 _TOKEN_TO_TEXTOBJECT	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/ulti_snips.py	/^_TOKEN_TO_TEXTOBJECT = {$/;"	v
-_TabExpand_RealWorld	vim/plugged/ultisnips/test/test_SnippetOptions.py	/^class _TabExpand_RealWorld(object):$/;"	c
-_Tabs	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^class _Tabs(object):$/;"	c
-_TextIterator	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^class _TextIterator(object):$/;"	c
+_TabExpand_RealWorld	vim/plugged/ultisnips/test/test_SnippetOptions.py	/^class _TabExpand_RealWorld:$/;"	c
+_Tabs	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^class _Tabs:$/;"	c
+_TextIterator	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^class _TextIterator:$/;"	c
 _UmlautsBase	vim/plugged/ultisnips/test/test_Chars.py	/^class _UmlautsBase(_VimTest):$/;"	c
 _VimCursor	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/snippet_instance.py	/^class _VimCursor(NoneditableTextObject):$/;"	c
 _VisualContent	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^_VisualContent = namedtuple("_VisualContent", ["mode", "text"])$/;"	v
@@ -2056,7 +2061,6 @@ __getitem__	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/
 __getitem__	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^    def __getitem__(self, no):$/;"	m	class:_Tabs	file:
 __getitem__	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^    def __getitem__(self, idx):$/;"	m	class:VimBuffer	file:
 __getslice__	vim/plugged/ultisnips/pythonx/UltiSnips/buffer_proxy.py	/^    def __getslice__(self, i, j):$/;"	m	class:VimBufferProxy	file:
-__getslice__	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^    def __getslice__(self, i, j):  # pylint:disable=no-self-use$/;"	m	class:VimBuffer	file:
 __init__	vim/plugged/ultisnips/pythonx/UltiSnips/buffer_proxy.py	/^    def __init__(self, snippets_stack, vstate):$/;"	m	class:VimBufferProxy
 __init__	vim/plugged/ultisnips/pythonx/UltiSnips/indent_util.py	/^    def __init__(self):$/;"	m	class:IndentUtil
 __init__	vim/plugged/ultisnips/pythonx/UltiSnips/position.py	/^    def __init__(self, line, col):$/;"	m	class:Position
@@ -2131,7 +2135,6 @@ __setitem__	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/
 __setitem__	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^    def __setitem__(self, no, value):$/;"	m	class:_Tabs	file:
 __setitem__	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^    def __setitem__(self, idx, text):$/;"	m	class:VimBuffer	file:
 __setslice__	vim/plugged/ultisnips/pythonx/UltiSnips/buffer_proxy.py	/^    def __setslice__(self, i, j, text):$/;"	m	class:VimBufferProxy	file:
-__setslice__	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^    def __setslice__(self, i, j, text):  # pylint:disable=no-self-use$/;"	m	class:VimBuffer	file:
 __str__	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    def __str__(self):$/;"	m	class:_SnippetUtilCursor	file:
 __sub__	vim/plugged/ultisnips/pythonx/UltiSnips/position.py	/^    def __sub__(self, pos):$/;"	m	class:Position	file:
 __webpack_require__	vim/plugged/coc.nvim/build/index.js	/^\/******\/ 	function __webpack_require__(moduleId) {$/;"	f
@@ -2208,7 +2211,6 @@ _extra_vim_config	vim/plugged/ultisnips/test/test_Visual.py	/^    def _extra_vim
 _extra_vim_config	vim/plugged/ultisnips/test/vim_test_case.py	/^    def _extra_vim_config(self, vim_config):$/;"	m	class:VimTestCase
 _fatal_error_abort	tmux/plugins/tpm/scripts/helpers/plugin_functions.sh	/^_fatal_error_abort() {$/;"	f
 _file_to_edit	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def _file_to_edit(self, requested_ft, bang):$/;"	m	class:SnippetManager
-_find_all_snippet_directories	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/file/ulti_snips.py	/^def _find_all_snippet_directories():$/;"	f
 _find_closing_brace	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/transformation.py	/^def _find_closing_brace(string, start_pos):$/;"	f
 _find_recursive	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/snippet_instance.py	/^        def _find_recursive(obj):$/;"	f	function:SnippetInstance.update_textobjects
 _fzf_statusline	vim/plugged/fzf.vim/plugin/fzf.vim	/^  augroup _fzf_statusline$/;"	a
@@ -2218,10 +2220,10 @@ _get_all_snippet_files_for	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/sourc
 _get_all_snippet_files_for	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/file/ulti_snips.py	/^    def _get_all_snippet_files_for(self, ft):$/;"	m	class:UltiSnipsFileSource
 _get_diff	vim/plugged/ultisnips/pythonx/UltiSnips/buffer_proxy.py	/^    def _get_diff(self, start, end, new_value):$/;"	m	class:VimBufferProxy
 _get_existing_deep_extends	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/base.py	/^    def _get_existing_deep_extends(self, base_filetypes):$/;"	m	class:SnippetSource
-_get_file_to_edit	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def _get_file_to_edit($/;"	m	class:SnippetManager
 _get_line_diff	vim/plugged/ultisnips/pythonx/UltiSnips/buffer_proxy.py	/^    def _get_line_diff(self, line_number, before, after):$/;"	m	class:VimBufferProxy
 _get_next_tab	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/base.py	/^    def _get_next_tab(self, number):$/;"	m	class:EditableTextObject
 _get_pos	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^def _get_pos(name):$/;"	f
+_get_potential_snippet_filenames_to_edit	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^def _get_potential_snippet_filenames_to_edit(snippet_dir, filetypes):$/;"	f
 _get_prev_tab	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/base.py	/^    def _get_prev_tab(self, number):$/;"	m	class:EditableTextObject
 _get_tabstop	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/base.py	/^    def _get_tabstop(self, requester, number):$/;"	m	class:EditableTextObject
 _get_tabstop	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/snippet_instance.py	/^    def _get_tabstop(self, requester, no):$/;"	m	class:SnippetInstance
@@ -2267,6 +2269,7 @@ _parse_till_closing_brace	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsin
 _parse_till_unescaped_char	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^def _parse_till_unescaped_char(stream, chars):$/;"	f
 _place_initial_text	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/snippet_instance.py	/^        def _place_initial_text(obj):$/;"	f	function:SnippetInstance.replace_initial_text
 _re_match	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    def _re_match(self, trigger):$/;"	m	class:SnippetDefinition
+_read_text_file	vim/plugged/ultisnips/test/vim_interface.py	/^def _read_text_file(filename):$/;"	f
 _refresh_snippets	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def _refresh_snippets(self):$/;"	m	class:SnippetManager
 _reinit	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def _reinit(self):$/;"	m	class:SnippetManager
 _replace_conditional	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/transformation.py	/^def _replace_conditional(match, string):$/;"	f
@@ -2275,6 +2278,7 @@ _reset	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^   
 _run_shell_command	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/shell_code.py	/^def _run_shell_command(cmd, tmpdir):$/;"	f
 _rv_changed	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^    def _rv_changed(self):$/;"	m	class:SnippetUtil
 _save_last_visual_selection	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def _save_last_visual_selection(self):$/;"	m	class:SnippetManager
+_select_and_create_file_to_edit	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^def _select_and_create_file_to_edit(potentials: Set[str]) -> str:$/;"	f
 _send	vim/plugged/ultisnips/test/vim_interface.py	/^    def _send(self, s):$/;"	m	class:VimInterfaceTmux
 _set_pos	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^def _set_pos(name, pos):$/;"	f
 _setup_inner_state	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def _setup_inner_state(self):$/;"	m	class:SnippetManager
@@ -2299,9 +2303,8 @@ _update	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^  
 _update	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/shell_code.py	/^    def _update(self, done, buf):$/;"	m	class:ShellCode
 _update	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/viml_code.py	/^    def _update(self, done, buf):$/;"	m	class:VimLCode
 _update	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/visual.py	/^    def _update(self, done, buf):$/;"	m	class:Visual
-_vim_dec	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^    def _vim_dec(string):$/;"	f
-_vim_enc	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^    def _vim_enc(bytearray):$/;"	f
-_vim_enc	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^    def _vim_enc(string):$/;"	f
+_vim_dec	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^def _vim_dec(string):$/;"	f
+_vim_enc	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^def _vim_enc(bytearray):$/;"	f
 _words_for_line	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^def _words_for_line(trigger, before, num_words=None):$/;"	f
 a	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^    a = "First Line\\nSecond Line"$/;"	v	class:TestWithNewline
 a	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^    a = "Vorne hallo Hinten"$/;"	v	class:TestCheapDelete
@@ -2318,7 +2321,7 @@ activateDirNode	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s
 activateFileNode	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:activateFileNode(node)$/;"	f
 addChild	vim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:addChild(tag) abort dict$/;"	f
 addTag	vim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:addTag(tag) abort dict$/;"	f
-add_buffer_filetypes	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def add_buffer_filetypes(self, ft):$/;"	m	class:SnippetManager
+add_buffer_filetypes	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def add_buffer_filetypes(self, filetypes):$/;"	m	class:SnippetManager
 add_db	vim/plugged/vim-gutentags/autoload/gutentags/gtags_cscope.vim	/^function! s:add_db(db_file) abort$/;"	f
 add_files_to_gitignore	tmux/plugins/tpm/lib/tmux-test/setup	/^add_files_to_gitignore() {$/;"	f
 add_methods	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:add_methods(namespace, method_names) abort$/;"	f
@@ -2669,8 +2672,15 @@ args	vim/plugged/ultisnips/test/test_Autocommands.py	/^    args = ""$/;"	v	class
 args	vim/plugged/ultisnips/test/test_UltiSnipFunc.py	/^    args = ""$/;"	v	class:_AddFuncBase
 args	vim/plugged/ultisnips/test/test_UltiSnipFunc.py	/^    args = '".*test", "simple expand", "desc", "r", "all", 0'$/;"	v	class:AddFunc_Opt
 args	vim/plugged/ultisnips/test/test_UltiSnipFunc.py	/^    args = '"test", "simple expand", "desc", "", "all", 0'$/;"	v	class:AddFunc_Simple
-as_unicode	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^    def as_unicode(string):$/;"	f
-as_vimencoding	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^    def as_vimencoding(string):$/;"	f
+ask	polybar/polybar-themes/polybar-3/scripts/checkupdates	/^ask() {$/;"	f
+ask	polybar/polybar-themes/polybar-4/scripts/checkupdates	/^ask() {$/;"	f
+ask	polybar/polybar-themes/polybar-5/scripts/checkupdates	/^ask() {$/;"	f
+ask	polybar/polybar-themes/polybar-7/scripts/checkupdates	/^ask() {$/;"	f
+ask	polybar/polybar-themes/polybar-8/scripts/checkupdates	/^ask() {$/;"	f
+ask	polybar/polybar-themes/polybar-8/source/feather/scripts/checkupdates	/^ask() {$/;"	f
+ask	polybar/polybar-themes/polybar-8/source/material/scripts/checkupdates	/^ask() {$/;"	f
+ask	polybar/polybar-themes/polybar-8/source/siji/scripts/checkupdates	/^ask() {$/;"	f
+ask	polybar/polybar-themes/polybar-8/source/typicons/scripts/checkupdates	/^ask() {$/;"	f
 ask	polybar/scripts/checkupdates	/^ask() {$/;"	f
 ask	vim/autoload/plug.vim	/^function! s:ask(message, ...)$/;"	f
 ask_no_interrupt	vim/autoload/plug.vim	/^function! s:ask_no_interrupt(...)$/;"	f
@@ -2686,6 +2696,7 @@ asyncrun#status	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncru
 asyncrun#stop	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#stop(bang)$/;"	f
 asyncrun#version	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#version()$/;"	f
 asyncrun_augroup	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	augroup asyncrun_augroup$/;"	a
+attr	vim/plugged/vim-vue/syntax/vue.vim	/^function! s:attr(name, value)$/;"	f
 b	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^    b = "Vorne Hinten"$/;"	v	class:TestCheapDelete
 b	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^    b = "Vorne hallo  Hinten"$/;"	v	class:TestRealLife1
 b	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^    b = "hallo End t"$/;"	v	class:TestRealLife
@@ -2703,10 +2714,12 @@ b:current_syntax	vim/plugged/ultisnips/syntax/snippets_snipmate.vim	/^let b:curr
 b:current_syntax	vim/plugged/vim-fugitive/syntax/fugitive.vim	/^let b:current_syntax = "fugitive"$/;"	v
 b:current_syntax	vim/plugged/vim-fugitive/syntax/fugitiveblame.vim	/^let b:current_syntax = "fugitiveblame"$/;"	v
 b:current_syntax	vim/plugged/vim-startify/syntax/startify.vim	/^let b:current_syntax = 'startify'$/;"	v
+b:current_syntax	vim/plugged/vim-vue/syntax/vue.vim	/^let b:current_syntax = "vue"$/;"	v
 b:did_after_plugin_ultisnips_after	vim/plugged/ultisnips/after/plugin/UltiSnips_after.vim	/^let b:did_after_plugin_ultisnips_after = 1$/;"	v
 b:did_autoload_ultisnips	vim/plugged/ultisnips/autoload/UltiSnips.vim	/^let b:did_autoload_ultisnips = 1$/;"	v
 b:did_autoload_ultisnips_map_keys	vim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim	/^let b:did_autoload_ultisnips_map_keys = 1$/;"	v
 b:did_ftplugin	vim/plugged/ultisnips/ftplugin/snippets.vim	/^let b:did_ftplugin = 1$/;"	v
+b:did_indent	vim/plugged/vim-vue/indent/vue.vim	/^let b:did_indent = 1$/;"	v
 b:match_ignorecase	vim/plugged/ultisnips/ftplugin/snippets.vim	/^  let b:match_ignorecase = 0$/;"	v
 b:match_words	vim/plugged/ultisnips/ftplugin/snippets.vim	/^  let b:match_words = '^snippet\\>:^endsnippet\\>,^global\\>:^endglobal\\>,\\${:}'$/;"	v
 b:ultisnips_override_snipmate	vim/plugged/ultisnips/syntax/snippets_snipmate.vim	/^let b:ultisnips_override_snipmate = 1$/;"	v
@@ -2734,7 +2747,7 @@ buflisted_sorted	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:bufliste
 bufopen	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:bufopen(lines)$/;"	f
 build_command	vim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^function! s:build_command(color)$/;"	f
 build_sections	vim/plugged/vim-airline/autoload/airline/extensions/default.vim	/^function! s:build_sections(builder, context, keys)$/;"	f
-byte2col	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^    def byte2col(line, nbyte):$/;"	f
+byte2col	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^def byte2col(line, nbyte):$/;"	f
 c	vim/init.vim	/^nnoremap c "_c$/;"	m
 c	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^    def c(self):  # pylint:disable=invalid-name$/;"	m	class:SnippetUtil
 c	vim/plugged/vim-airline/t/airline.vim	/^    let c = len(g:airline_statusline_funcrefs)$/;"	v
@@ -2929,7 +2942,7 @@ coc#util#version	vim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util
 coc#util#vim_info	vim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#vim_info()$/;"	f
 coc#util#win_position	vim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#win_position()$/;"	f
 coc#util#with_callback	vim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#with_callback(method, args, cb)$/;"	f
-col2byte	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^    def col2byte(line, col):$/;"	f
+col2byte	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^def col2byte(line, col):$/;"	f
 color_map	vim/plugged/dracula/autoload/airline/themes/dracula.vim	/^func! s:color_map(a, b, c, ...)$/;"	f
 colors	vim/plugged/vim-airline/t/themes.vim	/^    let colors = airline#themes#get_highlight('Foo')$/;"	v
 column.define_syntax	vim/plugged/vim-devicons/autoload/vimfiler/columns/devicons.vim	/^function! s:column.define_syntax(context) abort "{{{$/;"	f
@@ -3041,6 +3054,7 @@ deleteBookmark	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:
 delete_mark	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^def delete_mark(name):$/;"	f
 delete_op	vim/autoload/plug.vim	/^function! s:delete_op(type, ...)$/;"	f
 delta	vim/plugged/ultisnips/pythonx/UltiSnips/position.py	/^    def delta(self, pos):$/;"	m	class:Position
+dependencies	vim/plugged/vim-vue/Makefile	/^dependencies = \\$/;"	m
 description	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    def description(self):$/;"	m	class:SnippetDefinition
 devicons#plugins#ctrlp#init	vim/plugged/vim-devicons/autoload/devicons/plugins/ctrlp.vim	/^function! devicons#plugins#ctrlp#init() abort$/;"	f
 devicons#plugins#denite#init	vim/plugged/vim-devicons/autoload/devicons/plugins/denite.vim	/^function! devicons#plugins#denite#init() abort$/;"	f
@@ -3093,6 +3107,15 @@ ensure	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/base.py	/^    def 
 ensure	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/file/base.py	/^    def ensure(self, filetypes):$/;"	m	class:SnippetFileSource
 ensure_tpm_path_exists	tmux/plugins/tpm/scripts/helpers/utility.sh	/^ensure_tpm_path_exists() {$/;"	f
 err	vim/autoload/plug.vim	/^function! s:err(msg)$/;"	f
+error	polybar/polybar-themes/polybar-3/scripts/checkupdates	/^error() {$/;"	f
+error	polybar/polybar-themes/polybar-4/scripts/checkupdates	/^error() {$/;"	f
+error	polybar/polybar-themes/polybar-5/scripts/checkupdates	/^error() {$/;"	f
+error	polybar/polybar-themes/polybar-7/scripts/checkupdates	/^error() {$/;"	f
+error	polybar/polybar-themes/polybar-8/scripts/checkupdates	/^error() {$/;"	f
+error	polybar/polybar-themes/polybar-8/source/feather/scripts/checkupdates	/^error() {$/;"	f
+error	polybar/polybar-themes/polybar-8/source/material/scripts/checkupdates	/^error() {$/;"	f
+error	polybar/polybar-themes/polybar-8/source/siji/scripts/checkupdates	/^error() {$/;"	f
+error	polybar/polybar-themes/polybar-8/source/typicons/scripts/checkupdates	/^error() {$/;"	f
 error	polybar/scripts/checkupdates	/^error() {$/;"	f
 esc	vim/autoload/plug.vim	/^function! s:esc(path)$/;"	f
 escape	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:escape(path)$/;"	f
@@ -3252,6 +3275,7 @@ filter_oldfiles	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:fil
 filter_oldfiles_unsafe	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:filter_oldfiles_unsafe(path_prefix, path_format, use_env) abort$/;"	f
 finalize	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/base.py	/^def finalize(all_tokens, seen_ts, snippet_instance):$/;"	f
 findAndRevealPath	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:findAndRevealPath(pathStr)$/;"	f
+find_all_snippet_directories	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/file/ulti_snips.py	/^def find_all_snippet_directories():$/;"	f
 find_all_snippet_files	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/file/ulti_snips.py	/^def find_all_snippet_files(ft):$/;"	f
 find_name	vim/autoload/plug.vim	/^function! s:find_name(lnum)$/;"	f
 find_open_window	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:find_open_window(b)$/;"	f
@@ -3547,10 +3571,6 @@ g:UltiSnipsMappingsToIgnore	vim/plugged/ultisnips/autoload/UltiSnips/map_keys.vi
 g:UltiSnipsRemoveSelectModeMappings	vim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim	/^    let g:UltiSnipsRemoveSelectModeMappings = 1$/;"	v
 g:UltiSnipsSnippetDirectories	vim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim	/^    let g:UltiSnipsSnippetDirectories = [ "UltiSnips" ]$/;"	v
 g:__gutentags_vim_is_leaving	vim/plugged/vim-gutentags/plugin/gutentags.vim	/^let g:__gutentags_vim_is_leaving = 0$/;"	v
-g:_uspy	vim/plugged/ultisnips/plugin/UltiSnips.vim	/^       let g:_uspy=":py "$/;"	v
-g:_uspy	vim/plugged/ultisnips/plugin/UltiSnips.vim	/^       let g:_uspy=":python "$/;"	v
-g:_uspy	vim/plugged/ultisnips/plugin/UltiSnips.vim	/^       let g:_uspy=":python3 "$/;"	v
-g:_uspy	vim/plugged/ultisnips/plugin/UltiSnips.vim	/^   let g:_uspy=":py3 "$/;"	v
 g:_webdevicons_airline_orig_formatter	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^    let g:_webdevicons_airline_orig_formatter = 'default'$/;"	v
 g:_webdevicons_airline_orig_formatter	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^    let g:_webdevicons_airline_orig_formatter = g:airline#extensions#tabline#formatter$/;"	v
 g:airline#extensions#branch#enabled	vim/init.vim	/^let g:airline#extensions#branch#enabled                       = 1$/;"	v
@@ -4780,7 +4800,6 @@ g:asyncrun_windows	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncru
 g:asyncrun_windows	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let g:asyncrun_windows = 0$/;"	v
 g:autoloaded_fugitive	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^let g:autoloaded_fugitive = 1$/;"	v
 g:autoloaded_startify	vim/plugged/vim-startify/autoload/startify.vim	/^let g:autoloaded_startify = 1$/;"	v
-g:clang_format#auto_format	vim/init.vim	/^let g:clang_format#auto_format = 1$/;"	v
 g:coc#_context	vim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc#_context = {'start': 0, 'preselect': -1,'candidates': []}$/;"	v
 g:coc_cygqwin_path_prefixes	vim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc_cygqwin_path_prefixes = get(g:, 'coc_cygqwin_path_prefixes', {})$/;"	v
 g:coc_global_extensions	vim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc_global_extensions = get(g:, 'coc_global_extensions', [])$/;"	v
@@ -4931,11 +4950,12 @@ g:loaded_nerdtree_fs_menu	vim/plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^let
 g:loaded_nerdtree_ui_glue_autoload	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^let g:loaded_nerdtree_ui_glue_autoload = 1$/;"	v
 g:loaded_plug	vim/autoload/plug.vim	/^let g:loaded_plug = 1$/;"	v
 g:loaded_startify	vim/plugged/vim-startify/plugin/startify.vim	/^let g:loaded_startify = 1$/;"	v
+g:loaded_syntastic_vue_eslint_checker	vim/plugged/vim-vue/syntax_checkers/vue/eslint.vim	/^let g:loaded_syntastic_vue_eslint_checker = 1$/;"	v
 g:loaded_tagbar	vim/plugged/tagbar/autoload/tagbar.vim	/^let g:loaded_tagbar = 1$/;"	v
 g:loaded_webdevicons	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^let g:loaded_webdevicons = 1$/;"	v
 g:plugs_order	vim/autoload/plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order', keys(g:plugs))$/;"	v
 g:ruby_operators	vim/plugged/dracula/after/syntax/ruby.vim	/^    let g:ruby_operators=1$/;"	v
-g:startify_bookmarks	vim/init.vim	/^let g:startify_bookmarks = [ {'c': '~\/.vim\/vimrc'}, {'d': '~\/.vim\/vim-plug.vim'}, {'t': '~\/.tmux.conf'}  ]$/;"	v
+g:startify_bookmarks	vim/init.vim	/^let g:startify_bookmarks = [ {'c': '~\/.vim\/vimrc'}, {'d': '~\/.vim\/vim-plug.vim'}, {'t': '~\/.tmux.conf'},  {'i' : '~\/.config\/i3\/config'}, {'p' : '~\/.config\/polybar\/config'}, {'k' : '~\/.config\/kitty\/kitty.conf'}  ]$/;"	v
 g:startify_change_to_dir	vim/init.vim	/^let g:startify_change_to_dir = 0$/;"	v
 g:startify_files_number	vim/init.vim	/^let g:startify_files_number = 10$/;"	v
 g:startify_list_order	vim/init.vim	/^let g:startify_list_order = [['Most recently used files in current directory:'], 'dir',$/;"	v
@@ -4948,6 +4968,8 @@ g:tagbar_iconchars	vim/plugged/tagbar/plugin/tagbar.vim	/^        let g:tagbar_i
 g:tagbar_type_snippets	vim/plugged/ultisnips/ftplugin/snippets.vim	/^let g:tagbar_type_snippets = {$/;"	v
 g:terminal_ansi_colors	vim/plugged/dracula/colors/dracula.vim	/^  let g:terminal_ansi_colors = []$/;"	v
 g:terminal_color_	vim/plugged/dracula/colors/dracula.vim	/^    let g:terminal_color_{s:i} = g:dracula#palette['color_' . s:i]$/;"	v
+g:vue_pre_processors	vim/init.vim	/^let g:vue_pre_processors = 'detect_on_enter'$/;"	v
+g:vue_pre_processors	vim/plugged/vim-vue/syntax/vue.vim	/^  let g:vue_pre_processors = []$/;"	v
 g:webdevicons_enable	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:webdevicons_enable = 1$/;"	v
 g:webdevicons_enable_airline_statusline	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:webdevicons_enable_airline_statusline = 1$/;"	v
 g:webdevicons_enable_airline_tabline	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:webdevicons_enable_airline_tabline = 1$/;"	v
@@ -4955,7 +4977,6 @@ g:webdevicons_enable_nerdtree	vim/plugged/vim-devicons/nerdtree_plugin/webdevico
 g:webdevicons_enable_nerdtree	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:webdevicons_enable_nerdtree = 1$/;"	v
 g:webdevicons_gui_glyph_fix	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^    let g:webdevicons_gui_glyph_fix = 0$/;"	v
 g:webdevicons_gui_glyph_fix	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^    let g:webdevicons_gui_glyph_fix = 1$/;"	v
-g:ycm_use_clangd	vim/init.vim	/^let g:ycm_use_clangd = 0$/;"	v
 gather_candidates	vim/plugged/ultisnips/rplugin/python3/deoplete/sources/ultisnips.py	/^    def gather_candidates(self, context):$/;"	m	class:Source
 gen_def	vim/plugged/vim-airline-themes/autoload/airline/themes/fruit_punch.vim	/^fun! s:gen_def(fg, bg)$/;"	f
 generate_wildignore_options	vim/plugged/vim-gutentags/autoload/gutentags/ctags.vim	/^function! s:generate_wildignore_options() abort$/;"	f
@@ -4985,11 +5006,13 @@ get_cursor_pos	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^def get_c
 get_deep_extends	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/base.py	/^    def get_deep_extends(self, base_filetypes):$/;"	m	class:SnippetSource
 get_diagnostics	vim/plugged/vim-airline/autoload/airline/extensions/languageclient.vim	/^function! s:get_diagnostics()$/;"	f
 get_digits_from_string	tmux/plugins/tpm/scripts/check_tmux_version.sh	/^get_digits_from_string() {$/;"	f
+get_dot_vim	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^def get_dot_vim():$/;"	f
 get_git_root	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:get_git_root()$/;"	f
 get_hunks_changes	vim/plugged/vim-airline/autoload/airline/extensions/hunks.vim	/^function! s:get_hunks_changes()$/;"	f
 get_hunks_empty	vim/plugged/vim-airline/autoload/airline/extensions/hunks.vim	/^function! s:get_hunks_empty()$/;"	f
 get_hunks_gitgutter	vim/plugged/vim-airline/autoload/airline/extensions/hunks.vim	/^function! s:get_hunks_gitgutter()$/;"	f
 get_hunks_signify	vim/plugged/vim-airline/autoload/airline/extensions/hunks.vim	/^function! s:get_hunks_signify()$/;"	f
+get_indentexpr	vim/plugged/vim-vue/indent/vue.vim	/^function! s:get_indentexpr(language)$/;"	f
 get_index_as_string	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:get_index_as_string() abort$/;"	f
 get_lists	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:get_lists() abort$/;"	f
 get_map_str	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:get_map_str(map) abort$/;"	f
@@ -5007,6 +5030,16 @@ get_syn	vim/plugged/vim-airline/autoload/airline/highlighter.vim	/^function! s:g
 get_tabstops	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/snippet_instance.py	/^    def get_tabstops(self):$/;"	m	class:SnippetInstance
 get_tmux_option	tmux/plugins/tpm/scripts/check_tmux_version.sh	/^get_tmux_option() {$/;"	f
 get_tmux_option	tmux/plugins/tpm/tpm	/^get_tmux_option() {$/;"	f
+get_total_updates	polybar/polybar-themes/polybar-2/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
+get_total_updates	polybar/polybar-themes/polybar-3/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
+get_total_updates	polybar/polybar-themes/polybar-4/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
+get_total_updates	polybar/polybar-themes/polybar-5/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
+get_total_updates	polybar/polybar-themes/polybar-7/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
+get_total_updates	polybar/polybar-themes/polybar-8/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
+get_total_updates	polybar/polybar-themes/polybar-8/source/feather/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
+get_total_updates	polybar/polybar-themes/polybar-8/source/material/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
+get_total_updates	polybar/polybar-themes/polybar-8/source/siji/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
+get_total_updates	polybar/polybar-themes/polybar-8/source/typicons/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
 get_total_updates	polybar/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
 get_transitioned_seperator	vim/plugged/vim-airline/autoload/airline/builder.vim	/^function! s:get_transitioned_seperator(self, prev_group, group, side)$/;"	f
 get_wordcount	vim/plugged/vim-airline/autoload/airline/extensions/wordcount.vim	/^  function! s:get_wordcount(visual_mode_active)$/;"	f
@@ -5304,7 +5337,7 @@ keys	vim/plugged/ultisnips/test/test_Interpolation.py	/^    keys = "test" + EX$/
 keys	vim/plugged/ultisnips/test/test_Interpolation.py	/^    keys = "test" + EX$/;"	v	class:PythonCodeOld_SimpleExample
 keys	vim/plugged/ultisnips/test/test_Interpolation.py	/^    keys = "test" + EX$/;"	v	class:PythonCode_SimpleExample
 keys	vim/plugged/ultisnips/test/test_Interpolation.py	/^    keys = "test" + EX$/;"	v	class:PythonCode_SimpleExample_ReturnValueIsEmptyString
-keys	vim/plugged/ultisnips/test/test_Interpolation.py	/^    keys = "test" + EX$/;"	v	class:Python_WeirdScoping_Error
+keys	vim/plugged/ultisnips/test/test_Interpolation.py	/^    keys = "test" + EX$/;"	v	class:Python_SnipRvCanBeNonText
 keys	vim/plugged/ultisnips/test/test_Interpolation.py	/^    keys = "test" + EX$/;"	v	class:TabStop_Shell_TestEscapedCharsAndShellVars_Overwrite
 keys	vim/plugged/ultisnips/test/test_Interpolation.py	/^    keys = "test" + EX$/;"	v	class:TabStop_Shell_TestEscapedChars_Overwrite
 keys	vim/plugged/ultisnips/test/test_Interpolation.py	/^    keys = "ups test" + EX$/;"	v	class:PythonCode_TrickyReferences
@@ -5761,7 +5794,25 @@ mkline	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^   
 mode	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^    def mode(self):$/;"	m	class:VimPosition
 mode	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^    def mode(self):$/;"	m	class:VisualContentPreserver
 move	vim/plugged/ultisnips/pythonx/UltiSnips/position.py	/^    def move(self, pivot, delta):$/;"	m	class:Position
+msg	polybar/polybar-themes/polybar-3/scripts/checkupdates	/^msg() {$/;"	f
+msg	polybar/polybar-themes/polybar-4/scripts/checkupdates	/^msg() {$/;"	f
+msg	polybar/polybar-themes/polybar-5/scripts/checkupdates	/^msg() {$/;"	f
+msg	polybar/polybar-themes/polybar-7/scripts/checkupdates	/^msg() {$/;"	f
+msg	polybar/polybar-themes/polybar-8/scripts/checkupdates	/^msg() {$/;"	f
+msg	polybar/polybar-themes/polybar-8/source/feather/scripts/checkupdates	/^msg() {$/;"	f
+msg	polybar/polybar-themes/polybar-8/source/material/scripts/checkupdates	/^msg() {$/;"	f
+msg	polybar/polybar-themes/polybar-8/source/siji/scripts/checkupdates	/^msg() {$/;"	f
+msg	polybar/polybar-themes/polybar-8/source/typicons/scripts/checkupdates	/^msg() {$/;"	f
 msg	polybar/scripts/checkupdates	/^msg() {$/;"	f
+msg2	polybar/polybar-themes/polybar-3/scripts/checkupdates	/^msg2() {$/;"	f
+msg2	polybar/polybar-themes/polybar-4/scripts/checkupdates	/^msg2() {$/;"	f
+msg2	polybar/polybar-themes/polybar-5/scripts/checkupdates	/^msg2() {$/;"	f
+msg2	polybar/polybar-themes/polybar-7/scripts/checkupdates	/^msg2() {$/;"	f
+msg2	polybar/polybar-themes/polybar-8/scripts/checkupdates	/^msg2() {$/;"	f
+msg2	polybar/polybar-themes/polybar-8/source/feather/scripts/checkupdates	/^msg2() {$/;"	f
+msg2	polybar/polybar-themes/polybar-8/source/material/scripts/checkupdates	/^msg2() {$/;"	f
+msg2	polybar/polybar-themes/polybar-8/source/siji/scripts/checkupdates	/^msg2() {$/;"	f
+msg2	polybar/polybar-themes/polybar-8/source/typicons/scripts/checkupdates	/^msg2() {$/;"	f
 msg2	polybar/scripts/checkupdates	/^msg2() {$/;"	f
 mycommands	vim/init.vim	/^    augroup mycommands$/;"	a
 name_temp	vim/plugged/ultisnips/test/vim_interface.py	/^    def name_temp(self, file_path):$/;"	m	class:TempFileManager
@@ -5797,8 +5848,6 @@ nerdtree#version	vim/plugged/nerdtree/autoload/nerdtree.vim	/^function! nerdtree
 new_airline_ale_get_line_number	vim/plugged/vim-airline/autoload/airline/extensions/ale.vim	/^function! s:new_airline_ale_get_line_number(cnt, type) abort$/;"	f
 new_scratch_buffer	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^def new_scratch_buffer(text):$/;"	f
 new_window	vim/autoload/plug.vim	/^function! s:new_window()$/;"	f
-next	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^    next = __next__  # for python2$/;"	v	class:_TextIterator
-next	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^    next = __next__  # for python2$/;"	v	class:LineIterator
 no_unidecode_available	vim/plugged/ultisnips/test/util.py	/^def no_unidecode_available():$/;"	f
 notify	vim/plugged/coc.nvim/autoload/coc/client.vim	/^function! s:notify(method, args) dict$/;"	f
 ntabs_to_proper_indent	vim/plugged/ultisnips/pythonx/UltiSnips/indent_util.py	/^    def ntabs_to_proper_indent(self, ntabs):$/;"	m	class:IndentUtil
@@ -5845,7 +5894,6 @@ openKindFold	vim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^functi
 openNodeRecursively	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:openNodeRecursively(node)$/;"	f
 openParents	vim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:openParents() abort dict$/;"	f
 openVSplit	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:openVSplit(target)$/;"	f
-open_ascii_file	vim/plugged/ultisnips/pythonx/UltiSnips/compatibility.py	/^    def open_ascii_file(filename, mode):$/;"	f
 open_buffer	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:open_buffer(entry)$/;"	f
 opt	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^    def opt(self, option, default=None):  # pylint:disable=no-self-use$/;"	m	class:SnippetUtil
 option_set_to	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^def option_set_to(name, new_value):$/;"	f
@@ -5865,6 +5913,15 @@ path_join	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:path_join(h
 peek	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^    def peek(self, count=1):$/;"	m	class:_TextIterator
 peek	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^    def peek(self):$/;"	m	class:LineIterator
 placeholder	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^    def placeholder(self):$/;"	m	class:VisualContentPreserver
+plain	polybar/polybar-themes/polybar-3/scripts/checkupdates	/^plain() {$/;"	f
+plain	polybar/polybar-themes/polybar-4/scripts/checkupdates	/^plain() {$/;"	f
+plain	polybar/polybar-themes/polybar-5/scripts/checkupdates	/^plain() {$/;"	f
+plain	polybar/polybar-themes/polybar-7/scripts/checkupdates	/^plain() {$/;"	f
+plain	polybar/polybar-themes/polybar-8/scripts/checkupdates	/^plain() {$/;"	f
+plain	polybar/polybar-themes/polybar-8/source/feather/scripts/checkupdates	/^plain() {$/;"	f
+plain	polybar/polybar-themes/polybar-8/source/material/scripts/checkupdates	/^plain() {$/;"	f
+plain	polybar/polybar-themes/polybar-8/source/siji/scripts/checkupdates	/^plain() {$/;"	f
+plain	polybar/polybar-themes/polybar-8/source/typicons/scripts/checkupdates	/^plain() {$/;"	f
 plain	polybar/scripts/checkupdates	/^plain() {$/;"	f
 pluck	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:pluck(dict, key, default)$/;"	f
 plug#	vim/autoload/plug.vim	/^function! plug#(repo, ...)$/;"	f
@@ -5913,10 +5970,8 @@ prototype.insert_titles	vim/plugged/vim-airline/autoload/airline/extensions/tabl
 prototype.split	vim/plugged/vim-airline/autoload/airline/builder.vim	/^function! s:prototype.split(...) dict$/;"	f
 prototype.try_insert_title	vim/plugged/vim-airline/autoload/airline/extensions/tabline/builder.vim	/^function! s:prototype.try_insert_title(index, group, pos, sep_size, force) dict$/;"	f
 pull_changes	tmux/plugins/tpm/scripts/update_plugin.sh	/^pull_changes() {$/;"	f
-python3	vim/plugged/ultisnips/test/test_Plugin.py	/^def python3():$/;"	f
 rand	vim/plugged/vim-airline/plugin/airline.vim	/^function! s:rand(max) abort$/;"	f
 random_theme	vim/plugged/vim-airline/plugin/airline.vim	/^function! s:random_theme() abort$/;"	f
-read_text_file	vim/plugged/ultisnips/test/vim_interface.py	/^def read_text_file(filename):$/;"	f
 reap	vim/autoload/plug.vim	/^function! s:reap(name)$/;"	f
 record_diagnostics	vim/plugged/vim-airline/autoload/airline/extensions/languageclient.vim	/^function! s:record_diagnostics(state)$/;"	f
 reduce_line	vim/plugged/fzf.vim/autoload/fzf/vim/complete.vim	/^function! s:reduce_line(lines)$/;"	f
@@ -7506,6 +7561,7 @@ s:asyncrun_support	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let s:asyncru
 s:asyncrun_support	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:asyncrun_support = 0$/;"	v
 s:asyncrun_windows	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let s:asyncrun_windows = 1$/;"	v
 s:asyncrun_windows	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:asyncrun_windows = 0$/;"	v
+s:attr_pattern	vim/plugged/vim-vue/syntax/vue.vim	/^  let s:attr_pattern = has_key(s:language, 'attr_pattern') ? s:language.attr_pattern : s:attr('lang', s:language.name)$/;"	v
 s:attrs	vim/plugged/dracula/colors/dracula.vim	/^let s:attrs = {$/;"	v
 s:autocommands_done	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:autocommands_done = 0$/;"	v
 s:banana_smoothie	vim/plugged/vim-airline-themes/autoload/airline/themes/fruit_punch.vim	/^let s:banana_smoothie = ['#fce78d', 222]$/;"	v
@@ -7598,7 +7654,6 @@ s:cpo_save	vim/plugged/dbext.vim/plugin/dbext.vim	/^let s:cpo_save = &cpo$/;"	v
 s:cpo_save	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^let s:cpo_save = &cpo$/;"	v
 s:cpo_save	vim/plugged/fzf.vim/autoload/fzf/vim/complete.vim	/^let s:cpo_save = &cpo$/;"	v
 s:cpo_save	vim/plugged/fzf.vim/plugin/fzf.vim	/^let s:cpo_save = &cpo$/;"	v
-s:cs	vim/plugged/vim-airline/autoload/airline/extensions/ctrlspace.vim	/^let s:cs = ctrlspace#context#Configuration().Symbols.CS$/;"	v
 s:ctags_is_uctags	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:ctags_is_uctags     = 0$/;"	v
 s:cterm00	vim/plugged/vim-airline-themes/autoload/airline/themes/alduin.vim	/^let s:cterm00 = "234"$/;"	v
 s:cterm00	vim/plugged/vim-airline-themes/autoload/airline/themes/base16_3024.vim	/^let s:cterm00 = 0$/;"	v
@@ -9556,6 +9611,7 @@ s:highlight_groups	vim/plugged/vim-airline/autoload/airline/extensions/tabline/c
 s:highlight_groups	vim/plugged/vim-airline/autoload/airline/extensions/tabline/tabws.vim	/^let s:highlight_groups = ['hid', 0, '', 'sel', 'mod_unsel', 0, 'mod_unsel', 'mod']$/;"	v
 s:hl_groups	vim/plugged/vim-airline/autoload/airline/highlighter.vim	/^let s:hl_groups = {}$/;"	v
 s:hot_pink	vim/plugged/vim-airline-themes/autoload/airline/themes/vice.vim	/^let s:hot_pink = [201, "#ff00ff" ]$/;"	v
+s:html_indent	vim/plugged/vim-vue/indent/vue.vim	/^let s:html_indent = s:get_indentexpr('html')$/;"	v
 s:hunk_symbols	vim/plugged/vim-airline/autoload/airline/extensions/hunks.vim	/^let s:hunk_symbols = get(g:, 'airline#extensions#hunks#hunk_symbols', ['+', '~', '-'])$/;"	v
 s:iTerm_escape_template	vim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^let s:iTerm_escape_template = '\\033]Pl%s\\033\\\\'$/;"	v
 s:ics	vim/plugged/tagbar/syntax/tagbar.vim	/^let s:ics = escape(join(g:tagbar_iconchars, ''), ']^\\-')$/;"	v
@@ -9596,6 +9652,9 @@ s:keyMaps	vim/plugged/nerdtree/lib/nerdtree/key_map.vim	/^let s:keyMaps = {}$/;"
 s:known_files	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:known_files = {$/;"	v
 s:known_files	vim/plugged/vim-gutentags/autoload/gutentags.vim	/^let s:known_files = []$/;"	v
 s:known_projects	vim/plugged/vim-gutentags/autoload/gutentags.vim	/^let s:known_projects = {}$/;"	v
+s:language	vim/plugged/vim-vue/indent/vue.vim	/^    let s:language.indentexpr = s:get_indentexpr(s:language.name)$/;"	v
+s:languages	vim/plugged/vim-vue/indent/vue.vim	/^let s:languages = [$/;"	v
+s:languages	vim/plugged/vim-vue/syntax/vue.vim	/^let s:languages = [$/;"	v
 s:last_alt_bufnr	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:last_alt_bufnr = -1$/;"	v
 s:last_highlight_tline	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:last_highlight_tline = 0$/;"	v
 s:last_mode	vim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^let s:last_mode = ''$/;"	v
@@ -9654,7 +9713,6 @@ s:orange	vim/plugged/dracula/colors/dracula.vim	/^let s:orange    = g:dracula#pa
 s:orange	vim/plugged/vim-airline-themes/autoload/airline/themes/distinguished.vim	/^let s:orange  = [166, '#d75f00']$/;"	v
 s:orange	vim/plugged/vim-airline-themes/autoload/airline/themes/solarized_flood.vim	/^let s:orange  = {'hex': '#CB4B16', 'term': 166}  " 203,  75,  22$/;"	v
 s:outerfg	vim/plugged/vim-airline-themes/autoload/airline/themes/distinguished.vim	/^let s:outerfg = [ 16, '#000000']$/;"	v
-s:overwrite	vim/plugged/vim-airline/autoload/airline/extensions/bufferline.vim	/^let s:overwrite = get(g:, 'airline#extensions#bufferline#overwrite_variables', 1)$/;"	v
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}$/;"	v
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.inactive.left =  [ [ s:cyan, s:black ], [ s:white, s:black ] ]$/;"	v
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.inactive.middle = [ [ s:white, s:gray ] ]$/;"	v
@@ -9671,7 +9729,6 @@ s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.t
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.tabline.right = copy(s:p.normal.right)$/;"	v
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.tabline.tabsel = [ [ s:cyan, s:black ] ]$/;"	v
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.visual.left = [ [ s:black, s:orange ], [ s:cyan, s:gray ] ]$/;"	v
-s:padding	vim/plugged/vim-airline/autoload/airline/extensions/ctrlspace.vim	/^let s:padding = s:spc . s:spc . s:spc$/;"	v
 s:padding_left	vim/plugged/vim-startify/autoload/startify.vim	/^let s:padding_left = repeat(' ', get(g:, 'startify_padding_left', 3))$/;"	v
 s:padding_left	vim/plugged/vim-startify/syntax/startify.vim	/^let s:padding_left = repeat(' ', get(g:, 'startify_padding_left', 3))$/;"	v
 s:parts	vim/plugged/vim-airline/autoload/airline/parts.vim	/^let s:parts = {}$/;"	v
@@ -9759,7 +9816,6 @@ s:skip_symbol	vim/plugged/vim-airline/autoload/airline/extensions/tabline/format
 s:skiplist	vim/plugged/vim-startify/autoload/startify.vim	/^let s:skiplist = get(g:, 'startify_skiplist', [$/;"	v
 s:source	vim/plugged/ultisnips/autoload/neocomplete/sources/ultisnips.vim	/^let s:source = {$/;"	v
 s:spaceStr	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^let s:spaceStr = ' '$/;"	v
-s:spc	vim/plugged/vim-airline/autoload/airline/extensions/ctrlspace.vim	/^let s:spc = g:airline_symbols.space$/;"	v
 s:spc	vim/plugged/vim-airline/autoload/airline/extensions/example.vim	/^let s:spc = g:airline_symbols.space$/;"	v
 s:spc	vim/plugged/vim-airline/autoload/airline/extensions/localsearch.vim	/^let s:spc = g:airline_symbols.space$/;"	v
 s:spc	vim/plugged/vim-airline/autoload/airline/extensions/obsession.vim	/^let s:spc = g:airline_symbols.space$/;"	v
@@ -9772,6 +9828,7 @@ s:spc	vim/plugged/vim-airline/autoload/airline/extensions/windowswap.vim	/^let s
 s:spc	vim/plugged/vim-airline/autoload/airline/extensions/ycm.vim	/^let s:spc = g:airline_symbols.space$/;"	v
 s:spc	vim/plugged/vim-airline/autoload/airline/section.vim	/^let s:spc = g:airline_symbols.space$/;"	v
 s:spc	vim/plugged/vim-airline/autoload/airline/util.vim	/^let s:spc = g:airline_symbols.space$/;"	v
+s:start_pattern	vim/plugged/vim-vue/syntax/vue.vim	/^  let s:start_pattern = '<' . s:language.tag . '\\>\\_[^>]*' . s:attr_pattern . '\\_[^>]*>'$/;"	v
 s:statusline_in_use	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:statusline_in_use = 0$/;"	v
 s:subtle	vim/plugged/dracula/colors/dracula.vim	/^let s:subtle    = g:dracula#palette.subtle$/;"	v
 s:symbol	vim/plugged/vim-airline/autoload/airline/extensions/whitespace.vim	/^let s:symbol = get(g:, 'airline#extensions#whitespace#symbol', g:airline_symbols.whitespace)$/;"	v
@@ -9892,6 +9949,7 @@ shellesc_cmd	vim/autoload/plug.vim	/^function! s:shellesc_cmd(arg, script)$/;"	f
 shellesc_ps1	vim/autoload/plug.vim	/^function! s:shellesc_ps1(arg)$/;"	f
 shift	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^    def shift(self, amount=1):$/;"	m	class:SnippetUtil
 shortpath	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:shortpath()$/;"	f
+should_register	vim/plugged/vim-vue/syntax/vue.vim	/^function! s:should_register(language, start_pattern)$/;"	f
 showMenu	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:showMenu(node)$/;"	f
 show_bookmarks	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:show_bookmarks() abort$/;"	f
 show_commands	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:show_commands() abort$/;"	f
@@ -10021,6 +10079,7 @@ snippets	vim/plugged/ultisnips/test/test_Format.py	/^    snippets = ("test", "hu
 snippets	vim/plugged/ultisnips/test/test_Format.py	/^    snippets = (("m1", "Something"), ("m", "\\t$0"))$/;"	v	class:RecTabStopsWithExpandtab_SpecialIndentProblem_ECR
 snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ("test", "Hallo ${1:now `echo fromecho`} end")$/;"	v	class:TabStop_Shell_InDefValue_Leave
 snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ("test", "Hallo ${1:now `echo fromecho`} end")$/;"	v	class:TabStop_Shell_InDefValue_Overwrite
+snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ("test", "`!p snip.rv = 5`")$/;"	v	class:Python_SnipRvCanBeNonText
 snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ("test", "h`!p snip.rv = snip.v.mode + snip.v.text`b")$/;"	v	class:PythonVisual_LineSelect_Simple
 snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ("test", "h`!p snip.rv = snip.v.mode + snip.v.text`b")$/;"	v	class:PythonVisual_NoVisualSelection_Ignore
 snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ("test", "h`!p snip.rv = snip.v.mode + snip.v.text`b")$/;"	v	class:PythonVisual_SelectOneWord
@@ -10049,7 +10108,6 @@ snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ($/;"
 snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ($/;"	v	class:PythonCode_UseNewOverOld
 snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ($/;"	v	class:PythonVisual_HasAccessToSelectedPlaceholders
 snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ($/;"	v	class:PythonVisual_HasAccessToZeroPlaceholders
-snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ($/;"	v	class:Python_WeirdScoping_Error
 snippets	vim/plugged/ultisnips/test/test_Interpolation.py	/^    snippets = ($/;"	v	class:TabStop_Shell_ShebangPython
 snippets	vim/plugged/ultisnips/test/test_ListSnippets.py	/^    snippets = ($/;"	v	class:_ListAllSnippets
 snippets	vim/plugged/ultisnips/test/test_Mirror.py	/^    snippets = "test", "$1 $1_"$/;"	v	class:Mirror_TestKill_InsertAfter_NoKill
@@ -10312,7 +10370,7 @@ snippets	vim/plugged/ultisnips/test/test_Visual.py	/^    snippets = ("test", r"h
 snippets	vim/plugged/ultisnips/test/test_Visual.py	/^    snippets = ("test", r"h${VISUAL\/.\/\\U$0\\E\/g}b")$/;"	v	class:VisualTransformation_LineSelect_Simple
 snippets	vim/plugged/ultisnips/test/test_Visual.py	/^    snippets = ("test", r"h${VISUAL\/.\/\\U$0\\E\/g}b")$/;"	v	class:VisualTransformation_SelectOneWord
 snippets	vim/plugged/ultisnips/test/vim_test_case.py	/^    snippets = ()$/;"	v	class:VimTestCase
-snippets_in_current_scope	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def snippets_in_current_scope(self, searchAll):$/;"	m	class:SnippetManager
+snippets_in_current_scope	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def snippets_in_current_scope(self, search_all):$/;"	m	class:SnippetManager
 softRefreshNerdTree	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^function! s:softRefreshNerdTree()$/;"	f
 sortByLength	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:sortByLength(i1, i2)$/;"	f
 sortTags	vim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:sortTags(compare_typeinfo) abort dict$/;"	f
@@ -10658,6 +10716,7 @@ wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "    star
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "##########\\nHallo Welt"$/;"	v	class:PythonCodeOld_ReferencePlaceholderBefore
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "##########\\nHallo Welt"$/;"	v	class:PythonCode_ReferencePlaceholderBefore
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "$hi"$/;"	v	class:TabStop_Shell_TestEscapedChars_Overwrite
+wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "5"$/;"	v	class:Python_SnipRvCanBeNonText
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "Hallo now Hallo Welt endand more"$/;"	v
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "Hallo now fromecho endand more"$/;"	v	class:TabStop_Shell_InDefValue_Leave
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "Hallo overwrite endand more"$/;"	v	class:TabStop_Shell_InDefValue_Overwrite
@@ -10666,7 +10725,6 @@ wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "aaa"$/;"
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "bl-\\n\\tah, bah"$/;"	v	class:PythonCode_CanOverwriteTabstop
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "blah"$/;"	v	class:TabStop_Shell_TestEscapedCharsAndShellVars_Overwrite
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "egal Hallo End"$/;"	v
-wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "h5b"$/;"	v	class:Python_WeirdScoping_Error
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "hVhello\\nnice\\nworld\\nb"$/;"	v	class:PythonVisual_LineSelect_Simple
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "hbabc"$/;"	v	class:PythonVisual_NoVisualSelection_Ignore
 wanted	vim/plugged/ultisnips/test/test_Interpolation.py	/^    wanted = "hi Hallo End"$/;"	v	class:PythonCodeOld_SimpleExample
@@ -11031,6 +11089,15 @@ wanted	vim/plugged/ultisnips/test/vim_test_case.py	/^    wanted = ""$/;"	v	class
 warn	vim/autoload/plug.vim	/^function! s:warn(cmd, msg)$/;"	f
 warn	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:warn(message)$/;"	f
 warn	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:warn(msg) abort$/;"	f
+warning	polybar/polybar-themes/polybar-3/scripts/checkupdates	/^warning() {$/;"	f
+warning	polybar/polybar-themes/polybar-4/scripts/checkupdates	/^warning() {$/;"	f
+warning	polybar/polybar-themes/polybar-5/scripts/checkupdates	/^warning() {$/;"	f
+warning	polybar/polybar-themes/polybar-7/scripts/checkupdates	/^warning() {$/;"	f
+warning	polybar/polybar-themes/polybar-8/scripts/checkupdates	/^warning() {$/;"	f
+warning	polybar/polybar-themes/polybar-8/source/feather/scripts/checkupdates	/^warning() {$/;"	f
+warning	polybar/polybar-themes/polybar-8/source/material/scripts/checkupdates	/^warning() {$/;"	f
+warning	polybar/polybar-themes/polybar-8/source/siji/scripts/checkupdates	/^warning() {$/;"	f
+warning	polybar/polybar-themes/polybar-8/source/typicons/scripts/checkupdates	/^warning() {$/;"	f
 warning	polybar/scripts/checkupdates	/^warning() {$/;"	f
 warning	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:warning(msg) abort$/;"	f
 webdevicons	vim/plugged/vim-devicons/pythonx/vim_devicons/powerline/segments.py	/^def webdevicons(pl, segment_info):$/;"	f
