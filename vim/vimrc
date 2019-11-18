@@ -537,7 +537,7 @@ let g:startify_list_order = [['Most recently used files in current directory:'],
             \                ['Bookmarks:'], 'bookmarks']
 let g:startify_change_to_dir = 0
 let g:startify_files_number = 10
-let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'}, {'t': '~/.tmux.conf'},  {'i' : '~/.config/i3/config'}, {'p' : '~/.config/polybar/config'}, {'k' : '~/.config/kitty/kitty.conf'}  ]
+let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'}, {'t': '~/.tmux.conf'},  {'i' : '~/.config/i3/config'}, {'p' : '~/.config/polybar/config'}, {'h' : '~/.hyper.js'}  ]
 
 "if filereadable(".vim.custom")
     "so .vim.custom
