@@ -1,3 +1,4 @@
+#exec zsh
 export PATH="$PATH:/usr/local/bin:$HOME/.local/bin"
 [ -f ~/.bashrc_work ] && . ~/.bashrc_work || true
 

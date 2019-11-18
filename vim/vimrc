@@ -11,6 +11,11 @@ source ~/code/vim/maven-search.vim/maven-search.vim
 
 " Internal vim stuff
 
+"if has('gui_running')
+  "set guifont=Menlo Nerd Font Mono Regular:h12
+"endif
+
+
 " maven makeprg
 set makeprg=mvn\ -q\ -f\ project.xml\ jar:install
 
@@ -191,7 +196,6 @@ if executable("rg")
 elseif executable("ag")
     set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
 endif
-
 set grepformat=%f:%l:%c:%m,%f:%l:%m
 
 function! GetVisualSelection()

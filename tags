@@ -2963,6 +2963,7 @@ compare_git_uri	vim/autoload/plug.vim	/^function! s:compare_git_uri(a, b)$/;"	f
 compensate_for_pum	vim/plugged/ultisnips/autoload/UltiSnips.vim	/^function! s:compensate_for_pum() abort$/;"	f
 complete_insert	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:complete_insert(lines)$/;"	f
 complete_trigger	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:complete_trigger()$/;"	f
+config	terminals/hyper.js	/^  config: {$/;"	p	class:module.exports
 conflict_marker	vim/plugged/vim-airline/autoload/airline/extensions/whitespace.vim	/^function! s:conflict_marker()$/;"	f
 conky_main	conky/conky_orange.lua	/^function conky_main()$/;"	f
 conserve	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^    def conserve(self):$/;"	m	class:VisualContentPreserver
