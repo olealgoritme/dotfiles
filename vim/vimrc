@@ -15,9 +15,13 @@ source ~/code/vim/maven-search.vim/maven-search.vim
   "set guifont=Menlo Nerd Font Mono Regular:h12
 "endif
 
+set <S-Left>=^[^[1;5D
+set <S-Right>=^[^[1;5C
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " maven makeprg
-set makeprg=mvn\ -q\ -f\ project.xml\ jar:install
+set makeprg=mvn\ -q\ -f\ pom.xml\ jar:install
 
 " ctags path, search upwards till tags file is found
 "set tags=./tags;/
@@ -25,7 +29,7 @@ set makeprg=mvn\ -q\ -f\ project.xml\ jar:install
 "let g:airline_extensions = ['branch', 'hunks', 'coc']
 
 " NERDTree window size
-let g:NERDTreeWinSize = 60
+let g:NERDTreeWinSize = 45
 
 " Use clang instead of clangd
 "let g:ycm_use_clangd = 0
@@ -50,6 +54,7 @@ augroup xuw_cfg_autocmd
     " Left/Right-arrow = open/close
     autocmd FileType nerdtree nmap <buffer> <Right> o
     autocmd FileType nerdtree nmap <buffer> <Left> o
+
     autocmd FileType java set tags=~/.tags/java_jdk_src.tag
 
     " Close NERDTree if it's the only window open
@@ -87,17 +92,22 @@ endfunction
 
 function! s:customMappings()
 
-    nnoremap <silent>f :Files<CR>
-    nnoremap <silent>b :Buffers<CR>
+    nnoremap <silent><C-f> :Files<CR>
+    nnoremap <silent><C-b> :Buffers<CR>
 
-    nnoremap <silent><S-j> <S-Down>
-    nnoremap <silent><S-k> <S-Up>
-    nnoremap <silent><A-j> <A-Down>
-    nnoremap <silent><A-k> <A-Up>
+    map <S-h> <S-Left>
+    map <S-j> <S-Down>
+    map <S-k> <S-Up>
+    map <S-l> <S-Right>
 
+    map <C-h> <C-Left>
+    map <C-j> <C-Down>
+    map <C-k> <C-Up>
+    map <C-l> <C-Right>
+    
     " jumps to the next/previous function
-    nnoremap <silent><A-Up>   :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "bw")<CR>
-    nnoremap <silent><A-Down> :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "w")<CR>
+    nnoremap <silent><C-Up>   :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "bw")<CR>
+    nnoremap <silent><C-Down> :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "w")<CR>
 
     " select all lines till empty line
     vnoremap <silent><S-Up> {
@@ -129,8 +139,10 @@ function! s:customMappings()
     nnoremap <Tab>    <C-w>w
 
     " Switch between buffers using alt+left/right arrow
-    nnoremap <silent><A-Right> :call NextBuffer()<CR>
-    nnoremap <silent><A-Left> :call PrevBuffer()<CR>
+    nnoremap <silent><C-Right> :call NextBuffer()<CR>
+    nnoremap <silent><C-Left> :call PrevBuffer()<CR>
+    nnoremap <silent><C-l> :call NextBuffer()<CR>
+    nnoremap <silent><C-h> :call PrevBuffer()<CR>
 
     vnoremap <Leader><Enter> <Esc>i<Enter><Esc>
     nnoremap <Leader><Enter> i<Enter><Esc>
@@ -161,12 +173,10 @@ endfunction
 " Call NERDTreeFind if NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
 function! NERDTreeSync()
-  if IsNERDTreeOpen()
-    if &modifiable && strlen(expand('%')) > 0 && !&diff
+    if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
         NERDTreeFind
         wincmd p
     endif
-  endif
 endfunction
 
 " Alt+Right but NOT when in Nerdtree or Tagbar
@@ -498,7 +508,7 @@ let g:airline#extensions#tagbar#enabled                       = 0
 let g:airline_powerline_fonts                                 = 1
 let g:airline#extensions#whitespace#enabled       = 0
 let g:airline#extensions#tabline#fnamemod         = ':t'
-let g:airline_theme                               = 'base16'
+let g:airline_theme                               = 'base16_snazzy'
 let g:airline_section_c                           = '%{fnamemodify(expand("%"), ":~:.")}'
 let g:airline_section_x                           = '%{fnamemodify(getcwd(), ":t")}'
 let g:airline_section_y                           = airline#section#create(['filetype'])

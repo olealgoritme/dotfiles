@@ -7,15 +7,16 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'posva/vim-vue'
-Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-scripts/dbext.vim'
+"Plug 'arcticicestudio/nord-vim'
+"Plug 'christoomey/vim-tmux-navigator'
+"Plug 'vim-scripts/dbext.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
-Plug 'skywind3000/asyncrun.vim'
+"Plug 'skywind3000/asyncrun.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'scrooloose/nerdtree'

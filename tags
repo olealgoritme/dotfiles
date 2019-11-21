@@ -4,6 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+$FZF_DEFAULT_COMMAND	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^    let $FZF_DEFAULT_COMMAND = a:grep_command$/;"	v
+$FZF_DEFAULT_COMMAND	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^    let $FZF_DEFAULT_COMMAND = prev_default_command$/;"	v
 0	vim/init.vim	/^nnoremap 0 ^$/;"	m
 ;	vim/init.vim	/^nnoremap ; :$/;"	m
 ;	vim/init.vim	/^vnoremap ; :$/;"	m
@@ -49,26 +51,7 @@
 <Plug>(coc-references)	vim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-references)            :<C-u>call       CocAction('jumpReferences')<CR>$/;"	m
 <Plug>(coc-rename)	vim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-rename)                :<C-u>call       CocActionAsync('rename')<CR>$/;"	m
 <Plug>(coc-type-definition)	vim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-type-definition)       :<C-u>call       CocAction('jumpTypeDefinition')<CR>$/;"	m
-<Plug>AutoPairsReturn	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^imap <script> <Plug>AutoPairsReturn <SID>AutoPairsReturn$/;"	m
 <Plug>CocRefresh	vim/plugged/coc.nvim/plugin/coc.vim	/^inoremap <silent>                          <Plug>CocRefresh <C-r>=coc#_complete()<CR>$/;"	m
-<Plug>DBDescribeProcedure	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBDescribeProcedure :DBDescribeProcedure<CR>$/;"	m
-<Plug>DBDescribeProcedureAskName	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBDescribeProcedureAskName$/;"	m
-<Plug>DBDescribeTable	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBDescribeTable :DBDescribeTable<CR>$/;"	m
-<Plug>DBDescribeTableAskName	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBDescribeTableAskName$/;"	m
-<Plug>DBExecSQL	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBExecSQL :DBExecSQL<CR>$/;"	m
-<Plug>DBExecSQLUnderCursor	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBExecSQLUnderCursor :DBExecSQLUnderCursor<CR>$/;"	m
-<Plug>DBExecSQLUnderTopXCursor	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBExecSQLUnderTopXCursor :DBExecSQLUnderCursorTopX<CR>$/;"	m
-<Plug>DBHistory	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBHistory :DBHistory<CR>$/;"	m
-<Plug>DBListColumn	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBListColumn :DBListColumn<CR>$/;"	m
-<Plug>DBListProcedure	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBListProcedure$/;"	m
-<Plug>DBListTable	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBListTable$/;"	m
-<Plug>DBListView	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBListView$/;"	m
-<Plug>DBOrientationToggle	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBOrientationToggle :DBOrientationToggle<CR>$/;"	m
-<Plug>DBPromptForBufferParameters	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBPromptForBufferParameters$/;"	m
-<Plug>DBSelectFromTable	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBSelectFromTable :DBSelectFromTable<CR>$/;"	m
-<Plug>DBSelectFromTableAskName	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBSelectFromTableAskName$/;"	m
-<Plug>DBSelectFromTableWithWhere	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBSelectFromTableWithWhere$/;"	m
-<Plug>DBSelectFromTopXTable	vim/plugged/dbext.vim/plugin/dbext.vim	/^    nmap <unique> <script> <Plug>DBSelectFromTopXTable :DBSelectFromTableTopX<CR>$/;"	m
 <Plug>XTablineCdCurrent	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^        nnoremap <unique> <script> <Plug>XTablineCdCurrent :cd %:p:h<cr>:call airline#util#doautocmd('BufAdd')<cr>:pwd<cr>$/;"	m
 <Plug>XTablineCdDown1	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^        nnoremap <unique> <script> <Plug>XTablineCdDown1   :cd %:p:h:h<cr>:call airline#util#doautocmd('BufAdd')<cr>:pwd<cr>$/;"	m
 <Plug>XTablineCdDown2	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^        nnoremap <unique> <script> <Plug>XTablineCdDown2   :cd %:p:h:h:h<cr>:call airline#util#doautocmd('BufAdd')<cr>:pwd<cr>$/;"	m
@@ -81,7 +64,6 @@
 <Plug>XTablineToggleFiltering	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <unique> <script> <Plug>XTablineToggleFiltering <SID>ToggleFiltering$/;"	m
 <Plug>XTablineToggleTabs	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <unique> <script> <Plug>XTablineToggleTabs <SID>ToggleTabs$/;"	m
 <SID>:	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^nnoremap <SID>: :<C-U><C-R>=v:count ? v:count : ''<CR>$/;"	m
-<SID>AutoPairsReturn	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^inoremap <silent> <SID>AutoPairsReturn <C-R>=AutoPairsReturn()<CR>$/;"	m
 <SID>NextBuffer	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <silent> <expr> <SID>NextBuffer airline#extensions#tabline#xtabline#next_buffer(v:count1)$/;"	m
 <SID>PrevBuffer	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <silent> <expr> <SID>PrevBuffer airline#extensions#tabline#xtabline#prev_buffer(v:count1)$/;"	m
 <SID>ReopenLastTab	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <silent> <SID>ReopenLastTab :XTabReopen<cr>$/;"	m
@@ -153,7 +135,6 @@ AirlineWebDevIcons	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^function! A
 Aliases	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Aliases(dir) abort$/;"	f
 AltMultipart	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:AltMultipart()$/;"	f
 AltNested	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:AltNested()$/;"	f
-Alter	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=+ -complete=customlist,dbext#DB_completeTables Alter             :call dbext#DB_execSql("alter " . <q-args>)$/;"	c
 Anon_NoTrigger_AfterSpace	vim/plugged/ultisnips/test/test_AnonymousExpansion.py	/^class Anon_NoTrigger_AfterSpace(_AnonBase):$/;"	c
 Anon_NoTrigger_BeginningOfLine	vim/plugged/ultisnips/test/test_AnonymousExpansion.py	/^class Anon_NoTrigger_BeginningOfLine(_AnonBase):$/;"	c
 Anon_NoTrigger_FirstCharOfLine	vim/plugged/ultisnips/test/test_AnonymousExpansion.py	/^class Anon_NoTrigger_FirstCharOfLine(_AnonBase):$/;"	c
@@ -183,20 +164,6 @@ AsyncRun_Job_Stop	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:Asy
 AsyncRun_Job_Update	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_Update(count)$/;"	f
 AsyncStop	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^command! -bar -bang -nargs=0 AsyncStop call asyncrun#stop('<bang>')$/;"	c
 AutoCmd	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AutoCmd(name)$/;"	f
-AutoPairsBackInsert	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsBackInsert()$/;"	f
-AutoPairsDefaultPairs	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsDefaultPairs()$/;"	f
-AutoPairsDefine	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsDefine(pairs, ...)$/;"	f
-AutoPairsDelete	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsDelete()$/;"	f
-AutoPairsFastWrap	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsFastWrap()$/;"	f
-AutoPairsInit	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsInit()$/;"	f
-AutoPairsInsert	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsInsert(key)$/;"	f
-AutoPairsJump	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsJump()$/;"	f
-AutoPairsMap	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsMap(key)$/;"	f
-AutoPairsMoveCharacter	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsMoveCharacter(key)$/;"	f
-AutoPairsReturn	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsReturn()$/;"	f
-AutoPairsSpace	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsSpace()$/;"	f
-AutoPairsToggle	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsToggle()$/;"	f
-AutoPairsTryInit	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsTryInit()$/;"	f
 AutoUpdate	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:AutoUpdate(fname, force, ...) abort$/;"	f
 Autocmd	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:Autocmd(...) abort$/;"	f
 Autocommands	vim/plugged/ultisnips/test/test_Autocommands.py	/^class Autocommands(_VimTest):$/;"	c
@@ -275,7 +242,6 @@ CTAGS_ARGS	vim/plugged/vim-gutentags/plat/win32/update_tags.cmd	/^set CTAGS_ARGS
 CTAGS_EXE	vim/plugged/vim-gutentags/plat/win32/update_tags.cmd	/^    set CTAGS_EXE=%~2$/;"	v
 CTAGS_EXE	vim/plugged/vim-gutentags/plat/win32/update_tags.cmd	/^set CTAGS_EXE=ctags$/;"	v
 Call	vim/plugged/coc.nvim/autoload/coc/util.vim	/^function! s:Call(method, args)$/;"	f
-Call	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=+ Call              :call dbext#DB_execSql("call " . <q-args>)$/;"	c
 CanCommentLine	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:CanCommentLine(forceNested, lineNum)$/;"	f
 CanPlaceCursor	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:CanPlaceCursor(line, col)$/;"	f
 CanSexyCommentLines	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:CanSexyCommentLines(topline, bottomline)$/;"	f
@@ -362,7 +328,6 @@ ConvertLeadingTabsToSpaces	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/
 ConvertLeadingWhiteSpace	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:ConvertLeadingWhiteSpace(line)$/;"	f
 CorrectFocusOnStartup	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CorrectFocusOnStartup() abort$/;"	f
 CountNonESCedOccurances	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:CountNonESCedOccurances(str, searchstr, escChar)$/;"	f
-Create	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=+ Create            :call dbext#DB_execSql("create " . <q-args>)$/;"	c
 CreateAutocommands	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CreateAutocommands() abort$/;"	f
 CreateDelimMapFromCms	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:CreateDelimMapFromCms()$/;"	f
 CreateMaps	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function! s:CreateMaps(modes, target, desc, combo)$/;"	f
@@ -395,326 +360,9 @@ CursorHoldUpdate	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^function! s:C
 CursorMovement_BS_InEditMode	vim/plugged/ultisnips/test/test_Movement.py	/^class CursorMovement_BS_InEditMode(_VimTest):$/;"	c
 CursorMovement_Multiline_ECR	vim/plugged/ultisnips/test/test_Movement.py	/^class CursorMovement_Multiline_ECR(_VimTest):$/;"	c
 CursorRangeFromSelected	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:CursorRangeFromSelected(type, ...) abort$/;"	f
-DBCheckModeline	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBCheckModeline$/;"	c
-DBCommit	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=0 DBCommit          :call dbext#DB_commit()$/;"	c
-DBCompleteProcedures	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 -bang DBCompleteProcedures$/;"	c
-DBCompleteTables	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 -bang DBCompleteTables$/;"	c
-DBCompleteViews	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 -bang DBCompleteViews$/;"	c
-DBConnect	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=0 DBConnect         :call dbext#DB_connect()$/;"	c
-DBDescribeProcedure	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=* -range DBDescribeProcedure$/;"	c
-DBDescribeProcedureAskName	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBDescribeProcedureAskName$/;"	c
-DBDescribeTable	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=* -range DBDescribeTable$/;"	c
-DBDescribeTableAskName	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBDescribeTableAskName$/;"	c
-DBDisconnect	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=* DBDisconnect      :call dbext#DB_disconnect(<q-args>)$/;"	c
-DBDisconnectAll	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=* DBDisconnectAll   :call dbext#DB_disconnectAll()$/;"	c
-DBExecRangeSQL	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -range -nargs=0 DBExecRangeSQL <line1>,<line2>call dbext#DB_execRangeSql()$/;"	c
-DBExecSQL	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBExecSQL$/;"	c
-DBExecSQL	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=+ DBExecSQL         :call dbext#DB_execSql(<q-args>)$/;"	c
-DBExecSQLTopX	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=+ DBExecSQLTopX     :call dbext#DB_execSqlTopX(<q-args>)$/;"	c
-DBExecSQLUnderCursor	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBExecSQLUnderCursor$/;"	c
-DBExecSQLUnderCursorTopX	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBExecSQLUnderCursorTopX$/;"	c
-DBExecVisualSQL	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 -range DBExecVisualSQL :call dbext#DB_execSql(DB_getVisualBlock())$/;"	c
-DBExecVisualSQLTopX	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 -range DBExecVisualSQLTopX :call dbext#DB_execSqlTopX(DB_getVisualBlock())$/;"	c
-DBGetOption	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=* -complete=customlist,dbext#DB_completeSettings DBGetOption :echo DB_listOption(<q-args>)$/;"	c
-DBHistory	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBHistory$/;"	c
-DBListColumn	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=* DBListColumn$/;"	c
-DBListConnections	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=0 DBListConnections :call dbext#DB_getListConnections()$/;"	c
-DBListProcedure	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=? DBListProcedure$/;"	c
-DBListTable	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=? DBListTable$/;"	c
-DBListVar	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=0 DBListVar         :call dbext#DB_sqlVarList()$/;"	c
-DBListView	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=? DBListView$/;"	c
-DBOrientationToggle	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBOrientationToggle$/;"	c
-DBProfilesRefresh	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=0 DBProfilesRefresh :call dbext#DB_buildLists()$/;"	c
-DBPromptForBufferParameters	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBPromptForBufferParameters$/;"	c
-DBResultsClose	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBResultsClose$/;"	c
-DBResultsOpen	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBResultsOpen$/;"	c
-DBResultsRefresh	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBResultsRefresh$/;"	c
-DBResultsToggleResize	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBResultsToggleResize$/;"	c
-DBRollback	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=0 DBRollback        :call dbext#DB_rollback()$/;"	c
-DBSelectFromTable	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=* -range DBSelectFromTable$/;"	c
-DBSelectFromTableAskName	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBSelectFromTableAskName$/;"	c
-DBSelectFromTableTopX	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=* -range DBSelectFromTableTopX$/;"	c
-DBSelectFromTableWithWhere	vim/plugged/dbext.vim/plugin/dbext.vim	/^    command! -nargs=0 DBSelectFromTableWithWhere$/;"	c
-DBSetOption	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=* -complete=customlist,dbext#DB_completeSettings DBSetOption :call dbext#DB_setMultipleOptions(<q-args>)$/;"	c
-DBSetVar	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=* -bang -complete=customlist,dbext#DB_completeVariable DBSetVar :call dbext#DB_sqlVarAssignment(<bang>0, 'set '.<q-args>)$/;"	c
-DBVarRangeAssign	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -range -nargs=0 -bang DBVarRangeAssign <line1>,<line2>call dbext#DB_sqlVarRangeAssignment(<bang>0)$/;"	c
-DB_ASA_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_describeProcedure(proc_name)$/;"	f
-DB_ASA_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_describeTable(table_name)$/;"	f
-DB_ASA_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_execSql(str)$/;"	f
-DB_ASA_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_getDictionaryProcedure()$/;"	f
-DB_ASA_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_getDictionaryTable()$/;"	f
-DB_ASA_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_getDictionaryView()$/;"	f
-DB_ASA_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_getListColumn(table_name)$/;"	f
-DB_ASA_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_getListProcedure(proc_prefix)$/;"	f
-DB_ASA_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_getListTable(table_prefix)$/;"	f
-DB_ASA_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_getListView(view_prefix)$/;"	f
-DB_ASA_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASA_stripHeaderFooter(result)$/;"	f
-DB_ASE_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_describeProcedure(procedure_name)$/;"	f
-DB_ASE_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_describeTable(table_name)$/;"	f
-DB_ASE_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_execSql(str)$/;"	f
-DB_ASE_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_getDictionaryProcedure() "{{{$/;"	f
-DB_ASE_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_getDictionaryTable() "{{{$/;"	f
-DB_ASE_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_getDictionaryView() "{{{$/;"	f
-DB_ASE_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_getListColumn(table_name) "{{{$/;"	f
-DB_ASE_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_getListProcedure(proc_prefix)$/;"	f
-DB_ASE_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_getListTable(table_prefix)$/;"	f
-DB_ASE_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_getListView(view_prefix)$/;"	f
-DB_ASE_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ASE_stripHeaderFooter(result) "{{{$/;"	f
-DB_CRATE_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_describeProcedure(procedure_name)$/;"	f
-DB_CRATE_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_describeTable(table_name)$/;"	f
-DB_CRATE_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_execSql(str)$/;"	f
-DB_CRATE_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_getDictionaryProcedure()$/;"	f
-DB_CRATE_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_getDictionaryTable()$/;"	f
-DB_CRATE_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_getDictionaryView()$/;"	f
-DB_CRATE_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_getListColumn(table_name)$/;"	f
-DB_CRATE_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_getListProcedure(proc_prefix)$/;"	f
-DB_CRATE_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_getListTable(table_prefix)$/;"	f
-DB_CRATE_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_getListView(view_prefix)$/;"	f
-DB_CRATE_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_CRATE_stripHeaderFooter(result)$/;"	f
-DB_DB2_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_describeProcedure(procedure_name)$/;"	f
-DB_DB2_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_describeTable(table_name)$/;"	f
-DB_DB2_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_execSql(str)$/;"	f
-DB_DB2_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_getDictionaryProcedure()$/;"	f
-DB_DB2_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_getDictionaryTable()$/;"	f
-DB_DB2_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_getDictionaryView()$/;"	f
-DB_DB2_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_getListColumn(table_name)$/;"	f
-DB_DB2_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_getListProcedure(proc_prefix)$/;"	f
-DB_DB2_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_getListTable(table_prefix)$/;"	f
-DB_DB2_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_getListView(view_prefix)$/;"	f
-DB_DB2_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DB2_stripHeaderFooter(result)$/;"	f
-DB_DBI_Autoload	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_Autoload()$/;"	f
-DB_DBI_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_describeProcedure(procedure_name)$/;"	f
-DB_DBI_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_describeTable(table_name)$/;"	f
-DB_DBI_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_execSql(str)$/;"	f
-DB_DBI_execStr	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_execStr(str)$/;"	f
-DB_DBI_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_getDictionaryProcedure() "{{{$/;"	f
-DB_DBI_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_getDictionaryTable() "{{{$/;"	f
-DB_DBI_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_getDictionaryView() "{{{$/;"	f
-DB_DBI_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_getListColumn(table_name)$/;"	f
-DB_DBI_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_getListProcedure(proc_prefix)$/;"	f
-DB_DBI_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_getListTable(table_prefix)$/;"	f
-DB_DBI_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_getListView(view_prefix)$/;"	f
-DB_DBI_setOption	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_setOption(option_name, value) "{{{$/;"	f
-DB_DBI_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_DBI_stripHeaderFooter(result)$/;"	f
-DB_DictionaryCreate	vim/plugged/dbext.vim/plugin/dbext.vim	/^function! DB_DictionaryCreate( drop_dict, which )$/;"	f
-DB_DictionaryDelete	vim/plugged/dbext.vim/plugin/dbext.vim	/^function! DB_DictionaryDelete( which )$/;"	f
 DB_FILE	vim/plugged/vim-gutentags/plat/win32/update_scopedb.cmd	/^    set DB_FILE=%~2$/;"	v
 DB_FILE	vim/plugged/vim-gutentags/plat/win32/update_scopedb.cmd	/^set DB_FILE=cscope.out$/;"	v
-DB_FIREBIRD_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_describeProcedure(procedure_name)$/;"	f
-DB_FIREBIRD_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_describeTable(table_name)$/;"	f
-DB_FIREBIRD_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_execSql(str)$/;"	f
-DB_FIREBIRD_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_getDictionaryProcedure() "{{{$/;"	f
-DB_FIREBIRD_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_getDictionaryTable() "{{{$/;"	f
-DB_FIREBIRD_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_getDictionaryView() "{{{$/;"	f
-DB_FIREBIRD_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_getListColumn(table_name) "{{{$/;"	f
-DB_FIREBIRD_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_getListProcedure(proc_prefix)$/;"	f
-DB_FIREBIRD_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_getListTable(table_prefix)$/;"	f
-DB_FIREBIRD_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_getListView(view_prefix)$/;"	f
-DB_FIREBIRD_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_FIREBIRD_stripHeaderFooter(result) "{{{$/;"	f
-DB_HANA_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_describeProcedure(proc_name)$/;"	f
-DB_HANA_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_describeTable(table_name)$/;"	f
-DB_HANA_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_execSql(str)$/;"	f
-DB_HANA_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_getDictionaryProcedure()$/;"	f
-DB_HANA_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_getDictionaryTable()$/;"	f
-DB_HANA_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_getDictionaryView()$/;"	f
-DB_HANA_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_getListColumn(table_name)$/;"	f
-DB_HANA_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_getListProcedure(proc_prefix)$/;"	f
-DB_HANA_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_getListTable(table_prefix)$/;"	f
-DB_HANA_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_getListView(view_prefix)$/;"	f
-DB_HANA_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_HANA_stripHeaderFooter(result)$/;"	f
-DB_INGRES_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_describeProcedure(procedure_name)$/;"	f
-DB_INGRES_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_describeTable(table_name)$/;"	f
-DB_INGRES_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_execSql(str)$/;"	f
-DB_INGRES_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_getDictionaryProcedure()$/;"	f
-DB_INGRES_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_getDictionaryTable()$/;"	f
-DB_INGRES_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_getDictionaryView()$/;"	f
-DB_INGRES_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_getListColumn(table_name)$/;"	f
-DB_INGRES_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_getListProcedure(proc_prefix)$/;"	f
-DB_INGRES_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_getListTable(table_prefix)$/;"	f
-DB_INGRES_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_getListView(view_prefix)$/;"	f
-DB_INGRES_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INGRES_stripHeaderFooter(result)$/;"	f
-DB_INTERBASE_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_describeProcedure(procedure_name)$/;"	f
-DB_INTERBASE_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_describeTable(table_name)$/;"	f
-DB_INTERBASE_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_execSql(str)$/;"	f
-DB_INTERBASE_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_getDictionaryProcedure()$/;"	f
-DB_INTERBASE_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_getDictionaryTable()$/;"	f
-DB_INTERBASE_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_getDictionaryView()$/;"	f
-DB_INTERBASE_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_getListColumn(table_name)$/;"	f
-DB_INTERBASE_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_getListProcedure(proc_prefix)$/;"	f
-DB_INTERBASE_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_getListTable(table_prefix)$/;"	f
-DB_INTERBASE_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_getListView(view_prefix)$/;"	f
-DB_INTERBASE_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_INTERBASE_stripHeaderFooter(result)$/;"	f
-DB_IQ_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_describeProcedure(proc_name)$/;"	f
-DB_IQ_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_describeTable(table_name)$/;"	f
-DB_IQ_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_execSql(str)$/;"	f
-DB_IQ_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_getDictionaryProcedure()$/;"	f
-DB_IQ_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_getDictionaryTable()$/;"	f
-DB_IQ_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_getDictionaryView()$/;"	f
-DB_IQ_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_getListColumn(table_name)$/;"	f
-DB_IQ_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_getListProcedure(proc_prefix)$/;"	f
-DB_IQ_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_getListTable(table_prefix)$/;"	f
-DB_IQ_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_getListView(view_prefix)$/;"	f
-DB_IQ_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_IQ_stripHeaderFooter(result)$/;"	f
-DB_MYSQL_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_describeProcedure(procedure_name)$/;"	f
-DB_MYSQL_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_describeTable(table_name)$/;"	f
-DB_MYSQL_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_execSql(str)$/;"	f
-DB_MYSQL_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_getDictionaryProcedure() "{{{$/;"	f
-DB_MYSQL_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_getDictionaryTable() "{{{$/;"	f
-DB_MYSQL_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_getDictionaryView() "{{{$/;"	f
-DB_MYSQL_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_getListColumn(table_name) "{{{$/;"	f
-DB_MYSQL_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_getListProcedure(proc_prefix)$/;"	f
-DB_MYSQL_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_getListTable(table_prefix)$/;"	f
-DB_MYSQL_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_getListView(view_prefix)$/;"	f
-DB_MYSQL_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_MYSQL_stripHeaderFooter(result) "{{{$/;"	f
-DB_ODBC_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_describeProcedure(procedure_name)$/;"	f
-DB_ODBC_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_describeTable(table_name)$/;"	f
-DB_ODBC_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_execSql(str)$/;"	f
-DB_ODBC_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_getDictionaryProcedure() "{{{$/;"	f
-DB_ODBC_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_getDictionaryTable() "{{{$/;"	f
-DB_ODBC_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_getDictionaryView() "{{{$/;"	f
-DB_ODBC_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_getListColumn(table_name)$/;"	f
-DB_ODBC_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_getListProcedure(proc_prefix)$/;"	f
-DB_ODBC_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_getListTable(table_prefix)$/;"	f
-DB_ODBC_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_getListView(view_prefix)$/;"	f
-DB_ODBC_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ODBC_stripHeaderFooter(result)$/;"	f
-DB_ORA_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_describeProcedure(procedure_name)$/;"	f
-DB_ORA_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_describeTable(table_name)$/;"	f
-DB_ORA_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_execSql(str)$/;"	f
-DB_ORA_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_getDictionaryProcedure() "{{{$/;"	f
-DB_ORA_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_getDictionaryTable() "{{{$/;"	f
-DB_ORA_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_getDictionaryView() "{{{$/;"	f
-DB_ORA_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_getListColumn(table_name) "{{{$/;"	f
-DB_ORA_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_getListProcedure(proc_prefix)$/;"	f
-DB_ORA_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_getListTable(table_prefix)$/;"	f
-DB_ORA_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_getListView(view_prefix)$/;"	f
-DB_ORA_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ORA_stripHeaderFooter(result) "{{{$/;"	f
-DB_PGSQL_check_pgpass	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_check_pgpass()$/;"	f
-DB_PGSQL_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_describeProcedure(procedure_name)$/;"	f
-DB_PGSQL_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_describeTable(table_name)$/;"	f
-DB_PGSQL_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_execSql(str)$/;"	f
-DB_PGSQL_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_getDictionaryProcedure()$/;"	f
-DB_PGSQL_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_getDictionaryTable()$/;"	f
-DB_PGSQL_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_getDictionaryView()$/;"	f
-DB_PGSQL_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_getListColumn(table_name)$/;"	f
-DB_PGSQL_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_getListProcedure(proc_prefix)$/;"	f
-DB_PGSQL_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_getListTable(table_prefix)$/;"	f
-DB_PGSQL_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_getListView(view_prefix)$/;"	f
-DB_PGSQL_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_PGSQL_stripHeaderFooter(result)$/;"	f
-DB_RDB_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_describeProcedure(procedure_name) "{{{$/;"	f
-DB_RDB_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_describeTable(table_name) "{{{$/;"	f
-DB_RDB_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_execSql(str) "{{{$/;"	f
-DB_RDB_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_getDictionaryProcedure() "{{{$/;"	f
-DB_RDB_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_getDictionaryTable() "{{{$/;"	f
-DB_RDB_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_getDictionaryView() "{{{$/;"	f
-DB_RDB_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_getListColumn(table_name) "{{{$/;"	f
-DB_RDB_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_getListProcedure(proc_prefix) "{{{$/;"	f
-DB_RDB_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_getListTable(table_prefix) "{{{$/;"	f
-DB_RDB_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_getListView(view_prefix) "{{{$/;"	f
-DB_RDB_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_RDB_stripHeaderFooter(result) "{{{$/;"	f
-DB_SQLITE_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_describeProcedure(procedure_name)$/;"	f
-DB_SQLITE_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_describeTable(table_name)$/;"	f
-DB_SQLITE_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_execSql(str)$/;"	f
-DB_SQLITE_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_getDictionaryProcedure()$/;"	f
-DB_SQLITE_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_getDictionaryTable()$/;"	f
-DB_SQLITE_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_getDictionaryView()$/;"	f
-DB_SQLITE_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_getListColumn(table_name)$/;"	f
-DB_SQLITE_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_getListProcedure(proc_prefix)$/;"	f
-DB_SQLITE_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_getListTable(table_prefix)$/;"	f
-DB_SQLITE_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_getListView(view_prefix)$/;"	f
-DB_SQLITE_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLITE_stripHeaderFooter(result)$/;"	f
-DB_SQLSRV_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_describeProcedure(procedure_name)$/;"	f
-DB_SQLSRV_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_describeTable(table_name)$/;"	f
-DB_SQLSRV_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_execSql(str)$/;"	f
-DB_SQLSRV_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_getDictionaryProcedure() "{{{$/;"	f
-DB_SQLSRV_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_getDictionaryTable() "{{{$/;"	f
-DB_SQLSRV_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_getDictionaryView() "{{{$/;"	f
-DB_SQLSRV_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_getListColumn(table_name)$/;"	f
-DB_SQLSRV_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_getListProcedure(proc_prefix)$/;"	f
-DB_SQLSRV_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_getListTable(table_prefix)$/;"	f
-DB_SQLSRV_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_getListView(view_prefix)$/;"	f
-DB_SQLSRV_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_SQLSRV_stripHeaderFooter(result)$/;"	f
-DB_ULTRALITE_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_describeProcedure(proc_name)$/;"	f
-DB_ULTRALITE_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_describeTable(table_name)$/;"	f
-DB_ULTRALITE_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_execSql(str)$/;"	f
-DB_ULTRALITE_getDictionaryProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_getDictionaryProcedure()$/;"	f
-DB_ULTRALITE_getDictionaryTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_getDictionaryTable()$/;"	f
-DB_ULTRALITE_getDictionaryView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_getDictionaryView()$/;"	f
-DB_ULTRALITE_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_getListColumn(table_name)$/;"	f
-DB_ULTRALITE_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_getListProcedure(proc_prefix)$/;"	f
-DB_ULTRALITE_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_getListTable(table_prefix)$/;"	f
-DB_ULTRALITE_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_getListView(view_prefix)$/;"	f
-DB_ULTRALITE_stripHeaderFooter	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_ULTRALITE_stripHeaderFooter(result)$/;"	f
-DB_addBufDictList	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_addBufDictList( buf_nbr ) "{{{$/;"	f
-DB_addConnected	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_addConnected( buf_nbr )$/;"	f
-DB_addToResultBuffer	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_addToResultBuffer(output, do_clear)$/;"	f
-DB_checkModeline	vim/plugged/dbext.vim/plugin/dbext.vim	/^function! DB_checkModeline()$/;"	f
-DB_delBufDictList	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_delBufDictList( buf_nbr ) "{{{$/;"	f
-DB_delConnected	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_delConnected( buf_nbr )$/;"	f
-DB_errorMsg	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_errorMsg(msg)$/;"	f
-DB_escapeStr	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_escapeStr(value)$/;"	f
-DB_execCmd	vim/plugged/dbext.vim/plugin/dbext.vim	/^function! DB_execCmd(name, ...)$/;"	f
-DB_fullPath2Bin	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_fullPath2Bin(executable_name)$/;"	f
-DB_get	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_get(name, ...)$/;"	f
-DB_getCommentChars	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getCommentChars()$/;"	f
-DB_getDefault	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getDefault(name)$/;"	f
-DB_getDictionaryName	vim/plugged/dbext.vim/plugin/dbext.vim	/^function! DB_getDictionaryName( which )$/;"	f
-DB_getInput	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getInput(prompt, default_value, cancel_value)$/;"	f
-DB_getInputSecret	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getInputSecret(prompt, default_value, cancel_value)$/;"	f
-DB_getListColumn	vim/plugged/dbext.vim/plugin/dbext.vim	/^function! DB_getListColumn(...)$/;"	f
-DB_getLoginScript	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getLoginScript(filename)$/;"	f
-DB_getObjectAndQuote	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getObjectAndQuote(object) "{{{$/;"	f
-DB_getObjectName	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getObjectName(object) "{{{$/;"	f
-DB_getObjectOwner	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getObjectOwner(object) "{{{$/;"	f
-DB_getParameters	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getParameters(scope)$/;"	f
-DB_getTblAlias	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getTblAlias(table_name)$/;"	f
-DB_getTitle	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_getTitle()$/;"	f
-DB_getVisualBlock	vim/plugged/dbext.vim/plugin/dbext.vim	/^function! DB_getVisualBlock() range$/;"	f
-DB_historyAdd	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_historyAdd(sql)$/;"	f
-DB_historyDel	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_historyDel(line)$/;"	f
-DB_historyOpen	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_historyOpen()$/;"	f
-DB_historySave	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_historySave(auto_hide)$/;"	f
-DB_historyUse	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_historyUse(line)$/;"	f
-DB_listOption	vim/plugged/dbext.vim/plugin/dbext.vim	/^function! DB_listOption(...)$/;"	f
-DB_option	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_option(param, value, separator)$/;"	f
-DB_pad	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_pad(side, length, value)$/;"	f
-DB_parseCPP	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parseCPP(query)$/;"	f
-DB_parseHostVariables	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parseHostVariables(query)$/;"	f
-DB_parseJProperties	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parseJProperties(query)$/;"	f
-DB_parseJava	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parseJava(query)$/;"	f
-DB_parsePHP	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parsePHP(query)$/;"	f
-DB_parsePerl	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parsePerl(query)$/;"	f
-DB_parseProfile	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parseProfile(value)$/;"	f
-DB_parseProfileOld	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parseProfileOld(value)$/;"	f
-DB_parseSQL	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parseSQL(query)$/;"	f
-DB_parseVB	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parseVB(query)$/;"	f
-DB_parseVim	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_parseVim(query)$/;"	f
-DB_promptForParameters	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_promptForParameters(...)$/;"	f
-DB_removeEmptyLines	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_removeEmptyLines(sql)$/;"	f
-DB_resBufName	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_resBufName()$/;"	f
-DB_resetBufferParameters	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_resetBufferParameters(use_defaults)$/;"	f
-DB_resetGlobalParameters	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_resetGlobalParameters()$/;"	f
-DB_restoreConnParameters	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_restoreConnParameters()$/;"	f
-DB_runCmd	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_runCmd(cmd, sql, result)$/;"	f
-DB_saveConnParameters	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_saveConnParameters()$/;"	f
-DB_saveSize	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_saveSize(buf_name)$/;"	f
-DB_searchReplace	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_searchReplace(str, exp_find_str, exp_get_value, count_matches)$/;"	f
-DB_searchReplaceSavedVariable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_searchReplaceSavedVariable(str, exp_find_str, exp_get_value, count_matches)$/;"	f
-DB_set	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_set(name, value)$/;"	f
-DB_setGlobal	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_setGlobal(name, value)$/;"	f
-DB_setWType	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_setWType(name, value)$/;"	f
-DB_sqlVarInit	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_sqlVarInit()$/;"	f
-DB_sqlVarRemoveTemp	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_sqlVarRemoveTemp()$/;"	f
-DB_sqlVarSet	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_sqlVarSet(name, value, temporary)$/;"	f
-DB_sqlVarSubstitute	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_sqlVarSubstitute(sql)$/;"	f
-DB_stripComments	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_stripComments(mdl_options)$/;"	f
-DB_stripLeadFollowQuotesSpace	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_stripLeadFollowQuotesSpace(str)$/;"	f
-DB_stripLeadFollowSpaceLines	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_stripLeadFollowSpaceLines(str)$/;"	f
-DB_switchToBuffer	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_switchToBuffer(buf_name, buf_file, get_buf_nr_name)$/;"	f
-DB_validateBufferParameters	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_validateBufferParameters()$/;"	f
-DB_varToString	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_varToString(name)$/;"	f
-DB_warningMsg	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! s:DB_warningMsg(msg)$/;"	f
 DUMP_FILENAME	vim/plugged/ultisnips/pythonx/UltiSnips/debug.py	/^DUMP_FILENAME = ($/;"	v
-Delete	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=+ -complete=customlist,dbext#DB_completeTables Delete            :call dbext#DB_execSql("delete " . <q-args>)$/;"	c
 DeleteCurrentTabStop1_JumpBack	vim/plugged/ultisnips/test/test_Editing.py	/^class DeleteCurrentTabStop1_JumpBack(_VimTest):$/;"	c
 DeleteCurrentTabStop2_JumpBack	vim/plugged/ultisnips/test/test_Editing.py	/^class DeleteCurrentTabStop2_JumpBack(_VimTest):$/;"	c
 DeleteCurrentTabStop3_JumpAround	vim/plugged/ultisnips/test/test_Editing.py	/^class DeleteCurrentTabStop3_JumpAround(_VimTest):$/;"	c
@@ -766,7 +414,6 @@ DoesBlockHaveMultipartDelim	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	
 DoneParseArgs	vim/plugged/vim-gutentags/plat/win32/update_scopedb.cmd	/^:DoneParseArgs$/;"	l
 DoneParseArgs	vim/plugged/vim-gutentags/plat/win32/update_tags.cmd	/^:DoneParseArgs$/;"	l
 DotRelative	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DotRelative(path, ...) abort$/;"	f
-Drop	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=+ -complete=customlist,dbext#DB_completeTables Drop              :call dbext#DB_execSql("drop " . <q-args>)$/;"	c
 EA	vim/plugged/ultisnips/test/constant.py	/^EA = "#"  # Expand anonymous$/;"	v
 ER	vim/plugged/vim-airline-themes/autoload/airline/themes/base16_snazzy.vim	/^let ER = [ s:base00 , s:base08 , 235 , 203 ]      " [ error color ]$/;"	v
 ESC	vim/plugged/ultisnips/test/constant.py	/^ESC = "\\x1b"$/;"	v
@@ -792,7 +439,6 @@ ExecuteCtagsOnFile	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ExecuteC
 ExitSnippetModeAfterTabstopZero	vim/plugged/ultisnips/test/test_Expand.py	/^class ExitSnippetModeAfterTabstopZero(_VimTest):$/;"	c
 Expand	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Expand(rev, ...) abort$/;"	f
 ExpandInTheMiddleOfLine_ExpectCorrectResult	vim/plugged/ultisnips/test/test_Expand.py	/^class ExpandInTheMiddleOfLine_ExpectCorrectResult(_SimpleExpands):$/;"	c
-ExpandMap	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:ExpandMap(map)$/;"	f
 ExpandSplit	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExpandSplit(string, ...) abort$/;"	f
 ExpandVar	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExpandVar(other, var, flags, esc, ...) abort$/;"	f
 ExpandVarLegacy	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExpandVarLegacy(str) abort$/;"	f
@@ -912,7 +558,6 @@ InitCwds	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vi
 InitTypes	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:InitTypes() abort$/;"	f
 InitVariable	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:InitVariable(var, value)$/;"	f
 InitWindow	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:InitWindow(autoclose) abort$/;"	f
-Insert	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=+ -complete=customlist,dbext#DB_completeTables Insert            :call dbext#DB_execSql("insert " . <q-args>)$/;"	c
 InstallOptions	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:InstallOptions(...)abort$/;"	f
 InvertComment	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:InvertComment(firstLine, lastLine)$/;"	f
 IsCommented	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:IsCommented(left, right, line)$/;"	f
@@ -1262,6 +907,7 @@ PlaceDelimitersAndInsBetween	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim
 Plugin_SuperTab_SimpleTest	vim/plugged/ultisnips/test/test_Plugin.py	/^class Plugin_SuperTab_SimpleTest(_VimTest):$/;"	c
 Position	vim/plugged/ultisnips/pythonx/UltiSnips/position.py	/^class Position:$/;"	c
 PreparePathArgs	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PreparePathArgs(cmd, dir, literal) abort$/;"	f
+Prettier	vim/init.vim	/^command! -nargs=0 Prettier :CocCommand prettier.formatFile$/;"	c
 PrevBuffer	vim/init.vim	/^function! PrevBuffer()$/;"	f
 PreviousFile	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PreviousFile(count) abort$/;"	f
 PreviousHunk	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PreviousHunk(count) abort$/;"	f
@@ -1405,7 +1051,6 @@ ScriptWrite	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:ScriptWri
 Search	vim/init.vim	/^function! Search(pattern, flags)$/;"	f
 SearchOptions	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:SearchOptions(...) abort$/;"	f
 SectionSpec	vim/plugged/vim-airline/t/section.vim	/^function! SectionSpec()$/;"	f
-Select	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=+ -complete=customlist,dbext#DB_completeTables Select            :call dbext#DB_execSql("select " . <q-args>)$/;"	c
 SelectModeMappings_BufferLocalMappings_ECR	vim/plugged/ultisnips/test/test_Selection.py	/^class SelectModeMappings_BufferLocalMappings_ECR(_SelectModeMappings):$/;"	c
 SelectModeMappings_DisableRemoveBeforeSelecting_ECR	vim/plugged/ultisnips/test/test_Selection.py	/^class SelectModeMappings_DisableRemoveBeforeSelecting_ECR(_SelectModeMappings):$/;"	c
 SelectModeMappings_IgnoreMappings1_ECR	vim/plugged/ultisnips/test/test_Selection.py	/^class SelectModeMappings_IgnoreMappings1_ECR(_SelectModeMappings):$/;"	c
@@ -1918,7 +1563,6 @@ Undo_RemoveWholeSnippet	vim/plugged/ultisnips/test/test_Editing.py	/^class Undo_
 Uniq	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Uniq(list) abort$/;"	f
 Unlock	vim/plugged/vim-gutentags/plat/win32/update_tags.cmd	/^:Unlock$/;"	l
 UntabbedCol	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:UntabbedCol(line, col)$/;"	f
-Update	vim/plugged/dbext.vim/plugin/dbext.vim	/^command! -nargs=+ -complete=customlist,dbext#DB_completeTables Update            :call dbext#DB_execSql("update " . <q-args>)$/;"	c
 UpdateGlobalDB	vim/init.vim	/^function! UpdateGlobalDB()$/;"	f
 UpdateModifiedSnippetWithoutCursorMove1	vim/plugged/ultisnips/test/test_Editing.py	/^class UpdateModifiedSnippetWithoutCursorMove1(_VimTest):$/;"	c
 UpdateModifiedSnippetWithoutCursorMove2	vim/plugged/ultisnips/test/test_Editing.py	/^class UpdateModifiedSnippetWithoutCursorMove2(_VimTest):$/;"	c
@@ -2321,7 +1965,7 @@ activateDirNode	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s
 activateFileNode	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:activateFileNode(node)$/;"	f
 addChild	vim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:addChild(tag) abort dict$/;"	f
 addTag	vim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:addTag(tag) abort dict$/;"	f
-add_buffer_filetypes	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def add_buffer_filetypes(self, filetypes):$/;"	m	class:SnippetManager
+add_buffer_filetypes	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def add_buffer_filetypes(self, filetypes: str):$/;"	m	class:SnippetManager
 add_db	vim/plugged/vim-gutentags/autoload/gutentags/gtags_cscope.vim	/^function! s:add_db(db_file) abort$/;"	f
 add_files_to_gitignore	tmux/plugins/tpm/lib/tmux-test/setup	/^add_files_to_gitignore() {$/;"	f
 add_methods	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:add_methods(namespace, method_names) abort$/;"	f
@@ -2724,7 +2368,6 @@ b:match_ignorecase	vim/plugged/ultisnips/ftplugin/snippets.vim	/^  let b:match_i
 b:match_words	vim/plugged/ultisnips/ftplugin/snippets.vim	/^  let b:match_words = '^snippet\\>:^endsnippet\\>,^global\\>:^endglobal\\>,\\${:}'$/;"	v
 b:ultisnips_override_snipmate	vim/plugged/ultisnips/syntax/snippets_snipmate.vim	/^let b:ultisnips_override_snipmate = 1$/;"	v
 b:undo_ftplugin	vim/plugged/ultisnips/ftplugin/snippets.vim	/^let b:undo_ftplugin = "$/;"	v
-backspace	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:backspace(s)$/;"	f
 bang	vim/autoload/plug.vim	/^function! s:bang(cmd, ...)$/;"	f
 bar	vim/autoload/plug.vim	/^function! s:bar()$/;"	f
 basename	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^    def basename(self):  # pylint:disable=no-self-use$/;"	m	class:SnippetUtil
@@ -2993,64 +2636,10 @@ customMappings	vim/init.vim	/^function! s:customMappings()$/;"	f
 customOpenBookmark	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:customOpenBookmark(node)$/;"	f
 customOpenDir	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:customOpenDir(node)$/;"	f
 customOpenFile	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:customOpenFile(node)$/;"	f
-dbext	vim/plugged/dbext.vim/plugin/dbext.vim	/^augroup dbext$/;"	a
-dbext#DB_DictionaryCreate	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_DictionaryCreate( drop_dict, which ) "{{{$/;"	f
-dbext#DB_DictionaryDelete	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_DictionaryDelete( which, buf_nr ) "{{{$/;"	f
-dbext#DB_auBufDelete	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_auBufDelete(del_buf_nr) "{{{$/;"	f
-dbext#DB_auVimLeavePre	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_auVimLeavePre() "{{{$/;"	f
-dbext#DB_buildLists	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_buildLists()$/;"	f
-dbext#DB_checkModeline	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_checkModeline()$/;"	f
-dbext#DB_commit	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_commit(...)$/;"	f
-dbext#DB_completeSettings	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_completeSettings(ArgLead, CmdLine, CursorPos)$/;"	f
-dbext#DB_completeTables	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_completeTables(ArgLead, CmdLine, CursorPos)$/;"	f
-dbext#DB_completeVariable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_completeVariable(ArgLead, CmdLine, CursorPos)$/;"	f
-dbext#DB_connect	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_connect()$/;"	f
-dbext#DB_describeProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_describeProcedure(...)$/;"	f
-dbext#DB_describeProcedurePrompt	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_describeProcedurePrompt()$/;"	f
-dbext#DB_describeTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_describeTable(...)$/;"	f
-dbext#DB_describeTablePrompt	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_describeTablePrompt()$/;"	f
-dbext#DB_disconnect	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_disconnect(...)$/;"	f
-dbext#DB_disconnectAll	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_disconnectAll()$/;"	f
-dbext#DB_execFuncTypeWCheck	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_execFuncTypeWCheck(name,...)$/;"	f
-dbext#DB_execFuncWCheck	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_execFuncWCheck(name,...)$/;"	f
-dbext#DB_execRangeSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_execRangeSql() range$/;"	f
-dbext#DB_execSql	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_execSql(query)$/;"	f
-dbext#DB_execSqlTopX	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_execSqlTopX(...)$/;"	f
-dbext#DB_execSqlWithDefault	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_execSqlWithDefault(...)$/;"	f
-dbext#DB_getDictionaryName	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_getDictionaryName( which ) "{{{$/;"	f
-dbext#DB_getListColumn	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_getListColumn(table_name, silent_mode, use_newline_sep )$/;"	f
-dbext#DB_getListConnections	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_getListConnections()$/;"	f
-dbext#DB_getListProcedure	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_getListProcedure(...)$/;"	f
-dbext#DB_getListTable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_getListTable(...)$/;"	f
-dbext#DB_getListView	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_getListView(...)$/;"	f
-dbext#DB_getQueryUnderCursor	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_getQueryUnderCursor()$/;"	f
-dbext#DB_getSqlWithDefault	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_getSqlWithDefault(...)$/;"	f
-dbext#DB_getWType	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_getWType(name)$/;"	f
-dbext#DB_getWTypeDefault	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_getWTypeDefault(name)$/;"	f
-dbext#DB_historyList	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_historyList()$/;"	f
-dbext#DB_listOption	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_listOption(...)$/;"	f
-dbext#DB_orientationToggle	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_orientationToggle(...)$/;"	f
-dbext#DB_parseQuery	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_parseQuery(query)$/;"	f
-dbext#DB_removeVariable	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_removeVariable() range$/;"	f
-dbext#DB_rollback	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_rollback(...)$/;"	f
-dbext#DB_runPrevCmd	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_runPrevCmd(...)$/;"	f
-dbext#DB_selectTablePrompt	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_selectTablePrompt()$/;"	f
-dbext#DB_setMultipleOptions	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_setMultipleOptions(multi_options, ...)$/;"	f
-dbext#DB_setTitle	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_setTitle()$/;"	f
-dbext#DB_sqlVarAssignment	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_sqlVarAssignment(drop_var, stmt)$/;"	f
-dbext#DB_sqlVarList	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_sqlVarList(...)$/;"	f
-dbext#DB_sqlVarRangeAssignment	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_sqlVarRangeAssignment(remove_var) range$/;"	f
-dbext#DB_switchPrevBuf	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_switchPrevBuf()$/;"	f
-dbext#DB_windowClose	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_windowClose(buf_name)$/;"	f
-dbext#DB_windowOpen	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_windowOpen()$/;"	f
-dbext#DB_windowResize	vim/plugged/dbext.vim/autoload/dbext.vim	/^function! dbext#DB_windowResize()$/;"	f
-dbext_dbi#DBI_initialize	vim/plugged/dbext.vim/autoload/dbext_dbi.vim	/^function! dbext_dbi#DBI_initialize()$/;"	f
-dbext_dbi#DBI_load_perl_subs	vim/plugged/dbext.vim/autoload/dbext_dbi.vim	/^function! dbext_dbi#DBI_load_perl_subs()$/;"	f
 debug	vim/plugged/ultisnips/pythonx/UltiSnips/debug.py	/^def debug(msg):$/;"	f
 define_commands	vim/autoload/plug.vim	/^function! s:define_commands()$/;"	f
 defs	vim/plugged/fzf.vim/plugin/fzf.vim	/^function! s:defs(commands)$/;"	f
 delete	vim/autoload/plug.vim	/^function! s:delete(range, force)$/;"	f
-delete	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:delete(s)$/;"	f
 deleteBookmark	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:deleteBookmark(bookmark)$/;"	f
 delete_mark	vim/plugged/ultisnips/pythonx/UltiSnips/vim_helper.py	/^def delete_mark(name):$/;"	f
 delete_op	vim/autoload/plug.vim	/^function! s:delete_op(type, ...)$/;"	f
@@ -3516,22 +3105,6 @@ fzf#vim#with_preview	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! fzf#vi
 fzf_buffers	vim/plugged/fzf.vim/plugin/fzf.vim	/^augroup fzf_buffers$/;"	a
 fzf_restore_colors	vim/plugged/fzf.vim/plugin/fzf.vim	/^  function! s:fzf_restore_colors()$/;"	f
 fzf_vim_term	vim/plugged/fzf.vim/plugin/fzf.vim	/^  function! s:fzf_vim_term()$/;"	f
-g:AutoPairs	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}$/;"	v
-g:AutoPairsCenterLine	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsCenterLine = 1$/;"	v
-g:AutoPairsFlyMode	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsFlyMode = 0$/;"	v
-g:AutoPairsLoaded	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^let g:AutoPairsLoaded = 1$/;"	v
-g:AutoPairsMapBS	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapBS = 1$/;"	v
-g:AutoPairsMapCR	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapCR = 1$/;"	v
-g:AutoPairsMapCh	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapCh = 1$/;"	v
-g:AutoPairsMapSpace	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapSpace = 1$/;"	v
-g:AutoPairsMoveCharacter	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMoveCharacter = "()[]{}\\"'"$/;"	v
-g:AutoPairsMultilineClose	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMultilineClose = 1$/;"	v
-g:AutoPairsShortcutBackInsert	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutBackInsert = '<M-b>'$/;"	v
-g:AutoPairsShortcutFastWrap	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutFastWrap = '<M-e>'$/;"	v
-g:AutoPairsShortcutJump	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutJump = '<M-n>'$/;"	v
-g:AutoPairsShortcutToggle	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutToggle = '<M-p>'$/;"	v
-g:AutoPairsSmartQuotes	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsSmartQuotes = 1$/;"	v
-g:AutoPairsWildClosedPair	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsWildClosedPair = ''$/;"	v
 g:DevIconsEnableFolderExtensionPatternMatching	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:DevIconsEnableFolderExtensionPatternMatching = 0$/;"	v
 g:DevIconsEnableFolderPatternMatching	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:DevIconsEnableFolderPatternMatching = 1$/;"	v
 g:DevIconsEnableFoldersOpenClose	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:DevIconsEnableFoldersOpenClose = 0$/;"	v
@@ -3557,7 +3130,7 @@ g:NERDTreePathNotifier	vim/plugged/nerdtree/lib/nerdtree/notifier.vim	/^let g:NE
 g:NERDTreeSortOrder	vim/plugged/nerdtree/plugin/NERD_tree.vim	/^    let g:NERDTreeSortOrder = ['\\\/$', '*', '\\.swp$',  '\\.bak$', '\\~$']$/;"	v
 g:NERDTreeStatusline	vim/plugged/nerdtree/plugin/NERD_tree.vim	/^    let g:NERDTreeStatusline = "%{exists('b:NERDTree')?b:NERDTree.root.path.str():''}"$/;"	v
 g:NERDTreeUI	vim/plugged/nerdtree/lib/nerdtree/ui.vim	/^let g:NERDTreeUI = s:UI$/;"	v
-g:NERDTreeWinSize	vim/init.vim	/^let g:NERDTreeWinSize = 60$/;"	v
+g:NERDTreeWinSize	vim/init.vim	/^let g:NERDTreeWinSize = 45$/;"	v
 g:UltiSnipsEditSplit	vim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim	/^    let g:UltiSnipsEditSplit = 'normal'$/;"	v
 g:UltiSnipsEditSplit	vim/plugged/ultisnips/docker/docker_vimrc.vim	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
 g:UltiSnipsEnableSnipMate	vim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim	/^    let g:UltiSnipsEnableSnipMate = 1$/;"	v
@@ -4415,6 +3988,27 @@ g:airline#themes#night_owl#palette	vim/plugged/vim-airline-themes/autoload/airli
 g:airline#themes#night_owl#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/night_owl.vim	/^let g:airline#themes#night_owl#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)$/;"	v
 g:airline#themes#night_owl#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/night_owl.vim	/^let g:airline#themes#night_owl#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)$/;"	v
 g:airline#themes#night_owl#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/night_owl.vim	/^let g:airline#themes#night_owl#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette = {}$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive = airline#themes#generate_color_map(s:IAMain, s:IARight, s:IAMiddle)$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive.airline_error = s:IAError$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive.airline_term = s:IAMiddle$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive.airline_warning = s:IAWarn$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert = airline#themes#generate_color_map(s:IMain, s:IRight, s:IMiddle)$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert.airline_error = s:IError$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert.airline_term = s:IMiddle$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert.airline_warning = s:IWarn$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal = airline#themes#generate_color_map(s:NMain, s:NRight, s:NMiddle)$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal.airline_error = s:NError$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal.airline_term = s:NMiddle$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal.airline_warning = s:NWarn$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace = airline#themes#generate_color_map(s:RMain, s:RRight, s:RMiddle)$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace.airline_error = s:RError$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace.airline_term = s:RMiddle$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace.airline_warning = s:RWarn$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual = airline#themes#generate_color_map(s:VMain, s:VRight, s:VMiddle)$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual.airline_error = s:VError$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual.airline_term = s:VMiddle$/;"	v
+g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual.airline_warning = s:VWarn$/;"	v
 g:airline#themes#ouo#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/ouo.vim	/^let g:airline#themes#ouo#palette = {}$/;"	v
 g:airline#themes#ouo#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/ouo.vim	/^let g:airline#themes#ouo#palette.accents = {$/;"	v
 g:airline#themes#ouo#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/ouo.vim	/^let g:airline#themes#ouo#palette.inactive =$/;"	v
@@ -4768,7 +4362,7 @@ g:airline_section_x	vim/init.vim	/^let g:airline_section_x                      
 g:airline_section_y	vim/init.vim	/^let g:airline_section_y                           = airline#section#create(['filetype'])$/;"	v
 g:airline_statusline_funcrefs	vim/plugged/vim-airline/autoload/airline.vim	/^let g:airline_statusline_funcrefs = get(g:, 'airline_statusline_funcrefs', [])$/;"	v
 g:airline_statusline_funcrefs	vim/plugged/vim-airline/t/airline.vim	/^    let g:airline_statusline_funcrefs = []$/;"	v
-g:airline_theme	vim/init.vim	/^let g:airline_theme                               = 'base16'$/;"	v
+g:airline_theme	vim/init.vim	/^let g:airline_theme                               = 'base16_snazzy'$/;"	v
 g:airline_theme	vim/plugged/vim-airline/t/airline.vim	/^let g:airline_theme = 'dark'$/;"	v
 g:airline_theme	vim/plugged/vim-airline/t/builder.vim	/^let g:airline_theme = 'dark'$/;"	v
 g:airline_theme	vim/plugged/vim-airline/t/highlighter.vim	/^let g:airline_theme = 'dark'$/;"	v
@@ -4810,14 +4404,9 @@ g:coc_user_config	vim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc_user_config 
 g:coc_vim_commands	vim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc_vim_commands = []$/;"	v
 g:colors_name	vim/colors/ronakg.vim	/^let g:colors_name="ronakg"$/;"	v
 g:colors_name	vim/plugged/dracula/colors/dracula.vim	/^let g:colors_name = 'dracula'$/;"	v
+g:colors_name	vim/plugged/nord-vim/colors/nord.vim	/^let g:colors_name = "nord"$/;"	v
 g:count	vim/plugged/vim-airline/t/util.vim	/^    let g:count = 0$/;"	v
 g:cursormode_exit_mode	vim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^  let g:cursormode_exit_mode='n'$/;"	v
-g:dbext_default_menu_mode	vim/plugged/dbext.vim/plugin/dbext.vim	/^    let g:dbext_default_menu_mode = 3$/;"	v
-g:dbext_default_usermaps	vim/plugged/dbext.vim/plugin/dbext.vim	/^    let g:dbext_default_usermaps = 1$/;"	v
-g:dbext_map_or_cmd	vim/plugged/dbext.vim/plugin/dbext.vim	/^        let g:dbext_map_or_cmd = 'cmd'$/;"	v
-g:dbext_map_or_cmd	vim/plugged/dbext.vim/plugin/dbext.vim	/^        let g:dbext_map_or_cmd = 'map'$/;"	v
-g:dbext_map_prefix	vim/plugged/dbext.vim/plugin/dbext.vim	/^    let g:dbext_map_prefix = '<Leader>s'$/;"	v
-g:dbext_rows_affected	vim/plugged/dbext.vim/plugin/dbext.vim	/^    let g:dbext_rows_affected = 0$/;"	v
 g:did_coc_loaded	vim/plugged/coc.nvim/plugin/coc.vim	/^let g:did_coc_loaded = 1$/;"	v
 g:dracula#palette	vim/plugged/dracula/autoload/dracula.vim	/^let g:dracula#palette           = {}$/;"	v
 g:dracula#palette	vim/plugged/dracula/autoload/dracula.vim	/^let g:dracula#palette.bg        = ['#282A36', 236]$/;"	v
@@ -4936,13 +4525,9 @@ g:indentLine_setConceal	vim/plugged/indentLine/after/plugin/indentLine.vim	/^let
 g:indentLine_showFirstIndentLevel	vim/plugged/indentLine/after/plugin/indentLine.vim	/^let g:indentLine_showFirstIndentLevel = get(g:, 'indentLine_showFirstIndentLevel', 0)$/;"	v
 g:io_fugitive	vim/plugged/vim-fugitive/plugin/fugitive.vim	/^let g:io_fugitive = {$/;"	v
 g:lightline#colorscheme#dracula#palette	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let g:lightline#colorscheme#dracula#palette = lightline#colorscheme#flatten(s:p)$/;"	v
+g:lightline#colorscheme#nord#palette	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let g:lightline#colorscheme#nord#palette = lightline#colorscheme#flatten(s:p)$/;"	v
 g:loaded_airline	vim/plugged/vim-airline/plugin/airline.vim	/^let g:loaded_airline = 1$/;"	v
 g:loaded_airline_themes	vim/plugged/vim-airline-themes/plugin/airline-themes.vim	/^let g:loaded_airline_themes = 1$/;"	v
-g:loaded_dbext	vim/plugged/dbext.vim/plugin/dbext.vim	/^let g:loaded_dbext = 2300$/;"	v
-g:loaded_dbext_auto	vim/plugged/dbext.vim/autoload/dbext.vim	/^let g:loaded_dbext_auto = 2300$/;"	v
-g:loaded_dbext_dbi	vim/plugged/dbext.vim/autoload/dbext_dbi.vim	/^    let g:loaded_dbext_dbi = -1$/;"	v
-g:loaded_dbext_dbi	vim/plugged/dbext.vim/autoload/dbext_dbi.vim	/^let g:loaded_dbext_dbi = 2300$/;"	v
-g:loaded_dbext_dbi_msg	vim/plugged/dbext.vim/autoload/dbext_dbi.vim	/^    let g:loaded_dbext_dbi_msg = 'Vim does not have perl support enabled'$/;"	v
 g:loaded_fugitive	vim/plugged/vim-fugitive/plugin/fugitive.vim	/^let g:loaded_fugitive = 1$/;"	v
 g:loaded_gutentags	vim/plugged/vim-gutentags/plugin/gutentags.vim	/^let g:loaded_gutentags = 1$/;"	v
 g:loaded_nerdtree_autoload	vim/plugged/nerdtree/autoload/nerdtree.vim	/^let g:loaded_nerdtree_autoload = 1$/;"	v
@@ -4954,9 +4539,17 @@ g:loaded_startify	vim/plugged/vim-startify/plugin/startify.vim	/^let g:loaded_st
 g:loaded_syntastic_vue_eslint_checker	vim/plugged/vim-vue/syntax_checkers/vue/eslint.vim	/^let g:loaded_syntastic_vue_eslint_checker = 1$/;"	v
 g:loaded_tagbar	vim/plugged/tagbar/autoload/tagbar.vim	/^let g:loaded_tagbar = 1$/;"	v
 g:loaded_webdevicons	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^let g:loaded_webdevicons = 1$/;"	v
+g:nord_bold	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_bold = 1$/;"	v
+g:nord_bold_vertical_split_line	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_bold_vertical_split_line = 0$/;"	v
+g:nord_comment_brightness	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_comment_brightness = 10$/;"	v
+g:nord_cursor_line_number_background	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_cursor_line_number_background = 0$/;"	v
+g:nord_italic	vim/plugged/nord-vim/colors/nord.vim	/^    let g:nord_italic = 0$/;"	v
+g:nord_italic	vim/plugged/nord-vim/colors/nord.vim	/^    let g:nord_italic = 1$/;"	v
+g:nord_uniform_diff_background	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_uniform_diff_background = 0$/;"	v
+g:nord_uniform_status_lines	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_uniform_status_lines = 0$/;"	v
 g:plugs_order	vim/autoload/plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order', keys(g:plugs))$/;"	v
 g:ruby_operators	vim/plugged/dracula/after/syntax/ruby.vim	/^    let g:ruby_operators=1$/;"	v
-g:startify_bookmarks	vim/init.vim	/^let g:startify_bookmarks = [ {'c': '~\/.vim\/vimrc'}, {'d': '~\/.vim\/vim-plug.vim'}, {'t': '~\/.tmux.conf'},  {'i' : '~\/.config\/i3\/config'}, {'p' : '~\/.config\/polybar\/config'}, {'k' : '~\/.config\/kitty\/kitty.conf'}  ]$/;"	v
+g:startify_bookmarks	vim/init.vim	/^let g:startify_bookmarks = [ {'c': '~\/.vim\/vimrc'}, {'d': '~\/.vim\/vim-plug.vim'}, {'t': '~\/.tmux.conf'},  {'i' : '~\/.config\/i3\/config'}, {'p' : '~\/.config\/polybar\/config'}, {'h' : '~\/.hyper.js'}  ]$/;"	v
 g:startify_change_to_dir	vim/init.vim	/^let g:startify_change_to_dir = 0$/;"	v
 g:startify_files_number	vim/init.vim	/^let g:startify_files_number = 10$/;"	v
 g:startify_list_order	vim/init.vim	/^let g:startify_list_order = [['Most recently used files in current directory:'], 'dir',$/;"	v
@@ -4968,7 +4561,24 @@ g:tagbar_iconchars	vim/plugged/tagbar/plugin/tagbar.vim	/^        let g:tagbar_i
 g:tagbar_iconchars	vim/plugged/tagbar/plugin/tagbar.vim	/^        let g:tagbar_iconchars = ['▶', '▼']$/;"	v
 g:tagbar_type_snippets	vim/plugged/ultisnips/ftplugin/snippets.vim	/^let g:tagbar_type_snippets = {$/;"	v
 g:terminal_ansi_colors	vim/plugged/dracula/colors/dracula.vim	/^  let g:terminal_ansi_colors = []$/;"	v
+g:terminal_ansi_colors	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_ansi_colors = [s:nord1_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord8_gui, s:nord5_gui, s:nord3_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]$/;"	v
 g:terminal_color_	vim/plugged/dracula/colors/dracula.vim	/^    let g:terminal_color_{s:i} = g:dracula#palette['color_' . s:i]$/;"	v
+g:terminal_color_0	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_0 = s:nord1_gui$/;"	v
+g:terminal_color_1	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_1 = s:nord11_gui$/;"	v
+g:terminal_color_10	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_10 = s:nord14_gui$/;"	v
+g:terminal_color_11	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_11 = s:nord13_gui$/;"	v
+g:terminal_color_12	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_12 = s:nord9_gui$/;"	v
+g:terminal_color_13	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_13 = s:nord15_gui$/;"	v
+g:terminal_color_14	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_14 = s:nord7_gui$/;"	v
+g:terminal_color_15	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_15 = s:nord6_gui$/;"	v
+g:terminal_color_2	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_2 = s:nord14_gui$/;"	v
+g:terminal_color_3	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_3 = s:nord13_gui$/;"	v
+g:terminal_color_4	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_4 = s:nord9_gui$/;"	v
+g:terminal_color_5	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_5 = s:nord15_gui$/;"	v
+g:terminal_color_6	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_6 = s:nord8_gui$/;"	v
+g:terminal_color_7	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_7 = s:nord5_gui$/;"	v
+g:terminal_color_8	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_8 = s:nord3_gui$/;"	v
+g:terminal_color_9	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_9 = s:nord11_gui$/;"	v
 g:vue_pre_processors	vim/init.vim	/^let g:vue_pre_processors = 'detect_on_enter'$/;"	v
 g:vue_pre_processors	vim/plugged/vim-vue/syntax/vue.vim	/^  let g:vue_pre_processors = []$/;"	v
 g:webdevicons_enable	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:webdevicons_enable = 1$/;"	v
@@ -5044,7 +4654,6 @@ get_total_updates	polybar/polybar-themes/polybar-8/source/typicons/scripts/updat
 get_total_updates	polybar/scripts/updates.sh	/^get_total_updates() { UPDATES=$(checkupdates 2>\/dev\/null | wc -l); }$/;"	f
 get_transitioned_seperator	vim/plugged/vim-airline/autoload/airline/builder.vim	/^function! s:get_transitioned_seperator(self, prev_group, group, side)$/;"	f
 get_wordcount	vim/plugged/vim-airline/autoload/airline/extensions/wordcount.vim	/^  function! s:get_wordcount(visual_mode_active)$/;"	f
-getline	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:getline()$/;"	f
 gettime	vim/plugged/tagbar/autoload/tagbar/debug.vim	/^    function! s:gettime() abort$/;"	f
 git_validate	vim/autoload/plug.vim	/^function! s:git_validate(spec, check_branch)$/;"	f
 git_version_requirement	vim/autoload/plug.vim	/^function! s:git_version_requirement(...)$/;"	f
@@ -5123,6 +4732,7 @@ hash_match	vim/autoload/plug.vim	/^function! s:hash_match(a, b)$/;"	f
 head_tail	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^def head_tail(line):$/;"	f
 health#coc#check	vim/plugged/coc.nvim/autoload/health/coc.vim	/^function! health#coc#check() abort$/;"	f
 helptag_sink	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:helptag_sink(line)$/;"	f
+hi	vim/plugged/nord-vim/colors/nord.vim	/^function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)$/;"	f
 highlight_keys	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:highlight_keys(str)$/;"	f
 history	vim/plugged/fzf.vim/plugin/fzf.vim	/^function! s:history(arg, bang)$/;"	f
 history_sink	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:history_sink(type, lines)$/;"	f
@@ -5723,11 +5333,7 @@ launch	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    
 launch	vim/plugged/ultisnips/test/vim_interface.py	/^    def launch(self, config=[]):$/;"	m	class:VimInterface
 launch	vim/plugged/ultisnips/test/vim_interface.py	/^    def launch(self, config=[]):$/;"	m	class:VimInterfaceTmuxNeovim
 lazy	vim/autoload/plug.vim	/^function! s:lazy(plug, opt)$/;"	f
-leader	vim/plugged/dbext.vim/plugin/dbext.vim	/^        let leader = g:mapleader$/;"	v
-leader	vim/plugged/dbext.vim/plugin/dbext.vim	/^    let leader = '\\'$/;"	v
-leader	vim/plugged/dbext.vim/plugin/dbext.vim	/^    let leader = escape(leader, '\\')$/;"	v
 leave_with_wait	vim/plugged/ultisnips/test/vim_interface.py	/^    def leave_with_wait(self):$/;"	m	class:VimInterface
-left	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:left(s)$/;"	f
 legacy_airline_ale_get_line_number	vim/plugged/vim-airline/autoload/airline/extensions/ale.vim	/^function! s:legacy_airline_ale_get_line_number(cnt, type) abort$/;"	f
 line_handler	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:line_handler(lines)$/;"	f
 line_index	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^    def line_index(self):$/;"	m	class:LineIterator
@@ -5748,6 +5354,7 @@ lod_ft	vim/autoload/plug.vim	/^function! s:lod_ft(pat, names)$/;"	f
 lod_map	vim/autoload/plug.vim	/^function! s:lod_map(map, names, with_prefix, prefix)$/;"	f
 log	vim/autoload/plug.vim	/^function! s:log(bullet, name, lines)$/;"	f
 log4	vim/autoload/plug.vim	/^function! s:log4(name, msg)$/;"	f
+logWarning	vim/plugged/nord-vim/colors/nord.vim	/^function! s:logWarning(msg)$/;"	f
 logpos	vim/autoload/plug.vim	/^function! s:logpos(name)$/;"	f
 lpad	vim/autoload/plug.vim	/^function! s:lpad(str, len)$/;"	f
 main	tmux/plugins/tpm/bin/clean_plugins	/^main() {$/;"	f
@@ -5782,14 +5389,9 @@ maps	vim/plugged/ultisnips/test/test_Selection.py	/^    maps = ("H", "x"), ("e",
 maps	vim/plugged/ultisnips/test/test_Selection.py	/^    maps = ("e", "l"), ("H", "x")$/;"	v	class:SelectModeMappings_IgnoreMappings2_ECR
 mark_sink	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:mark_sink(lines)$/;"	f
 mark_window	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:mark_window() abort$/;"	f
-matchbegin	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:matchbegin(text, close)$/;"	f
 matched	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    def matched(self):$/;"	m	class:SnippetDefinition
-matchend	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:matchend(text, open)$/;"	f
 matches	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    def matches(self, before, visual_content=None):$/;"	m	class:SnippetDefinition
 maxDiff	vim/plugged/ultisnips/test/vim_test_case.py	/^    maxDiff = None  # Show all diff output, always.$/;"	v	class:VimTestCase
-menuRoot	vim/plugged/dbext.vim/plugin/dbext.vim	/^        let menuRoot = '&Plugin.&dbext'$/;"	v
-menuRoot	vim/plugged/dbext.vim/plugin/dbext.vim	/^        let menuRoot = '&dbext'$/;"	v
-menuRoot	vim/plugged/dbext.vim/plugin/dbext.vim	/^        let menuRoot = 'dbext'$/;"	v
 merge_opts	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:merge_opts(dict, eopts)$/;"	f
 mkline	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^    def mkline(self, line="", indent=None):$/;"	m	class:SnippetUtil
 mode	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^    def mode(self):$/;"	m	class:VimPosition
@@ -5947,6 +5549,7 @@ ppos	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^    def ppos(self):$
 prepare	vim/autoload/plug.vim	/^function! s:prepare(...)$/;"	f
 prepend_opts	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:prepend_opts(dict, eopts)$/;"	f
 preserve	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    def preserve(self):$/;"	m	class:_SnippetUtilCursor
+prev_default_command	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^    let prev_default_command = $FZF_DEFAULT_COMMAND$/;"	v
 previewBookmark	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:previewBookmark(bookmark)$/;"	f
 previewNodeCurrent	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:previewNodeCurrent(node)$/;"	f
 previewNodeHSplit	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:previewNodeHSplit(node)$/;"	f
@@ -6030,7 +5633,6 @@ return	vim/plugged/coc.nvim/build/index.js	/^\/******\/ 	__webpack_require__.o =
 reuseWin	vim/plugged/nerdtree/autoload/nerdtree.vim	/^function! s:reuseWin(dir) abort$/;"	f
 revert	vim/autoload/plug.vim	/^function! s:revert()$/;"	f
 rgb_to_r_g_b	conky/conky_orange.lua	/^function rgb_to_r_g_b(colour, alpha)$/;"	f
-right	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:right(s)$/;"	f
 rm_rf	vim/autoload/plug.vim	/^function! s:rm_rf(dir)$/;"	f
 root	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let root = s:guess_root(a:path, a:markers)$/;"	v
 rtp	vim/autoload/plug.vim	/^function! s:rtp(spec)$/;"	f
@@ -6101,8 +5703,6 @@ s:ERROR	vim/plugged/vim-airline-themes/autoload/airline/themes/base16_atelierdun
 s:ERROR	vim/plugged/vim-airline-themes/autoload/airline/themes/dracula.vim	/^let s:ERROR = [ s:guiWhite, s:gui05, s:ctermWhite, s:cterm05 ]$/;"	v
 s:Event	vim/plugged/nerdtree/lib/nerdtree/event.vim	/^let s:Event = {}$/;"	v
 s:FlagSet	vim/plugged/nerdtree/lib/nerdtree/flag_set.vim	/^let s:FlagSet = {}$/;"	v
-s:Go	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let s:Go = ""$/;"	v
-s:Go	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let s:Go = "\\<C-G>U"$/;"	v
 s:I1	vim/autoload/airline/themes/ronakg.vim	/^let s:I1 = [ '#585858' , '#e4e4e4' , 240 , 214 ] " Mode$/;"	v
 s:I1	vim/plugged/vim-airline-themes/autoload/airline/themes/alduin.vim	/^let s:I1 = [s:guiWhite, s:gui0B, s:ctermWhite, s:cterm0B]$/;"	v
 s:I1	vim/plugged/vim-airline-themes/autoload/airline/themes/angr.vim	/^let s:I1 = [s:gui_med_gray_hi, s:gui_blue, s:cterm_med_gray_hi, s:cterm_blue]$/;"	v
@@ -6601,6 +6201,12 @@ s:IA3	vim/plugged/vim-airline-themes/autoload/airline/themes/ouo.vim	/^let s:IA3
 s:IA3	vim/plugged/vim-airline-themes/autoload/airline/themes/qwq.vim	/^let s:IA3 = [ '#ffffff' , '#A28E79' , 239 , 236 , '' ]$/;"	v
 s:IA3	vim/plugged/vim-airline-themes/autoload/airline/themes/understated.vim	/^let s:IA3 = ['#4E4E4E', '#1C1C1C', 239, 234, '']$/;"	v
 s:IA3	vim/plugged/vim-airline-themes/autoload/airline/themes/xtermlight.vim	/^let s:IA3 = [ '#a8a8a8' , '#eeeeee' , 248 , 255 , '' ]$/;"	v
+s:IAError	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
+s:IAMain	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAMain = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:IAMiddle	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAMiddle = [s:nord5_gui, s:nord1_gui, s:nord5_term, s:nord1_term]$/;"	v
+s:IARight	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IARight = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:IAWarn	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
+s:IError	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/base16_snazzy.vim	/^let s:IM = [ s:base00 , 235 ]$/;"	v
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/base16color.vim	/^let s:IM = [ '#40403C' , 236 ]$/;"	v
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/laederon.vim	/^let s:IM = [ '#242321' , 235 ]$/;"	v
@@ -6608,6 +6214,8 @@ s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/term.vim	/^let s:IM 
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/term_light.vim	/^let s:IM = [ '#40403C' , 7 ]$/;"	v
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/ubaryd.vim	/^let s:IM = [ '#242321' , 235 ]$/;"	v
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/wombat.vim	/^let s:IM = [ '#40403C' , 238 ]$/;"	v
+s:IMain	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IMain = [s:nord1_gui, s:nord14_gui, s:nord1_term, s:nord6_term]$/;"	v
+s:IMiddle	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
 s:IN1	vim/plugged/vim-airline-themes/autoload/airline/themes/alduin.vim	/^let s:IN1 = [s:guiGray, s:gui01, s:ctermGray, s:cterm01]$/;"	v
 s:IN1	vim/plugged/vim-airline-themes/autoload/airline/themes/aurora.vim	/^let s:IN1 = [ '#9e9e9e' , '#9e9e9e' , 247 , 247 ]$/;"	v
 s:IN1	vim/plugged/vim-airline-themes/autoload/airline/themes/badcat.vim	/^let s:IN1 = [ s:guiBlack     , s:guiGray  , s:ctermBlack      , s:ctermGray  ]$/;"	v
@@ -6633,8 +6241,9 @@ s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/jellybeans.vim	/^le
 s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/jet.vim	/^let s:IN3 = [ s:gui02 , s:gui00 , s:cterm02 , s:cterm00 ]$/;"	v
 s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/sierra.vim	/^let s:IN3 = [s:gui02, s:guiAlmostBlack, s:cterm02, s:ctermAlmostBlack]$/;"	v
 s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/vice.vim	/^let s:IN3 = [s:grey0[1], s:grey1[1], s:grey0[0], s:grey1[0] ]$/;"	v
+s:IRight	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
+s:IWarn	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
 s:KeyMap	vim/plugged/nerdtree/lib/nerdtree/key_map.vim	/^let s:KeyMap = {}$/;"	v
-s:Left	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^let s:Left = s:Go."\\<LEFT>"$/;"	v
 s:MenuController	vim/plugged/nerdtree/lib/nerdtree/menu_controller.vim	/^let s:MenuController = {}$/;"	v
 s:MenuItem	vim/plugged/nerdtree/lib/nerdtree/menu_item.vim	/^let s:MenuItem = {}$/;"	v
 s:N1	vim/autoload/airline/themes/ronakg.vim	/^let s:N1 = [ '#585858' , '#e4e4e4' , 240 , 223 ] " Mode$/;"	v
@@ -6938,6 +6547,11 @@ s:N4	vim/plugged/vim-airline-themes/autoload/airline/themes/ubaryd.vim	/^let s:N
 s:N4	vim/plugged/vim-airline-themes/autoload/airline/themes/wombat.vim	/^let s:N4 = [ '#86CD74' , 113 ]                   " mode modified$/;"	v
 s:NERDFileNameEscape	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^let s:NERDFileNameEscape="[]#*$%'\\" ?`!&();<>\\\\"$/;"	v
 s:NERDTree	vim/plugged/nerdtree/lib/nerdtree/nerdtree.vim	/^let s:NERDTree = {}$/;"	v
+s:NError	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
+s:NMain	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NMain = [s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term]$/;"	v
+s:NMiddle	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:NRight	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
+s:NWarn	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
 s:Notifier	vim/plugged/nerdtree/lib/nerdtree/notifier.vim	/^let s:Notifier = {}$/;"	v
 s:Opener	vim/plugged/nerdtree/lib/nerdtree/opener.vim	/^let s:Opener = {}$/;"	v
 s:PA	vim/plugged/vim-airline-themes/autoload/airline/themes/badwolf.vim	/^let s:PA = [ '#f4cf86' , 222 ]                   " dirtyblonde$/;"	v
@@ -7176,7 +6790,11 @@ s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/desertink.vim	/^let 
 s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/powerlineish.vim	/^let s:RE = [ '#ffffff' , '#d70000' , 231 , 160 ] " white          & brightred$/;"	v
 s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/ravenpower.vim	/^let s:RE = [ '#ffffff' , '#d70000' , 231 , 160 ] " white          & brightred$/;"	v
 s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/violet.vim	/^let s:RE = [ '#c6c6c6' , '#ce537a' , 251, 168 ]$/;"	v
-s:Right	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^let s:Right = s:Go."\\<RIGHT>"$/;"	v
+s:RError	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
+s:RMain	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RMain = [s:nord1_gui, s:nord14_gui, s:nord1_term, s:nord14_term]$/;"	v
+s:RMiddle	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:RRight	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
+s:RWarn	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
 s:State	vim/plugged/tagbar/autoload/tagbar/state.vim	/^let s:State = {$/;"	v
 s:TE	vim/plugged/vim-airline-themes/autoload/airline/themes/peaksea.vim	/^let s:TE = [ '#1C1C1C' , '#3A3A3A' , 254 , 237 , '' ]$/;"	v
 s:TH	vim/plugged/vim-airline-themes/autoload/airline/themes/desertink.vim	/^let s:TH  = [ s:N1[1], s:N1[0], s:N1[3], s:N1[2] ]     " hidden buffers$/;"	v
@@ -7473,6 +7091,11 @@ s:V4	vim/plugged/vim-airline-themes/autoload/airline/themes/term.vim	/^let s:V4 
 s:V4	vim/plugged/vim-airline-themes/autoload/airline/themes/term_light.vim	/^let s:V4 = [ '#B5D3F3' , '#141413' , 12,  0 ]$/;"	v
 s:V4	vim/plugged/vim-airline-themes/autoload/airline/themes/ubaryd.vim	/^let s:V4 = [ '#9a4820' , 88 ]$/;"	v
 s:V4	vim/plugged/vim-airline-themes/autoload/airline/themes/wombat.vim	/^let s:V4 = [ '#7CB0E6' , 111 ]$/;"	v
+s:VError	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
+s:VMain	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VMain = [s:nord1_gui, s:nord7_gui, s:nord1_term, s:nord7_term]$/;"	v
+s:VMiddle	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:VRight	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
+s:VWarn	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
 s:W	vim/plugged/vim-airline-themes/autoload/airline/themes/ouo.vim	/^let s:W = [s:gui_warningfg, s:gui_warningbg, s:cterm_warningfg, s:cterm_warningbg, 'bold']$/;"	v
 s:WARNING	vim/plugged/vim-airline-themes/autoload/airline/themes/base16_atelierdune.vim	/^let s:WARNING = [ s:gui01, s:gui0A, s:cterm0C, s:cterm06 ]$/;"	v
 s:WARNING	vim/plugged/vim-airline-themes/autoload/airline/themes/dracula.vim	/^let s:WARNING = [ s:guiBlack, s:gui03, s:ctermBlack, s:cterm03 ]$/;"	v
@@ -7608,6 +7231,8 @@ s:black	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^let s:b
 s:blobdirs	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^  let s:blobdirs = {}$/;"	v
 s:blue	vim/plugged/vim-airline-themes/autoload/airline/themes/distinguished.vim	/^let s:blue    = [ 67, '#5f87af']$/;"	v
 s:blue	vim/plugged/vim-airline-themes/autoload/airline/themes/solarized_flood.vim	/^let s:blue    = {'hex': '#268BD2', 'term':  32}  "  38, 139, 210 *$/;"	v
+s:bold	vim/plugged/nord-vim/colors/nord.vim	/^  let s:bold = ""$/;"	v
+s:bold	vim/plugged/nord-vim/colors/nord.vim	/^let s:bold = "bold,"$/;"	v
 s:buf_min_count	vim/plugged/vim-airline/autoload/airline/extensions/tabline/autoshow.vim	/^let s:buf_min_count = get(g:, 'airline#extensions#tabline#buffer_min_count', 0)$/;"	v
 s:buf_modified_symbol	vim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/default.vim	/^let s:buf_modified_symbol = g:airline_symbols.modified$/;"	v
 s:buf_nr_format	vim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/default.vim	/^let s:buf_nr_format = get(g:, 'airline#extensions#tabline#buffer_nr_format', '%s: ')$/;"	v
@@ -7649,9 +7274,6 @@ s:contexts	vim/plugged/vim-airline/autoload/airline.vim	/^let s:contexts = {}$/;
 s:core_funcrefs	vim/plugged/vim-airline/autoload/airline.vim	/^let s:core_funcrefs = [$/;"	v
 s:cow	vim/plugged/vim-startify/autoload/startify/fortune.vim	/^let s:cow = [$/;"	v
 s:cpo_save	vim/autoload/plug.vim	/^let s:cpo_save = &cpo$/;"	v
-s:cpo_save	vim/plugged/dbext.vim/autoload/dbext.vim	/^let s:cpo_save = &cpo$/;"	v
-s:cpo_save	vim/plugged/dbext.vim/autoload/dbext_dbi.vim	/^let s:cpo_save = &cpo$/;"	v
-s:cpo_save	vim/plugged/dbext.vim/plugin/dbext.vim	/^let s:cpo_save = &cpo$/;"	v
 s:cpo_save	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^let s:cpo_save = &cpo$/;"	v
 s:cpo_save	vim/plugged/fzf.vim/autoload/fzf/vim/complete.vim	/^let s:cpo_save = &cpo$/;"	v
 s:cpo_save	vim/plugged/fzf.vim/plugin/fzf.vim	/^let s:cpo_save = &cpo$/;"	v
@@ -8620,14 +8242,6 @@ s:dark_gray	vim/plugged/vim-airline-themes/autoload/airline/themes/fruit_punch.v
 s:dark_lavender	vim/plugged/vim-airline-themes/autoload/airline/themes/vice.vim	/^let s:dark_lavender = [97, "#875faf"]$/;"	v
 s:dark_mint	vim/plugged/vim-airline-themes/autoload/airline/themes/vice.vim	/^let s:dark_mint = [49, "#87af87"]$/;"	v
 s:darkblue	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^let s:darkblue = g:dracula#palette.comment$/;"	v
-s:dbext_buffer_last	vim/plugged/dbext.vim/autoload/dbext.vim	/^let s:dbext_buffer_last       = -1$/;"	v
-s:dbext_buffer_last_winnr	vim/plugged/dbext.vim/autoload/dbext.vim	/^let s:dbext_buffer_last_winnr = -1$/;"	v
-s:dbext_buffers_connected	vim/plugged/dbext.vim/autoload/dbext.vim	/^let s:dbext_buffers_connected = []$/;"	v
-s:dbext_buffers_with_dict_files	vim/plugged/dbext.vim/autoload/dbext.vim	/^let s:dbext_buffers_with_dict_files = []$/;"	v
-s:dbext_prev_sql	vim/plugged/dbext.vim/autoload/dbext.vim	/^let s:dbext_prev_sql     = ''$/;"	v
-s:dbext_result_count	vim/plugged/dbext.vim/autoload/dbext.vim	/^let s:dbext_result_count = 0$/;"	v
-s:dbext_tempfile	vim/plugged/dbext.vim/autoload/dbext.vim	/^let s:dbext_tempfile = fnamemodify(tempname(), ":h")$/;"	v
-s:dbext_tempfile	vim/plugged/dbext.vim/autoload/dbext.vim	/^let s:dbext_tempfile = s:dbext_tempfile.(s:dbext_tempfile =~ '^\/' ? '\/' : '\\').'dbext.sql'$/;"	v
 s:debug_enabled	vim/plugged/tagbar/autoload/tagbar/debug.vim	/^let s:debug_enabled = 0$/;"	v
 s:debug_file	vim/plugged/tagbar/autoload/tagbar/debug.vim	/^let s:debug_file = ''$/;"	v
 s:decimal_group	vim/plugged/vim-airline/autoload/airline/extensions/wordcount/formatters/default.vim	/^  let s:decimal_group = ''$/;"	v
@@ -8666,6 +8280,8 @@ s:filetype_overrides	vim/plugged/vim-airline/autoload/airline/extensions.vim	/^ 
 s:filetype_overrides	vim/plugged/vim-airline/autoload/airline/extensions.vim	/^  let s:filetype_overrides['gina-log'] = ['gina', '%{gina#component#repo#preset()}' ]$/;"	v
 s:filetype_overrides	vim/plugged/vim-airline/autoload/airline/extensions.vim	/^  let s:filetype_overrides['gina-status'] = ['gina', '%{gina#component#repo#preset()}' ]$/;"	v
 s:filetype_overrides	vim/plugged/vim-airline/autoload/airline/extensions.vim	/^  let s:filetype_overrides['gina-tag'] = ['gina', '%{gina#component#repo#preset()}' ]$/;"	v
+s:filetype_overrides	vim/plugged/vim-airline/autoload/airline/extensions.vim	/^  let s:filetype_overrides['nerdtree'] = [ get(g:, 'NERDTreeStatusline', 'NERD'), '' ]$/;"	v
+s:filetype_overrides	vim/plugged/vim-airline/autoload/airline/extensions.vim	/^  let s:filetype_overrides['nerdtree'] = ['NERDTree', '']$/;"	v
 s:filetype_overrides	vim/plugged/vim-airline/autoload/airline/extensions.vim	/^let s:filetype_overrides = {$/;"	v
 s:filetype_regex_overrides	vim/plugged/vim-airline/autoload/airline/extensions.vim	/^let s:filetype_regex_overrides = {}$/;"	v
 s:first_rtp	vim/autoload/plug.vim	/^let s:first_rtp = s:escrtp(get(s:split_rtp(), 0, ''))$/;"	v
@@ -9607,6 +9223,7 @@ s:guisep	vim/plugged/vim-airline-themes/autoload/airline/themes/serene.vim	/^let
 s:has_strcharpart	vim/plugged/vim-airline/autoload/airline/util.vim	/^let s:has_strcharpart = exists('*strcharpart')$/;"	v
 s:has_strchars	vim/plugged/vim-airline/autoload/airline/util.vim	/^let s:has_strchars = exists('*strchars')$/;"	v
 s:hash_colors	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:hash_colors = {}$/;"	v
+s:head_cache	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:head_cache = {}$/;"	v
 s:head_format	vim/plugged/vim-airline/autoload/airline/extensions/branch.vim	/^let s:head_format = get(g:, 'airline#extensions#branch#format', 0)$/;"	v
 s:highlight_groups	vim/plugged/vim-airline/autoload/airline/extensions/tabline/ctrlspace.vim	/^let s:highlight_groups = ['hid', 0, '', 'sel', 'mod_unsel', 0, 'mod_unsel', 'mod']$/;"	v
 s:highlight_groups	vim/plugged/vim-airline/autoload/airline/extensions/tabline/tabws.vim	/^let s:highlight_groups = ['hid', 0, '', 'sel', 'mod_unsel', 0, 'mod_unsel', 'mod']$/;"	v
@@ -9648,6 +9265,10 @@ s:is_win	vim/plugged/fzf.vim/autoload/fzf/vim/complete.vim	/^let s:is_win = has(
 s:is_win	vim/plugged/fzf.vim/plugin/fzf.vim	/^let s:is_win = has('win32') || has('win64')$/;"	v
 s:is_win	vim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^let s:is_win = has('win32') || has('win64')$/;"	v
 s:is_win32term	vim/plugged/vim-airline/autoload/airline/highlighter.vim	/^let s:is_win32term = (has('win32') || has('win64')) &&$/;"	v
+s:italic	vim/plugged/nord-vim/colors/nord.vim	/^  let s:italic = ""$/;"	v
+s:italic	vim/plugged/nord-vim/colors/nord.vim	/^let s:italic = "italic,"$/;"	v
+s:italicize_comments	vim/plugged/nord-vim/colors/nord.vim	/^    let s:italicize_comments = s:italic$/;"	v
+s:italicize_comments	vim/plugged/nord-vim/colors/nord.vim	/^let s:italicize_comments = ""$/;"	v
 s:item_pattern	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:item_pattern = s:file_commit_pattern . '\\|^@@'$/;"	v
 s:keyMaps	vim/plugged/nerdtree/lib/nerdtree/key_map.vim	/^let s:keyMaps = {}$/;"	v
 s:known_files	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:known_files = {$/;"	v
@@ -9701,6 +9322,88 @@ s:new_window	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:new_window      = 1$
 s:nomodeline	vim/plugged/vim-airline/autoload/airline/util.vim	/^let s:nomodeline = (v:version > 703 || (v:version == 703 && has("patch438"))) ? '<nomodeline>' : ''$/;"	v
 s:non_zero_only	vim/plugged/vim-airline/autoload/airline/extensions/hunks.vim	/^let s:non_zero_only = get(g:, 'airline#extensions#hunks#non_zero_only', 0)$/;"	v
 s:none	vim/plugged/dracula/colors/dracula.vim	/^let s:none      = ['NONE', 'NONE']$/;"	v
+s:nord0	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord0 = ["#2E3440", "NONE"]$/;"	v
+s:nord0_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord0_gui = "#2E3440"$/;"	v
+s:nord0_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord0_gui = "#2E3440"$/;"	v
+s:nord0_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord0_term = "NONE"$/;"	v
+s:nord1	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord1 = ["#3B4252", 0]$/;"	v
+s:nord10	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord10 = ["#5E81AC", 12]$/;"	v
+s:nord10_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord10_gui = "#5E81AC"$/;"	v
+s:nord10_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord10_gui = "#5E81AC"$/;"	v
+s:nord10_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord10_term = "12"$/;"	v
+s:nord10_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord10_term = "12"$/;"	v
+s:nord11	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord11 = ["#BF616A", 1]$/;"	v
+s:nord11_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord11_gui = "#BF616A"$/;"	v
+s:nord11_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord11_gui = "#BF616A"$/;"	v
+s:nord11_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord11_term = "1"$/;"	v
+s:nord11_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord11_term = "1"$/;"	v
+s:nord12	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord12 = ["#D08770", 11]$/;"	v
+s:nord12_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord12_gui = "#D08770"$/;"	v
+s:nord12_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord12_gui = "#D08770"$/;"	v
+s:nord12_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord12_term = "11"$/;"	v
+s:nord12_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord12_term = "11"$/;"	v
+s:nord13	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord13 = ["#EBCB8B", 3]$/;"	v
+s:nord13_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord13_gui = "#EBCB8B"$/;"	v
+s:nord13_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord13_gui = "#EBCB8B"$/;"	v
+s:nord13_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord13_term = "3"$/;"	v
+s:nord13_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord13_term = "3"$/;"	v
+s:nord14	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord14 = ["#A3BE8C", 2]$/;"	v
+s:nord14_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord14_gui = "#A3BE8C"$/;"	v
+s:nord14_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord14_gui = "#A3BE8C"$/;"	v
+s:nord14_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord14_term = "2"$/;"	v
+s:nord14_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord14_term = "2"$/;"	v
+s:nord15	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord15 = ["#B48EAD", 5]$/;"	v
+s:nord15_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord15_gui = "#B48EAD"$/;"	v
+s:nord15_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord15_gui = "#B48EAD"$/;"	v
+s:nord15_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord15_term = "5"$/;"	v
+s:nord15_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord15_term = "5"$/;"	v
+s:nord1_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord1_gui = "#3B4252"$/;"	v
+s:nord1_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord1_gui = "#3B4252"$/;"	v
+s:nord1_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord1_term = "0"$/;"	v
+s:nord1_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord1_term = "0"$/;"	v
+s:nord2	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord2 = ["#434C5E", "NONE"]$/;"	v
+s:nord2_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord2_gui = "#434C5E"$/;"	v
+s:nord2_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord2_gui = "#434C5E"$/;"	v
+s:nord2_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord2_term = "NONE"$/;"	v
+s:nord3	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord3 = ["#4C566A", 8]$/;"	v
+s:nord3_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord3_gui = "#4C566A"$/;"	v
+s:nord3_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_gui = "#4C566A"$/;"	v
+s:nord3_gui_bright	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_gui_bright = "#616E88"$/;"	v
+s:nord3_gui_brightened	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_gui_brightened = [$/;"	v
+s:nord3_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord3_term = "8"$/;"	v
+s:nord3_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_term = "8"$/;"	v
+s:nord4	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord4 = ["#D8DEE9", "NONE"]$/;"	v
+s:nord4_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord4_gui = "#D8DEE9"$/;"	v
+s:nord4_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord4_gui = "#D8DEE9"$/;"	v
+s:nord4_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord4_term = "NONE"$/;"	v
+s:nord5	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord5 = ["#E5E9F0", 7]$/;"	v
+s:nord5_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord5_gui = "#E5E9F0"$/;"	v
+s:nord5_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord5_gui = "#E5E9F0"$/;"	v
+s:nord5_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord5_term = "7"$/;"	v
+s:nord5_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord5_term = "7"$/;"	v
+s:nord6	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord6 = ["#ECEFF4", 15]$/;"	v
+s:nord6_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord6_gui = "#ECEFF4"$/;"	v
+s:nord6_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord6_gui = "#ECEFF4"$/;"	v
+s:nord6_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord6_term = "15"$/;"	v
+s:nord6_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord6_term = "15"$/;"	v
+s:nord7	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord7 = ["#8FBCBB", 14]$/;"	v
+s:nord7_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord7_gui = "#8FBCBB"$/;"	v
+s:nord7_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord7_gui = "#8FBCBB"$/;"	v
+s:nord7_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord7_term = "14"$/;"	v
+s:nord7_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord7_term = "14"$/;"	v
+s:nord8	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord8 = ["#88C0D0", 6]$/;"	v
+s:nord8_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord8_gui = "#88C0D0"$/;"	v
+s:nord8_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord8_gui = "#88C0D0"$/;"	v
+s:nord8_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord8_term = "6"$/;"	v
+s:nord8_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord8_term = "6"$/;"	v
+s:nord9	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord9 = ["#81A1C1", 4]$/;"	v
+s:nord9_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord9_gui = "#81A1C1"$/;"	v
+s:nord9_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord9_gui = "#81A1C1"$/;"	v
+s:nord9_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord9_term = "4"$/;"	v
+s:nord9_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord9_term = "4"$/;"	v
+s:nord_vim_version	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord_vim_version="0.12.0"$/;"	v
+s:nord_vim_version	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord_vim_version="0.12.0"$/;"	v
+s:nord_vim_version	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord_vim_version="0.12.0"$/;"	v
 s:nowait	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:nowait = v:version >= 704 ? '<nowait>' : ''$/;"	v
 s:nowait	vim/plugged/vim-fugitive/plugin/fugitive.vim	/^let s:nowait = v:version >= 704 ? '<nowait>' : ''$/;"	v
 s:number_map	vim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim	/^let s:number_map = &encoding == 'utf-8'$/;"	v
@@ -9730,6 +9433,22 @@ s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.t
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.tabline.right = copy(s:p.normal.right)$/;"	v
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.tabline.tabsel = [ [ s:cyan, s:black ] ]$/;"	v
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.visual.left = [ [ s:black, s:orange ], [ s:cyan, s:gray ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.inactive.left =  [ [ s:nord1, s:nord8 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.inactive.middle = [ [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.inactive.right = [ [ s:nord5, s:nord1 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.insert.left = [ [ s:nord1, s:nord6 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.error = [ [ s:nord1, s:nord11 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.left = [ [ s:nord1, s:nord8 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.middle = [ [ s:nord5, s:nord3 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.right = [ [ s:nord5, s:nord1 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.warning = [ [ s:nord1, s:nord13 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.replace.left = [ [ s:nord1, s:nord13 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.left = [ [ s:nord5, s:nord3 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.middle = [ [ s:nord5, s:nord3 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.right = [ [ s:nord5, s:nord3 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.tabsel = [ [ s:nord1, s:nord8 ] ]$/;"	v
+s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.visual.left = [ [ s:nord1, s:nord7 ], [ s:nord5, s:nord1 ] ]$/;"	v
 s:padding_left	vim/plugged/vim-startify/autoload/startify.vim	/^let s:padding_left = repeat(' ', get(g:, 'startify_padding_left', 3))$/;"	v
 s:padding_left	vim/plugged/vim-startify/syntax/startify.vim	/^let s:padding_left = repeat(' ', get(g:, 'startify_padding_left', 3))$/;"	v
 s:parts	vim/plugged/vim-airline/autoload/airline/parts.vim	/^let s:parts = {}$/;"	v
@@ -9867,6 +9586,8 @@ s:tree_up_dir_line	vim/plugged/nerdtree/syntax/nerdtree.vim	/^let s:tree_up_dir_
 s:trees	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:trees = {}$/;"	v
 s:triggers	vim/autoload/plug.vim	/^let s:triggers = get(s:, 'triggers', {})$/;"	v
 s:type_init_done	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:type_init_done    = 0$/;"	v
+s:underline	vim/plugged/nord-vim/colors/nord.vim	/^  let s:underline = "NONE,"$/;"	v
+s:underline	vim/plugged/nord-vim/colors/nord.vim	/^let s:underline = "underline,"$/;"	v
 s:unicode	vim/plugged/vim-startify/autoload/startify/fortune.vim	/^let s:unicode = &encoding == 'utf-8' && get(g:, 'startify_fortune_use_unicode')$/;"	v
 s:unite_source	vim/plugged/ultisnips/autoload/unite/sources/ultisnips.vim	/^let s:unite_source = {$/;"	v
 s:unite_source	vim/plugged/ultisnips/autoload/unite/sources/ultisnips.vim	/^let s:unite_source.action_table.expand = {$/;"	v
@@ -9883,6 +9604,8 @@ s:vcs_config	vim/plugged/vim-airline/autoload/airline/extensions/branch.vim	/^le
 s:version	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^let s:version = '0.11.0'$/;"	v
 s:vim8	vim/autoload/plug.vim	/^let s:vim8 = has('patch-8.0.0039') && exists('*job_start')$/;"	v
 s:vim_quitting	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:vim_quitting = 0$/;"	v
+s:vimwiki_hcolor_ctermfg	vim/plugged/nord-vim/colors/nord.vim	/^  let s:vimwiki_hcolor_ctermfg = [s:nord7_term, s:nord8_term, s:nord9_term, s:nord10_term, s:nord14_term, s:nord15_term]$/;"	v
+s:vimwiki_hcolor_guifg	vim/plugged/nord-vim/colors/nord.vim	/^  let s:vimwiki_hcolor_guifg = [s:nord7_gui, s:nord8_gui, s:nord9_gui, s:nord10_gui, s:nord14_gui, s:nord15_gui]$/;"	v
 s:violet	vim/plugged/vim-airline-themes/autoload/airline/themes/solarized_flood.vim	/^let s:violet  = {'hex': '#6C71C4', 'term':  62}  " 108, 113, 196 *$/;"	v
 s:visibility_symbols	vim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^let s:visibility_symbols = {$/;"	v
 s:want_showmod	vim/plugged/vim-airline-themes/autoload/airline/themes/minimalist.vim	/^let s:want_showmod = get(g:, 'airline_minimalist_showmod', 0)$/;"	v
@@ -10373,7 +10096,6 @@ snippets	vim/plugged/ultisnips/test/test_Visual.py	/^    snippets = ("test", r"h
 snippets	vim/plugged/ultisnips/test/vim_test_case.py	/^    snippets = ()$/;"	v	class:VimTestCase
 snippets_in_current_scope	vim/plugged/ultisnips/pythonx/UltiSnips/snippet_manager.py	/^    def snippets_in_current_scope(self, search_all):$/;"	m	class:SnippetManager
 softRefreshNerdTree	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^function! s:softRefreshNerdTree()$/;"	f
-sortByLength	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:sortByLength(i1, i2)$/;"	f
 sortTags	vim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:sortTags(compare_typeinfo) abort dict$/;"	f
 sort_buffers	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:sort_buffers(...)$/;"	f
 sort_by_tick	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:sort_by_tick(one, two)$/;"	f
@@ -10545,7 +10267,6 @@ transform	vim/plugged/vim-startify/autoload/startify.vim	/^function s:transform(
 trigger	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/base.py	/^    def trigger(self):$/;"	m	class:SnippetDefinition
 trim	vim/autoload/plug.vim	/^function! s:trim(str)$/;"	f
 trim	vim/plugged/coc.nvim/autoload/coc.vim	/^function! s:trim(str)$/;"	f
-ulen	vim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:ulen(s)$/;"	f
 ultisnips_snippets	vim/plugged/ultisnips/ftplugin/snippets.vim	/^augroup ultisnips_snippets.vim$/;"	a
 undo	tmux/plugins/tpm/lib/tmux-test/setup	/^undo() {$/;"	f
 unescape	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^def unescape(text):$/;"	f

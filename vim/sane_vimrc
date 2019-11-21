@@ -84,7 +84,7 @@ set mouse=a
 
 if $TMUX == ''
     " Copies Yanked text to clipboard (Linux = unnamedplus | Windows = unnamed)
-    set clipboard+=unnamedplus
+    set clipboard=unnamedplus
 endif
 
 if has('nvim')
@@ -112,7 +112,7 @@ endif
 let g:dracula_colorterm = 0
 colorscheme dracula
 set background=dark
-hi LineNr guibg=#1d2021
+"hi LineNr guibg=#1d2021
 
 try
     source ~/.vimrc_work

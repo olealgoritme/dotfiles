@@ -1,33 +1,50 @@
 set $mod Mod4
 set $mod2 Mod1
 
+# Theme colors
+client.focused #e39866 #1e1e20 #e39866 #e39866 #e39866
+client.focused_inactive #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
+client.unfocused #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
+client.urgent #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
+client.placeholder #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
+
+client.background #1e1e20
 new_float normal
-border_radius 10
+border_radius 5
 hide_edge_borders none
 
 font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec hyper
+#i3-sensible-terminal
 
 # Window kill command
 bindsym $mod+q kill
 
 # start program launcher
 bindsym $mod+e exec --no-startup-id rofi -show run
+bindsym $mod+c exec --no-startup-id chromium-browser
 
 # change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
+
+
+# change focus
+bindsym $mod2+Tab focus right
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+j move right
+bindsym $mod+Shift+k move left
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
@@ -42,8 +59,7 @@ bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+w 'toggle split'
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -58,15 +74,15 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+#bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+#bindsym $mod+minus scratchpad show
 
 # navigate workspaces next / previous
-bindsym $mod+$mod2+Right workspace next
-bindsym $mod+$mod2+Left workspace prev
+bindsym $mod+Right workspace next
+bindsym $mod+Left workspace prev
 
 # workspaces
 set $ws1 1
@@ -89,14 +105,8 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 
 # Move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Shift+Left move container to workspace prev
+bindsym $mod+Shift+Right move container to workspace next
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -109,7 +119,7 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open specific applications in floating mode
- for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 0
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -121,7 +131,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-msg exit
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -150,8 +160,8 @@ mode "resize" {
         # Pressing down will grow the window’s height.
         bindsym j resize shrink width 5 px or 5 ppt
         bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppk
+        bindsym semicolon resize grow width 5 px orl5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -165,30 +175,18 @@ mode "resize" {
 }
 
 # Autostart applications
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id compton --config ~/.config/compton/config
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id /usr/bin/pulseaudio &
+exec --no-startup-id /usr/bin/start-pulseaudio-x11 &
 exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
+exec --no-startup-id /home/xuw/scripts/xrander_add_res.sh 2200 1000 144
+exec --no-startup-id /home/xuw/scripts/performance.sh
 exec --no-startup-id clipit
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
-
-# Theme colors
-client.focused #e39866 #1e1e20 #e39866 #e39866 #e39866
-client.focused_inactive #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
-client.unfocused #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
-client.urgent #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
-client.placeholder #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
-
-client.background #1e1e20
+exec --no-startup-id /home/xuw/.local/bin/play-with-mpv &> /dev/null &
 
 # Gaps
-gaps inner 30
-gaps outer 30
-
-
-bar {
-    # Height in pixels
-    height 25
-}
+# gaps inner|outer|horizontal|vertical|top|right|bottom|left current|all set|plus|minus|toggle <px>
+gaps right 130
+gaps inner 100
