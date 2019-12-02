@@ -28,9 +28,19 @@
 			</action>
 		</item>
 		<separator/>
+		<item label="Ranger File Explorer">
+			<action name="Execute">
+				<execute>xfce4-terminal --hide-borders -e &quot;ranger&quot;</execute>
+			</action>
+		</item>
 		<item label="File Explorer">
 			<action name="Execute">
-				<execute>thunar</execute>
+				<execute>nautilus</execute>
+			</action>
+		</item>
+		<item label="Popcorn Time">
+			<action name="Execute">
+				<execute>popcorntime</execute>
 			</action>
 		</item>
 		<item label="Virt-Manager">
@@ -45,7 +55,7 @@
 		<separator/>
 		<item label="VIM Borderless">
 			<action name="Execute">
-				<execute>xfce4-terminal --geometry 240x55+277+220 --hide-borders -e &quot;bash -c '/usr/bin/nvim ~/code/'&quot;</execute>
+				<execute>xfce4-terminal --geometry 240x55+277+220 --hide-borders -e &quot;bash -c '/usr/bin/nvim'&quot;</execute>
 			</action>
 		</item>
 		<separator/>

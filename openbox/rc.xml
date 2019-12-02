@@ -10,12 +10,12 @@
     <focusNew>yes</focusNew>
     <!-- always try to focus new windows when they appear. other rules do
        apply -->
-    <followMouse>yes</followMouse>
+    <followMouse>no</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
     <focusLast>yes</focusLast>
     <!-- focus the last used window when changing desktops, instead of the one
        under the mouse pointer. when followMouse is enabled -->
-    <underMouse>yes</underMouse>
+    <underMouse>no</underMouse>
     <!-- move focus under the mouse, even when the mouse is not moving -->
     <focusDelay>200</focusDelay>
     <!-- when followMouse is enabled, the mouse must be inside the window for
@@ -42,8 +42,10 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Arc_modified</name>
+    <name>Arc-Mod</name>
     <titleLayout>NLIMC</titleLayout>
+    <cornerRadius>8</cornerRadius>
+    <cornerRadius menu="yes">8</cornerRadius>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -54,9 +56,7 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-  <cornerRadius>10</cornerRadius>
-  <cornerRadius menu="yes">10</cornerRadius>
-  <keepBorder>yes</keepBorder>
+    <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>RobotoMono Nerd Font</name>
@@ -130,7 +130,7 @@
       <name>3</name>
       <name>4</name>
     </names>
-    <popupTime>300</popupTime>
+    <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -155,10 +155,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>15</top>
-    <bottom>15</bottom>
-    <left>15</left>
-    <right>15</right>
+    <top>10</top>
+    <bottom>10</bottom>
+    <left>10</left>
+    <right>10</right>
   </margins>
   <dock>
     <position>Bottom</position>
@@ -191,41 +191,47 @@
         <command>sound_switch</command>
       </action>
     </keybind>
-    <keybind key="C-S-F10">
+    <keybind key="C-S-K">
       <action name="Execute">
         <command>/usr/local/bin/volume_down</command>
       </action>
     </keybind>
-    <keybind key="C-S-F11">
+    <keybind key="C-S-I">
       <action name="Execute">
         <command>/usr/local/bin/volume_up</command>
       </action>
     </keybind>
-    <keybind key="C-S-T">
+    <keybind key="W-c">
       <action name="Execute">
-        <command>xfce4-terminal --hide-borders</command>
+        <command>chromium-browser</command>
       </action>
       <action name="Focus"/>
     </keybind>
-    <keybind key="W-H">
+    <keybind key="C-S-T">
+      <action name="Execute">
+        <command>hyper</command>
+      </action>
+      <action name="Focus"/>
+    </keybind>
+    <keybind key="W-Left">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-L">
+    <keybind key="W-Right">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-W-H">
+    <keybind key="C-W-Left">
       <action name="SendToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-W-L">
+    <keybind key="C-W-Right">
       <action name="SendToDesktop">
         <to>right</to>
         <wrap>no</wrap>
@@ -243,7 +249,7 @@
     <keybind key="C-S-X">
       <action name="Move"/>
     </keybind>
-    <keybind key="W-K">
+    <keybind key="W-Up">
       <action name="if">
         <shaded>no</shaded>
         <then>
@@ -313,22 +319,22 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-L">
+    <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
       </action>
     </keybind>
-    <keybind key="W-S-H">
+    <keybind key="W-S-Left">
       <action name="DirectionalCycleWindows">
         <direction>left</direction>
       </action>
     </keybind>
-    <keybind key="W-S-K">
+    <keybind key="W-S-Up">
       <action name="DirectionalCycleWindows">
         <direction>up</direction>
       </action>
     </keybind>
-    <keybind key="W-S-J">
+    <keybind key="W-S-Down">
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
       </action>
@@ -336,7 +342,7 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
-          <command>gmrun</command>
+        <command>gmrun</command>
       </action>
     </keybind>
     <!-- Launch scrot when Print is pressed -->
@@ -589,16 +595,6 @@
       </mousebind>
     </context>
     <context name="Desktop">
-      <mousebind button="Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
       <mousebind button="A-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
@@ -720,7 +716,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>
