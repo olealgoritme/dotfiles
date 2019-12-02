@@ -44,12 +44,12 @@ augroup xuw_cfg_autocmd
     autocmd VimEnter * call s:customMappings()
     autocmd VimEnter * call s:customCommandsIfEmptyFile()
 
-    autocmd VimEnter *
-            \   if !argc()
-            \ |   Startify
-            \ |   NERDTree
-            \ |   wincmd w
-            \ | endif
+    "autocmd VimEnter *
+            "\   if !argc()
+            "\ |   Startify
+            "\ |   NERDTree
+            "\ |   wincmd w
+            "\ | endif
 
     " Left/Right-arrow = open/close
     autocmd FileType nerdtree nmap <buffer> <Right> o
@@ -58,7 +58,7 @@ augroup xuw_cfg_autocmd
     autocmd FileType java set tags=~/.tags/java_jdk_src.tag
 
     " Close NERDTree if it's the only window open
-    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    "autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
     " syntax highlight for config or config.cfg / .conf
     autocmd BufEnter,BufRead *.conf,*.cfg,*conf* setf dosini
@@ -94,6 +94,7 @@ function! s:customMappings()
 
     nnoremap <silent><C-f> :Files<CR>
     nnoremap <silent><C-b> :Buffers<CR>
+    nnoremap <silent><C-n> :NERDTreeToggle<CR>
 
     map <S-h> <S-Left>
     map <S-j> <S-Down>
@@ -504,9 +505,9 @@ let g:airline#extensions#tabline#buffer_idx_mode              = 1
 let g:airline#extensions#tabline#buffer_nr_show               = 0
 let g:airline#extensions#tabline#show_buffers                 = 1
 let g:airline#extensions#branch#enabled                       = 1
-let g:airline#extensions#tagbar#enabled                       = 0
+let g:airline#extensions#tagbar#enabled                       = 1
 let g:airline_powerline_fonts                                 = 1
-let g:airline#extensions#whitespace#enabled       = 0
+let g:airline#extensions#whitespace#enabled       = 1
 let g:airline#extensions#tabline#fnamemod         = ':t'
 let g:airline_theme                               = 'base16_snazzy'
 let g:airline_section_c                           = '%{fnamemodify(expand("%"), ":~:.")}'

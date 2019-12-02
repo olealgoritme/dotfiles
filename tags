@@ -147,23 +147,6 @@ Anon_Trigger_Twice	vim/plugged/ultisnips/test/test_AnonymousExpansion.py	/^class
 AppendCommentToLine	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:AppendCommentToLine()$/;"	f
 AskPassArgs	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:AskPassArgs(dir) abort$/;"	f
 AsyncRequest	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:AsyncRequest(name, args) abort$/;"	f
-AsyncRun	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^command! -bang -nargs=+ -range=0 -complete=file AsyncRun$/;"	c
-AsyncRun_Job_AutoCmd	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_AutoCmd(mode, auto)$/;"	f
-AsyncRun_Job_AutoScroll	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_AutoScroll()$/;"	f
-AsyncRun_Job_CheckScroll	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_CheckScroll()$/;"	f
-AsyncRun_Job_Cursor	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_Cursor()$/;"	f
-AsyncRun_Job_NeoVim	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_NeoVim(job_id, data, event)$/;"	f
-AsyncRun_Job_OnCallback	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_OnCallback(channel, text)$/;"	f
-AsyncRun_Job_OnClose	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_OnClose(channel)$/;"	f
-AsyncRun_Job_OnExit	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_OnExit(job, message)$/;"	f
-AsyncRun_Job_OnFinish	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_OnFinish()$/;"	f
-AsyncRun_Job_OnTimer	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! g:AsyncRun_Job_OnTimer(id)$/;"	f
-AsyncRun_Job_Start	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_Start(cmd)$/;"	f
-AsyncRun_Job_Status	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_Status()$/;"	f
-AsyncRun_Job_Stop	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_Stop(how)$/;"	f
-AsyncRun_Job_Update	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AsyncRun_Job_Update(count)$/;"	f
-AsyncStop	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^command! -bar -bang -nargs=0 AsyncStop call asyncrun#stop('<bang>')$/;"	c
-AutoCmd	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:AutoCmd(name)$/;"	f
 AutoUpdate	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:AutoUpdate(fname, force, ...) abort$/;"	f
 Autocmd	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:Autocmd(...) abort$/;"	f
 Autocommands	vim/plugged/ultisnips/test/test_Autocommands.py	/^class Autocommands(_VimTest):$/;"	c
@@ -423,7 +406,6 @@ EditableTextObject	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/base.py	
 Enable	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:Enable()$/;"	f
 Enable	vim/plugged/vim-tmux-clipboard/plugin/vimtmuxclipboard.vim	/^func! s:Enable()$/;"	f
 EndOfTextToken	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^class EndOfTextToken(Token):$/;"	c
-ErrorMsg	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:ErrorMsg(msg)$/;"	f
 Esc	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:Esc(str)$/;"	f
 EscapeCharToken	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^class EscapeCharToken(Token):$/;"	c
 EscapeCtagsCmd	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:EscapeCtagsCmd(ctags_bin, args, ...) abort$/;"	f
@@ -444,7 +426,6 @@ ExpandVar	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExpandVar
 ExpandVarLegacy	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExpandVarLegacy(str) abort$/;"	f
 ExpireStatus	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExpireStatus(bufnr) abort$/;"	f
 ExtensionList	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:ExtensionList(...) abort$/;"	f
-ExtractOpt	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:ExtractOpt(command)$/;"	f
 FILESIZE	vim/plugged/vim-gutentags/plat/win32/update_scopedb.cmd	/^for \/F %%F in ("%DB_FILE%.files") do set FILESIZE=%%~zF$/;"	v
 FILESIZE	vim/plugged/vim-gutentags/plat/win32/update_scopedb.cmd	/^set FILESIZE=0$/;"	v
 FILE_LIST_CMD	vim/plugged/vim-gutentags/plat/win32/update_scopedb.cmd	/^    set FILE_LIST_CMD=%~2$/;"	v
@@ -780,7 +761,6 @@ No_Tab_Expand_Simple	vim/plugged/ultisnips/test/test_SnippetOptions.py	/^class N
 NonUnicodeDataInUnnamedRegister	vim/plugged/ultisnips/test/test_Fixes.py	/^class NonUnicodeDataInUnnamedRegister(_VimTest):$/;"	c
 NoneditableTextObject	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/base.py	/^class NoneditableTextObject(TextObject):$/;"	c
 NotEnoughBuffers	vim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^function! s:NotEnoughBuffers()$/;"	f
-NotSupport	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:NotSupport()$/;"	f
 Notifier.AddListener	vim/plugged/nerdtree/lib/nerdtree/notifier.vim	/^function! s:Notifier.AddListener(event, funcname)$/;"	f
 Notifier.GetListenersForEvent	vim/plugged/nerdtree/lib/nerdtree/notifier.vim	/^function! s:Notifier.GetListenersForEvent(name)$/;"	f
 Notifier.GetListenersMap	vim/plugged/nerdtree/lib/nerdtree/notifier.vim	/^function! s:Notifier.GetListenersMap()$/;"	f
@@ -1047,7 +1027,6 @@ SLoad	vim/plugged/vim-startify/plugin/startify.vim	/^command! -nargs=? -bar -ban
 SNIPMATE_SNIPPET_PRIORITY	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/definition/snipmate.py	/^    SNIPMATE_SNIPPET_PRIORITY = -1000$/;"	v	class:SnipMateSnippetDefinition
 SSave	vim/plugged/vim-startify/plugin/startify.vim	/^command! -nargs=? -bar -bang -complete=customlist,startify#session_list SSave   call startify#session_save(<bang>0, <f-args>)$/;"	c
 SaveScreenState	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:SaveScreenState()$/;"	f
-ScriptWrite	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:ScriptWrite(command, pause)$/;"	f
 Search	vim/init.vim	/^function! Search(pattern, flags)$/;"	f
 SearchOptions	vim/plugged/coc.nvim/plugin/coc.vim	/^function! s:SearchOptions(...) abort$/;"	f
 SectionSpec	vim/plugged/vim-airline/t/section.vim	/^function! SectionSpec()$/;"	f
@@ -1208,8 +1187,6 @@ State.setCurrentFile	vim/plugged/tagbar/autoload/tagbar/state.vim	/^function! s:
 State.setPaused	vim/plugged/tagbar/autoload/tagbar/state.vim	/^function! s:State.setPaused() abort dict$/;"	f
 StatusCfile	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StatusCfile(...) abort$/;"	f
 StatusCommand	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StatusCommand(line1, line2, range, count, bang, mods, reg, arg, args, ...) abort$/;"	f
-StringReplace	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:StringReplace(text, old, new)$/;"	f
-StringStrip	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:StringStrip(text)$/;"	f
 StripTrailingWhite	vim/init.vim	/^function! StripTrailingWhite()$/;"	f
 Subcommands	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Subcommands() abort$/;"	f
 SwapOuterMultiPartDelimsForPlaceHolders	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:SwapOuterMultiPartDelimsForPlaceHolders(line)$/;"	f
@@ -2330,16 +2307,6 @@ ask	vim/autoload/plug.vim	/^function! s:ask(message, ...)$/;"	f
 ask_no_interrupt	vim/autoload/plug.vim	/^function! s:ask_no_interrupt(...)$/;"	f
 assign_name	vim/autoload/plug.vim	/^function! s:assign_name()$/;"	f
 assoc	vim/autoload/plug.vim	/^function! s:assoc(dict, key, val)$/;"	f
-asyncrun#execute	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#execute(mode, cwd, save)$/;"	f
-asyncrun#fullname	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#fullname(f)$/;"	f
-asyncrun#get_root	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#get_root(path, ...)$/;"	f
-asyncrun#path_join	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#path_join(home, name)$/;"	f
-asyncrun#quickfix_toggle	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#quickfix_toggle(size, ...)$/;"	f
-asyncrun#run	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#run(bang, opts, args, ...)$/;"	f
-asyncrun#status	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#status()$/;"	f
-asyncrun#stop	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#stop(bang)$/;"	f
-asyncrun#version	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! asyncrun#version()$/;"	f
-asyncrun_augroup	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	augroup asyncrun_augroup$/;"	a
 attr	vim/plugged/vim-vue/syntax/vue.vim	/^function! s:attr(name, value)$/;"	f
 b	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^    b = "Vorne Hinten"$/;"	v	class:TestCheapDelete
 b	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^    b = "Vorne hallo  Hinten"$/;"	v	class:TestRealLife1
@@ -2401,7 +2368,6 @@ cd_to_vcs_root	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:cd_t
 cfile	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:cfile() abort$/;"	f
 chCwd	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:chCwd(node)$/;"	f
 chRoot	vim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:chRoot(node)$/;"	f
-chdir	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:chdir(path)$/;"	f
 checkAutocmd	vim/plugged/coc.nvim/autoload/health/coc.vim	/^function! s:checkAutocmd()$/;"	f
 checkCommand	vim/plugged/coc.nvim/autoload/health/coc.vim	/^function! s:checkCommand()$/;"	f
 checkEnvironment	vim/plugged/coc.nvim/autoload/health/coc.vim	/^function! s:checkEnvironment() abort$/;"	f
@@ -2412,7 +2378,6 @@ check_defined_section	vim/plugged/vim-airline/autoload/airline/extensions.vim	/^
 check_dir_exists_helper	tmux/plugins/tpm/tests/helpers/tpm.sh	/^check_dir_exists_helper() {$/;"	f
 check_mixed_indent	vim/plugged/vim-airline/autoload/airline/extensions/whitespace.vim	/^function! s:check_mixed_indent()$/;"	f
 check_mixed_indent_file	vim/plugged/vim-airline/autoload/airline/extensions/whitespace.vim	/^function! s:check_mixed_indent_file()$/;"	f
-check_quickfix	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	function! s:check_quickfix()$/;"	f
 check_required_vim_version	vim/plugged/ultisnips/test/test_Autotrigger.py	/^def check_required_vim_version(test):$/;"	f
 check_required_vim_version	vim/plugged/ultisnips/test/test_Editing.py	/^def check_required_vim_version(test):$/;"	f
 check_ruby	vim/autoload/plug.vim	/^function! s:check_ruby()$/;"	f
@@ -2718,7 +2683,6 @@ evaluate_tabline	vim/plugged/vim-airline/autoload/airline/extensions/tabline/bui
 excmds	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:excmds()$/;"	f
 exec_separator	vim/plugged/vim-airline/autoload/airline/highlighter.vim	/^function! s:exec_separator(dict, from, to, inverse, suffix)$/;"	f
 executable	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:executable(binary) abort$/;"	f
-execute	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:execute(mode)$/;"	f
 execute	vim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:execute(cmd)$/;"	f
 exit_helper	tmux/plugins/tpm/lib/tmux-test/tests/helpers/helpers.sh	/^exit_helper() {$/;"	f
 exit_if_unsupported_version	tmux/plugins/tpm/scripts/check_tmux_version.sh	/^exit_if_unsupported_version() {$/;"	f
@@ -2870,7 +2834,6 @@ find_all_snippet_files	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/fi
 find_name	vim/autoload/plug.vim	/^function! s:find_name(lnum)$/;"	f
 find_open_window	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:find_open_window(b)$/;"	f
 find_parent_for_new_to	vim/plugged/ultisnips/pythonx/UltiSnips/text_objects/base.py	/^    def find_parent_for_new_to(self, pos):$/;"	m	class:EditableTextObject
-find_root	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:find_root(path, markers)$/;"	f
 find_snippet_files	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/source/file/ulti_snips.py	/^def find_snippet_files(ft, directory):$/;"	f
 finish	vim/autoload/plug.vim	/^function! s:finish(pull)$/;"	f
 finish_bindings	vim/autoload/plug.vim	/^function! s:finish_bindings()$/;"	f
@@ -2986,7 +2949,6 @@ fugitive_folding	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugiti
 fugitive_merge	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_merge$/;"	a
 fugitive_status	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_status$/;"	a
 fugitive_temp	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_temp$/;"	a
-fullname	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let fullname = asyncrun#fullname(a:path)$/;"	v
 funcs.buf_add_highlight	vim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_add_highlight(bufnr, srcId, hlGroup, line, colStart, colEnd) abort$/;"	f
 funcs.buf_attach	vim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_attach(...)$/;"	f
 funcs.buf_clear_namespace	vim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_clear_namespace(bufnr, srcId, startLine, endLine) abort$/;"	f
@@ -3163,8 +3125,8 @@ g:airline#extensions#tabline#fnamemod	vim/init.vim	/^let g:airline#extensions#ta
 g:airline#extensions#tabline#formatter	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^  let g:airline#extensions#tabline#formatter = 'webdevicons'$/;"	v
 g:airline#extensions#tabline#show_buffers	vim/init.vim	/^let g:airline#extensions#tabline#show_buffers                 = 1$/;"	v
 g:airline#extensions#tabline#tab_min_count	vim/init.vim	/^let g:airline#extensions#tabline#tab_min_count                = 1$/;"	v
-g:airline#extensions#tagbar#enabled	vim/init.vim	/^let g:airline#extensions#tagbar#enabled                       = 0$/;"	v
-g:airline#extensions#whitespace#enabled	vim/init.vim	/^let g:airline#extensions#whitespace#enabled       = 0$/;"	v
+g:airline#extensions#tagbar#enabled	vim/init.vim	/^let g:airline#extensions#tagbar#enabled                       = 1$/;"	v
+g:airline#extensions#whitespace#enabled	vim/init.vim	/^let g:airline#extensions#whitespace#enabled       = 1$/;"	v
 g:airline#extensions#windowswap#indicator_text	vim/plugged/vim-airline/autoload/airline/extensions/windowswap.vim	/^  let g:airline#extensions#windowswap#indicator_text = 'WS'$/;"	v
 g:airline#themes#alduin#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/alduin.vim	/^let g:airline#themes#alduin#palette = {}$/;"	v
 g:airline#themes#alduin#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/alduin.vim	/^let g:airline#themes#alduin#palette.inactive = airline#themes#generate_color_map(s:IN1, s:IN2, s:IN3)$/;"	v
@@ -3988,27 +3950,6 @@ g:airline#themes#night_owl#palette	vim/plugged/vim-airline-themes/autoload/airli
 g:airline#themes#night_owl#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/night_owl.vim	/^let g:airline#themes#night_owl#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)$/;"	v
 g:airline#themes#night_owl#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/night_owl.vim	/^let g:airline#themes#night_owl#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)$/;"	v
 g:airline#themes#night_owl#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/night_owl.vim	/^let g:airline#themes#night_owl#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette = {}$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive = airline#themes#generate_color_map(s:IAMain, s:IARight, s:IAMiddle)$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive.airline_error = s:IAError$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive.airline_term = s:IAMiddle$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive.airline_warning = s:IAWarn$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert = airline#themes#generate_color_map(s:IMain, s:IRight, s:IMiddle)$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert.airline_error = s:IError$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert.airline_term = s:IMiddle$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert.airline_warning = s:IWarn$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal = airline#themes#generate_color_map(s:NMain, s:NRight, s:NMiddle)$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal.airline_error = s:NError$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal.airline_term = s:NMiddle$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal.airline_warning = s:NWarn$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace = airline#themes#generate_color_map(s:RMain, s:RRight, s:RMiddle)$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace.airline_error = s:RError$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace.airline_term = s:RMiddle$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace.airline_warning = s:RWarn$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual = airline#themes#generate_color_map(s:VMain, s:VRight, s:VMiddle)$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual.airline_error = s:VError$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual.airline_term = s:VMiddle$/;"	v
-g:airline#themes#nord#palette	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual.airline_warning = s:VWarn$/;"	v
 g:airline#themes#ouo#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/ouo.vim	/^let g:airline#themes#ouo#palette = {}$/;"	v
 g:airline#themes#ouo#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/ouo.vim	/^let g:airline#themes#ouo#palette.accents = {$/;"	v
 g:airline#themes#ouo#palette	vim/plugged/vim-airline-themes/autoload/airline/themes/ouo.vim	/^let g:airline#themes#ouo#palette.inactive =$/;"	v
@@ -4366,33 +4307,6 @@ g:airline_theme	vim/init.vim	/^let g:airline_theme                              
 g:airline_theme	vim/plugged/vim-airline/t/airline.vim	/^let g:airline_theme = 'dark'$/;"	v
 g:airline_theme	vim/plugged/vim-airline/t/builder.vim	/^let g:airline_theme = 'dark'$/;"	v
 g:airline_theme	vim/plugged/vim-airline/t/highlighter.vim	/^let g:airline_theme = 'dark'$/;"	v
-g:asyncrun_auto	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_auto = ''$/;"	v
-g:asyncrun_bell	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_bell = 0$/;"	v
-g:asyncrun_code	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_code = ''$/;"	v
-g:asyncrun_encs	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_encs = ''$/;"	v
-g:asyncrun_exit	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_exit = ''$/;"	v
-g:asyncrun_ftrun	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_ftrun = {}$/;"	v
-g:asyncrun_hook	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_hook = ''$/;"	v
-g:asyncrun_info	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_info = ''$/;"	v
-g:asyncrun_last	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_last = 0$/;"	v
-g:asyncrun_local	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_local = 1$/;"	v
-g:asyncrun_mode	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_mode = 0$/;"	v
-g:asyncrun_save	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_save = 0$/;"	v
-g:asyncrun_shell	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_shell = ''$/;"	v
-g:asyncrun_shellflag	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_shellflag = ''$/;"	v
-g:asyncrun_silent	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_silent = 1$/;"	v
-g:asyncrun_skip	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_skip = 0$/;"	v
-g:asyncrun_status	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_status = ''$/;"	v
-g:asyncrun_stdin	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_stdin = has('win32') || has('win64') || has('win95')$/;"	v
-g:asyncrun_stop	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_stop = ''$/;"	v
-g:asyncrun_support	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^		let g:asyncrun_support = 1$/;"	v
-g:asyncrun_support	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_support = 1$/;"	v
-g:asyncrun_support	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let g:asyncrun_support = 0$/;"	v
-g:asyncrun_text	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_text = ''$/;"	v
-g:asyncrun_timer	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_timer = 25$/;"	v
-g:asyncrun_trim	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_trim = 0$/;"	v
-g:asyncrun_windows	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let g:asyncrun_windows = 1$/;"	v
-g:asyncrun_windows	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let g:asyncrun_windows = 0$/;"	v
 g:autoloaded_fugitive	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^let g:autoloaded_fugitive = 1$/;"	v
 g:autoloaded_startify	vim/plugged/vim-startify/autoload/startify.vim	/^let g:autoloaded_startify = 1$/;"	v
 g:coc#_context	vim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc#_context = {'start': 0, 'preselect': -1,'candidates': []}$/;"	v
@@ -4404,7 +4318,6 @@ g:coc_user_config	vim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc_user_config 
 g:coc_vim_commands	vim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc_vim_commands = []$/;"	v
 g:colors_name	vim/colors/ronakg.vim	/^let g:colors_name="ronakg"$/;"	v
 g:colors_name	vim/plugged/dracula/colors/dracula.vim	/^let g:colors_name = 'dracula'$/;"	v
-g:colors_name	vim/plugged/nord-vim/colors/nord.vim	/^let g:colors_name = "nord"$/;"	v
 g:count	vim/plugged/vim-airline/t/util.vim	/^    let g:count = 0$/;"	v
 g:cursormode_exit_mode	vim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^  let g:cursormode_exit_mode='n'$/;"	v
 g:did_coc_loaded	vim/plugged/coc.nvim/plugin/coc.vim	/^let g:did_coc_loaded = 1$/;"	v
@@ -4525,7 +4438,6 @@ g:indentLine_setConceal	vim/plugged/indentLine/after/plugin/indentLine.vim	/^let
 g:indentLine_showFirstIndentLevel	vim/plugged/indentLine/after/plugin/indentLine.vim	/^let g:indentLine_showFirstIndentLevel = get(g:, 'indentLine_showFirstIndentLevel', 0)$/;"	v
 g:io_fugitive	vim/plugged/vim-fugitive/plugin/fugitive.vim	/^let g:io_fugitive = {$/;"	v
 g:lightline#colorscheme#dracula#palette	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let g:lightline#colorscheme#dracula#palette = lightline#colorscheme#flatten(s:p)$/;"	v
-g:lightline#colorscheme#nord#palette	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let g:lightline#colorscheme#nord#palette = lightline#colorscheme#flatten(s:p)$/;"	v
 g:loaded_airline	vim/plugged/vim-airline/plugin/airline.vim	/^let g:loaded_airline = 1$/;"	v
 g:loaded_airline_themes	vim/plugged/vim-airline-themes/plugin/airline-themes.vim	/^let g:loaded_airline_themes = 1$/;"	v
 g:loaded_fugitive	vim/plugged/vim-fugitive/plugin/fugitive.vim	/^let g:loaded_fugitive = 1$/;"	v
@@ -4539,14 +4451,6 @@ g:loaded_startify	vim/plugged/vim-startify/plugin/startify.vim	/^let g:loaded_st
 g:loaded_syntastic_vue_eslint_checker	vim/plugged/vim-vue/syntax_checkers/vue/eslint.vim	/^let g:loaded_syntastic_vue_eslint_checker = 1$/;"	v
 g:loaded_tagbar	vim/plugged/tagbar/autoload/tagbar.vim	/^let g:loaded_tagbar = 1$/;"	v
 g:loaded_webdevicons	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^let g:loaded_webdevicons = 1$/;"	v
-g:nord_bold	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_bold = 1$/;"	v
-g:nord_bold_vertical_split_line	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_bold_vertical_split_line = 0$/;"	v
-g:nord_comment_brightness	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_comment_brightness = 10$/;"	v
-g:nord_cursor_line_number_background	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_cursor_line_number_background = 0$/;"	v
-g:nord_italic	vim/plugged/nord-vim/colors/nord.vim	/^    let g:nord_italic = 0$/;"	v
-g:nord_italic	vim/plugged/nord-vim/colors/nord.vim	/^    let g:nord_italic = 1$/;"	v
-g:nord_uniform_diff_background	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_uniform_diff_background = 0$/;"	v
-g:nord_uniform_status_lines	vim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_uniform_status_lines = 0$/;"	v
 g:plugs_order	vim/autoload/plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order', keys(g:plugs))$/;"	v
 g:ruby_operators	vim/plugged/dracula/after/syntax/ruby.vim	/^    let g:ruby_operators=1$/;"	v
 g:startify_bookmarks	vim/init.vim	/^let g:startify_bookmarks = [ {'c': '~\/.vim\/vimrc'}, {'d': '~\/.vim\/vim-plug.vim'}, {'t': '~\/.tmux.conf'},  {'i' : '~\/.config\/i3\/config'}, {'p' : '~\/.config\/polybar\/config'}, {'h' : '~\/.hyper.js'}  ]$/;"	v
@@ -4561,24 +4465,7 @@ g:tagbar_iconchars	vim/plugged/tagbar/plugin/tagbar.vim	/^        let g:tagbar_i
 g:tagbar_iconchars	vim/plugged/tagbar/plugin/tagbar.vim	/^        let g:tagbar_iconchars = ['▶', '▼']$/;"	v
 g:tagbar_type_snippets	vim/plugged/ultisnips/ftplugin/snippets.vim	/^let g:tagbar_type_snippets = {$/;"	v
 g:terminal_ansi_colors	vim/plugged/dracula/colors/dracula.vim	/^  let g:terminal_ansi_colors = []$/;"	v
-g:terminal_ansi_colors	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_ansi_colors = [s:nord1_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord8_gui, s:nord5_gui, s:nord3_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]$/;"	v
 g:terminal_color_	vim/plugged/dracula/colors/dracula.vim	/^    let g:terminal_color_{s:i} = g:dracula#palette['color_' . s:i]$/;"	v
-g:terminal_color_0	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_0 = s:nord1_gui$/;"	v
-g:terminal_color_1	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_1 = s:nord11_gui$/;"	v
-g:terminal_color_10	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_10 = s:nord14_gui$/;"	v
-g:terminal_color_11	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_11 = s:nord13_gui$/;"	v
-g:terminal_color_12	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_12 = s:nord9_gui$/;"	v
-g:terminal_color_13	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_13 = s:nord15_gui$/;"	v
-g:terminal_color_14	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_14 = s:nord7_gui$/;"	v
-g:terminal_color_15	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_15 = s:nord6_gui$/;"	v
-g:terminal_color_2	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_2 = s:nord14_gui$/;"	v
-g:terminal_color_3	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_3 = s:nord13_gui$/;"	v
-g:terminal_color_4	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_4 = s:nord9_gui$/;"	v
-g:terminal_color_5	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_5 = s:nord15_gui$/;"	v
-g:terminal_color_6	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_6 = s:nord8_gui$/;"	v
-g:terminal_color_7	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_7 = s:nord5_gui$/;"	v
-g:terminal_color_8	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_8 = s:nord3_gui$/;"	v
-g:terminal_color_9	vim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_9 = s:nord11_gui$/;"	v
 g:vue_pre_processors	vim/init.vim	/^let g:vue_pre_processors = 'detect_on_enter'$/;"	v
 g:vue_pre_processors	vim/plugged/vim-vue/syntax/vue.vim	/^  let g:vue_pre_processors = []$/;"	v
 g:webdevicons_enable	vim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim	/^  let g:webdevicons_enable = 1$/;"	v
@@ -4732,7 +4619,6 @@ hash_match	vim/autoload/plug.vim	/^function! s:hash_match(a, b)$/;"	f
 head_tail	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^def head_tail(line):$/;"	f
 health#coc#check	vim/plugged/coc.nvim/autoload/health/coc.vim	/^function! health#coc#check() abort$/;"	f
 helptag_sink	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:helptag_sink(line)$/;"	f
-hi	vim/plugged/nord-vim/colors/nord.vim	/^function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)$/;"	f
 highlight_keys	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:highlight_keys(str)$/;"	f
 history	vim/plugged/fzf.vim/plugin/fzf.vim	/^function! s:history(arg, bang)$/;"	f
 history_sink	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:history_sink(type, lines)$/;"	f
@@ -5323,8 +5209,6 @@ known_files.get	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:known_files
 known_files.has	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:known_files.has(fname) abort dict$/;"	f
 known_files.put	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:known_files.put(fileinfo, ...) abort dict$/;"	f
 known_files.rm	vim/plugged/tagbar/autoload/tagbar.vim	/^function! s:known_files.rm(fname) abort dict$/;"	f
-l:win_loc	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^      let l:win_loc = get(g:, 'asyncrun_win_loc', 0)$/;"	v
-l:winnr	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let l:winnr = winnr()$/;"	v
 languageclient_refresh	vim/plugged/vim-airline/autoload/airline/extensions/languageclient.vim	/^function! s:languageclient_refresh()$/;"	f
 last_buffer	vim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim	/^  let last_buffer = len(b.buffers) - 1$/;"	v
 last_non_empty_line	vim/autoload/plug.vim	/^function! s:last_non_empty_line(lines)$/;"	f
@@ -5354,7 +5238,6 @@ lod_ft	vim/autoload/plug.vim	/^function! s:lod_ft(pat, names)$/;"	f
 lod_map	vim/autoload/plug.vim	/^function! s:lod_map(map, names, with_prefix, prefix)$/;"	f
 log	vim/autoload/plug.vim	/^function! s:log(bullet, name, lines)$/;"	f
 log4	vim/autoload/plug.vim	/^function! s:log4(name, msg)$/;"	f
-logWarning	vim/plugged/nord-vim/colors/nord.vim	/^function! s:logWarning(msg)$/;"	f
 logpos	vim/autoload/plug.vim	/^function! s:logpos(name)$/;"	f
 lpad	vim/autoload/plug.vim	/^function! s:lpad(str, len)$/;"	f
 main	tmux/plugins/tpm/bin/clean_plugins	/^main() {$/;"	f
@@ -5512,7 +5395,6 @@ parse_and_instantiate	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/ul
 parse_args	vim/plugged/ultisnips/test_all.py	/^    def parse_args():$/;"	f	function:setup_other_plugins
 parse_options	vim/autoload/plug.vim	/^function! s:parse_options(arg)$/;"	f
 path	vim/autoload/plug.vim	/^  function! s:path(path)$/;"	f
-path_join	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:path_join(home, name)$/;"	f
 peek	vim/plugged/ultisnips/pythonx/UltiSnips/snippet/parsing/lexer.py	/^    def peek(self, count=1):$/;"	m	class:_TextIterator
 peek	vim/plugged/ultisnips/pythonx/UltiSnips/text.py	/^    def peek(self):$/;"	m	class:LineIterator
 placeholder	vim/plugged/ultisnips/pythonx/UltiSnips/vim_state.py	/^    def placeholder(self):$/;"	m	class:VisualContentPreserver
@@ -5634,9 +5516,7 @@ reuseWin	vim/plugged/nerdtree/autoload/nerdtree.vim	/^function! s:reuseWin(dir) 
 revert	vim/autoload/plug.vim	/^function! s:revert()$/;"	f
 rgb_to_r_g_b	conky/conky_orange.lua	/^function rgb_to_r_g_b(colour, alpha)$/;"	f
 rm_rf	vim/autoload/plug.vim	/^function! s:rm_rf(dir)$/;"	f
-root	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let root = s:guess_root(a:path, a:markers)$/;"	v
 rtp	vim/autoload/plug.vim	/^function! s:rtp(spec)$/;"	f
-run	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^function! s:run(opts)$/;"	f
 runTest	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^    def runTest(self):$/;"	m	class:_Base
 runTest	vim/plugged/ultisnips/pythonx/UltiSnips/test_diff.py	/^    def runTest(self):$/;"	m	class:_BaseGuessing
 runTest	vim/plugged/ultisnips/pythonx/UltiSnips/test_position.py	/^    def runTest(self):$/;"	m	class:_MPBase
@@ -6201,12 +6081,6 @@ s:IA3	vim/plugged/vim-airline-themes/autoload/airline/themes/ouo.vim	/^let s:IA3
 s:IA3	vim/plugged/vim-airline-themes/autoload/airline/themes/qwq.vim	/^let s:IA3 = [ '#ffffff' , '#A28E79' , 239 , 236 , '' ]$/;"	v
 s:IA3	vim/plugged/vim-airline-themes/autoload/airline/themes/understated.vim	/^let s:IA3 = ['#4E4E4E', '#1C1C1C', 239, 234, '']$/;"	v
 s:IA3	vim/plugged/vim-airline-themes/autoload/airline/themes/xtermlight.vim	/^let s:IA3 = [ '#a8a8a8' , '#eeeeee' , 248 , 255 , '' ]$/;"	v
-s:IAError	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
-s:IAMain	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAMain = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
-s:IAMiddle	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAMiddle = [s:nord5_gui, s:nord1_gui, s:nord5_term, s:nord1_term]$/;"	v
-s:IARight	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IARight = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
-s:IAWarn	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
-s:IError	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/base16_snazzy.vim	/^let s:IM = [ s:base00 , 235 ]$/;"	v
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/base16color.vim	/^let s:IM = [ '#40403C' , 236 ]$/;"	v
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/laederon.vim	/^let s:IM = [ '#242321' , 235 ]$/;"	v
@@ -6214,8 +6088,6 @@ s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/term.vim	/^let s:IM 
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/term_light.vim	/^let s:IM = [ '#40403C' , 7 ]$/;"	v
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/ubaryd.vim	/^let s:IM = [ '#242321' , 235 ]$/;"	v
 s:IM	vim/plugged/vim-airline-themes/autoload/airline/themes/wombat.vim	/^let s:IM = [ '#40403C' , 238 ]$/;"	v
-s:IMain	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IMain = [s:nord1_gui, s:nord14_gui, s:nord1_term, s:nord6_term]$/;"	v
-s:IMiddle	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
 s:IN1	vim/plugged/vim-airline-themes/autoload/airline/themes/alduin.vim	/^let s:IN1 = [s:guiGray, s:gui01, s:ctermGray, s:cterm01]$/;"	v
 s:IN1	vim/plugged/vim-airline-themes/autoload/airline/themes/aurora.vim	/^let s:IN1 = [ '#9e9e9e' , '#9e9e9e' , 247 , 247 ]$/;"	v
 s:IN1	vim/plugged/vim-airline-themes/autoload/airline/themes/badcat.vim	/^let s:IN1 = [ s:guiBlack     , s:guiGray  , s:ctermBlack      , s:ctermGray  ]$/;"	v
@@ -6241,8 +6113,6 @@ s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/jellybeans.vim	/^le
 s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/jet.vim	/^let s:IN3 = [ s:gui02 , s:gui00 , s:cterm02 , s:cterm00 ]$/;"	v
 s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/sierra.vim	/^let s:IN3 = [s:gui02, s:guiAlmostBlack, s:cterm02, s:ctermAlmostBlack]$/;"	v
 s:IN3	vim/plugged/vim-airline-themes/autoload/airline/themes/vice.vim	/^let s:IN3 = [s:grey0[1], s:grey1[1], s:grey0[0], s:grey1[0] ]$/;"	v
-s:IRight	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
-s:IWarn	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
 s:KeyMap	vim/plugged/nerdtree/lib/nerdtree/key_map.vim	/^let s:KeyMap = {}$/;"	v
 s:MenuController	vim/plugged/nerdtree/lib/nerdtree/menu_controller.vim	/^let s:MenuController = {}$/;"	v
 s:MenuItem	vim/plugged/nerdtree/lib/nerdtree/menu_item.vim	/^let s:MenuItem = {}$/;"	v
@@ -6547,11 +6417,6 @@ s:N4	vim/plugged/vim-airline-themes/autoload/airline/themes/ubaryd.vim	/^let s:N
 s:N4	vim/plugged/vim-airline-themes/autoload/airline/themes/wombat.vim	/^let s:N4 = [ '#86CD74' , 113 ]                   " mode modified$/;"	v
 s:NERDFileNameEscape	vim/plugged/nerdcommenter/plugin/NERD_commenter.vim	/^let s:NERDFileNameEscape="[]#*$%'\\" ?`!&();<>\\\\"$/;"	v
 s:NERDTree	vim/plugged/nerdtree/lib/nerdtree/nerdtree.vim	/^let s:NERDTree = {}$/;"	v
-s:NError	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
-s:NMain	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NMain = [s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term]$/;"	v
-s:NMiddle	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
-s:NRight	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
-s:NWarn	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
 s:Notifier	vim/plugged/nerdtree/lib/nerdtree/notifier.vim	/^let s:Notifier = {}$/;"	v
 s:Opener	vim/plugged/nerdtree/lib/nerdtree/opener.vim	/^let s:Opener = {}$/;"	v
 s:PA	vim/plugged/vim-airline-themes/autoload/airline/themes/badwolf.vim	/^let s:PA = [ '#f4cf86' , 222 ]                   " dirtyblonde$/;"	v
@@ -6790,11 +6655,6 @@ s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/desertink.vim	/^let 
 s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/powerlineish.vim	/^let s:RE = [ '#ffffff' , '#d70000' , 231 , 160 ] " white          & brightred$/;"	v
 s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/ravenpower.vim	/^let s:RE = [ '#ffffff' , '#d70000' , 231 , 160 ] " white          & brightred$/;"	v
 s:RE	vim/plugged/vim-airline-themes/autoload/airline/themes/violet.vim	/^let s:RE = [ '#c6c6c6' , '#ce537a' , 251, 168 ]$/;"	v
-s:RError	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
-s:RMain	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RMain = [s:nord1_gui, s:nord14_gui, s:nord1_term, s:nord14_term]$/;"	v
-s:RMiddle	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
-s:RRight	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
-s:RWarn	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
 s:State	vim/plugged/tagbar/autoload/tagbar/state.vim	/^let s:State = {$/;"	v
 s:TE	vim/plugged/vim-airline-themes/autoload/airline/themes/peaksea.vim	/^let s:TE = [ '#1C1C1C' , '#3A3A3A' , 254 , 237 , '' ]$/;"	v
 s:TH	vim/plugged/vim-airline-themes/autoload/airline/themes/desertink.vim	/^let s:TH  = [ s:N1[1], s:N1[0], s:N1[3], s:N1[2] ]     " hidden buffers$/;"	v
@@ -7091,11 +6951,6 @@ s:V4	vim/plugged/vim-airline-themes/autoload/airline/themes/term.vim	/^let s:V4 
 s:V4	vim/plugged/vim-airline-themes/autoload/airline/themes/term_light.vim	/^let s:V4 = [ '#B5D3F3' , '#141413' , 12,  0 ]$/;"	v
 s:V4	vim/plugged/vim-airline-themes/autoload/airline/themes/ubaryd.vim	/^let s:V4 = [ '#9a4820' , 88 ]$/;"	v
 s:V4	vim/plugged/vim-airline-themes/autoload/airline/themes/wombat.vim	/^let s:V4 = [ '#7CB0E6' , 111 ]$/;"	v
-s:VError	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
-s:VMain	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VMain = [s:nord1_gui, s:nord7_gui, s:nord1_term, s:nord7_term]$/;"	v
-s:VMiddle	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
-s:VRight	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
-s:VWarn	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
 s:W	vim/plugged/vim-airline-themes/autoload/airline/themes/ouo.vim	/^let s:W = [s:gui_warningfg, s:gui_warningbg, s:cterm_warningfg, s:cterm_warningbg, 'bold']$/;"	v
 s:WARNING	vim/plugged/vim-airline-themes/autoload/airline/themes/base16_atelierdune.vim	/^let s:WARNING = [ s:gui01, s:gui0A, s:cterm0C, s:cterm06 ]$/;"	v
 s:WARNING	vim/plugged/vim-airline-themes/autoload/airline/themes/dracula.vim	/^let s:WARNING = [ s:guiBlack, s:gui03, s:ctermBlack, s:cterm03 ]$/;"	v
@@ -7163,28 +7018,6 @@ s:app	vim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:app = "MacVim"$/;"	v
 s:app	vim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:app = "System Events"$/;"	v
 s:app	vim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:app = "Terminal"$/;"	v
 s:app	vim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:app = "iTerm2"$/;"	v
-s:async_code	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_code = 0$/;"	v
-s:async_congest	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let s:async_congest = 0$/;"	v
-s:async_congest	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let s:async_congest = has('patch-8.0.100')? 1 : 0$/;"	v
-s:async_congest	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_congest = 0$/;"	v
-s:async_debug	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_debug = 0$/;"	v
-s:async_efm	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_efm = &errorformat$/;"	v
-s:async_head	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_head = 0$/;"	v
-s:async_info	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_info = { 'text':"", 'post':'', 'postsave':'' }$/;"	v
-s:async_nvim	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_nvim = has('nvim')? 1 : 0$/;"	v
-s:async_output	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_output = {}$/;"	v
-s:async_quick	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let s:async_quick = (v:version >= 800 || has('patch-7.4.1997'))? 1 : 0$/;"	v
-s:async_quick	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let s:async_quick = has('nvim-0.2.0')? 1 : 0$/;"	v
-s:async_quick	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_quick = 0$/;"	v
-s:async_scroll	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_scroll = 0$/;"	v
-s:async_start	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_start = 0$/;"	v
-s:async_state	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_state = 0$/;"	v
-s:async_tail	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:async_tail = 0$/;"	v
-s:asyncrun_support	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^		let s:asyncrun_support = 1$/;"	v
-s:asyncrun_support	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let s:asyncrun_support = 1$/;"	v
-s:asyncrun_support	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:asyncrun_support = 0$/;"	v
-s:asyncrun_windows	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let s:asyncrun_windows = 1$/;"	v
-s:asyncrun_windows	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^let s:asyncrun_windows = 0$/;"	v
 s:attr_pattern	vim/plugged/vim-vue/syntax/vue.vim	/^  let s:attr_pattern = has_key(s:language, 'attr_pattern') ? s:language.attr_pattern : s:attr('lang', s:language.name)$/;"	v
 s:attrs	vim/plugged/dracula/colors/dracula.vim	/^let s:attrs = {$/;"	v
 s:autocommands_done	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:autocommands_done = 0$/;"	v
@@ -7231,8 +7064,6 @@ s:black	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^let s:b
 s:blobdirs	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^  let s:blobdirs = {}$/;"	v
 s:blue	vim/plugged/vim-airline-themes/autoload/airline/themes/distinguished.vim	/^let s:blue    = [ 67, '#5f87af']$/;"	v
 s:blue	vim/plugged/vim-airline-themes/autoload/airline/themes/solarized_flood.vim	/^let s:blue    = {'hex': '#268BD2', 'term':  32}  "  38, 139, 210 *$/;"	v
-s:bold	vim/plugged/nord-vim/colors/nord.vim	/^  let s:bold = ""$/;"	v
-s:bold	vim/plugged/nord-vim/colors/nord.vim	/^let s:bold = "bold,"$/;"	v
 s:buf_min_count	vim/plugged/vim-airline/autoload/airline/extensions/tabline/autoshow.vim	/^let s:buf_min_count = get(g:, 'airline#extensions#tabline#buffer_min_count', 0)$/;"	v
 s:buf_modified_symbol	vim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/default.vim	/^let s:buf_modified_symbol = g:airline_symbols.modified$/;"	v
 s:buf_nr_format	vim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/default.vim	/^let s:buf_nr_format = get(g:, 'airline#extensions#tabline#buffer_nr_format', '%s: ')$/;"	v
@@ -9265,10 +9096,6 @@ s:is_win	vim/plugged/fzf.vim/autoload/fzf/vim/complete.vim	/^let s:is_win = has(
 s:is_win	vim/plugged/fzf.vim/plugin/fzf.vim	/^let s:is_win = has('win32') || has('win64')$/;"	v
 s:is_win	vim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^let s:is_win = has('win32') || has('win64')$/;"	v
 s:is_win32term	vim/plugged/vim-airline/autoload/airline/highlighter.vim	/^let s:is_win32term = (has('win32') || has('win64')) &&$/;"	v
-s:italic	vim/plugged/nord-vim/colors/nord.vim	/^  let s:italic = ""$/;"	v
-s:italic	vim/plugged/nord-vim/colors/nord.vim	/^let s:italic = "italic,"$/;"	v
-s:italicize_comments	vim/plugged/nord-vim/colors/nord.vim	/^    let s:italicize_comments = s:italic$/;"	v
-s:italicize_comments	vim/plugged/nord-vim/colors/nord.vim	/^let s:italicize_comments = ""$/;"	v
 s:item_pattern	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:item_pattern = s:file_commit_pattern . '\\|^@@'$/;"	v
 s:keyMaps	vim/plugged/nerdtree/lib/nerdtree/key_map.vim	/^let s:keyMaps = {}$/;"	v
 s:known_files	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:known_files = {$/;"	v
@@ -9322,88 +9149,6 @@ s:new_window	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:new_window      = 1$
 s:nomodeline	vim/plugged/vim-airline/autoload/airline/util.vim	/^let s:nomodeline = (v:version > 703 || (v:version == 703 && has("patch438"))) ? '<nomodeline>' : ''$/;"	v
 s:non_zero_only	vim/plugged/vim-airline/autoload/airline/extensions/hunks.vim	/^let s:non_zero_only = get(g:, 'airline#extensions#hunks#non_zero_only', 0)$/;"	v
 s:none	vim/plugged/dracula/colors/dracula.vim	/^let s:none      = ['NONE', 'NONE']$/;"	v
-s:nord0	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord0 = ["#2E3440", "NONE"]$/;"	v
-s:nord0_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord0_gui = "#2E3440"$/;"	v
-s:nord0_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord0_gui = "#2E3440"$/;"	v
-s:nord0_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord0_term = "NONE"$/;"	v
-s:nord1	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord1 = ["#3B4252", 0]$/;"	v
-s:nord10	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord10 = ["#5E81AC", 12]$/;"	v
-s:nord10_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord10_gui = "#5E81AC"$/;"	v
-s:nord10_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord10_gui = "#5E81AC"$/;"	v
-s:nord10_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord10_term = "12"$/;"	v
-s:nord10_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord10_term = "12"$/;"	v
-s:nord11	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord11 = ["#BF616A", 1]$/;"	v
-s:nord11_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord11_gui = "#BF616A"$/;"	v
-s:nord11_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord11_gui = "#BF616A"$/;"	v
-s:nord11_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord11_term = "1"$/;"	v
-s:nord11_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord11_term = "1"$/;"	v
-s:nord12	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord12 = ["#D08770", 11]$/;"	v
-s:nord12_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord12_gui = "#D08770"$/;"	v
-s:nord12_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord12_gui = "#D08770"$/;"	v
-s:nord12_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord12_term = "11"$/;"	v
-s:nord12_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord12_term = "11"$/;"	v
-s:nord13	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord13 = ["#EBCB8B", 3]$/;"	v
-s:nord13_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord13_gui = "#EBCB8B"$/;"	v
-s:nord13_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord13_gui = "#EBCB8B"$/;"	v
-s:nord13_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord13_term = "3"$/;"	v
-s:nord13_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord13_term = "3"$/;"	v
-s:nord14	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord14 = ["#A3BE8C", 2]$/;"	v
-s:nord14_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord14_gui = "#A3BE8C"$/;"	v
-s:nord14_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord14_gui = "#A3BE8C"$/;"	v
-s:nord14_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord14_term = "2"$/;"	v
-s:nord14_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord14_term = "2"$/;"	v
-s:nord15	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord15 = ["#B48EAD", 5]$/;"	v
-s:nord15_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord15_gui = "#B48EAD"$/;"	v
-s:nord15_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord15_gui = "#B48EAD"$/;"	v
-s:nord15_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord15_term = "5"$/;"	v
-s:nord15_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord15_term = "5"$/;"	v
-s:nord1_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord1_gui = "#3B4252"$/;"	v
-s:nord1_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord1_gui = "#3B4252"$/;"	v
-s:nord1_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord1_term = "0"$/;"	v
-s:nord1_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord1_term = "0"$/;"	v
-s:nord2	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord2 = ["#434C5E", "NONE"]$/;"	v
-s:nord2_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord2_gui = "#434C5E"$/;"	v
-s:nord2_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord2_gui = "#434C5E"$/;"	v
-s:nord2_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord2_term = "NONE"$/;"	v
-s:nord3	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord3 = ["#4C566A", 8]$/;"	v
-s:nord3_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord3_gui = "#4C566A"$/;"	v
-s:nord3_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_gui = "#4C566A"$/;"	v
-s:nord3_gui_bright	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_gui_bright = "#616E88"$/;"	v
-s:nord3_gui_brightened	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_gui_brightened = [$/;"	v
-s:nord3_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord3_term = "8"$/;"	v
-s:nord3_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_term = "8"$/;"	v
-s:nord4	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord4 = ["#D8DEE9", "NONE"]$/;"	v
-s:nord4_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord4_gui = "#D8DEE9"$/;"	v
-s:nord4_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord4_gui = "#D8DEE9"$/;"	v
-s:nord4_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord4_term = "NONE"$/;"	v
-s:nord5	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord5 = ["#E5E9F0", 7]$/;"	v
-s:nord5_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord5_gui = "#E5E9F0"$/;"	v
-s:nord5_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord5_gui = "#E5E9F0"$/;"	v
-s:nord5_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord5_term = "7"$/;"	v
-s:nord5_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord5_term = "7"$/;"	v
-s:nord6	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord6 = ["#ECEFF4", 15]$/;"	v
-s:nord6_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord6_gui = "#ECEFF4"$/;"	v
-s:nord6_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord6_gui = "#ECEFF4"$/;"	v
-s:nord6_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord6_term = "15"$/;"	v
-s:nord6_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord6_term = "15"$/;"	v
-s:nord7	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord7 = ["#8FBCBB", 14]$/;"	v
-s:nord7_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord7_gui = "#8FBCBB"$/;"	v
-s:nord7_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord7_gui = "#8FBCBB"$/;"	v
-s:nord7_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord7_term = "14"$/;"	v
-s:nord7_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord7_term = "14"$/;"	v
-s:nord8	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord8 = ["#88C0D0", 6]$/;"	v
-s:nord8_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord8_gui = "#88C0D0"$/;"	v
-s:nord8_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord8_gui = "#88C0D0"$/;"	v
-s:nord8_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord8_term = "6"$/;"	v
-s:nord8_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord8_term = "6"$/;"	v
-s:nord9	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord9 = ["#81A1C1", 4]$/;"	v
-s:nord9_gui	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord9_gui = "#81A1C1"$/;"	v
-s:nord9_gui	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord9_gui = "#81A1C1"$/;"	v
-s:nord9_term	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord9_term = "4"$/;"	v
-s:nord9_term	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord9_term = "4"$/;"	v
-s:nord_vim_version	vim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord_vim_version="0.12.0"$/;"	v
-s:nord_vim_version	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord_vim_version="0.12.0"$/;"	v
-s:nord_vim_version	vim/plugged/nord-vim/colors/nord.vim	/^let s:nord_vim_version="0.12.0"$/;"	v
 s:nowait	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:nowait = v:version >= 704 ? '<nowait>' : ''$/;"	v
 s:nowait	vim/plugged/vim-fugitive/plugin/fugitive.vim	/^let s:nowait = v:version >= 704 ? '<nowait>' : ''$/;"	v
 s:number_map	vim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim	/^let s:number_map = &encoding == 'utf-8'$/;"	v
@@ -9433,22 +9178,6 @@ s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.t
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.tabline.right = copy(s:p.normal.right)$/;"	v
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.tabline.tabsel = [ [ s:cyan, s:black ] ]$/;"	v
 s:p	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^  let s:p.visual.left = [ [ s:black, s:orange ], [ s:cyan, s:gray ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.inactive.left =  [ [ s:nord1, s:nord8 ], [ s:nord5, s:nord1 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.inactive.middle = [ [ s:nord5, s:nord1 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.inactive.right = [ [ s:nord5, s:nord1 ], [ s:nord5, s:nord1 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.insert.left = [ [ s:nord1, s:nord6 ], [ s:nord5, s:nord1 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.error = [ [ s:nord1, s:nord11 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.left = [ [ s:nord1, s:nord8 ], [ s:nord5, s:nord1 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.middle = [ [ s:nord5, s:nord3 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.right = [ [ s:nord5, s:nord1 ], [ s:nord5, s:nord1 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.warning = [ [ s:nord1, s:nord13 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.replace.left = [ [ s:nord1, s:nord13 ], [ s:nord5, s:nord1 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.left = [ [ s:nord5, s:nord3 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.middle = [ [ s:nord5, s:nord3 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.right = [ [ s:nord5, s:nord3 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.tabsel = [ [ s:nord1, s:nord8 ] ]$/;"	v
-s:p	vim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.visual.left = [ [ s:nord1, s:nord7 ], [ s:nord5, s:nord1 ] ]$/;"	v
 s:padding_left	vim/plugged/vim-startify/autoload/startify.vim	/^let s:padding_left = repeat(' ', get(g:, 'startify_padding_left', 3))$/;"	v
 s:padding_left	vim/plugged/vim-startify/syntax/startify.vim	/^let s:padding_left = repeat(' ', get(g:, 'startify_padding_left', 3))$/;"	v
 s:parts	vim/plugged/vim-airline/autoload/airline/parts.vim	/^let s:parts = {}$/;"	v
@@ -9478,7 +9207,6 @@ s:prototype	vim/plugged/vim-airline/autoload/airline/extensions/tabline/builder.
 s:purple	vim/plugged/dracula/autoload/lightline/colorscheme/dracula.vim	/^let s:purple   = g:dracula#palette.purple$/;"	v
 s:purple	vim/plugged/dracula/colors/dracula.vim	/^let s:purple    = g:dracula#palette.purple$/;"	v
 s:pwin_by_tagbar	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:pwin_by_tagbar = 0$/;"	v
-s:quickfix_open	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	let s:quickfix_open = 0$/;"	v
 s:quit	vim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:quit = "quit"$/;"	v
 s:quit	vim/plugged/coc.nvim/autoload/coc/util.vim	/^let s:quit = ""$/;"	v
 s:quotes	vim/plugged/vim-startify/autoload/startify/fortune.vim	/^let s:quotes = exists('g:startify_custom_header_quotes')$/;"	v
@@ -9586,8 +9314,6 @@ s:tree_up_dir_line	vim/plugged/nerdtree/syntax/nerdtree.vim	/^let s:tree_up_dir_
 s:trees	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:trees = {}$/;"	v
 s:triggers	vim/autoload/plug.vim	/^let s:triggers = get(s:, 'triggers', {})$/;"	v
 s:type_init_done	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:type_init_done    = 0$/;"	v
-s:underline	vim/plugged/nord-vim/colors/nord.vim	/^  let s:underline = "NONE,"$/;"	v
-s:underline	vim/plugged/nord-vim/colors/nord.vim	/^let s:underline = "underline,"$/;"	v
 s:unicode	vim/plugged/vim-startify/autoload/startify/fortune.vim	/^let s:unicode = &encoding == 'utf-8' && get(g:, 'startify_fortune_use_unicode')$/;"	v
 s:unite_source	vim/plugged/ultisnips/autoload/unite/sources/ultisnips.vim	/^let s:unite_source = {$/;"	v
 s:unite_source	vim/plugged/ultisnips/autoload/unite/sources/ultisnips.vim	/^let s:unite_source.action_table.expand = {$/;"	v
@@ -9604,8 +9330,6 @@ s:vcs_config	vim/plugged/vim-airline/autoload/airline/extensions/branch.vim	/^le
 s:version	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^let s:version = '0.11.0'$/;"	v
 s:vim8	vim/autoload/plug.vim	/^let s:vim8 = has('patch-8.0.0039') && exists('*job_start')$/;"	v
 s:vim_quitting	vim/plugged/tagbar/autoload/tagbar.vim	/^let s:vim_quitting = 0$/;"	v
-s:vimwiki_hcolor_ctermfg	vim/plugged/nord-vim/colors/nord.vim	/^  let s:vimwiki_hcolor_ctermfg = [s:nord7_term, s:nord8_term, s:nord9_term, s:nord10_term, s:nord14_term, s:nord15_term]$/;"	v
-s:vimwiki_hcolor_guifg	vim/plugged/nord-vim/colors/nord.vim	/^  let s:vimwiki_hcolor_guifg = [s:nord7_gui, s:nord8_gui, s:nord9_gui, s:nord10_gui, s:nord14_gui, s:nord15_gui]$/;"	v
 s:violet	vim/plugged/vim-airline-themes/autoload/airline/themes/solarized_flood.vim	/^let s:violet  = {'hex': '#6C71C4', 'term':  62}  " 108, 113, 196 *$/;"	v
 s:visibility_symbols	vim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^let s:visibility_symbols = {$/;"	v
 s:want_showmod	vim/plugged/vim-airline-themes/autoload/airline/themes/minimalist.vim	/^let s:want_showmod = get(g:, 'airline_minimalist_showmod', 0)$/;"	v
@@ -9682,7 +9406,6 @@ show_files	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:show_fil
 show_lists	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:show_lists(lists) abort$/;"	f
 show_sessions	vim/plugged/vim-startify/autoload/startify.vim	/^function! s:show_sessions() abort$/;"	f
 show_tabline	vim/plugged/vim-airline/autoload/airline/extensions/tabline/autoshow.vim	/^function! s:show_tabline(min_count, total_count)$/;"	f
-silent!	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	noautocmd silent! exec ''.l:winnr.'wincmd w'$/;"	m
 silent_call	vim/plugged/ultisnips/test/vim_interface.py	/^def silent_call(cmd):$/;"	f
 silently_source_all_tmux_files	tmux/plugins/tpm/scripts/source_plugins.sh	/^silently_source_all_tmux_files() {$/;"	f
 skip_if	vim/plugged/ultisnips/test/test_Autotrigger.py	/^    skip_if = ($/;"	v	class:Autotrigger_WillProduceNoExceptionWithVimLowerThan214
@@ -10829,8 +10552,6 @@ webdevicons#refresh	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^function! 
 webdevicons#softRefresh	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^function! webdevicons#softRefresh()$/;"	f
 webdevicons#version	vim/plugged/vim-devicons/plugin/webdevicons.vim	/^function! webdevicons#version()$/;"	f
 webdevicons_file_format	vim/plugged/vim-devicons/pythonx/vim_devicons/powerline/segments.py	/^def webdevicons_file_format(pl, segment_info):$/;"	f
-windo	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	noautocmd windo call s:WindowCheck(0)$/;"	m
-windo	vim/plugged/asyncrun.vim/plugin/asyncrun.vim	/^	noautocmd windo call s:WindowCheck(1)$/;"	m
 windows_sink	vim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:windows_sink(line)$/;"	f
 winshell	vim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:winshell() abort$/;"	f
 with_cd	vim/autoload/plug.vim	/^function! s:with_cd(cmd, dir, ...)$/;"	f
