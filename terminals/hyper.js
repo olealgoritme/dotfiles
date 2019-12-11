@@ -4,7 +4,7 @@ module.exports = {
     scrollback: "3000",
     fontSize: 12,
     fontFamily:
-      '"DejaVuSansMono Nerd Font", Consolas, "Lucida Console", monospace',
+      '"DejaVuSansMono Nerd Font", "Consolas", "Lucida Console", monospace',
     fontWeight: "normal",
     fontWeightBold: "bold",
     lineHeight: 1,
@@ -54,12 +54,11 @@ module.exports = {
 
   plugins: [
     //"hyperfull",
-    //"hyperline"
+    //"hyperline",
     //"hyperpower"
     "hyper-snazzy",
-    "hyper-blink",
-    "hyperterm-cursor",
-    "hyperborder"
+    "hyperborder",
+    "hyper-font-smoothing"
   ],
   localPlugins: [],
   modifierKeys: { altIsMeta: true },
