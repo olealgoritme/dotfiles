@@ -163,8 +163,8 @@ function! s:customMappings()
     map <C-l> <C-Right>
     
     " jumps to the next/previous function
-    nnoremap <silent><C-Up>   :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "bw")<CR>
-    nnoremap <silent><C-Down> :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "w")<CR>
+    nnoremap <silent><A-Up>   :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "bw")<CR>
+    nnoremap <silent><A-Down> :call search('\(\(def\\|func\\|function\\|\\if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "w")<CR>
 
     " select all lines till empty line
     vnoremap <silent><S-Up> {
