@@ -15,6 +15,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
+Plug 'tikhomirov/vim-glsl'
+"Plug 'patriciogonzalezvivo/vim-glslViewer'
 Plug 'majutsushi/tagbar'
 "Plug 'skywind3000/asyncrun.vim'
 Plug 'vim-airline/vim-airline-themes'
