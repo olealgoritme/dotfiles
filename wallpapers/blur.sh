@@ -1,6 +1,7 @@
 #!/bin/bash
 # blurs the current feh set background
 # ~/.fehbg file contains the file name
+# deps: sudo apt install feh imagemagick
 
 eval "set -- $(sed 1d "$HOME/.fehbg")"
 
