@@ -12,29 +12,41 @@ BLUR_APPEND="_blur"
 WALLPAPER_BLUR_FILENAME=${WALLPAPER_FILE%.*}
 WALLPAPER_BLUR_PATH=${FOLDER}/${WALLPAPER_BLUR_FILENAME}
 
-function blur() {
-    # Create blurred if it doesn't already exist
+function check_blur() {
     if [ -f "$WALLPAPER_BLUR_PATH$BLUR_APPEND.$WALLPAPER_EXT" ]; then
-        echo "Blurry version already exist. Switching to original wallpaper"
-        ORIG_WP=$(echo $WALLPAPER_PATH | sed -E 's/_blur//g')
-        feh --bg-scale $ORIG_WP
+        switch_to_blurry
     else
-        echo "Creating: $WALLPAPER_BLUR_PATH"
-        CONVERT_CMD=$(convert $WALLPAPER_PATH -blur 0x6 $WALLPAPER_BLUR_PATH$BLUR_APPEND.$WALLPAPER_EXT)
-        $CONVERT_CMD
+        create_blurry
+        switch_to_blurry
     fi
 }
 
-# Is this a blurred wallpaper?
+function create_blurry() {
+    echo "Creating blurry wallpaper: $WALLPAPER_BLUR_PATH"
+    CONVERT_CMD=$(convert $WALLPAPER_PATH -blur 0x6 $WALLPAPER_BLUR_PATH$BLUR_APPEND.$WALLPAPER_EXT)
+    $CONVERT_CMD
+}
+
+function switch_to_original() {
+    echo "Switching to original wallpaper"
+    ORIG_WP=$(echo $WALLPAPER_PATH | sed -E 's/_blur//g')
+    feh --bg-scale $ORIG_WP
+}
+
+function switch_to_blurry() {
+    echo "Switching to blurry wallpaper"
+    feh --bg-scale $WALLPAPER_BLUR_PATH$BLUR_APPEND.$WALLPAPER_EXT
+}
+
+
+
+# is current feh wallpaper blurry? Eg: some_wallpaper_blur.png
 if [[ $WALLPAPER_FILE == *"$BLUR_APPEND"* ]];
 then
-  echo "$WALLPAPER_FILE is already a blurred wallpaper. Switching to original wallpaper"
-  ORIG_WP=$(echo $WALLPAPER_PATH | sed -E 's/_blur//g')
-  feh --bg-scale $ORIG_WP
+  switch_to_original
   exit
 else 
-  blur
-  # set blurred wallpaper
-  feh --bg-scale $WALLPAPER_BLUR_PATH$BLUR_APPEND.$WALLPAPER_EXT
+  check_blur
+  exit
 fi
 
