@@ -8,13 +8,17 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'posva/vim-vue'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'chrisbra/Colorizer'
+"Plug 'ianks/vim-tsx'
+Plug 'leafgarland/typescript-vim'
 "Plug 'arcticicestudio/nord-vim'
-"Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'roxma/vim-tmux-clipboard'
 "Plug 'vim-scripts/dbext.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'tikhomirov/vim-glsl'
 "Plug 'patriciogonzalezvivo/vim-glslViewer'
 Plug 'majutsushi/tagbar'
@@ -28,6 +32,5 @@ Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
-Plug 'roxma/vim-tmux-clipboard'
 call plug#end()
 "}}

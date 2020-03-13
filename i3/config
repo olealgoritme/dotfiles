@@ -17,7 +17,7 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec hyper
+bindsym $mod+Return exec alacritty
 #i3-sensible-terminal
 
 # Window kill command
@@ -25,7 +25,7 @@ bindsym $mod+q kill
 
 # start program launcher
 bindsym $mod+e exec --no-startup-id rofi -show run
-bindsym $mod+c exec --no-startup-id chromium-browser
+bindsym $mod+c exec --no-startup-id google-chrome --disable-frame-rate-limit
 
 # change focus
 # bindsym $mod+Left focus left
@@ -175,16 +175,16 @@ mode "resize" {
 }
 
 # Autostart applications
-exec --no-startup-id compton --config ~/.config/compton/config
+exec --no-startup-id compton --config ~/.config/compton/compton.config
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id /usr/bin/pulseaudio &
 exec --no-startup-id /usr/bin/start-pulseaudio-x11 &
 exec --no-startup-id nm-applet
 exec --no-startup-id /home/xuw/scripts/xrander_add_res.sh 2200 1000 144
-exec --no-startup-id /home/xuw/scripts/performance.sh
+exec --no-startup-id /home/xuw/scripts/overclock.sh
 exec --no-startup-id clipit
 exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
-exec --no-startup-id /home/xuw/.local/bin/play-with-mpv &> /dev/null &
+exec --no-startup-id /usr/local/bin/play-with-mpv &> /dev/null &
 
 # Gaps
 # gaps inner|outer|horizontal|vertical|top|right|bottom|left current|all set|plus|minus|toggle <px>

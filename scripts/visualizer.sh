@@ -4,6 +4,6 @@
 
 if ! pgrep -x "cava" > /dev/null
 then
-    xfce4-terminal --hide-borders -e cava --geometry 70x15 &> /dev/null &
+    alacritty -e cava &> /dev/null &
 fi
 

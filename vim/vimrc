@@ -2,12 +2,8 @@
 " Source: https://github.com/olealgoritme/dotfiles
 " Inspiration: https://github.com/ronakg
 
-" Keep all the sane settings in following file
 source ~/.vim/sane_vimrc
-set runtimepath^=~/code/vim/maven-search.vim/
-source ~/code/vim/maven-search.vim/maven-search.vim
-set <S-Left>=^[^[1;5D
-set <S-Right>=^[^[1;5C
+set clipboard+=unnamedplus
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 set makeprg=mvn\ -q\ -f\ pom.xml\ jar:install
@@ -212,10 +208,8 @@ function! s:customMappings()
     nnoremap <Tab>    <C-w>w
 
     " Switch between buffers using alt+left/right arrow
-    nnoremap <silent><C-Right> :call NextBuffer()<CR>
-    nnoremap <silent><C-Left> :call PrevBuffer()<CR>
-    nnoremap <silent><C-l> :call NextBuffer()<CR>
-    nnoremap <silent><C-h> :call PrevBuffer()<CR>
+    nnoremap <silent><A-Right> :call NextBuffer()<CR>
+    nnoremap <silent><A-Left> :call PrevBuffer()<CR>
 
     vnoremap <Leader><Enter> <Esc>i<Enter><Esc>
     nnoremap <Leader><Enter> i<Enter><Esc>
