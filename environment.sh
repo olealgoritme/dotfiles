@@ -65,8 +65,3 @@ else
     export CSCOPE_EDITOR=vim
 fi
 
-# FZF
-if command_exists fzf; then
-    export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-    export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
-fi

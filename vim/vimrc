@@ -279,13 +279,13 @@ function! FindAndReplaceAll(from, to)
     execute "%s/" . a:from . "/" . a:to . "/gc"
 endfunction
 
-" Grep for word under the cursor
-if executable("rg")
-    set grepprg=rg\ --vimgrep\ -g\ '!tags'
-elseif executable("ag")
-    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
-endif
-set grepformat=%f:%l:%c:%m,%f:%l:%m
+"" Grep for word under the cursor
+"if executable("rg")
+    "set grepprg=rg\ --vimgrep\ -g\ '!tags'
+"elseif executable("ag")
+    "set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+"endif
+"set grepformat=%f:%l:%c:%m,%f:%l:%m
 
 function! GetVisualSelection()
     " https://stackoverflow.com/a/6271254/777247
