@@ -1,0 +1,96 @@
+!! ACPI / IRQ / Interrupt Linux kernel problem solving !!
+_________________________________________________________
+
+Test in follwing sequence (kernel boot parameters):
+-- first: upgrade your motherboard bios to newest version
+-- Put boot parameters in /etc/default/grub
+_________________________________________________________
+
+
+┌──────────┐
+│ acpi=off │
+└──────────┘
+INFO: disables ACPI support
+RESULT: GOOD
+
+
+┌─────────┐
+│ acpi=ht │
+└─────────┘
+INFO: disables ACPI support except for hyper threading
+RESULT: NO GOOD
+
+
+┌────────────┐
+│ pci=noacpi │
+└────────────┘
+INFO: disables ACPI for irq routing and pci scanning
+RESULT: NO GOOD
+
+
+┌────────────┐
+│ acpi=noirq │
+└────────────┘
+INFO: disables ACPI for irq routing
+RESULT: NO GOOD
+
+
+┌─────────────┐
+│ pnpacpi=off │
+└─────────────┘
+INFO: disables the ACPI of the linux pnp code
+RESULT: NO GOOD
+
+
+┌────────┐
+│ noapic │
+└────────┘
+INFO: disables io-apic for irq routing or pci scanning
+RESULT: NO GOOD
+
+
+┌─────────┐
+│ nolapic │
+└─────────┘
+INFO: disables the local APIC
+RESULT: NO GOOD, NO BOOT
+
+--
+Extras:
+
+┌───────────────────────────┐
+│ acpi_enforce_resources=no │
+└───────────────────────────┘
+RESULT: ?
+┌────────────────────────────┐
+│ acpi_enforce_resources=lax │
+└────────────────────────────┘
+RESULT: NO GOOD
+┌──────────────┐
+│ pci=routeirq │
+└──────────────┘
+RESULT: NO GOOD
+
+acpi_rev_override=5
+NO GOOD
+
+
+
+
+CURRENT SOLUTION:
+noapic pci=assign-busses apicmaintimer idle=poll reboot=cold,hard
+
+
+WORKS:
+noapic pci=assign-busses apicmaintimer idle=poll
+
+WORKS:
+mce=off idle=poll reboot=warm
+
+
+CURRENT:
+quiet splash vfio-pci.ids=1002:731f,1002:ab38,1002:1478,1002:1479 mce=off idle=poll pci=assign-busses apicmaintimer reboot=warm numa=off iommu=pt amd_iommu=on nvidia-drm.modeset=1 amdgpu.noretry=0
+
+
+
+
