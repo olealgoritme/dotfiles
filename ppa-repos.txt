@@ -1,0 +1,11 @@
+# nvidia drivers
+sudo add-apt-repository ppa:graphics-drivers/ppa
+
+# neovim latest
+sudo add-apt-repository ppa:neovim-ppa/unstable
+
+# deepin desktop
+sudo add-apt-repository ppa:leaeasy/dde
+
+# alacritty
+sudo add-apt-repository ppa:mmstick76/alacritty
