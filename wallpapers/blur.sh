@@ -23,19 +23,19 @@ function check_blur() {
 }
 
 function create_blurry() {
-    echo "Creating blurry wallpaper: $WALLPAPER_BLUR_PATH"
+    #echo "Creating blurry wallpaper: $WALLPAPER_BLUR_PATH"
     CONVERT_CMD=$(convert $WALLPAPER_PATH -blur 0x6 $WALLPAPER_BLUR_PATH$BLUR_APPEND.$WALLPAPER_EXT)
     $CONVERT_CMD
 }
 
 function switch_to_original() {
-    echo "Switching to original wallpaper"
+    #echo "Switching to original wallpaper"
     ORIG_WP=$(echo $WALLPAPER_PATH | sed -E 's/_blur//g')
     feh --bg-scale $ORIG_WP
 }
 
 function switch_to_blurry() {
-    echo "Switching to blurry wallpaper"
+    #echo "Switching to blurry wallpaper"
     feh --bg-scale $WALLPAPER_BLUR_PATH$BLUR_APPEND.$WALLPAPER_EXT
 }
 

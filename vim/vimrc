@@ -10,8 +10,21 @@ set makeprg=mvn\ -q\ -f\ pom.xml\ jar:install
 let g:NERDTreeWinSize = 45
 let g:vue_pre_processors = 'detect_on_enter'
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python2'
 
 
+
+
+" turn off highlight search
+nnoremap <Esc> :nohlsearch<CR><Esc>
 
 " testin start
 
@@ -141,8 +154,7 @@ function! s:customGlobalVars()
     " Dracula colorscheme
     let g:dracula_colorterm = 0
 
-    
-    
+
     " NERDTree config
     let g:NERDCreateDefaultMappings = 0
     let g:NERDRemoveExtraSpaces = 0

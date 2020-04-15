@@ -1,7 +1,8 @@
 {
     "suggest.noselect": true,
     "coc.preferences.formatOnSaveFiletypes": [
-        "css", 
+        "css",
+        "html",
         "Markdown",
         "javascript",
         "typescript",

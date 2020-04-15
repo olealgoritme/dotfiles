@@ -1,0 +1,91 @@
+#!/bin/bash
+PREVIUS=""
+STOP=""
+NEXT=""
+PLAY=""
+REPEAT="凌"
+SCREENSHOOT=""
+STACKED=""
+TABBED="ﬓ"
+SPLIT=""
+LOCK=""
+SLEEP="鈴"
+LOGOUT=""
+RESTART=""
+SHUTDOWN=""
+
+list_icons() {
+	echo $PREVIUS
+	echo $STOP
+	echo $NEXT
+	echo $PLAY
+	echo $REPEAT
+	echo $SCREENSHOOT
+	echo $STACKED
+	echo $TABBED
+	echo $SPLIT
+    echo $LOCK
+    echo $SLEEP
+    echo $LOGOUT
+    echo $RESTART
+    echo $SHUTDOWN
+}
+
+handle_option() {
+    case "$1" in
+        "$PREVIUS")
+            mpc -q prev
+            ;;
+        "$STOP")
+            mpc -q stop
+            ;;
+        "$NEXT")
+            mpc -q next
+            ;;
+        "$PLAY")
+            mpc -q play
+            ;;
+        "$REPEAT")
+            mpc -q repeat
+            ;;
+        "$SCREENSHOOT")
+            exec scrot -e 'feh $f -x' --delay 1 &
+            ;;
+        "$STACKED")
+            i3-msg layout stacked
+            ;;
+        "$TABBED")
+            i3-msg layout tabbed
+            ;;
+        "$SPLIT")
+            i3-msg layout toggle split
+            ;;
+        "$LOCK")
+            i3lock
+            ;;
+        "$SLEEP")
+            if $(rofi_confirm $SLEEP); then
+                betterlockscreen -l blur &
+                systemctl suspend
+            fi
+            ;;
+        "$LOGOUT")
+            if $(rofi_confirm $LOGOUT); then
+                i3-msg exit
+            fi
+            ;;
+        "$RESTART")
+            if $(rofi_confirm $RESTART); then
+                reboot
+            fi
+            ;;
+        "$SHUTDOWN")
+            if $(rofi_confirm $SHUTDOWN); then
+                shutdown now
+            fi
+            ;;
+    esac
+}
+
+SELECTION="$(list_icons | rofi -dmenu -theme options_menu)"
+handle_option $SELECTION &

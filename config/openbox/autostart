@@ -1,0 +1,36 @@
+####################### RICE #################################
+feh --bg-scale ~/dotfiles/wallpapers/hexa_3840_1080.png &
+
+# tint2 panel
+tint2 -c /home/xuw/.config/tint2/livia/livia.tint2rc &
+
+# conky
+# conky -c ~/.config/conky/config 2>/dev/null &
+
+# cava in alacritty
+/usr/local/bin/visualizer &
+
+# Compositor
+compton --config ~/.config/openbox/compton.config &
+##############################################################
+
+# add resolution
+/home/xuw/scripts/xrander_add_res.sh 2200 1000 144 &
+/home/xuw/scripts/xrander_add_res.sh 2560 1080 143 &
+
+# MPV server extension (server for chrome extensions to launch to mpv/y-dl)
+/home/xuw/.local/bin/play-with-mpv &> /dev/null &
+
+# Overclock CPU
+sudo /home/xuw/scripts/overclock.sh &
+
+# Disable mouse acceleration
+/home/xuw/scripts/mouse.sh &
+
+
+# Audio
+pulseaudio &
+start-pulseaudio-x11 &
+
+# REMAP keycode 49 on poker vortex rgb to get pipe sign (normally outputs the paragraph sign on nordic layout)
+xmodmap -e "keycode 49 = bar bar bar" &
