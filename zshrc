@@ -78,17 +78,14 @@ setopt APPEND_HISTORY
 setopt COMPLETE_ALIASES
 
 plugins=(
-    git
     vi-mode
-    )
+)
 
 [ -f $DOTFILES/zsh_prompt ] && . $DOTFILES/zsh_prompt
 
 # FZF
 if [ -f ~/.fzf.zsh ]; then
-   . ~/.fzf.zsh
+   #. ~/.fzf.zsh
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias loadnvm="$HOME/.nvm/nvm.sh"

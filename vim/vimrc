@@ -5,6 +5,9 @@
 source ~/.vim/sane_vimrc
 set clipboard+=unnamedplus
 
+" marks current line
+set cursorline
+
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 set makeprg=mvn\ -q\ -f\ pom.xml\ jar:install
 let g:NERDTreeWinSize = 45
@@ -25,6 +28,7 @@ let g:python_host_prog = '/usr/bin/python2'
 
 " turn off highlight search
 nnoremap <Esc> :nohlsearch<CR><Esc>
+nnoremap <leader>n :set hlsearch!<cr>
 
 " testin start
 

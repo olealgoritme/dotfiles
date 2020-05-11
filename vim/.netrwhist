@@ -1,3 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/xuw/code/c/capture/drm'
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/xuw/code/c/NvFBC/tests/NvFBCHwEnc'
+let g:netrw_dirhist_8='/'
+let g:netrw_dirhist_7='/home'
+let g:netrw_dirhist_6='/home/xuw'
+let g:netrw_dirhist_5='/home/xuw/Downloads'
+let g:netrw_dirhist_4='/home/xuw/Downloads/csgo_leak'
+let g:netrw_dirhist_3='/home/xuw/Downloads/csgo_leak/cstrike15_src'
+let g:netrw_dirhist_2='/home/xuw/Downloads/csgo_leak/cstrike15_src/bitmap'
+let g:netrw_dirhist_1='/home/xuw/Downloads/csgo_leak/cstrike15_src'
