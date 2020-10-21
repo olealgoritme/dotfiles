@@ -6,31 +6,25 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'stevearc/vim-arduino'
+Plug 'tomlion/vim-solidity'
 Plug 'leafgarland/typescript-vim'
 Plug 'dikiaap/minimalist'
-"Plug 'posva/vim-vue'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'chrisbra/Colorizer'
-"Plug 'ianks/vim-tsx'
 Plug 'leafgarland/typescript-vim'
-"Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'roxma/vim-tmux-clipboard'
-"Plug 'vim-scripts/dbext.vim'
-"Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tikhomirov/vim-glsl'
-"Plug 'patriciogonzalezvivo/vim-glslViewer'
 Plug 'majutsushi/tagbar'
-"Plug 'skywind3000/asyncrun.vim'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'dracula/vim', {'as': 'dracula'}
+"Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'

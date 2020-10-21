@@ -16,12 +16,10 @@ includekernel=0
 usage() {
     echo -e "
 Usage: create_tags_db [-i] [-s source] [-f | -d d1,d2,d3,...] [-h]
-
 -i            Include kernel sources
 -s source     Run on 'source' directory instead of current working directory
 -d d1,d2,...  Comma separated list of top level directory to parse for cscope database
 -h            Print this help message
-
 Existing cscope.files is used to generate the database unless -d option is passed. In which case, fresh cscope.files file is generated.
 "
 }

@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/xuw/Debugging/huawei_q22/Huawei Q22/rom1/_EMMC_ROM1_008G30_2889332387_00000000_1D2000000.bin.extracted/ext-root-0/data/com.huawei.iptv.stb/app_content_shell/content_shell/Cache'
 let g:netrw_dirhist_9='/home/xuw/code/c/NvFBC/tests/NvFBCHwEnc'
 let g:netrw_dirhist_8='/'
 let g:netrw_dirhist_7='/home'

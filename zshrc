@@ -85,7 +85,11 @@ plugins=(
 
 # FZF
 if [ -f ~/.fzf.zsh ]; then
-   #. ~/.fzf.zsh
+  . ~/.fzf.zsh
 fi
 
 alias loadnvm="$HOME/.nvm/nvm.sh"
+alias xclip="xclip -selection c"
+alias xpaste="xclip -selection c -o"
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+alias mpv="mpv --no-border --autofit=600 --opengl-pbo=yes"
