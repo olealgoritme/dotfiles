@@ -1,5 +1,4 @@
 {
-    "suggest.noselect": true,
     "coc.preferences.formatOnSaveFiletypes": [
         "css",
         "html",
@@ -16,22 +15,23 @@
             "filetypes": [
                 "c",
                 "cpp",
+                "c++",
                 "objc",
                 "objcpp"
             ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            },
             "rootPatterns": [
                 ".ccls",
                 "compile_commands.json",
                 ".vim/",
                 ".git/",
                 ".hg/"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": "/tmp/ccls"
-                }
-            }
+            ]
         }
     },
-    "java.format.settings.url": "/home/xuw/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
+    "suggest.noselect": true
 }

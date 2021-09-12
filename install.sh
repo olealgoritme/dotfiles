@@ -11,7 +11,7 @@ echo "Initializing submodule(s)"
 git submodule update --init --recursive
 
 # List of files to be installed
-files="zshrc bashrc bash_profile vim tmux tmux.conf screenrc gitconfig inputrc idlerc"
+files="zshrc vim tmux tmux.conf"
 
 # Directories to install from and backup to
 DOTFILES=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
@@ -72,15 +72,11 @@ git submodule update --init --recursive
 echo -e "\nInstalling vim plugins..."
 vim -u NONE ./vim/vim-plug.vim +source\ % +PlugUpdate +UpdateRemotePlugins +qall
 
-echo -e "\nSourcing ~/.bashrc"
-. ~/.bashrc
+echo -e "\nSourcing ~/.zshrc"
+. ~/.zshrc
 
 # Create undodir for vim persistent undo
 mkdir -p ~/.undodir
-
-# Install crontab to push dotfiles every hour
-echo -e "\nInstalling crontab [every hour]"
-crontab crontab_install.sh
 
 # Hurray...
 echo -e "\n...You are done! Welcome to xuw's world."

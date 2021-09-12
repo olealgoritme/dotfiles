@@ -14,12 +14,6 @@ export TERM=xterm-256color
 # Aliases
 [ -f $DOTFILES/aliases.sh ] && . $DOTFILES/aliases.sh
 
-# Device specific settings should be in .bashrc_local
-[ -f ~/.bashrc_local ] && . ~/.bashrc_local
-
-# Work related settings should be in .bashrc_work
-[ -f ~/.bashrc_work ] && . ~/.bashrc_work
-
 # Git
 git config --global diff.tool vimdiff
 git config --global merge.tool vimdiff

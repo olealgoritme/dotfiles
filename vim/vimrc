@@ -10,8 +10,6 @@ set cursorline
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-set makeprg=mvn\ -q\ -f\ pom.xml
-
 let g:NERDTreeWinSize = 45
 "let NERDTreeHighlightCursorline = 0
 let g:vue_pre_processors = 'detect_on_enter'
