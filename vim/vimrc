@@ -5,6 +5,9 @@
 source ~/.vim/sane_vimrc
 set clipboard+=unnamedplus
 
+" vim leader key
+let mapleader = "\<Space>"
+
 " marks current line
 set cursorline
 
@@ -25,8 +28,14 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:python_host_prog = '/usr/bin/python2'
 
 
+" bufferline.nvim plugin
+set termguicolors
+lua << EOF
+require("bufferline").setup{}
+EOF
+
 " turn off highlight search
-nnoremap <Esc> :nohlsearch<CR><Esc>
+nnoremap <silent><Esc> :nohlsearch<CR><Esc>
 "nnoremap <leader>n :set hlsearch!<cr>
 
 " testin start
@@ -90,13 +99,10 @@ let g:coc_snippet_next = '<tab>'
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Use `[c` and `]c` to navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
+nmap <silent> gn <Plug>(coc-diagnostic-next)
+nmap <silent> gp <Plug>(coc-diagnostic-prev)
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
@@ -195,8 +201,21 @@ endfunction
 
 function! s:customMappings()
 
-    nnoremap <silent><C-f> :Files<CR>
-    nnoremap <silent><C-b> :Buffers<CR>
+    nnoremap <silent><Leader>ff :Files<CR>
+    nnoremap <silent><Leader>fn :tabnew<CR>
+    nnoremap <silent><Leader>fb :Buffers<CR>
+    nnoremap <silent><Leader>fw :Rg<CR>
+    nnoremap <silent><Leader>qq :qa!<CR>
+    nnoremap <silent><Leader>tn :call NumberToggle()<CR>
+
+    nnoremap <silent><Leader>x :bd<CR>
+    nnoremap <silent><Leader>rw /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
+    nnoremap <silent><Leader>ra :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
+
+    " Add a heading/subheading to current line
+    nnoremap <leader>== yypVr=<Esc>==
+    nnoremap <leader>-- yypVr-<Esc>==
+
     nnoremap <silent><C-n> :NERDTreeToggle<CR>
 
     map <S-h> <S-Left>
@@ -236,20 +255,20 @@ function! s:customMappings()
     vmap gc <plug>NERDCommenterSexy
 
     " Ctrl+T new tab
-    nnoremap <C-t>     :tabnew<CR>
-    inoremap <C-t>     <Esc>:tabnew<CR>
+    nnoremap <silent><C-t> :tabnew<CR>
+    inoremap <silent><C-t> <Esc>:tabnew<CR>
 
-    " Switch windows with TAB only
-    nnoremap <Tab>    <C-w>w
+    " Switch windows
+    nnoremap <C-w> <C-w>w
 
-    " Switch between buffers using alt+left/right arrow
-    nnoremap <silent><A-Right> :call NextBuffer()<CR>
-    nnoremap <silent><A-Left> :call PrevBuffer()<CR>
+    " Switch between buffers
+    nnoremap <silent><Tab>   :BufferLineCycleNext<CR>
+    nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
 
-    vnoremap <Leader><Enter> <Esc>i<Enter><Esc>
-    nnoremap <Leader><Enter> i<Enter><Esc>
-    nnoremap <Leader><Tab> i<Leader><Tab><Esc>
-    nnoremap <Leader><Leader> i<Leader><Esc>
+    vnoremap <silen><Leader><Enter>   <Esc>i<Enter><Esc><CR>
+    nnoremap <silent><Leader><Enter>  i<Enter><Esc><CR>
+    nnoremap <silent><Leader><Tab>    i<Leader><Tab><Esc><CR>
+    nnoremap <silent><Leader><Leader> i<Leader><Esc><CR>
 
 
     " RONAKG start
@@ -278,21 +297,6 @@ function! NERDTreeSync()
     if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
         NERDTreeFind
         wincmd p
-    endif
-endfunction
-
-" Alt+Right but NOT when in Nerdtree or Tagbar
-function! NextBuffer()
-    if ( 'nerdtree' != (&ft) && 'tagbar' != (&ft) )
-        :bn
-    endif
-endfunction
-
-
-" Alt+Left but NOT when in Nerdtree or Tagbar
-function! PrevBuffer()
-    if ( 'nerdtree' != (&ft) && 'tagbar' != (&ft) )
-        :bp
     endif
 endfunction
 
@@ -466,15 +470,9 @@ vnoremap ; :
 nnoremap 0 ^
 nnoremap ^ 0
 
-nnoremap <leader>l :call NumberToggle()<CR>
-
-" Add a heading/subheading to current line
-nnoremap <leader>= yypVr=<Esc>==
-nnoremap <leader>- yypVr-<Esc>==
 
 " Go to end of yanked/pasted text
 vnoremap <silent> y y`]
-" }}
 
 " Commit and push {{
 function! s:CommitPush(...)
@@ -553,17 +551,6 @@ if has("autocmd")"
 
         " Update diff when leaving from insertmode or writing to file
         autocmd BufWritepost * if &diff == 1 | diffupdate | endif
-
-        "if g:quickr_cscope_program == "gtags-cscope"
-        "    " Update GLOBAL database after file is written
-        ""    autocmd BufWritePost *.c call UpdateGlobalDB()
-        ""    autocmd BufWritePost *.cpp call UpdateGlobalDB()
-        ""    autocmd BufWritePost *.h call UpdateGlobalDB()
-        ""    autocmd User QfReplacementBufWritePost doautocmd BufWritePost
-        "endif
-
-        "autocmd BufWritePost $MYVIMRC,vimrc source $MYVIMRC | AirlineRefresh
-
         " Use shell syntax for .conf files
         autocmd BufRead,BufNewFile *.conf set syntax=sh
 
@@ -597,33 +584,6 @@ if &diff
     set number
     set norelativenumber
 endif
-
-
-let g:airline#extensions#tabline#enabled                      = 1
-let g:airline#extensions#tabline#buffer_min_count             = 0
-let g:airline#extensions#tabline#tab_min_count                = 0
-let g:airline#extensions#tabline#buffer_idx_mode              = 0
-let g:airline#extensions#tabline#buffer_nr_show               = 0
-let g:airline#extensions#tabline#show_buffers                 = 1
-let g:airline#extensions#branch#enabled                       = 0
-let g:airline#extensions#tagbar#enabled                       = 1
-let g:airline_powerline_fonts                                 = 1
-let g:airline#extensions#whitespace#enabled       = 0
-let g:airline#extensions#tabline#fnamemod         = ':t'
-let g:airline_theme                               = 'nord'
-let g:airline_section_c                           = '%{fnamemodify(expand("%"), ":~:.")}'
-let g:airline_section_x                           = '%{fnamemodify(getcwd(), ":t")}'
-let g:airline_section_y                           = airline#section#create(['filetype'])
-" Easier tab/buffer switching
-nmap <silent><A-1> <Plug>AirlineSelectTab1
-nmap <silent><A-2> <Plug>AirlineSelectTab2
-"nmap <leader>3 <Plug>AirlineSelectTab3
-"nmap <leader>4 <Plug>AirlineSelectTab4
-"nmap <leader>5 <Plug>AirlineSelectTab5
-"nmap <leader>6 <Plug>AirlineSelectTab6
-"nmap <leader>7 <Plug>AirlineSelectTab7
-"nmap <leader>8 <Plug>AirlineSelectTab8
-"nmap <leader>9 <Plug>AirlineSelectTab9
 
 
 "nnoremap <silent> <leader>p :FZF --no-reverse<CR>
