@@ -1,16 +1,40 @@
 #!/bin/bash
 ORIGIN=$(pwd)
 
-#./install_i3_gaps.sh
-#./install_picom.sh
+function install_i3_gaps() {
+    echo ""
+    while true; do
+        read -p "Do you wish to install i3 gaps ? (y/n): " yn
+        case $yn in
+            [Yy]* ) ./install_i3_gaps.sh; break;;
+            [Nn]* ) break;;
+        esac
+    done
+}
 
-# copy cfgs
-cd $ORIGIN
-mkdir ~/.config/i3/
-mkdir ~/.config/picom/
+function install_picom() {
+    echo ""
+    while true; do
+        read -p "Do you wish to install picom ? (y/n): " yn
+        case $yn in
+            [Yy]* ) ./install_picom.sh; break;;
+            [Nn]* ) break;;
+        esac
+    done
+}
 
-ln -snfv $ORIGIN/config ~/.config/i3/config
-ln -snfv $ORIGIN/picom.conf ~/.config/picom/picom.conf
+function install_cfgs() {
+    echo ""
+    while true; do
+        read -p "Do you wish to install i3/picom cfg files? (y/n): " yn
+        case $yn in
+            [Yy]* ) ./install_cfgs.sh; break;;
+            [Nn]* ) break;;
+        esac
+    done
+}
 
-killall picom
-i3 restart
+# run installers
+install_i3_gaps
+install_picom
+install_cfgs
