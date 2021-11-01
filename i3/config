@@ -152,6 +152,7 @@ mode "resize" {
 	bindsym $mod+r mode "default"
 }
 
+### Resize window ##
 bindsym $mod+r mode "resize"
 
 ### Gaps ###

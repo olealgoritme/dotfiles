@@ -93,3 +93,5 @@ alias xclip="xclip -selection c"
 alias xpaste="xclip -selection c -o"
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 alias mpv="mpv --no-border --autofit=600 --opengl-pbo=yes"
+
+export SDL_VIDEO_FULLSCREEN_HEAD=1
