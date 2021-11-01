@@ -1,100 +1,95 @@
-set $mod Mod4
-set $mod2 Mod1
+# i3 Config file
+# https://github.com/olealgoritme/dotfiles/i3/config
 
-# Theme colors
-client.focused #e39866 #1e1e20 #e39866 #e39866 #e39866
-client.focused_inactive #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
-client.unfocused #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
-client.urgent #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
-client.placeholder #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
+set $mod                             Mod4
+set $mod2                            Mod1
+set $smod                            Shift
 
-client.background #1e1e20
-new_float normal
-border_radius 5
-hide_edge_borders none
+set $wm_setting_font                 pango:Source Sans Pro, Semibold 11
 
-font xft:URWGothic-Book 11
+set $wm_setting_gap_width            15
+set $wm_setting_gap_heigth           15
+set $wm_setting_gap_inner            20
+set $wm_setting_gap_outer            20
 
-floating_modifier $mod
+set $wm_setting_border_size          2
+set $wm_setting_key_left             Left
+set $wm_setting_key_down             Down
+set $wm_setting_key_up               Up
+set $wm_setting_key_right            Right
 
-bindsym $mod+Return exec alacritty
-#i3-sensible-terminal
+set $wm_setting_app_terminal         alacritty
+set $wm_setting_app_browser          google-chrome-stable --disable-frame-rate-limit
+set $wm_setting_app_launcher         rofi -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launchers/colorful/style_1
+set $wm_setting_app_file_explorer    nautilus
+set $wm_setting_app_compositor       picom
 
-# Window kill command
-bindsym $mod+q kill
+set $wm_color_border_active_bg       #81A1C1
+set $wm_color_border_active_fg       #3B4252
+set $wm_color_border_inactive_bg     #3B4252
+set $wm_color_border_inactive_fg     #D8DEE9
+set $wm_color_background             #2E3440
 
-# start program launcher
-bindsym $mod+e exec --no-startup-id rofi -show run
-bindsym $mod+c exec --no-startup-id google-chrome --disable-frame-rate-limit
+set $bar_setting_position            bottom
+set $bar_setting_mode                dock
+set $bar_setting_font                pango:Source Sans Pro, Semibold 11
+set $bar_setting_separator           " - "
+set $bar_setting_statusCommand       i3status
+set $bar_setting_trayoutput          full
 
-# change focus
-# bindsym $mod+Left focus left
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
+set $bar_color_background            #3B4252
+set $bar_color_foreground            #D8DEE9
+set $bar_color_statusline            #D8DEE9
+set $bar_color_separator             #D8DEE9
 
+set $bar_color_workspace_focused_bg  #A3BE8C
+set $bar_color_workspace_focused_fg  #2E3440
+set $bar_color_workspace_active_bg   #EBCB8B
+set $bar_color_workspace_active_fg   #2E3440
+set $bar_color_workspace_inactive_bg #BF616A
+set $bar_color_workspace_inactive_fg #2E3440
+set $bar_color_workspace_urgent_bg   #D08770
+set $bar_color_workspace_urgent_fg   #2E3440
 
-# change focus
+### Applications ###
+# Start a terminal emulator
+bindsym $mod+Return exec --no-startup-id $wm_setting_app_terminal
+
+# Start a web browser
+bindsym $mod+c exec $wm_setting_app_browser
+
+# Start a program launcher
+bindsym $mod+e exec $wm_setting_app_launcher
+
+# Start a file explorer
+bindsym $mod+d exec $wm_setting_app_file_explorer
+
+### Startup Applications
+exec_always --no-startup-id $wm_setting_app_compositor
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/mountains.jpg &
+exec --no-startup-id nitrogen --restore &
+exec --no-startup-id /usr/bin/pulseaudio &
+exec --no-startup-id /usr/bin/start-pulseaudio-x11 &
+exec --no-startup-id nm-applet &
+exec --no-startup-id clipit &
+
+### Alt+Tab between applications ###
 bindsym $mod2+Tab focus right
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+j move right
-bindsym $mod+Shift+k move left
-bindsym $mod+Shift+l move right
-bindsym $mod+Shift+h move left
+### Workspaces ###
+set $ws1  "    1    "
+set $ws2  "    2    "
+set $ws3  "    3    "
+set $ws4  "    4    "
+set $ws5  "    5    "
+set $ws6  "    6    "
+set $ws7  "    7    "
+set $ws8  "    8    "
+set $ws9  "    9    "
+set $ws10 "    10   "
 
-# workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
-# split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
-
-# toggle fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+w 'toggle split'
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# toggle sticky
-bindsym $mod+Shift+s sticky toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# move the currently focused window to the scratchpad
-#bindsym $mod+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-#bindsym $mod+minus scratchpad show
-
-# navigate workspaces next / previous
-bindsym $mod+Right workspace next
-bindsym $mod+Left workspace prev
-
-# workspaces
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-
-# switch to workspace
+# Switch to workspace n
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -103,90 +98,128 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
-# Move focused container to workspace
-bindsym $mod+Shift+Left move container to workspace prev
-bindsym $mod+Shift+Right move container to workspace next
+# Switch workspace next/prev
+bindsym $mod+$wm_setting_key_right workspace next
+bindsym $mod+$wm_setting_key_left workspace prev
 
-# Move to workspace with focused container
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+# Move focused container to workspace n
+bindsym $mod+$smod+1 move container to workspace $ws1
+bindsym $mod+$smod+2 move container to workspace $ws2
+bindsym $mod+$smod+3 move container to workspace $ws3
+bindsym $mod+$smod+4 move container to workspace $ws4
+bindsym $mod+$smod+5 move container to workspace $ws5
+bindsym $mod+$smod+6 move container to workspace $ws6
+bindsym $mod+$smod+7 move container to workspace $ws7
+bindsym $mod+$smod+8 move container to workspace $ws8
+bindsym $mod+$smod+9 move container to workspace $ws9
+bindsym $mod+$smod+0 move container to workspace $ws10
 
-# Open specific applications in floating mode
-for_window [class=".*"] border pixel 0
+### Window sizes and positions ###
 
-# switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+# Move focused container to next/prev workspace
+bindsym $mod+$smod+$wm_setting_key_right move container to workspace next
+bindsym $mod+$smod+$wm_setting_key_left move container to workspace prev
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec i3-msg exit
-
-# Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+# Move focused window within workspace
+bindsym $mod+$wm_setting_key_down  move down
+bindsym $mod+$wm_setting_key_up    move up
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppk
-        bindsym semicolon resize grow width 5 px orl5 ppt
+#	These bindings trigger as soon as you enter the resize mode
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+#	Pressing left will shrink the window’s width.
+#	Pressing right will grow the window’s width.
+#	Pressing up will shrink the window’s height.
+#	Pressing down will grow the window’s height.
+	bindsym $wm_setting_key_left  resize shrink width 10 px or 10 ppt
+	bindsym $wm_setting_key_down  resize grow height 10 px or 10 ppt
+	bindsym $wm_setting_key_up    resize shrink height 10 px or 10 ppt
+	bindsym $wm_setting_key_right resize grow width 10 px or 10 ppt
 
-        # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+#	Resize the gap width and height
+	bindsym $smod+$wm_setting_key_left  gaps horizontal minus 5
+	bindsym $smod+$wm_setting_key_down  gaps horizontal plus 5
+	bindsym $smod+$wm_setting_key_up    gaps vertical minus 5
+	bindsym $smod+$wm_setting_key_right gaps vertical plus 5
+
+#	Back to normal: Enter or Escape or $mod+r
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
 }
 
-# Autostart applications
-exec --no-startup-id compton --config ~/.config/compton/compton.config
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id /usr/bin/pulseaudio &
-exec --no-startup-id /usr/bin/start-pulseaudio-x11 &
-exec --no-startup-id nm-applet
-exec --no-startup-id /home/xuw/scripts/xrander_add_res.sh 2200 1000 144
-exec --no-startup-id /home/xuw/scripts/overclock.sh
-exec --no-startup-id clipit
-exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
-exec --no-startup-id /usr/local/bin/play-with-mpv &> /dev/null &
+bindsym $mod+r mode "resize"
 
-# Gaps
-# gaps inner|outer|horizontal|vertical|top|right|bottom|left current|all set|plus|minus|toggle <px>
-gaps right 130
-gaps inner 100
+### Gaps ###
+gaps horizontal $wm_setting_gap_width
+gaps vertical   $wm_setting_gap_heigth
+gaps inner      $wm_setting_gap_inner
+gaps outer      $wm_setting_gap_outer
+smart_gaps on
+
+### Borders ###
+default_border pixel $wm_setting_border_size
+default_floating_border pixel $wm_setting_border_size
+smart_borders on
+
+### Colors ###
+# class                 border                       background                   text                         indicator                    child_border
+client.focused          $wm_color_border_active_bg   $wm_color_border_active_bg   $wm_color_border_active_fg   $wm_color_border_active_bg   $wm_color_border_active_bg
+client.focused_inactive $wm_color_border_inactive_bg $wm_color_border_inactive_bg $wm_color_border_inactive_fg $wm_color_border_inactive_bg $wm_color_border_inactive_bg
+client.unfocused        $wm_color_border_inactive_bg $wm_color_border_inactive_bg $wm_color_border_inactive_fg $wm_color_border_inactive_bg $wm_color_border_inactive_bg
+client.urgent           $wm_color_border_inactive_bg $wm_color_border_inactive_bg $wm_color_border_inactive_fg $wm_color_border_inactive_bg $wm_color_border_inactive_bg
+client.placeholder      $wm_color_border_inactive_bg $wm_color_border_inactive_bg $wm_color_border_inactive_fg $wm_color_border_inactive_bg $wm_color_border_inactive_bg
+client.background       $wm_color_background
+
+### i3bar ###
+bar {
+	position         $bar_setting_position
+	mode             $bar_setting_mode
+	font             $bar_setting_font
+	separator_symbol $bar_setting_separator
+	status_command   $bar_setting_statusCommand
+	tray_output      $bar_setting_trayoutput
+
+	colors {
+		background   $bar_color_background
+		statusline   $bar_color_statusline
+		separator    $bar_color_separator
+
+		focused_workspace  $bar_color_workspace_focused_bg  $bar_color_workspace_focused_bg  $bar_color_workspace_focused_fg
+		active_workspace   $bar_color_workspace_active_bg   $bar_color_workspace_active_bg   $bar_color_workspace_active_fg
+		inactive_workspace $bar_color_workspace_inactive_bg $bar_color_workspace_inactive_bg $bar_color_workspace_inactive_fg
+		urgent_workspace   $bar_color_workspace_urgent_bg   $bar_color_workspace_urgent_bg   $bar_color_workspace_urgent_fg
+	}
+}
+
+### Miscellaneous settings ###
+# Set the font used for titlebars (which are hidden here)
+font $wm_setting_font
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Enter fullscreen mode for the focused window
+bindsym $mod+f fullscreen toggle
+
+# Toggle between tiling and floating
+bindsym $mod+$smod+f floating toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+w layout toggle split
+
+# Kill the focused window
+bindsym $mod+q kill
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+$smod+r restart
+
+# i3 Config reload
+bindsym $mod+$smod+c reload
+
+# Quit i3 (logs you out of your X session)
+bindsym $mod+$smod+q exec "i3-nagbar -t warning -m 'You pressed the QUIT shortcut. Do you really want to QUIT i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
