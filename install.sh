@@ -11,7 +11,7 @@ echo "Initializing submodule(s)"
 git submodule update --init --recursive
 
 # List of files to be installed
-files="zshrc vim tmux tmux.conf"
+files="vim tmux tmux.conf"
 
 # Directories to install from and backup to
 DOTFILES=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
