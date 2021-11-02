@@ -609,7 +609,7 @@ let g:startify_list_order = [['Most recently used files in current directory:'],
             \                ['Bookmarks:'], 'bookmarks']
 let g:startify_change_to_dir = 0
 let g:startify_files_number = 10
-let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'}, {'t': '~/.tmux.conf'},  {'a' : '~/.config/alacritty/alacritty.yml'}, {'p' : '~/.config/polybar/config'}, {'z' : '~/.zshrc'}  ]
+let g:startify_bookmarks = [ {'a' : '~/.config/alacritty/alacritty.yml'}, {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'}, {'i': '~/.config/i3/config'}, {'p' : '~/.config/polybar/config'}, {'o': '~/.config/picom/picom.conf'}, {'t': '~/.tmux.conf'}, {'z' : '~/.zshrc'}  ]
 
 "if filereadable(".vim.custom")
     "so .vim.custom
@@ -661,7 +661,7 @@ let g:indentLine_char = '│'
 "let g:deoplete#file#enable_buffer_path = 1
 "let g:deoplete#auto_complete_start_length = 2
 
-nnoremap <C-b> :vsplit term://bash<CR>
+nnoremap <C-b> :vsplit term://zsh<CR>
 
 " Window navigation function
 " Make ctrl-h/j/k/l move between windows and auto-insert in terminals
