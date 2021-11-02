@@ -14,7 +14,6 @@
 - picom config is in [picom.conf](https://github.com/olealgoritme/dotfiles/blob/master/i3/picom.conf)
 
 
-
 ### NeoVim
 - Custom [vim-airline](https://github.com/vim-airline/vim-airline-themes)
 - List of plugins are in [vim-plug.vim](https://github.com/olealgoritme/dotfiles/blob/master/vim/vim-plug.vim)
