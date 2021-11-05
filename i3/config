@@ -18,8 +18,8 @@ set $wm_setting_key_down             Down
 set $wm_setting_key_up               Up
 set $wm_setting_key_right            Right
 
-set $wm_setting_app_terminal         alacritty
-set $wm_setting_app_browser          google-chrome-stable --disable-frame-rate-limit
+set $wm_setting_app_terminal         x-terminal-emulator
+set $wm_setting_app_browser          firefox
 set $wm_setting_app_launcher         rofi -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launchers/colorful/style_1
 set $wm_setting_app_file_explorer    nautilus
 set $wm_setting_app_compositor       picom
