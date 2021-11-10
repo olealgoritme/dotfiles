@@ -259,7 +259,7 @@ function! s:customMappings()
     inoremap <silent><C-t> <Esc>:tabnew<CR>
 
     " Switch windows
-    nnoremap <C-w> <C-w>w
+    nnoremap <silent><Leader>w <C-w>w
 
     " Switch between buffers
     nnoremap <silent><Tab>   :BufferLineCycleNext<CR>
