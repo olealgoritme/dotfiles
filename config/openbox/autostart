@@ -1,36 +1,38 @@
 ####################### RICE #################################
-feh --bg-scale ~/dotfiles/wallpapers/hexa_3840_1080.png &
+
+# fix long running GTK2+ apps
+/usr/libexec/gsd-xsettings &
+
+feh --bg-scale ~/Pictures/wallpapers/bigsur.jpg &
 
 # tint2 panel
-tint2 -c /home/xuw/.config/tint2/livia/livia.tint2rc &
-
-# conky
-# conky -c ~/.config/conky/config 2>/dev/null &
+#tint2 -c /home/xuw/.config/tint2/livia/livia.tint2rc &
 
 # cava in alacritty
-/usr/local/bin/visualizer &
+xfce4-terminal -e cava --geometry 120x10+140+1800 &
+
+# ncspot
+alacritty -e ncspot &
+
+# polybar
+~/.config/polybar/cuts/launch.sh &
 
 # Compositor
 compton --config ~/.config/openbox/compton.config &
 ##############################################################
 
-# add resolution
-/home/xuw/scripts/xrander_add_res.sh 2200 1000 144 &
-/home/xuw/scripts/xrander_add_res.sh 2560 1080 143 &
+# audio
+/usr/bin/pulseaudio &
+/usr/bin/start-pulseaudio-x11 &
 
-# MPV server extension (server for chrome extensions to launch to mpv/y-dl)
-/home/xuw/.local/bin/play-with-mpv &> /dev/null &
+# network meter
+no-startup-id nm-applet &
 
-# Overclock CPU
-sudo /home/xuw/scripts/overclock.sh &
+clipit &
+xscreensaver -no-splash &
 
-# Disable mouse acceleration
-/home/xuw/scripts/mouse.sh &
+# CPU overclock (performance governor)
+/home/xuw/scripts/overclock.sh &
 
-
-# Audio
-pulseaudio &
-start-pulseaudio-x11 &
-
-# REMAP keycode 49 on poker vortex rgb to get pipe sign (normally outputs the paragraph sign on nordic layout)
-xmodmap -e "keycode 49 = bar bar bar" &
+# Custom NVIDIA overclock and optimizations for RTX Titan (with vGPU hack)
+/usr/local/bin/nv-gpu-oc &

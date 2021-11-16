@@ -7,24 +7,34 @@
 			</action>
 		</item>
 		<separator/>
-		<item label="Terminal">
+		<item label="Alacritty">
 			<action name="Execute">
-				<execute>x-terminal-emulator</execute>
+				<execute>alacritty</execute>
+			</action>
+        </item>
+		<item label="xfce4-Terminal">
+			<action name="Execute">
+				<execute>xfce4-terminal</execute>
 			</action>
 		</item>
-		<item label="Terminal Borderless">
+		<item label="Google Chrome">
 			<action name="Execute">
-				<execute>xfce4-terminal --hide-borders</execute>
+                <execute>google-chrome --disable-frame-rate-limit</execute>
+			</action>
+        </item>
+		<item label="PulseAudio Control">
+			<action name="Execute">
+				<execute>pavucontrol</execute>
 			</action>
 		</item>
-		<item label="Chromium Browser">
+		<item label="Zoom">
 			<action name="Execute">
-				<execute>chromium-browser</execute>
+				<execute>zoom</execute>
 			</action>
-		</item>
+        </item>
 		<item label="Google Keep">
 			<action name="Execute">
-				<execute>chromium-browser --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki</execute>
+                <execute>google-chrome --disable-frame-rate-limit --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki</execute>
 			</action>
 		</item>
 		<separator/>
@@ -33,14 +43,9 @@
 				<execute>alacritty -t ranger -e ranger</execute>
 			</action>
 		</item>
-		<item label="File Explorer">
+		<item label="Nautilus">
 			<action name="Execute">
 				<execute>nautilus</execute>
-			</action>
-		</item>
-		<item label="Popcorn Time">
-			<action name="Execute">
-				<execute>popcorntime</execute>
 			</action>
 		</item>
 		<item label="Virt-Manager">
@@ -56,7 +61,7 @@
 		<separator/>
 		<item label="OpenBox Menu Config">
 			<action name="Execute">
-				<execute>obmenu</execute>
+				<execute>obmenu2</execute>
 			</action>
 		</item>
 		<item label="OpenBox Config">
@@ -67,11 +72,6 @@
 		<item label="GTK Theme Config">
 			<action name="Execute">
 				<execute>gtk-chtheme</execute>
-			</action>
-		</item>
-		<item label="PulseAudio Control">
-			<action name="Execute">
-				<execute>pavucontrol</execute>
 			</action>
 		</item>
 		<item label="Reconfigure">
