@@ -10,19 +10,21 @@ set $wm_setting_font                 pango:Source Sans Pro, Semibold 11
 set $wm_setting_gap_width            15
 set $wm_setting_gap_heigth           15
 set $wm_setting_gap_inner            20
-set $wm_setting_gap_outer            20
+set $wm_setting_gap_outer            50
 
-set $wm_setting_border_size          2
+set $wm_setting_border_size          0
 set $wm_setting_key_left             Left
 set $wm_setting_key_down             Down
 set $wm_setting_key_up               Up
 set $wm_setting_key_right            Right
 
-set $wm_setting_app_terminal         x-terminal-emulator
-set $wm_setting_app_browser          firefox
-set $wm_setting_app_launcher         rofi -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launchers/colorful/style_1
+set $wm_setting_app_terminal         alacritty
+set $wm_setting_app_browser          google-chrome-stable
+set $wm_setting_app_launcher         rofi -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launchers/text/style_1
 set $wm_setting_app_file_explorer    nautilus
 set $wm_setting_app_compositor       picom
+set $wm_setting_app_locate_window    locatewindow
+
 
 set $wm_color_border_active_bg       #81A1C1
 set $wm_color_border_active_fg       #3B4252
@@ -64,17 +66,29 @@ bindsym $mod+e exec $wm_setting_app_launcher
 # Start a file explorer
 bindsym $mod+d exec $wm_setting_app_file_explorer
 
+# Start a rofi "LOCATE WINDOW" shortcut
+bindsym $mod+l exec $wm_setting_app_locate_window
+
 ### Startup Applications
 exec_always --no-startup-id $wm_setting_app_compositor
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/mountains.jpg &
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/bigsur.jpg &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id /usr/bin/pulseaudio &
 exec --no-startup-id /usr/bin/start-pulseaudio-x11 &
 exec --no-startup-id nm-applet &
 exec --no-startup-id clipit &
+exec --no-startup-id xscreensaver -no-splash &
+# CPU overclock (performance governor)
+exec --no-startup-id /home/xuw/scripts/overclock.sh &
+# Custom NVIDIA overclock and optimizations for RTX Titan (with vGPU hack)
+exec --no-startup-id /usr/local/bin/nv-gpu-oc &
 
 ### Alt+Tab between applications ###
-bindsym $mod2+Tab focus right
+# bindsym $mod2+Tab focus right
+
+# change focused container
+bindsym $mod2+Tab focus parent; focus right; focus child
+bindsym $mod2+$smod+Tab focus parent; focus left; focus child
 
 ### Workspaces ###
 set $ws1  "    1    "
@@ -210,8 +224,8 @@ bindsym $mod+f fullscreen toggle
 # Toggle between tiling and floating
 bindsym $mod+$smod+f floating toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+w layout toggle split
+# change container layout (stacked, tabbed, split, tabbed)
+bindsym $mod+w layout toggle splith splitv tabbed stacked
 
 # Kill the focused window
 bindsym $mod+q kill
