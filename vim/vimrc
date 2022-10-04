@@ -1,20 +1,28 @@
 " Author: Ole Algoritme <olealgoritme@gmail.com>
 " Source: https://github.com/olealgoritme/dotfiles
-" Inspiration: https://github.com/ronakg
 
 source ~/.vim/sane_vimrc
 set clipboard+=unnamedplus
-
-" vim leader key
+set cursorline
+set termguicolors
 let mapleader = "\<Space>"
 
-" marks current line
-set cursorline
+lua require('bufferline').setup()
+lua require('neoscroll').setup()
+"lua require('nvim-tree').setup()
+"
+"
 
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+lua require("mason").setup()
+lua require("mason-lspconfig").setup()
+
+lua require('lspconfig').pyright.setup{}
+lua require('lspconfig').clangd.setup{}
+
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 let g:NERDTreeWinSize = 45
-"let NERDTreeHighlightCursorline = 0
+let NERDTreeHighlightCursorline = 0
 let g:vue_pre_processors = 'detect_on_enter'
 
 let g:UltiSnipsExpandTrigger="<c-tab>"
@@ -29,44 +37,25 @@ let g:python_host_prog = '/usr/bin/python2'
 
 
 " bufferline.nvim plugin
-set termguicolors
-lua << EOF
-require("bufferline").setup{}
-EOF
 
 " turn off highlight search
 nnoremap <silent><Esc> :nohlsearch<CR><Esc>
-"nnoremap <leader>n :set hlsearch!<cr>
-
-" testin start
-
-" if hidden is not set, TextEdit might fail.
 set hidden
-
-" Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
-
-" Better display for messages
 set cmdheight=2
-
-" You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
-
-" don't give |ins-completion-menu| messages.
 set shortmess+=c
 set shortmess+=a
-
-" always show signcolumns
 set signcolumn=yes
 
 " coc-snippets
 " Use <C-l> for trigger snippet expand.
-"inoremap <silent><expr> <TAB>
-      "\ pumvisible() ? coc#_select_confirm() :
-      "\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      "\ <SID>check_back_space() ? "\<TAB>" :
-      "\ coc#refresh()
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
@@ -99,45 +88,46 @@ let g:coc_snippet_next = '<tab>'
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-nmap <silent> gn <Plug>(coc-diagnostic-next)
-nmap <silent> gp <Plug>(coc-diagnostic-prev)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gt <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+"nmap <silent> gn <Plug>(coc-diagnostic-next)
+"nmap <silent> gp <Plug>(coc-diagnostic-prev)
+"nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> <leader>gd :lua vim.lsp.buf.declaration()<CR>
+"nmap <silent> gt <Plug>(coc-type-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+"xmap <leader>a  <Plug>(coc-codeaction-selected)
+"nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap for general codeAction
-nmap <silent><leader><A-Enter> :CocAction<CR>
+"nmap <silent><leader><A-Enter> :CocAction<CR>
 " Remap for do codeAction of current line
-nmap <silent><A-Enter>  <Plug>(coc-codeaction)
+"nmap <silent><A-Enter>  <Plug>(coc-codeaction)
 
 " Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
+"nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+"nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+"function! s:show_documentation()
+"  if (index(['vim','help'], &filetype) >= 0)
+"    execute 'h '.expand('<cword>')
+"  else
+"    call CocAction('doHover')
+"  endif
+"endfunction
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+"xmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
 
 " testing end
 
@@ -172,7 +162,7 @@ augroup xuw_cfg_autocmd
     " syntax highlight for config or config.cfg / .conf
     autocmd BufEnter,BufRead *.conf,*.cfg,*conf* setf dosini
 
-    autocmd BufEnter,BufRead *.json :%!python -m json.tool
+    "autocmd BufEnter,BufRead *.json :%!python -m json.tool
 
     " Remove whitespace on save
     autocmd BufWritepost * call StripTrailingWhite()
@@ -201,6 +191,9 @@ endfunction
 
 function! s:customMappings()
 
+    nnoremap <leader>ss :SSave<CR>
+    nnoremap <leader>sl :SClose<CR>ecency bonus
+
     nnoremap <silent><Leader>ff :Files<CR>
     nnoremap <silent><Leader>fn :tabnew<CR>
     nnoremap <silent><Leader>fb :Buffers<CR>
@@ -217,6 +210,7 @@ function! s:customMappings()
     nnoremap <leader>-- yypVr-<Esc>==
 
     nnoremap <silent><C-n> :NERDTreeToggle<CR>
+    nnoremap <leader>r :NERDTreeRefreshRoot<CR>
 
     map <S-h> <S-Left>
     map <S-j> <S-Down>
@@ -605,9 +599,20 @@ else
     endif
 endif
 
-let g:startify_list_order = [['Most recently used files in current directory:'], 'dir',
-            \                ['Bookmarks:'], 'bookmarks']
-let g:startify_change_to_dir = 0
+let g:startify_session_dir = '~/.vim/sessions'
+let g:startify_lists = [
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'files',     'header': ['   Files']            },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ ]
+
+let g:startify_custom_header = [
+        \ '   _  __     _      ',
+        \ '  / |/ /  __(_)_ _  ',
+        \ ' /    / |/ / /  ` \ ',
+        \ '/_/|_/|___/_/_/_/_/ ',
+        \]
+let g:startify_change_to_dir = 1
 let g:startify_files_number = 10
 let g:startify_bookmarks = [ {'a' : '~/.config/alacritty/alacritty.yml'}, {'c': '~/.vim/vimrc'}, {'d': '~/.vim/vim-plug.vim'}, {'i': '~/.config/i3/config'}, {'p' : '~/.config/polybar/config'}, {'o': '~/.config/picom/picom.conf'}, {'t': '~/.tmux.conf'}, {'z' : '~/.zshrc'}  ]
 
@@ -661,7 +666,7 @@ let g:indentLine_char = '│'
 "let g:deoplete#file#enable_buffer_path = 1
 "let g:deoplete#auto_complete_start_length = 2
 
-nnoremap <C-b> :vsplit term://zsh<CR>
+nnoremap <silent><leader>tt :vsplit term://zsh<CR>
 
 " Window navigation function
 " Make ctrl-h/j/k/l move between windows and auto-insert in terminals

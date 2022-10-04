@@ -110,7 +110,7 @@ endif
 "================= Colorscheme =============================
 
 let g:dracula_colorterm = 0
-colorscheme nord
+colorscheme dracula
 set background=dark
 "hi LineNr guibg=#1d2021
 
