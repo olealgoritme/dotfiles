@@ -9,8 +9,8 @@ set $wm_setting_font                 pango:Source Sans Pro, Semibold 11
 
 set $wm_setting_gap_width            15
 set $wm_setting_gap_heigth           15
-set $wm_setting_gap_inner            20
-set $wm_setting_gap_outer            50
+set $wm_setting_gap_inner            10
+set $wm_setting_gap_outer            20
 
 set $wm_setting_border_size          0
 set $wm_setting_key_left             Left
@@ -19,7 +19,7 @@ set $wm_setting_key_up               Up
 set $wm_setting_key_right            Right
 
 set $wm_setting_app_terminal         alacritty
-set $wm_setting_app_browser          google-chrome-stable
+set $wm_setting_app_browser          google-chrome-unstable
 set $wm_setting_app_launcher         rofi -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launchers/text/style_1
 set $wm_setting_app_file_explorer    nautilus
 set $wm_setting_app_compositor       picom
@@ -78,10 +78,15 @@ exec --no-startup-id /usr/bin/start-pulseaudio-x11 &
 exec --no-startup-id nm-applet &
 exec --no-startup-id clipit &
 exec --no-startup-id xscreensaver -no-splash &
+
 # CPU overclock (performance governor)
 exec --no-startup-id /home/xuw/scripts/overclock.sh &
-# Custom NVIDIA overclock and optimizations for RTX Titan (with vGPU hack)
+
+# Custom NVIDIA overclock and optimizations 
 exec --no-startup-id /usr/local/bin/nv-gpu-oc &
+
+# keyring daemon
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
 
 ### Alt+Tab between applications ###
 # bindsym $mod2+Tab focus right
@@ -91,10 +96,10 @@ bindsym $mod2+Tab focus parent; focus right; focus child
 bindsym $mod2+$smod+Tab focus parent; focus left; focus child
 
 ### Workspaces ###
-set $ws1  "    1    "
-set $ws2  "    2    "
-set $ws3  "    3    "
-set $ws4  "    4    "
+set $ws1  "  1 Main    "
+set $ws2  "  2 Coding  "
+set $ws3  "  3 School  "
+set $ws4  "  4 Gaming  "
 set $ws5  "    5    "
 set $ws6  "    6    "
 set $ws7  "    7    "
@@ -102,8 +107,13 @@ set $ws8  "    8    "
 set $ws9  "    9    "
 set $ws10 "    10   "
 
+# Static floating windows 
+for_window [instance="pavucontrol"] floating enable
+for_window [instance="steam"] floating enable
+for_window [instance="nvidia-settings"] floating enable
+for_window [instance="qemu"] floating enable
 
-# Switch to workspace n
+# Switch to workspace x
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3

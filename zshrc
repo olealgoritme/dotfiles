@@ -1,51 +1,22 @@
-# If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+
+# cargo binaries
+export PATH=/home/xuw/.cargo/bin:$PATH
+
+# llvm 13
+export PATH=/usr/llvm13.0/bin:$PATH
+
+# doom emacs
+export PATH=/home/xuw/.emacs.d/bin:$PATH
+
+# oh my zsh
 export ZSH="/home/xuw/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-
 plugins=(
     git
     vi-mode
 )
-
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 
 # Where are my dotfiles
@@ -77,10 +48,6 @@ setopt APPEND_HISTORY
 
 setopt COMPLETE_ALIASES
 
-plugins=(
-    vi-mode
-)
-
 [ -f $DOTFILES/zsh_prompt ] && . $DOTFILES/zsh_prompt
 
 # FZF
@@ -88,10 +55,16 @@ if [ -f ~/.fzf.zsh ]; then
   . ~/.fzf.zsh
 fi
 
-alias loadnvm="$HOME/.nvm/nvm.sh"
 alias xclip="xclip -selection c"
 alias xpaste="xclip -selection c -o"
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 alias mpv="mpv --no-border --autofit=600 --opengl-pbo=yes"
 
 export SDL_VIDEO_FULLSCREEN_HEAD=1
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+transfer(){ if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1";file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;}
