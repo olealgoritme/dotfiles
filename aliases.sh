@@ -18,12 +18,21 @@ alias ag='ag --noheading --nobreak'
 
 # Shortcut to create new tmux with pwd as session name
 alias tmux='tmux -2 -u'
-alias newtmux='tmux new -s ${PWD##*/}'
+#alias tmux='tmux new -s ${PWD##*/}'
 
 # fzf vim
 alias vip='vim +FZF'
 
 alias histfix='history -n && history -w && history -c && history -r'
+
+
+alias vim="nvim"
+alias xclip="xclip -selection c"
+alias xpaste="xclip -selection c -o"
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+alias mpv="mpv --no-border --autofit=600 --opengl-pbo=yes"
+alias py="python"
+alias o3d="open3d draw"
 
 # Git aliases
 alias add='git add'
