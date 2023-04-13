@@ -33,6 +33,7 @@ test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 alias mpv="mpv --no-border --autofit=600 --opengl-pbo=yes"
 alias py="python"
 alias o3d="open3d draw"
+alias n="nautilus"
 
 # Git aliases
 alias add='git add'

@@ -10,6 +10,7 @@ command_exists () {
     command -v $1 &> /dev/null
 }
 
+export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib
 export TERM=xterm-256color
 
 # Aliases
