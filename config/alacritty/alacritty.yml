@@ -18,9 +18,11 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 0
-    lines: 0
+    columns: 100
+    lines: 35
 
+  opacity: 1.0
+ 
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
@@ -37,8 +39,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 15
-    y: 15
+    x: 25
+    y: 25
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -52,7 +54,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -104,14 +106,17 @@ scrolling:
 # Font configuration (changes require restart)
 font:
   normal:
-   family: SauceCodePro Nerd Font
-   style: normal
+    family: Liga SFMono Nerd Font
 
   bold:
-   family: SauceCodePro Nerd Font
-   style: Bold
+    family: Liga SFMono Nerd Font
 
-  size: 12.0
+  italic:
+    family: Liga SFMono Nerd Font
+
+  bold_italic:
+    family: Liga SFMono Nerd Font
+  size: 14.0
   offset:
     x: 0
     y: 0
@@ -119,7 +124,6 @@ font:
   glyph_offset:
     x: 0
     y: 0
-  use_thin_strokes: true
   draw_bold_text_with_bright_colors: true
 
 
@@ -142,7 +146,7 @@ colors:
     matches:
       foreground: CellBackground
       background: '#88c0d0'
-    bar:
+    colors.footer_bar:
       background: '#434c5e'
       foreground: '#d8dee9'
   normal:
@@ -253,11 +257,6 @@ bell:
   duration: 0
   color: '0xffffff'
 
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.99
 
 # Mouse bindings
 #
@@ -301,8 +300,8 @@ mouse:
     #   - (macOS) open
     #   - (Linux) xdg-open
     #   - (Windows) explorer
-    #launcher:
-    #  program: xdg-open
+    launcher:
+      program: xdg-open
     #  args: []
 
     # URL modifiers
@@ -368,7 +367,7 @@ working_directory: None
 enable_experimental_conpty_backend: false
 
 # Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: true
+# alt_send_esc: true
 
 debug:
   # Display the time it takes to redraw each frame.
